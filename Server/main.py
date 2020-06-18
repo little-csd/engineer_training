@@ -1,19 +1,18 @@
-import websockets
-import asyncio
-import test_pb2
+import logging
+from websocket_server import WebsocketServer
 
-def recv_user_msg(websocket):
-    recv_text = websocket.recv()
-    print("recv_text:", websocket.pong, recv_text)
+def new_client(client, server):
+    print(client['id'])
+    server.send_message_to_all("Hey, a new client come in")
 
-async def run(websocket, path):
-    while True:
-        try:
-            recv_user_msg(websocket)
-        except Exception as e:
-            print("Exception:", e)
+def left_client(client, server):
+    print('clien {} left'.format(client['id']))
 
-# asyncio.get_event_loop().run_until_complete(websockets.serve(run, "192.168.101.65", 3891))
-# asyncio.get_event_loop().run_forever()
-p = test_pb2.Person()
-p.id = 10
+def msg_recv(client, server, msg):
+    print(msg)
+
+server = WebsocketServer(13245, host='192.168.101.65')
+server.set_fn_new_client(new_client)
+server.set_fn_client_left(left_client)
+server.set_fn_message_received(msg_recv)
+server.run_forever()
