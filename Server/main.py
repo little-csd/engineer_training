@@ -1,5 +1,6 @@
 import websockets
 import asyncio
+import test_pb2
 
 def recv_user_msg(websocket):
     recv_text = websocket.recv()
@@ -12,5 +13,7 @@ async def run(websocket, path):
         except Exception as e:
             print("Exception:", e)
 
-asyncio.get_event_loop().run_until_complete(websockets.serve(run, "192.168.101.65", 3891))
-asyncio.get_event_loop().run_forever()
+# asyncio.get_event_loop().run_until_complete(websockets.serve(run, "192.168.101.65", 3891))
+# asyncio.get_event_loop().run_forever()
+p = test_pb2.Person()
+p.id = 10
