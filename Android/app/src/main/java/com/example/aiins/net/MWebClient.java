@@ -19,6 +19,7 @@ public class MWebClient extends WebSocketClient {
     @Override
     public void onOpen(ServerHandshake handshakedata) {
         Log.i(TAG, "onOpen: " + handshakedata.getHttpStatusMessage());
+        Log.i(TAG, "onOpen: " + Thread.currentThread());
     }
 
     @Override
