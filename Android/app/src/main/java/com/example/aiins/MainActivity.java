@@ -1,23 +1,28 @@
 package com.example.aiins;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.res.AssetManager;
+import android.os.Build;
 import android.os.Bundle;
-import android.os.Parcel;
 import android.util.Log;
 
-import com.example.aiins.net.MWebClient;
-
-import org.java_websocket.WebSocket;
-import org.java_websocket.client.WebSocketClient;
-
-import java.net.MalformedURLException;
-import java.net.URI;
-import java.net.URISyntaxException;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.FileReader;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.net.URL;
 import java.net.URLClassLoader;
-import java.util.ArrayList;
-import java.util.List;
+import java.nio.ByteBuffer;
+
+import dalvik.system.BaseDexClassLoader;
+import dalvik.system.DexClassLoader;
+import dalvik.system.DexFile;
+import dalvik.system.InMemoryDexClassLoader;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -27,6 +32,5 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
     }
 }
