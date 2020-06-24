@@ -1,0 +1,63 @@
+syntax = "proto3"; // PB协议版本
+
+option java_package = "com.example.aiins.proto";
+
+// 基础询问信息
+message BasicReq {
+    int32 reqId = 1;
+    int32 reqCustomerId = 2;
+}
+
+// 基础回应信息
+message BasicRsp {
+    int32 resultCode = 1;
+    string msg = 2;
+}
+
+// 查找好友请求
+message FindFriendReq {
+    BasicReq basicReq = 1;
+    string targetName = 2;
+}
+
+// 查找好友响应
+message FindFriendRsp {
+    BasicRsp basicRsp = 1;
+    int32 targetId = 2;
+}
+
+// 添加好友, 返回 BasicRsp
+message AddFriendReq {
+    BasicReq basicReq = 1;
+
+}
+
+// 发送信息给好友/群聊, 返回 BasicRsp
+message TalkToReq {
+
+}
+
+// 建立群聊, 返回 BasicRsp
+message MakeGroupReq {
+
+}
+
+// 获取推送信息请求
+message FindOthersReq {
+
+}
+
+// 获取推送信息响应
+message FindOthersRsp {
+
+}
+
+// 设置头像, 成功返回 BasicRsp
+message SetIconReq {
+
+}
+
+// 设置昵称, 成功返回 BasicReq
+message SetNickNameReq {
+
+}

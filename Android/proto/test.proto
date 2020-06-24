@@ -1,9 +1,0 @@
-syntax = "proto3"; // PB协议版本
-
-option java_package = "com.example.aiins.proto";
-
-message Person {
-    int32 id = 1;
-    string name = 2;
-    string mail = 3;
-}
