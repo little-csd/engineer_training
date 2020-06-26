@@ -6,10 +6,9 @@ import android.util.Log
 import android.widget.Toast
 import com.example.aiins.MainActivity
 import com.example.aiins.R
-import com.example.aiins.net.NetworkUtil
+import com.example.aiins.proto.Basic
 import com.example.aiins.proto.Register
-import com.example.aiins.util.BaseActivity
-import com.example.aiins.util.Config
+import com.example.aiins.util.*
 import kotlinx.android.synthetic.main.activity_login.*
 import okhttp3.Call
 import okhttp3.Callback
@@ -42,7 +41,7 @@ class LoginActivity : BaseActivity(), Callback {
                 else -> {
                     submitting = true
                     val req = Register.RegisterReq.newBuilder()
-                    req.userName = username
+                    req.username = username
                     req.password = password
                     runOnUiThread {
                         Toast.makeText(this@LoginActivity, "Login...", Toast.LENGTH_SHORT).show()
@@ -71,14 +70,16 @@ class LoginActivity : BaseActivity(), Callback {
 
         runOnUiThread {
             if (rsp.resultCode == 0) {
-                Config.id = rsp.customerId
+                val data = FileUtil.readFileInFiles(Config.getUserDataName(rsp.uid))
+                Config.userData = Basic.BasicUserData.parseFrom(data)
+                Log.i(TAG, "LoginActivity: onResponse: create userdata ${Config.userData}")
+
                 Toast.makeText(this@LoginActivity, "Login successfully!", Toast.LENGTH_SHORT).show()
                 val intent = Intent(this, MainActivity::class.java)
                 intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
                 startActivity(intent)
             } else {
-                Log.i(TAG, "onResponse: " + rsp.resultCode)
-                Toast.makeText(this@LoginActivity, "Wrong password", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@LoginActivity, RspCode.MSG[rsp.resultCode], Toast.LENGTH_SHORT).show()
                 submitting = false
             }
         }

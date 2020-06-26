@@ -4,13 +4,13 @@ option java_package = "com.example.aiins.proto";
 
 // 登录请求
 message RegisterReq {
-  string userName = 1;
-  string nickName = 2;
+  string username = 1;
+  string nickname = 2;
   string password = 3;
 }
 
 // 登录响应
 message RegisterRsp {
   int32 resultCode = 1;
-  int32 customerId = 2;
+  int32 uid = 2;
 }

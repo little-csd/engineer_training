@@ -1,0 +1,31 @@
+syntax = "proto3"; // PB协议版本
+
+option java_package = "com.example.aiins.proto";
+
+message SettingReq {
+  int32 type = 1;
+  SetIconReq iconReq = 2;
+  SetNicknameReq nicknameReq = 3;
+  SetPasswordReq passwordReq = 4;
+}
+
+message SetIconReq {
+  int32 uid = 1;
+  bytes icon = 2;
+}
+
+message SetNicknameReq {
+  int32 uid = 1;
+  string nickname = 2;
+}
+
+message SetPasswordReq {
+  int32 uid = 1;
+  string old = 2;
+  string new = 3;
+}
+
+message SettingRsp {
+  int32 resultCode = 1;
+  string msg = 2;
+}

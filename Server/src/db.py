@@ -7,21 +7,22 @@ class Mongo:
         return res
     
     def login_add(self, username, nickname, password):
-        self.max_id += 1
+        uid = self.max_uid = self.max_uid + 1
         data = {
             'username': username,
             'nickname': nickname,
             'password': password,
-            'uid': self.max_id
+            'uid': uid
         }
         self.login.insert_one(data)
-        return self.max_id
+        return uid
 
     def __init__(self):
         self.client = pymongo.MongoClient(host='localhost')
+        # 在此处更改 db 即可
         self.db = self.client.test
         # login part
         self.login = self.db.login
-        self.max_id = self.login.find_one(sort=[("uid",-1)])
-        if self.max_id is None:
-            self.max_id = 0
+        self.max_uid = self.login.find_one(sort=[("uid",-1)])
+        if self.max_uid is None:
+            self.max_uid = 0

@@ -19,28 +19,28 @@ public final class Register {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string userName = 1;</code>
-     * @return The userName.
+     * <code>string username = 1;</code>
+     * @return The username.
      */
-    java.lang.String getUserName();
+    java.lang.String getUsername();
     /**
-     * <code>string userName = 1;</code>
-     * @return The bytes for userName.
+     * <code>string username = 1;</code>
+     * @return The bytes for username.
      */
     com.google.protobuf.ByteString
-        getUserNameBytes();
+        getUsernameBytes();
 
     /**
-     * <code>string nickName = 2;</code>
-     * @return The nickName.
+     * <code>string nickname = 2;</code>
+     * @return The nickname.
      */
-    java.lang.String getNickName();
+    java.lang.String getNickname();
     /**
-     * <code>string nickName = 2;</code>
-     * @return The bytes for nickName.
+     * <code>string nickname = 2;</code>
+     * @return The bytes for nickname.
      */
     com.google.protobuf.ByteString
-        getNickNameBytes();
+        getNicknameBytes();
 
     /**
      * <code>string password = 3;</code>
@@ -71,8 +71,8 @@ public final class Register {
       super(builder);
     }
     private RegisterReq() {
-      userName_ = "";
-      nickName_ = "";
+      username_ = "";
+      nickname_ = "";
       password_ = "";
     }
 
@@ -109,13 +109,13 @@ public final class Register {
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              userName_ = s;
+              username_ = s;
               break;
             }
             case 18: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              nickName_ = s;
+              nickname_ = s;
               break;
             }
             case 26: {
@@ -157,37 +157,37 @@ public final class Register {
     }
 
     public static final int USERNAME_FIELD_NUMBER = 1;
-    private volatile java.lang.Object userName_;
+    private volatile java.lang.Object username_;
     /**
-     * <code>string userName = 1;</code>
-     * @return The userName.
+     * <code>string username = 1;</code>
+     * @return The username.
      */
     @java.lang.Override
-    public java.lang.String getUserName() {
-      java.lang.Object ref = userName_;
+    public java.lang.String getUsername() {
+      java.lang.Object ref = username_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        userName_ = s;
+        username_ = s;
         return s;
       }
     }
     /**
-     * <code>string userName = 1;</code>
-     * @return The bytes for userName.
+     * <code>string username = 1;</code>
+     * @return The bytes for username.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getUserNameBytes() {
-      java.lang.Object ref = userName_;
+        getUsernameBytes() {
+      java.lang.Object ref = username_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        userName_ = b;
+        username_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -195,37 +195,37 @@ public final class Register {
     }
 
     public static final int NICKNAME_FIELD_NUMBER = 2;
-    private volatile java.lang.Object nickName_;
+    private volatile java.lang.Object nickname_;
     /**
-     * <code>string nickName = 2;</code>
-     * @return The nickName.
+     * <code>string nickname = 2;</code>
+     * @return The nickname.
      */
     @java.lang.Override
-    public java.lang.String getNickName() {
-      java.lang.Object ref = nickName_;
+    public java.lang.String getNickname() {
+      java.lang.Object ref = nickname_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        nickName_ = s;
+        nickname_ = s;
         return s;
       }
     }
     /**
-     * <code>string nickName = 2;</code>
-     * @return The bytes for nickName.
+     * <code>string nickname = 2;</code>
+     * @return The bytes for nickname.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getNickNameBytes() {
-      java.lang.Object ref = nickName_;
+        getNicknameBytes() {
+      java.lang.Object ref = nickname_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        nickName_ = b;
+        nickname_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -284,11 +284,11 @@ public final class Register {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getUserNameBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, userName_);
+      if (!getUsernameBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, username_);
       }
-      if (!getNickNameBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, nickName_);
+      if (!getNicknameBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, nickname_);
       }
       if (!getPasswordBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, password_);
@@ -302,11 +302,11 @@ public final class Register {
       if (size != -1) return size;
 
       size = 0;
-      if (!getUserNameBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, userName_);
+      if (!getUsernameBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, username_);
       }
-      if (!getNickNameBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, nickName_);
+      if (!getNicknameBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, nickname_);
       }
       if (!getPasswordBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, password_);
@@ -326,10 +326,10 @@ public final class Register {
       }
       com.example.aiins.proto.Register.RegisterReq other = (com.example.aiins.proto.Register.RegisterReq) obj;
 
-      if (!getUserName()
-          .equals(other.getUserName())) return false;
-      if (!getNickName()
-          .equals(other.getNickName())) return false;
+      if (!getUsername()
+          .equals(other.getUsername())) return false;
+      if (!getNickname()
+          .equals(other.getNickname())) return false;
       if (!getPassword()
           .equals(other.getPassword())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -344,9 +344,9 @@ public final class Register {
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + USERNAME_FIELD_NUMBER;
-      hash = (53 * hash) + getUserName().hashCode();
+      hash = (53 * hash) + getUsername().hashCode();
       hash = (37 * hash) + NICKNAME_FIELD_NUMBER;
-      hash = (53 * hash) + getNickName().hashCode();
+      hash = (53 * hash) + getNickname().hashCode();
       hash = (37 * hash) + PASSWORD_FIELD_NUMBER;
       hash = (53 * hash) + getPassword().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
@@ -486,9 +486,9 @@ public final class Register {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        userName_ = "";
+        username_ = "";
 
-        nickName_ = "";
+        nickname_ = "";
 
         password_ = "";
 
@@ -518,8 +518,8 @@ public final class Register {
       @java.lang.Override
       public com.example.aiins.proto.Register.RegisterReq buildPartial() {
         com.example.aiins.proto.Register.RegisterReq result = new com.example.aiins.proto.Register.RegisterReq(this);
-        result.userName_ = userName_;
-        result.nickName_ = nickName_;
+        result.username_ = username_;
+        result.nickname_ = nickname_;
         result.password_ = password_;
         onBuilt();
         return result;
@@ -569,12 +569,12 @@ public final class Register {
 
       public Builder mergeFrom(com.example.aiins.proto.Register.RegisterReq other) {
         if (other == com.example.aiins.proto.Register.RegisterReq.getDefaultInstance()) return this;
-        if (!other.getUserName().isEmpty()) {
-          userName_ = other.userName_;
+        if (!other.getUsername().isEmpty()) {
+          username_ = other.username_;
           onChanged();
         }
-        if (!other.getNickName().isEmpty()) {
-          nickName_ = other.nickName_;
+        if (!other.getNickname().isEmpty()) {
+          nickname_ = other.nickname_;
           onChanged();
         }
         if (!other.getPassword().isEmpty()) {
@@ -610,154 +610,154 @@ public final class Register {
         return this;
       }
 
-      private java.lang.Object userName_ = "";
+      private java.lang.Object username_ = "";
       /**
-       * <code>string userName = 1;</code>
-       * @return The userName.
+       * <code>string username = 1;</code>
+       * @return The username.
        */
-      public java.lang.String getUserName() {
-        java.lang.Object ref = userName_;
+      public java.lang.String getUsername() {
+        java.lang.Object ref = username_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          userName_ = s;
+          username_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>string userName = 1;</code>
-       * @return The bytes for userName.
+       * <code>string username = 1;</code>
+       * @return The bytes for username.
        */
       public com.google.protobuf.ByteString
-          getUserNameBytes() {
-        java.lang.Object ref = userName_;
+          getUsernameBytes() {
+        java.lang.Object ref = username_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          userName_ = b;
+          username_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>string userName = 1;</code>
-       * @param value The userName to set.
+       * <code>string username = 1;</code>
+       * @param value The username to set.
        * @return This builder for chaining.
        */
-      public Builder setUserName(
+      public Builder setUsername(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        userName_ = value;
+        username_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>string userName = 1;</code>
+       * <code>string username = 1;</code>
        * @return This builder for chaining.
        */
-      public Builder clearUserName() {
+      public Builder clearUsername() {
         
-        userName_ = getDefaultInstance().getUserName();
+        username_ = getDefaultInstance().getUsername();
         onChanged();
         return this;
       }
       /**
-       * <code>string userName = 1;</code>
-       * @param value The bytes for userName to set.
+       * <code>string username = 1;</code>
+       * @param value The bytes for username to set.
        * @return This builder for chaining.
        */
-      public Builder setUserNameBytes(
+      public Builder setUsernameBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        userName_ = value;
+        username_ = value;
         onChanged();
         return this;
       }
 
-      private java.lang.Object nickName_ = "";
+      private java.lang.Object nickname_ = "";
       /**
-       * <code>string nickName = 2;</code>
-       * @return The nickName.
+       * <code>string nickname = 2;</code>
+       * @return The nickname.
        */
-      public java.lang.String getNickName() {
-        java.lang.Object ref = nickName_;
+      public java.lang.String getNickname() {
+        java.lang.Object ref = nickname_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          nickName_ = s;
+          nickname_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>string nickName = 2;</code>
-       * @return The bytes for nickName.
+       * <code>string nickname = 2;</code>
+       * @return The bytes for nickname.
        */
       public com.google.protobuf.ByteString
-          getNickNameBytes() {
-        java.lang.Object ref = nickName_;
+          getNicknameBytes() {
+        java.lang.Object ref = nickname_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          nickName_ = b;
+          nickname_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>string nickName = 2;</code>
-       * @param value The nickName to set.
+       * <code>string nickname = 2;</code>
+       * @param value The nickname to set.
        * @return This builder for chaining.
        */
-      public Builder setNickName(
+      public Builder setNickname(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        nickName_ = value;
+        nickname_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>string nickName = 2;</code>
+       * <code>string nickname = 2;</code>
        * @return This builder for chaining.
        */
-      public Builder clearNickName() {
+      public Builder clearNickname() {
         
-        nickName_ = getDefaultInstance().getNickName();
+        nickname_ = getDefaultInstance().getNickname();
         onChanged();
         return this;
       }
       /**
-       * <code>string nickName = 2;</code>
-       * @param value The bytes for nickName to set.
+       * <code>string nickname = 2;</code>
+       * @param value The bytes for nickname to set.
        * @return This builder for chaining.
        */
-      public Builder setNickNameBytes(
+      public Builder setNicknameBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        nickName_ = value;
+        nickname_ = value;
         onChanged();
         return this;
       }
@@ -901,10 +901,10 @@ public final class Register {
     int getResultCode();
 
     /**
-     * <code>int32 customerId = 2;</code>
-     * @return The customerId.
+     * <code>int32 uid = 2;</code>
+     * @return The uid.
      */
-    int getCustomerId();
+    int getUid();
   }
   /**
    * <pre>
@@ -962,7 +962,7 @@ public final class Register {
             }
             case 16: {
 
-              customerId_ = input.readInt32();
+              uid_ = input.readInt32();
               break;
             }
             default: {
@@ -1008,15 +1008,15 @@ public final class Register {
       return resultCode_;
     }
 
-    public static final int CUSTOMERID_FIELD_NUMBER = 2;
-    private int customerId_;
+    public static final int UID_FIELD_NUMBER = 2;
+    private int uid_;
     /**
-     * <code>int32 customerId = 2;</code>
-     * @return The customerId.
+     * <code>int32 uid = 2;</code>
+     * @return The uid.
      */
     @java.lang.Override
-    public int getCustomerId() {
-      return customerId_;
+    public int getUid() {
+      return uid_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -1036,8 +1036,8 @@ public final class Register {
       if (resultCode_ != 0) {
         output.writeInt32(1, resultCode_);
       }
-      if (customerId_ != 0) {
-        output.writeInt32(2, customerId_);
+      if (uid_ != 0) {
+        output.writeInt32(2, uid_);
       }
       unknownFields.writeTo(output);
     }
@@ -1052,9 +1052,9 @@ public final class Register {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(1, resultCode_);
       }
-      if (customerId_ != 0) {
+      if (uid_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(2, customerId_);
+          .computeInt32Size(2, uid_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -1073,8 +1073,8 @@ public final class Register {
 
       if (getResultCode()
           != other.getResultCode()) return false;
-      if (getCustomerId()
-          != other.getCustomerId()) return false;
+      if (getUid()
+          != other.getUid()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -1088,8 +1088,8 @@ public final class Register {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + RESULTCODE_FIELD_NUMBER;
       hash = (53 * hash) + getResultCode();
-      hash = (37 * hash) + CUSTOMERID_FIELD_NUMBER;
-      hash = (53 * hash) + getCustomerId();
+      hash = (37 * hash) + UID_FIELD_NUMBER;
+      hash = (53 * hash) + getUid();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1229,7 +1229,7 @@ public final class Register {
         super.clear();
         resultCode_ = 0;
 
-        customerId_ = 0;
+        uid_ = 0;
 
         return this;
       }
@@ -1258,7 +1258,7 @@ public final class Register {
       public com.example.aiins.proto.Register.RegisterRsp buildPartial() {
         com.example.aiins.proto.Register.RegisterRsp result = new com.example.aiins.proto.Register.RegisterRsp(this);
         result.resultCode_ = resultCode_;
-        result.customerId_ = customerId_;
+        result.uid_ = uid_;
         onBuilt();
         return result;
       }
@@ -1310,8 +1310,8 @@ public final class Register {
         if (other.getResultCode() != 0) {
           setResultCode(other.getResultCode());
         }
-        if (other.getCustomerId() != 0) {
-          setCustomerId(other.getCustomerId());
+        if (other.getUid() != 0) {
+          setUid(other.getUid());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -1373,33 +1373,33 @@ public final class Register {
         return this;
       }
 
-      private int customerId_ ;
+      private int uid_ ;
       /**
-       * <code>int32 customerId = 2;</code>
-       * @return The customerId.
+       * <code>int32 uid = 2;</code>
+       * @return The uid.
        */
       @java.lang.Override
-      public int getCustomerId() {
-        return customerId_;
+      public int getUid() {
+        return uid_;
       }
       /**
-       * <code>int32 customerId = 2;</code>
-       * @param value The customerId to set.
+       * <code>int32 uid = 2;</code>
+       * @param value The uid to set.
        * @return This builder for chaining.
        */
-      public Builder setCustomerId(int value) {
+      public Builder setUid(int value) {
         
-        customerId_ = value;
+        uid_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>int32 customerId = 2;</code>
+       * <code>int32 uid = 2;</code>
        * @return This builder for chaining.
        */
-      public Builder clearCustomerId() {
+      public Builder clearUid() {
         
-        customerId_ = 0;
+        uid_ = 0;
         onChanged();
         return this;
       }
@@ -1476,10 +1476,10 @@ public final class Register {
   static {
     java.lang.String[] descriptorData = {
       "\n\024proto/Register.proto\"C\n\013RegisterReq\022\020\n" +
-      "\010userName\030\001 \001(\t\022\020\n\010nickName\030\002 \001(\t\022\020\n\010pas" +
-      "sword\030\003 \001(\t\"5\n\013RegisterRsp\022\022\n\nresultCode" +
-      "\030\001 \001(\005\022\022\n\ncustomerId\030\002 \001(\005B\031\n\027com.exampl" +
-      "e.aiins.protob\006proto3"
+      "\010username\030\001 \001(\t\022\020\n\010nickname\030\002 \001(\t\022\020\n\010pas" +
+      "sword\030\003 \001(\t\".\n\013RegisterRsp\022\022\n\nresultCode" +
+      "\030\001 \001(\005\022\013\n\003uid\030\002 \001(\005B\031\n\027com.example.aiins" +
+      ".protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -1490,13 +1490,13 @@ public final class Register {
     internal_static_RegisterReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_RegisterReq_descriptor,
-        new java.lang.String[] { "UserName", "NickName", "Password", });
+        new java.lang.String[] { "Username", "Nickname", "Password", });
     internal_static_RegisterRsp_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_RegisterRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_RegisterRsp_descriptor,
-        new java.lang.String[] { "ResultCode", "CustomerId", });
+        new java.lang.String[] { "ResultCode", "Uid", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

@@ -1,7 +1,6 @@
-package com.example.aiins.net
+package com.example.aiins.util
 
 import com.example.aiins.proto.Register
-import com.example.aiins.util.Config
 import okhttp3.Callback
 import okhttp3.OkHttpClient
 import okhttp3.Request

@@ -14,46 +14,52 @@ public final class Basic {
     registerAllExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
-  public interface BasicReqOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:BasicReq)
+  public interface UserDataReqOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:UserDataReq)
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>int32 reqId = 1;</code>
-     * @return The reqId.
+     * <code>repeated int32 uid = 1;</code>
+     * @return A list containing the uid.
      */
-    int getReqId();
-
+    java.util.List<java.lang.Integer> getUidList();
     /**
-     * <code>int32 reqCustomerId = 2;</code>
-     * @return The reqCustomerId.
+     * <code>repeated int32 uid = 1;</code>
+     * @return The count of uid.
      */
-    int getReqCustomerId();
+    int getUidCount();
+    /**
+     * <code>repeated int32 uid = 1;</code>
+     * @param index The index of the element to return.
+     * @return The uid at the given index.
+     */
+    int getUid(int index);
   }
   /**
    * <pre>
-   * 基础询问信息
+   * 获取一系列用户基本信息请求
    * </pre>
    *
-   * Protobuf type {@code BasicReq}
+   * Protobuf type {@code UserDataReq}
    */
-  public static final class BasicReq extends
+  public static final class UserDataReq extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:BasicReq)
-      BasicReqOrBuilder {
+      // @@protoc_insertion_point(message_implements:UserDataReq)
+      UserDataReqOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use BasicReq.newBuilder() to construct.
-    private BasicReq(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use UserDataReq.newBuilder() to construct.
+    private UserDataReq(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private BasicReq() {
+    private UserDataReq() {
+      uid_ = emptyIntList();
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
-      return new BasicReq();
+      return new UserDataReq();
     }
 
     @java.lang.Override
@@ -61,7 +67,7 @@ public final class Basic {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private BasicReq(
+    private UserDataReq(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -69,6 +75,3851 @@ public final class Basic {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                uid_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              uid_.addInt(input.readInt32());
+              break;
+            }
+            case 10: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
+                uid_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                uid_.addInt(input.readInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          uid_.makeImmutable(); // C
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.example.aiins.proto.Basic.internal_static_UserDataReq_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.example.aiins.proto.Basic.internal_static_UserDataReq_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.example.aiins.proto.Basic.UserDataReq.class, com.example.aiins.proto.Basic.UserDataReq.Builder.class);
+    }
+
+    public static final int UID_FIELD_NUMBER = 1;
+    private com.google.protobuf.Internal.IntList uid_;
+    /**
+     * <code>repeated int32 uid = 1;</code>
+     * @return A list containing the uid.
+     */
+    @java.lang.Override
+    public java.util.List<java.lang.Integer>
+        getUidList() {
+      return uid_;
+    }
+    /**
+     * <code>repeated int32 uid = 1;</code>
+     * @return The count of uid.
+     */
+    public int getUidCount() {
+      return uid_.size();
+    }
+    /**
+     * <code>repeated int32 uid = 1;</code>
+     * @param index The index of the element to return.
+     * @return The uid at the given index.
+     */
+    public int getUid(int index) {
+      return uid_.getInt(index);
+    }
+    private int uidMemoizedSerializedSize = -1;
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (getUidList().size() > 0) {
+        output.writeUInt32NoTag(10);
+        output.writeUInt32NoTag(uidMemoizedSerializedSize);
+      }
+      for (int i = 0; i < uid_.size(); i++) {
+        output.writeInt32NoTag(uid_.getInt(i));
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      {
+        int dataSize = 0;
+        for (int i = 0; i < uid_.size(); i++) {
+          dataSize += com.google.protobuf.CodedOutputStream
+            .computeInt32SizeNoTag(uid_.getInt(i));
+        }
+        size += dataSize;
+        if (!getUidList().isEmpty()) {
+          size += 1;
+          size += com.google.protobuf.CodedOutputStream
+              .computeInt32SizeNoTag(dataSize);
+        }
+        uidMemoizedSerializedSize = dataSize;
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.example.aiins.proto.Basic.UserDataReq)) {
+        return super.equals(obj);
+      }
+      com.example.aiins.proto.Basic.UserDataReq other = (com.example.aiins.proto.Basic.UserDataReq) obj;
+
+      if (!getUidList()
+          .equals(other.getUidList())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getUidCount() > 0) {
+        hash = (37 * hash) + UID_FIELD_NUMBER;
+        hash = (53 * hash) + getUidList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.example.aiins.proto.Basic.UserDataReq parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.example.aiins.proto.Basic.UserDataReq parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.example.aiins.proto.Basic.UserDataReq parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.example.aiins.proto.Basic.UserDataReq parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.example.aiins.proto.Basic.UserDataReq parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.example.aiins.proto.Basic.UserDataReq parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.example.aiins.proto.Basic.UserDataReq parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.example.aiins.proto.Basic.UserDataReq parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.example.aiins.proto.Basic.UserDataReq parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.example.aiins.proto.Basic.UserDataReq parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.example.aiins.proto.Basic.UserDataReq parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.example.aiins.proto.Basic.UserDataReq parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.example.aiins.proto.Basic.UserDataReq prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * 获取一系列用户基本信息请求
+     * </pre>
+     *
+     * Protobuf type {@code UserDataReq}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:UserDataReq)
+        com.example.aiins.proto.Basic.UserDataReqOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.example.aiins.proto.Basic.internal_static_UserDataReq_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.example.aiins.proto.Basic.internal_static_UserDataReq_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.example.aiins.proto.Basic.UserDataReq.class, com.example.aiins.proto.Basic.UserDataReq.Builder.class);
+      }
+
+      // Construct using com.example.aiins.proto.Basic.UserDataReq.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        uid_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.example.aiins.proto.Basic.internal_static_UserDataReq_descriptor;
+      }
+
+      @java.lang.Override
+      public com.example.aiins.proto.Basic.UserDataReq getDefaultInstanceForType() {
+        return com.example.aiins.proto.Basic.UserDataReq.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.example.aiins.proto.Basic.UserDataReq build() {
+        com.example.aiins.proto.Basic.UserDataReq result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.example.aiins.proto.Basic.UserDataReq buildPartial() {
+        com.example.aiins.proto.Basic.UserDataReq result = new com.example.aiins.proto.Basic.UserDataReq(this);
+        int from_bitField0_ = bitField0_;
+        if (((bitField0_ & 0x00000001) != 0)) {
+          uid_.makeImmutable();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.uid_ = uid_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.example.aiins.proto.Basic.UserDataReq) {
+          return mergeFrom((com.example.aiins.proto.Basic.UserDataReq)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.example.aiins.proto.Basic.UserDataReq other) {
+        if (other == com.example.aiins.proto.Basic.UserDataReq.getDefaultInstance()) return this;
+        if (!other.uid_.isEmpty()) {
+          if (uid_.isEmpty()) {
+            uid_ = other.uid_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensureUidIsMutable();
+            uid_.addAll(other.uid_);
+          }
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.example.aiins.proto.Basic.UserDataReq parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.example.aiins.proto.Basic.UserDataReq) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private com.google.protobuf.Internal.IntList uid_ = emptyIntList();
+      private void ensureUidIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          uid_ = mutableCopy(uid_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+      /**
+       * <code>repeated int32 uid = 1;</code>
+       * @return A list containing the uid.
+       */
+      public java.util.List<java.lang.Integer>
+          getUidList() {
+        return ((bitField0_ & 0x00000001) != 0) ?
+                 java.util.Collections.unmodifiableList(uid_) : uid_;
+      }
+      /**
+       * <code>repeated int32 uid = 1;</code>
+       * @return The count of uid.
+       */
+      public int getUidCount() {
+        return uid_.size();
+      }
+      /**
+       * <code>repeated int32 uid = 1;</code>
+       * @param index The index of the element to return.
+       * @return The uid at the given index.
+       */
+      public int getUid(int index) {
+        return uid_.getInt(index);
+      }
+      /**
+       * <code>repeated int32 uid = 1;</code>
+       * @param index The index to set the value at.
+       * @param value The uid to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUid(
+          int index, int value) {
+        ensureUidIsMutable();
+        uid_.setInt(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated int32 uid = 1;</code>
+       * @param value The uid to add.
+       * @return This builder for chaining.
+       */
+      public Builder addUid(int value) {
+        ensureUidIsMutable();
+        uid_.addInt(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated int32 uid = 1;</code>
+       * @param values The uid to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllUid(
+          java.lang.Iterable<? extends java.lang.Integer> values) {
+        ensureUidIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, uid_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated int32 uid = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearUid() {
+        uid_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:UserDataReq)
+    }
+
+    // @@protoc_insertion_point(class_scope:UserDataReq)
+    private static final com.example.aiins.proto.Basic.UserDataReq DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.example.aiins.proto.Basic.UserDataReq();
+    }
+
+    public static com.example.aiins.proto.Basic.UserDataReq getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<UserDataReq>
+        PARSER = new com.google.protobuf.AbstractParser<UserDataReq>() {
+      @java.lang.Override
+      public UserDataReq parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new UserDataReq(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<UserDataReq> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<UserDataReq> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.example.aiins.proto.Basic.UserDataReq getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface UserDataRspOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:UserDataRsp)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>repeated string nickname = 1;</code>
+     * @return A list containing the nickname.
+     */
+    java.util.List<java.lang.String>
+        getNicknameList();
+    /**
+     * <code>repeated string nickname = 1;</code>
+     * @return The count of nickname.
+     */
+    int getNicknameCount();
+    /**
+     * <code>repeated string nickname = 1;</code>
+     * @param index The index of the element to return.
+     * @return The nickname at the given index.
+     */
+    java.lang.String getNickname(int index);
+    /**
+     * <code>repeated string nickname = 1;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the nickname at the given index.
+     */
+    com.google.protobuf.ByteString
+        getNicknameBytes(int index);
+
+    /**
+     * <code>repeated string username = 2;</code>
+     * @return A list containing the username.
+     */
+    java.util.List<java.lang.String>
+        getUsernameList();
+    /**
+     * <code>repeated string username = 2;</code>
+     * @return The count of username.
+     */
+    int getUsernameCount();
+    /**
+     * <code>repeated string username = 2;</code>
+     * @param index The index of the element to return.
+     * @return The username at the given index.
+     */
+    java.lang.String getUsername(int index);
+    /**
+     * <code>repeated string username = 2;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the username at the given index.
+     */
+    com.google.protobuf.ByteString
+        getUsernameBytes(int index);
+
+    /**
+     * <code>repeated bytes icon = 3;</code>
+     * @return A list containing the icon.
+     */
+    java.util.List<com.google.protobuf.ByteString> getIconList();
+    /**
+     * <code>repeated bytes icon = 3;</code>
+     * @return The count of icon.
+     */
+    int getIconCount();
+    /**
+     * <code>repeated bytes icon = 3;</code>
+     * @param index The index of the element to return.
+     * @return The icon at the given index.
+     */
+    com.google.protobuf.ByteString getIcon(int index);
+  }
+  /**
+   * <pre>
+   * 一系列用户基本信息响应
+   * </pre>
+   *
+   * Protobuf type {@code UserDataRsp}
+   */
+  public static final class UserDataRsp extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:UserDataRsp)
+      UserDataRspOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use UserDataRsp.newBuilder() to construct.
+    private UserDataRsp(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private UserDataRsp() {
+      nickname_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      username_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      icon_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new UserDataRsp();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private UserDataRsp(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                nickname_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              nickname_.add(s);
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                username_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              username_.add(s);
+              break;
+            }
+            case 26: {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+                icon_ = new java.util.ArrayList<com.google.protobuf.ByteString>();
+                mutable_bitField0_ |= 0x00000004;
+              }
+              icon_.add(input.readBytes());
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          nickname_ = nickname_.getUnmodifiableView();
+        }
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+          username_ = username_.getUnmodifiableView();
+        }
+        if (((mutable_bitField0_ & 0x00000004) != 0)) {
+          icon_ = java.util.Collections.unmodifiableList(icon_); // C
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.example.aiins.proto.Basic.internal_static_UserDataRsp_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.example.aiins.proto.Basic.internal_static_UserDataRsp_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.example.aiins.proto.Basic.UserDataRsp.class, com.example.aiins.proto.Basic.UserDataRsp.Builder.class);
+    }
+
+    public static final int NICKNAME_FIELD_NUMBER = 1;
+    private com.google.protobuf.LazyStringList nickname_;
+    /**
+     * <code>repeated string nickname = 1;</code>
+     * @return A list containing the nickname.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getNicknameList() {
+      return nickname_;
+    }
+    /**
+     * <code>repeated string nickname = 1;</code>
+     * @return The count of nickname.
+     */
+    public int getNicknameCount() {
+      return nickname_.size();
+    }
+    /**
+     * <code>repeated string nickname = 1;</code>
+     * @param index The index of the element to return.
+     * @return The nickname at the given index.
+     */
+    public java.lang.String getNickname(int index) {
+      return nickname_.get(index);
+    }
+    /**
+     * <code>repeated string nickname = 1;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the nickname at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getNicknameBytes(int index) {
+      return nickname_.getByteString(index);
+    }
+
+    public static final int USERNAME_FIELD_NUMBER = 2;
+    private com.google.protobuf.LazyStringList username_;
+    /**
+     * <code>repeated string username = 2;</code>
+     * @return A list containing the username.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getUsernameList() {
+      return username_;
+    }
+    /**
+     * <code>repeated string username = 2;</code>
+     * @return The count of username.
+     */
+    public int getUsernameCount() {
+      return username_.size();
+    }
+    /**
+     * <code>repeated string username = 2;</code>
+     * @param index The index of the element to return.
+     * @return The username at the given index.
+     */
+    public java.lang.String getUsername(int index) {
+      return username_.get(index);
+    }
+    /**
+     * <code>repeated string username = 2;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the username at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getUsernameBytes(int index) {
+      return username_.getByteString(index);
+    }
+
+    public static final int ICON_FIELD_NUMBER = 3;
+    private java.util.List<com.google.protobuf.ByteString> icon_;
+    /**
+     * <code>repeated bytes icon = 3;</code>
+     * @return A list containing the icon.
+     */
+    @java.lang.Override
+    public java.util.List<com.google.protobuf.ByteString>
+        getIconList() {
+      return icon_;
+    }
+    /**
+     * <code>repeated bytes icon = 3;</code>
+     * @return The count of icon.
+     */
+    public int getIconCount() {
+      return icon_.size();
+    }
+    /**
+     * <code>repeated bytes icon = 3;</code>
+     * @param index The index of the element to return.
+     * @return The icon at the given index.
+     */
+    public com.google.protobuf.ByteString getIcon(int index) {
+      return icon_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      for (int i = 0; i < nickname_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, nickname_.getRaw(i));
+      }
+      for (int i = 0; i < username_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, username_.getRaw(i));
+      }
+      for (int i = 0; i < icon_.size(); i++) {
+        output.writeBytes(3, icon_.get(i));
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      {
+        int dataSize = 0;
+        for (int i = 0; i < nickname_.size(); i++) {
+          dataSize += computeStringSizeNoTag(nickname_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getNicknameList().size();
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < username_.size(); i++) {
+          dataSize += computeStringSizeNoTag(username_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getUsernameList().size();
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < icon_.size(); i++) {
+          dataSize += com.google.protobuf.CodedOutputStream
+            .computeBytesSizeNoTag(icon_.get(i));
+        }
+        size += dataSize;
+        size += 1 * getIconList().size();
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.example.aiins.proto.Basic.UserDataRsp)) {
+        return super.equals(obj);
+      }
+      com.example.aiins.proto.Basic.UserDataRsp other = (com.example.aiins.proto.Basic.UserDataRsp) obj;
+
+      if (!getNicknameList()
+          .equals(other.getNicknameList())) return false;
+      if (!getUsernameList()
+          .equals(other.getUsernameList())) return false;
+      if (!getIconList()
+          .equals(other.getIconList())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getNicknameCount() > 0) {
+        hash = (37 * hash) + NICKNAME_FIELD_NUMBER;
+        hash = (53 * hash) + getNicknameList().hashCode();
+      }
+      if (getUsernameCount() > 0) {
+        hash = (37 * hash) + USERNAME_FIELD_NUMBER;
+        hash = (53 * hash) + getUsernameList().hashCode();
+      }
+      if (getIconCount() > 0) {
+        hash = (37 * hash) + ICON_FIELD_NUMBER;
+        hash = (53 * hash) + getIconList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.example.aiins.proto.Basic.UserDataRsp parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.example.aiins.proto.Basic.UserDataRsp parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.example.aiins.proto.Basic.UserDataRsp parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.example.aiins.proto.Basic.UserDataRsp parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.example.aiins.proto.Basic.UserDataRsp parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.example.aiins.proto.Basic.UserDataRsp parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.example.aiins.proto.Basic.UserDataRsp parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.example.aiins.proto.Basic.UserDataRsp parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.example.aiins.proto.Basic.UserDataRsp parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.example.aiins.proto.Basic.UserDataRsp parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.example.aiins.proto.Basic.UserDataRsp parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.example.aiins.proto.Basic.UserDataRsp parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.example.aiins.proto.Basic.UserDataRsp prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * 一系列用户基本信息响应
+     * </pre>
+     *
+     * Protobuf type {@code UserDataRsp}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:UserDataRsp)
+        com.example.aiins.proto.Basic.UserDataRspOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.example.aiins.proto.Basic.internal_static_UserDataRsp_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.example.aiins.proto.Basic.internal_static_UserDataRsp_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.example.aiins.proto.Basic.UserDataRsp.class, com.example.aiins.proto.Basic.UserDataRsp.Builder.class);
+      }
+
+      // Construct using com.example.aiins.proto.Basic.UserDataRsp.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        nickname_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        username_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        icon_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.example.aiins.proto.Basic.internal_static_UserDataRsp_descriptor;
+      }
+
+      @java.lang.Override
+      public com.example.aiins.proto.Basic.UserDataRsp getDefaultInstanceForType() {
+        return com.example.aiins.proto.Basic.UserDataRsp.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.example.aiins.proto.Basic.UserDataRsp build() {
+        com.example.aiins.proto.Basic.UserDataRsp result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.example.aiins.proto.Basic.UserDataRsp buildPartial() {
+        com.example.aiins.proto.Basic.UserDataRsp result = new com.example.aiins.proto.Basic.UserDataRsp(this);
+        int from_bitField0_ = bitField0_;
+        if (((bitField0_ & 0x00000001) != 0)) {
+          nickname_ = nickname_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.nickname_ = nickname_;
+        if (((bitField0_ & 0x00000002) != 0)) {
+          username_ = username_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000002);
+        }
+        result.username_ = username_;
+        if (((bitField0_ & 0x00000004) != 0)) {
+          icon_ = java.util.Collections.unmodifiableList(icon_);
+          bitField0_ = (bitField0_ & ~0x00000004);
+        }
+        result.icon_ = icon_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.example.aiins.proto.Basic.UserDataRsp) {
+          return mergeFrom((com.example.aiins.proto.Basic.UserDataRsp)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.example.aiins.proto.Basic.UserDataRsp other) {
+        if (other == com.example.aiins.proto.Basic.UserDataRsp.getDefaultInstance()) return this;
+        if (!other.nickname_.isEmpty()) {
+          if (nickname_.isEmpty()) {
+            nickname_ = other.nickname_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensureNicknameIsMutable();
+            nickname_.addAll(other.nickname_);
+          }
+          onChanged();
+        }
+        if (!other.username_.isEmpty()) {
+          if (username_.isEmpty()) {
+            username_ = other.username_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+          } else {
+            ensureUsernameIsMutable();
+            username_.addAll(other.username_);
+          }
+          onChanged();
+        }
+        if (!other.icon_.isEmpty()) {
+          if (icon_.isEmpty()) {
+            icon_ = other.icon_;
+            bitField0_ = (bitField0_ & ~0x00000004);
+          } else {
+            ensureIconIsMutable();
+            icon_.addAll(other.icon_);
+          }
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.example.aiins.proto.Basic.UserDataRsp parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.example.aiins.proto.Basic.UserDataRsp) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private com.google.protobuf.LazyStringList nickname_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private void ensureNicknameIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          nickname_ = new com.google.protobuf.LazyStringArrayList(nickname_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+      /**
+       * <code>repeated string nickname = 1;</code>
+       * @return A list containing the nickname.
+       */
+      public com.google.protobuf.ProtocolStringList
+          getNicknameList() {
+        return nickname_.getUnmodifiableView();
+      }
+      /**
+       * <code>repeated string nickname = 1;</code>
+       * @return The count of nickname.
+       */
+      public int getNicknameCount() {
+        return nickname_.size();
+      }
+      /**
+       * <code>repeated string nickname = 1;</code>
+       * @param index The index of the element to return.
+       * @return The nickname at the given index.
+       */
+      public java.lang.String getNickname(int index) {
+        return nickname_.get(index);
+      }
+      /**
+       * <code>repeated string nickname = 1;</code>
+       * @param index The index of the value to return.
+       * @return The bytes of the nickname at the given index.
+       */
+      public com.google.protobuf.ByteString
+          getNicknameBytes(int index) {
+        return nickname_.getByteString(index);
+      }
+      /**
+       * <code>repeated string nickname = 1;</code>
+       * @param index The index to set the value at.
+       * @param value The nickname to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNickname(
+          int index, java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureNicknameIsMutable();
+        nickname_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string nickname = 1;</code>
+       * @param value The nickname to add.
+       * @return This builder for chaining.
+       */
+      public Builder addNickname(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureNicknameIsMutable();
+        nickname_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string nickname = 1;</code>
+       * @param values The nickname to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllNickname(
+          java.lang.Iterable<java.lang.String> values) {
+        ensureNicknameIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, nickname_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string nickname = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearNickname() {
+        nickname_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string nickname = 1;</code>
+       * @param value The bytes of the nickname to add.
+       * @return This builder for chaining.
+       */
+      public Builder addNicknameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        ensureNicknameIsMutable();
+        nickname_.add(value);
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.LazyStringList username_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private void ensureUsernameIsMutable() {
+        if (!((bitField0_ & 0x00000002) != 0)) {
+          username_ = new com.google.protobuf.LazyStringArrayList(username_);
+          bitField0_ |= 0x00000002;
+         }
+      }
+      /**
+       * <code>repeated string username = 2;</code>
+       * @return A list containing the username.
+       */
+      public com.google.protobuf.ProtocolStringList
+          getUsernameList() {
+        return username_.getUnmodifiableView();
+      }
+      /**
+       * <code>repeated string username = 2;</code>
+       * @return The count of username.
+       */
+      public int getUsernameCount() {
+        return username_.size();
+      }
+      /**
+       * <code>repeated string username = 2;</code>
+       * @param index The index of the element to return.
+       * @return The username at the given index.
+       */
+      public java.lang.String getUsername(int index) {
+        return username_.get(index);
+      }
+      /**
+       * <code>repeated string username = 2;</code>
+       * @param index The index of the value to return.
+       * @return The bytes of the username at the given index.
+       */
+      public com.google.protobuf.ByteString
+          getUsernameBytes(int index) {
+        return username_.getByteString(index);
+      }
+      /**
+       * <code>repeated string username = 2;</code>
+       * @param index The index to set the value at.
+       * @param value The username to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUsername(
+          int index, java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureUsernameIsMutable();
+        username_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string username = 2;</code>
+       * @param value The username to add.
+       * @return This builder for chaining.
+       */
+      public Builder addUsername(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureUsernameIsMutable();
+        username_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string username = 2;</code>
+       * @param values The username to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllUsername(
+          java.lang.Iterable<java.lang.String> values) {
+        ensureUsernameIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, username_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string username = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearUsername() {
+        username_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string username = 2;</code>
+       * @param value The bytes of the username to add.
+       * @return This builder for chaining.
+       */
+      public Builder addUsernameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        ensureUsernameIsMutable();
+        username_.add(value);
+        onChanged();
+        return this;
+      }
+
+      private java.util.List<com.google.protobuf.ByteString> icon_ = java.util.Collections.emptyList();
+      private void ensureIconIsMutable() {
+        if (!((bitField0_ & 0x00000004) != 0)) {
+          icon_ = new java.util.ArrayList<com.google.protobuf.ByteString>(icon_);
+          bitField0_ |= 0x00000004;
+         }
+      }
+      /**
+       * <code>repeated bytes icon = 3;</code>
+       * @return A list containing the icon.
+       */
+      public java.util.List<com.google.protobuf.ByteString>
+          getIconList() {
+        return ((bitField0_ & 0x00000004) != 0) ?
+                 java.util.Collections.unmodifiableList(icon_) : icon_;
+      }
+      /**
+       * <code>repeated bytes icon = 3;</code>
+       * @return The count of icon.
+       */
+      public int getIconCount() {
+        return icon_.size();
+      }
+      /**
+       * <code>repeated bytes icon = 3;</code>
+       * @param index The index of the element to return.
+       * @return The icon at the given index.
+       */
+      public com.google.protobuf.ByteString getIcon(int index) {
+        return icon_.get(index);
+      }
+      /**
+       * <code>repeated bytes icon = 3;</code>
+       * @param index The index to set the value at.
+       * @param value The icon to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIcon(
+          int index, com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureIconIsMutable();
+        icon_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated bytes icon = 3;</code>
+       * @param value The icon to add.
+       * @return This builder for chaining.
+       */
+      public Builder addIcon(com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureIconIsMutable();
+        icon_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated bytes icon = 3;</code>
+       * @param values The icon to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllIcon(
+          java.lang.Iterable<? extends com.google.protobuf.ByteString> values) {
+        ensureIconIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, icon_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated bytes icon = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearIcon() {
+        icon_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:UserDataRsp)
+    }
+
+    // @@protoc_insertion_point(class_scope:UserDataRsp)
+    private static final com.example.aiins.proto.Basic.UserDataRsp DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.example.aiins.proto.Basic.UserDataRsp();
+    }
+
+    public static com.example.aiins.proto.Basic.UserDataRsp getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<UserDataRsp>
+        PARSER = new com.google.protobuf.AbstractParser<UserDataRsp>() {
+      @java.lang.Override
+      public UserDataRsp parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new UserDataRsp(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<UserDataRsp> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<UserDataRsp> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.example.aiins.proto.Basic.UserDataRsp getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface BasicUserDataOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:BasicUserData)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string nickname = 1;</code>
+     * @return The nickname.
+     */
+    java.lang.String getNickname();
+    /**
+     * <code>string nickname = 1;</code>
+     * @return The bytes for nickname.
+     */
+    com.google.protobuf.ByteString
+        getNicknameBytes();
+
+    /**
+     * <code>string username = 2;</code>
+     * @return The username.
+     */
+    java.lang.String getUsername();
+    /**
+     * <code>string username = 2;</code>
+     * @return The bytes for username.
+     */
+    com.google.protobuf.ByteString
+        getUsernameBytes();
+
+    /**
+     * <code>string password = 3;</code>
+     * @return The password.
+     */
+    java.lang.String getPassword();
+    /**
+     * <code>string password = 3;</code>
+     * @return The bytes for password.
+     */
+    com.google.protobuf.ByteString
+        getPasswordBytes();
+
+    /**
+     * <code>int32 uid = 4;</code>
+     * @return The uid.
+     */
+    int getUid();
+  }
+  /**
+   * <pre>
+   * 每个用户都有的基本信息
+   * </pre>
+   *
+   * Protobuf type {@code BasicUserData}
+   */
+  public static final class BasicUserData extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:BasicUserData)
+      BasicUserDataOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use BasicUserData.newBuilder() to construct.
+    private BasicUserData(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private BasicUserData() {
+      nickname_ = "";
+      username_ = "";
+      password_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new BasicUserData();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private BasicUserData(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              nickname_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              username_ = s;
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              password_ = s;
+              break;
+            }
+            case 32: {
+
+              uid_ = input.readInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.example.aiins.proto.Basic.internal_static_BasicUserData_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.example.aiins.proto.Basic.internal_static_BasicUserData_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.example.aiins.proto.Basic.BasicUserData.class, com.example.aiins.proto.Basic.BasicUserData.Builder.class);
+    }
+
+    public static final int NICKNAME_FIELD_NUMBER = 1;
+    private volatile java.lang.Object nickname_;
+    /**
+     * <code>string nickname = 1;</code>
+     * @return The nickname.
+     */
+    @java.lang.Override
+    public java.lang.String getNickname() {
+      java.lang.Object ref = nickname_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        nickname_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string nickname = 1;</code>
+     * @return The bytes for nickname.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getNicknameBytes() {
+      java.lang.Object ref = nickname_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        nickname_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int USERNAME_FIELD_NUMBER = 2;
+    private volatile java.lang.Object username_;
+    /**
+     * <code>string username = 2;</code>
+     * @return The username.
+     */
+    @java.lang.Override
+    public java.lang.String getUsername() {
+      java.lang.Object ref = username_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        username_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string username = 2;</code>
+     * @return The bytes for username.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getUsernameBytes() {
+      java.lang.Object ref = username_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        username_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int PASSWORD_FIELD_NUMBER = 3;
+    private volatile java.lang.Object password_;
+    /**
+     * <code>string password = 3;</code>
+     * @return The password.
+     */
+    @java.lang.Override
+    public java.lang.String getPassword() {
+      java.lang.Object ref = password_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        password_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string password = 3;</code>
+     * @return The bytes for password.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getPasswordBytes() {
+      java.lang.Object ref = password_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        password_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int UID_FIELD_NUMBER = 4;
+    private int uid_;
+    /**
+     * <code>int32 uid = 4;</code>
+     * @return The uid.
+     */
+    @java.lang.Override
+    public int getUid() {
+      return uid_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getNicknameBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, nickname_);
+      }
+      if (!getUsernameBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, username_);
+      }
+      if (!getPasswordBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, password_);
+      }
+      if (uid_ != 0) {
+        output.writeInt32(4, uid_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getNicknameBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, nickname_);
+      }
+      if (!getUsernameBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, username_);
+      }
+      if (!getPasswordBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, password_);
+      }
+      if (uid_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(4, uid_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.example.aiins.proto.Basic.BasicUserData)) {
+        return super.equals(obj);
+      }
+      com.example.aiins.proto.Basic.BasicUserData other = (com.example.aiins.proto.Basic.BasicUserData) obj;
+
+      if (!getNickname()
+          .equals(other.getNickname())) return false;
+      if (!getUsername()
+          .equals(other.getUsername())) return false;
+      if (!getPassword()
+          .equals(other.getPassword())) return false;
+      if (getUid()
+          != other.getUid()) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + NICKNAME_FIELD_NUMBER;
+      hash = (53 * hash) + getNickname().hashCode();
+      hash = (37 * hash) + USERNAME_FIELD_NUMBER;
+      hash = (53 * hash) + getUsername().hashCode();
+      hash = (37 * hash) + PASSWORD_FIELD_NUMBER;
+      hash = (53 * hash) + getPassword().hashCode();
+      hash = (37 * hash) + UID_FIELD_NUMBER;
+      hash = (53 * hash) + getUid();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.example.aiins.proto.Basic.BasicUserData parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.example.aiins.proto.Basic.BasicUserData parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.example.aiins.proto.Basic.BasicUserData parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.example.aiins.proto.Basic.BasicUserData parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.example.aiins.proto.Basic.BasicUserData parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.example.aiins.proto.Basic.BasicUserData parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.example.aiins.proto.Basic.BasicUserData parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.example.aiins.proto.Basic.BasicUserData parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.example.aiins.proto.Basic.BasicUserData parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.example.aiins.proto.Basic.BasicUserData parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.example.aiins.proto.Basic.BasicUserData parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.example.aiins.proto.Basic.BasicUserData parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.example.aiins.proto.Basic.BasicUserData prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * 每个用户都有的基本信息
+     * </pre>
+     *
+     * Protobuf type {@code BasicUserData}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:BasicUserData)
+        com.example.aiins.proto.Basic.BasicUserDataOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.example.aiins.proto.Basic.internal_static_BasicUserData_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.example.aiins.proto.Basic.internal_static_BasicUserData_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.example.aiins.proto.Basic.BasicUserData.class, com.example.aiins.proto.Basic.BasicUserData.Builder.class);
+      }
+
+      // Construct using com.example.aiins.proto.Basic.BasicUserData.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        nickname_ = "";
+
+        username_ = "";
+
+        password_ = "";
+
+        uid_ = 0;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.example.aiins.proto.Basic.internal_static_BasicUserData_descriptor;
+      }
+
+      @java.lang.Override
+      public com.example.aiins.proto.Basic.BasicUserData getDefaultInstanceForType() {
+        return com.example.aiins.proto.Basic.BasicUserData.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.example.aiins.proto.Basic.BasicUserData build() {
+        com.example.aiins.proto.Basic.BasicUserData result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.example.aiins.proto.Basic.BasicUserData buildPartial() {
+        com.example.aiins.proto.Basic.BasicUserData result = new com.example.aiins.proto.Basic.BasicUserData(this);
+        result.nickname_ = nickname_;
+        result.username_ = username_;
+        result.password_ = password_;
+        result.uid_ = uid_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.example.aiins.proto.Basic.BasicUserData) {
+          return mergeFrom((com.example.aiins.proto.Basic.BasicUserData)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.example.aiins.proto.Basic.BasicUserData other) {
+        if (other == com.example.aiins.proto.Basic.BasicUserData.getDefaultInstance()) return this;
+        if (!other.getNickname().isEmpty()) {
+          nickname_ = other.nickname_;
+          onChanged();
+        }
+        if (!other.getUsername().isEmpty()) {
+          username_ = other.username_;
+          onChanged();
+        }
+        if (!other.getPassword().isEmpty()) {
+          password_ = other.password_;
+          onChanged();
+        }
+        if (other.getUid() != 0) {
+          setUid(other.getUid());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.example.aiins.proto.Basic.BasicUserData parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.example.aiins.proto.Basic.BasicUserData) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object nickname_ = "";
+      /**
+       * <code>string nickname = 1;</code>
+       * @return The nickname.
+       */
+      public java.lang.String getNickname() {
+        java.lang.Object ref = nickname_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          nickname_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string nickname = 1;</code>
+       * @return The bytes for nickname.
+       */
+      public com.google.protobuf.ByteString
+          getNicknameBytes() {
+        java.lang.Object ref = nickname_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          nickname_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string nickname = 1;</code>
+       * @param value The nickname to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNickname(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        nickname_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string nickname = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearNickname() {
+        
+        nickname_ = getDefaultInstance().getNickname();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string nickname = 1;</code>
+       * @param value The bytes for nickname to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNicknameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        nickname_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object username_ = "";
+      /**
+       * <code>string username = 2;</code>
+       * @return The username.
+       */
+      public java.lang.String getUsername() {
+        java.lang.Object ref = username_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          username_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string username = 2;</code>
+       * @return The bytes for username.
+       */
+      public com.google.protobuf.ByteString
+          getUsernameBytes() {
+        java.lang.Object ref = username_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          username_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string username = 2;</code>
+       * @param value The username to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUsername(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        username_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string username = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearUsername() {
+        
+        username_ = getDefaultInstance().getUsername();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string username = 2;</code>
+       * @param value The bytes for username to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUsernameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        username_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object password_ = "";
+      /**
+       * <code>string password = 3;</code>
+       * @return The password.
+       */
+      public java.lang.String getPassword() {
+        java.lang.Object ref = password_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          password_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string password = 3;</code>
+       * @return The bytes for password.
+       */
+      public com.google.protobuf.ByteString
+          getPasswordBytes() {
+        java.lang.Object ref = password_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          password_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string password = 3;</code>
+       * @param value The password to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPassword(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        password_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string password = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearPassword() {
+        
+        password_ = getDefaultInstance().getPassword();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string password = 3;</code>
+       * @param value The bytes for password to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPasswordBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        password_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int uid_ ;
+      /**
+       * <code>int32 uid = 4;</code>
+       * @return The uid.
+       */
+      @java.lang.Override
+      public int getUid() {
+        return uid_;
+      }
+      /**
+       * <code>int32 uid = 4;</code>
+       * @param value The uid to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUid(int value) {
+        
+        uid_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 uid = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearUid() {
+        
+        uid_ = 0;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:BasicUserData)
+    }
+
+    // @@protoc_insertion_point(class_scope:BasicUserData)
+    private static final com.example.aiins.proto.Basic.BasicUserData DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.example.aiins.proto.Basic.BasicUserData();
+    }
+
+    public static com.example.aiins.proto.Basic.BasicUserData getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<BasicUserData>
+        PARSER = new com.google.protobuf.AbstractParser<BasicUserData>() {
+      @java.lang.Override
+      public BasicUserData parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new BasicUserData(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<BasicUserData> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<BasicUserData> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.example.aiins.proto.Basic.BasicUserData getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface LocalDataOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:LocalData)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>.BasicUserData user = 1;</code>
+     * @return Whether the user field is set.
+     */
+    boolean hasUser();
+    /**
+     * <code>.BasicUserData user = 1;</code>
+     * @return The user.
+     */
+    com.example.aiins.proto.Basic.BasicUserData getUser();
+    /**
+     * <code>.BasicUserData user = 1;</code>
+     */
+    com.example.aiins.proto.Basic.BasicUserDataOrBuilder getUserOrBuilder();
+
+    /**
+     * <pre>
+     * 自己的头像
+     * </pre>
+     *
+     * <code>bytes icon = 2;</code>
+     * @return The icon.
+     */
+    com.google.protobuf.ByteString getIcon();
+
+    /**
+     * <pre>
+     * 对话信息
+     * </pre>
+     *
+     * <code>repeated .Message messages = 3;</code>
+     */
+    java.util.List<com.example.aiins.proto.Basic.Message> 
+        getMessagesList();
+    /**
+     * <pre>
+     * 对话信息
+     * </pre>
+     *
+     * <code>repeated .Message messages = 3;</code>
+     */
+    com.example.aiins.proto.Basic.Message getMessages(int index);
+    /**
+     * <pre>
+     * 对话信息
+     * </pre>
+     *
+     * <code>repeated .Message messages = 3;</code>
+     */
+    int getMessagesCount();
+    /**
+     * <pre>
+     * 对话信息
+     * </pre>
+     *
+     * <code>repeated .Message messages = 3;</code>
+     */
+    java.util.List<? extends com.example.aiins.proto.Basic.MessageOrBuilder> 
+        getMessagesOrBuilderList();
+    /**
+     * <pre>
+     * 对话信息
+     * </pre>
+     *
+     * <code>repeated .Message messages = 3;</code>
+     */
+    com.example.aiins.proto.Basic.MessageOrBuilder getMessagesOrBuilder(
+        int index);
+  }
+  /**
+   * <pre>
+   * 本地需要保存的数据
+   * </pre>
+   *
+   * Protobuf type {@code LocalData}
+   */
+  public static final class LocalData extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:LocalData)
+      LocalDataOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use LocalData.newBuilder() to construct.
+    private LocalData(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private LocalData() {
+      icon_ = com.google.protobuf.ByteString.EMPTY;
+      messages_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new LocalData();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private LocalData(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              com.example.aiins.proto.Basic.BasicUserData.Builder subBuilder = null;
+              if (user_ != null) {
+                subBuilder = user_.toBuilder();
+              }
+              user_ = input.readMessage(com.example.aiins.proto.Basic.BasicUserData.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(user_);
+                user_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 18: {
+
+              icon_ = input.readBytes();
+              break;
+            }
+            case 26: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                messages_ = new java.util.ArrayList<com.example.aiins.proto.Basic.Message>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              messages_.add(
+                  input.readMessage(com.example.aiins.proto.Basic.Message.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          messages_ = java.util.Collections.unmodifiableList(messages_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.example.aiins.proto.Basic.internal_static_LocalData_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.example.aiins.proto.Basic.internal_static_LocalData_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.example.aiins.proto.Basic.LocalData.class, com.example.aiins.proto.Basic.LocalData.Builder.class);
+    }
+
+    public static final int USER_FIELD_NUMBER = 1;
+    private com.example.aiins.proto.Basic.BasicUserData user_;
+    /**
+     * <code>.BasicUserData user = 1;</code>
+     * @return Whether the user field is set.
+     */
+    @java.lang.Override
+    public boolean hasUser() {
+      return user_ != null;
+    }
+    /**
+     * <code>.BasicUserData user = 1;</code>
+     * @return The user.
+     */
+    @java.lang.Override
+    public com.example.aiins.proto.Basic.BasicUserData getUser() {
+      return user_ == null ? com.example.aiins.proto.Basic.BasicUserData.getDefaultInstance() : user_;
+    }
+    /**
+     * <code>.BasicUserData user = 1;</code>
+     */
+    @java.lang.Override
+    public com.example.aiins.proto.Basic.BasicUserDataOrBuilder getUserOrBuilder() {
+      return getUser();
+    }
+
+    public static final int ICON_FIELD_NUMBER = 2;
+    private com.google.protobuf.ByteString icon_;
+    /**
+     * <pre>
+     * 自己的头像
+     * </pre>
+     *
+     * <code>bytes icon = 2;</code>
+     * @return The icon.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getIcon() {
+      return icon_;
+    }
+
+    public static final int MESSAGES_FIELD_NUMBER = 3;
+    private java.util.List<com.example.aiins.proto.Basic.Message> messages_;
+    /**
+     * <pre>
+     * 对话信息
+     * </pre>
+     *
+     * <code>repeated .Message messages = 3;</code>
+     */
+    @java.lang.Override
+    public java.util.List<com.example.aiins.proto.Basic.Message> getMessagesList() {
+      return messages_;
+    }
+    /**
+     * <pre>
+     * 对话信息
+     * </pre>
+     *
+     * <code>repeated .Message messages = 3;</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends com.example.aiins.proto.Basic.MessageOrBuilder> 
+        getMessagesOrBuilderList() {
+      return messages_;
+    }
+    /**
+     * <pre>
+     * 对话信息
+     * </pre>
+     *
+     * <code>repeated .Message messages = 3;</code>
+     */
+    @java.lang.Override
+    public int getMessagesCount() {
+      return messages_.size();
+    }
+    /**
+     * <pre>
+     * 对话信息
+     * </pre>
+     *
+     * <code>repeated .Message messages = 3;</code>
+     */
+    @java.lang.Override
+    public com.example.aiins.proto.Basic.Message getMessages(int index) {
+      return messages_.get(index);
+    }
+    /**
+     * <pre>
+     * 对话信息
+     * </pre>
+     *
+     * <code>repeated .Message messages = 3;</code>
+     */
+    @java.lang.Override
+    public com.example.aiins.proto.Basic.MessageOrBuilder getMessagesOrBuilder(
+        int index) {
+      return messages_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (user_ != null) {
+        output.writeMessage(1, getUser());
+      }
+      if (!icon_.isEmpty()) {
+        output.writeBytes(2, icon_);
+      }
+      for (int i = 0; i < messages_.size(); i++) {
+        output.writeMessage(3, messages_.get(i));
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (user_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, getUser());
+      }
+      if (!icon_.isEmpty()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(2, icon_);
+      }
+      for (int i = 0; i < messages_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(3, messages_.get(i));
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.example.aiins.proto.Basic.LocalData)) {
+        return super.equals(obj);
+      }
+      com.example.aiins.proto.Basic.LocalData other = (com.example.aiins.proto.Basic.LocalData) obj;
+
+      if (hasUser() != other.hasUser()) return false;
+      if (hasUser()) {
+        if (!getUser()
+            .equals(other.getUser())) return false;
+      }
+      if (!getIcon()
+          .equals(other.getIcon())) return false;
+      if (!getMessagesList()
+          .equals(other.getMessagesList())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasUser()) {
+        hash = (37 * hash) + USER_FIELD_NUMBER;
+        hash = (53 * hash) + getUser().hashCode();
+      }
+      hash = (37 * hash) + ICON_FIELD_NUMBER;
+      hash = (53 * hash) + getIcon().hashCode();
+      if (getMessagesCount() > 0) {
+        hash = (37 * hash) + MESSAGES_FIELD_NUMBER;
+        hash = (53 * hash) + getMessagesList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.example.aiins.proto.Basic.LocalData parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.example.aiins.proto.Basic.LocalData parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.example.aiins.proto.Basic.LocalData parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.example.aiins.proto.Basic.LocalData parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.example.aiins.proto.Basic.LocalData parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.example.aiins.proto.Basic.LocalData parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.example.aiins.proto.Basic.LocalData parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.example.aiins.proto.Basic.LocalData parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.example.aiins.proto.Basic.LocalData parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.example.aiins.proto.Basic.LocalData parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.example.aiins.proto.Basic.LocalData parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.example.aiins.proto.Basic.LocalData parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.example.aiins.proto.Basic.LocalData prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * 本地需要保存的数据
+     * </pre>
+     *
+     * Protobuf type {@code LocalData}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:LocalData)
+        com.example.aiins.proto.Basic.LocalDataOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.example.aiins.proto.Basic.internal_static_LocalData_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.example.aiins.proto.Basic.internal_static_LocalData_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.example.aiins.proto.Basic.LocalData.class, com.example.aiins.proto.Basic.LocalData.Builder.class);
+      }
+
+      // Construct using com.example.aiins.proto.Basic.LocalData.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getMessagesFieldBuilder();
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (userBuilder_ == null) {
+          user_ = null;
+        } else {
+          user_ = null;
+          userBuilder_ = null;
+        }
+        icon_ = com.google.protobuf.ByteString.EMPTY;
+
+        if (messagesBuilder_ == null) {
+          messages_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          messagesBuilder_.clear();
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.example.aiins.proto.Basic.internal_static_LocalData_descriptor;
+      }
+
+      @java.lang.Override
+      public com.example.aiins.proto.Basic.LocalData getDefaultInstanceForType() {
+        return com.example.aiins.proto.Basic.LocalData.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.example.aiins.proto.Basic.LocalData build() {
+        com.example.aiins.proto.Basic.LocalData result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.example.aiins.proto.Basic.LocalData buildPartial() {
+        com.example.aiins.proto.Basic.LocalData result = new com.example.aiins.proto.Basic.LocalData(this);
+        int from_bitField0_ = bitField0_;
+        if (userBuilder_ == null) {
+          result.user_ = user_;
+        } else {
+          result.user_ = userBuilder_.build();
+        }
+        result.icon_ = icon_;
+        if (messagesBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            messages_ = java.util.Collections.unmodifiableList(messages_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.messages_ = messages_;
+        } else {
+          result.messages_ = messagesBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.example.aiins.proto.Basic.LocalData) {
+          return mergeFrom((com.example.aiins.proto.Basic.LocalData)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.example.aiins.proto.Basic.LocalData other) {
+        if (other == com.example.aiins.proto.Basic.LocalData.getDefaultInstance()) return this;
+        if (other.hasUser()) {
+          mergeUser(other.getUser());
+        }
+        if (other.getIcon() != com.google.protobuf.ByteString.EMPTY) {
+          setIcon(other.getIcon());
+        }
+        if (messagesBuilder_ == null) {
+          if (!other.messages_.isEmpty()) {
+            if (messages_.isEmpty()) {
+              messages_ = other.messages_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureMessagesIsMutable();
+              messages_.addAll(other.messages_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.messages_.isEmpty()) {
+            if (messagesBuilder_.isEmpty()) {
+              messagesBuilder_.dispose();
+              messagesBuilder_ = null;
+              messages_ = other.messages_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              messagesBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getMessagesFieldBuilder() : null;
+            } else {
+              messagesBuilder_.addAllMessages(other.messages_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.example.aiins.proto.Basic.LocalData parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.example.aiins.proto.Basic.LocalData) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private com.example.aiins.proto.Basic.BasicUserData user_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.example.aiins.proto.Basic.BasicUserData, com.example.aiins.proto.Basic.BasicUserData.Builder, com.example.aiins.proto.Basic.BasicUserDataOrBuilder> userBuilder_;
+      /**
+       * <code>.BasicUserData user = 1;</code>
+       * @return Whether the user field is set.
+       */
+      public boolean hasUser() {
+        return userBuilder_ != null || user_ != null;
+      }
+      /**
+       * <code>.BasicUserData user = 1;</code>
+       * @return The user.
+       */
+      public com.example.aiins.proto.Basic.BasicUserData getUser() {
+        if (userBuilder_ == null) {
+          return user_ == null ? com.example.aiins.proto.Basic.BasicUserData.getDefaultInstance() : user_;
+        } else {
+          return userBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.BasicUserData user = 1;</code>
+       */
+      public Builder setUser(com.example.aiins.proto.Basic.BasicUserData value) {
+        if (userBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          user_ = value;
+          onChanged();
+        } else {
+          userBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.BasicUserData user = 1;</code>
+       */
+      public Builder setUser(
+          com.example.aiins.proto.Basic.BasicUserData.Builder builderForValue) {
+        if (userBuilder_ == null) {
+          user_ = builderForValue.build();
+          onChanged();
+        } else {
+          userBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.BasicUserData user = 1;</code>
+       */
+      public Builder mergeUser(com.example.aiins.proto.Basic.BasicUserData value) {
+        if (userBuilder_ == null) {
+          if (user_ != null) {
+            user_ =
+              com.example.aiins.proto.Basic.BasicUserData.newBuilder(user_).mergeFrom(value).buildPartial();
+          } else {
+            user_ = value;
+          }
+          onChanged();
+        } else {
+          userBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.BasicUserData user = 1;</code>
+       */
+      public Builder clearUser() {
+        if (userBuilder_ == null) {
+          user_ = null;
+          onChanged();
+        } else {
+          user_ = null;
+          userBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.BasicUserData user = 1;</code>
+       */
+      public com.example.aiins.proto.Basic.BasicUserData.Builder getUserBuilder() {
+        
+        onChanged();
+        return getUserFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.BasicUserData user = 1;</code>
+       */
+      public com.example.aiins.proto.Basic.BasicUserDataOrBuilder getUserOrBuilder() {
+        if (userBuilder_ != null) {
+          return userBuilder_.getMessageOrBuilder();
+        } else {
+          return user_ == null ?
+              com.example.aiins.proto.Basic.BasicUserData.getDefaultInstance() : user_;
+        }
+      }
+      /**
+       * <code>.BasicUserData user = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.example.aiins.proto.Basic.BasicUserData, com.example.aiins.proto.Basic.BasicUserData.Builder, com.example.aiins.proto.Basic.BasicUserDataOrBuilder> 
+          getUserFieldBuilder() {
+        if (userBuilder_ == null) {
+          userBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.example.aiins.proto.Basic.BasicUserData, com.example.aiins.proto.Basic.BasicUserData.Builder, com.example.aiins.proto.Basic.BasicUserDataOrBuilder>(
+                  getUser(),
+                  getParentForChildren(),
+                  isClean());
+          user_ = null;
+        }
+        return userBuilder_;
+      }
+
+      private com.google.protobuf.ByteString icon_ = com.google.protobuf.ByteString.EMPTY;
+      /**
+       * <pre>
+       * 自己的头像
+       * </pre>
+       *
+       * <code>bytes icon = 2;</code>
+       * @return The icon.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getIcon() {
+        return icon_;
+      }
+      /**
+       * <pre>
+       * 自己的头像
+       * </pre>
+       *
+       * <code>bytes icon = 2;</code>
+       * @param value The icon to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIcon(com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        icon_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 自己的头像
+       * </pre>
+       *
+       * <code>bytes icon = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearIcon() {
+        
+        icon_ = getDefaultInstance().getIcon();
+        onChanged();
+        return this;
+      }
+
+      private java.util.List<com.example.aiins.proto.Basic.Message> messages_ =
+        java.util.Collections.emptyList();
+      private void ensureMessagesIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          messages_ = new java.util.ArrayList<com.example.aiins.proto.Basic.Message>(messages_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.example.aiins.proto.Basic.Message, com.example.aiins.proto.Basic.Message.Builder, com.example.aiins.proto.Basic.MessageOrBuilder> messagesBuilder_;
+
+      /**
+       * <pre>
+       * 对话信息
+       * </pre>
+       *
+       * <code>repeated .Message messages = 3;</code>
+       */
+      public java.util.List<com.example.aiins.proto.Basic.Message> getMessagesList() {
+        if (messagesBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(messages_);
+        } else {
+          return messagesBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <pre>
+       * 对话信息
+       * </pre>
+       *
+       * <code>repeated .Message messages = 3;</code>
+       */
+      public int getMessagesCount() {
+        if (messagesBuilder_ == null) {
+          return messages_.size();
+        } else {
+          return messagesBuilder_.getCount();
+        }
+      }
+      /**
+       * <pre>
+       * 对话信息
+       * </pre>
+       *
+       * <code>repeated .Message messages = 3;</code>
+       */
+      public com.example.aiins.proto.Basic.Message getMessages(int index) {
+        if (messagesBuilder_ == null) {
+          return messages_.get(index);
+        } else {
+          return messagesBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <pre>
+       * 对话信息
+       * </pre>
+       *
+       * <code>repeated .Message messages = 3;</code>
+       */
+      public Builder setMessages(
+          int index, com.example.aiins.proto.Basic.Message value) {
+        if (messagesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureMessagesIsMutable();
+          messages_.set(index, value);
+          onChanged();
+        } else {
+          messagesBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 对话信息
+       * </pre>
+       *
+       * <code>repeated .Message messages = 3;</code>
+       */
+      public Builder setMessages(
+          int index, com.example.aiins.proto.Basic.Message.Builder builderForValue) {
+        if (messagesBuilder_ == null) {
+          ensureMessagesIsMutable();
+          messages_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          messagesBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 对话信息
+       * </pre>
+       *
+       * <code>repeated .Message messages = 3;</code>
+       */
+      public Builder addMessages(com.example.aiins.proto.Basic.Message value) {
+        if (messagesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureMessagesIsMutable();
+          messages_.add(value);
+          onChanged();
+        } else {
+          messagesBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 对话信息
+       * </pre>
+       *
+       * <code>repeated .Message messages = 3;</code>
+       */
+      public Builder addMessages(
+          int index, com.example.aiins.proto.Basic.Message value) {
+        if (messagesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureMessagesIsMutable();
+          messages_.add(index, value);
+          onChanged();
+        } else {
+          messagesBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 对话信息
+       * </pre>
+       *
+       * <code>repeated .Message messages = 3;</code>
+       */
+      public Builder addMessages(
+          com.example.aiins.proto.Basic.Message.Builder builderForValue) {
+        if (messagesBuilder_ == null) {
+          ensureMessagesIsMutable();
+          messages_.add(builderForValue.build());
+          onChanged();
+        } else {
+          messagesBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 对话信息
+       * </pre>
+       *
+       * <code>repeated .Message messages = 3;</code>
+       */
+      public Builder addMessages(
+          int index, com.example.aiins.proto.Basic.Message.Builder builderForValue) {
+        if (messagesBuilder_ == null) {
+          ensureMessagesIsMutable();
+          messages_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          messagesBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 对话信息
+       * </pre>
+       *
+       * <code>repeated .Message messages = 3;</code>
+       */
+      public Builder addAllMessages(
+          java.lang.Iterable<? extends com.example.aiins.proto.Basic.Message> values) {
+        if (messagesBuilder_ == null) {
+          ensureMessagesIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, messages_);
+          onChanged();
+        } else {
+          messagesBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 对话信息
+       * </pre>
+       *
+       * <code>repeated .Message messages = 3;</code>
+       */
+      public Builder clearMessages() {
+        if (messagesBuilder_ == null) {
+          messages_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          messagesBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 对话信息
+       * </pre>
+       *
+       * <code>repeated .Message messages = 3;</code>
+       */
+      public Builder removeMessages(int index) {
+        if (messagesBuilder_ == null) {
+          ensureMessagesIsMutable();
+          messages_.remove(index);
+          onChanged();
+        } else {
+          messagesBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 对话信息
+       * </pre>
+       *
+       * <code>repeated .Message messages = 3;</code>
+       */
+      public com.example.aiins.proto.Basic.Message.Builder getMessagesBuilder(
+          int index) {
+        return getMessagesFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <pre>
+       * 对话信息
+       * </pre>
+       *
+       * <code>repeated .Message messages = 3;</code>
+       */
+      public com.example.aiins.proto.Basic.MessageOrBuilder getMessagesOrBuilder(
+          int index) {
+        if (messagesBuilder_ == null) {
+          return messages_.get(index);  } else {
+          return messagesBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <pre>
+       * 对话信息
+       * </pre>
+       *
+       * <code>repeated .Message messages = 3;</code>
+       */
+      public java.util.List<? extends com.example.aiins.proto.Basic.MessageOrBuilder> 
+           getMessagesOrBuilderList() {
+        if (messagesBuilder_ != null) {
+          return messagesBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(messages_);
+        }
+      }
+      /**
+       * <pre>
+       * 对话信息
+       * </pre>
+       *
+       * <code>repeated .Message messages = 3;</code>
+       */
+      public com.example.aiins.proto.Basic.Message.Builder addMessagesBuilder() {
+        return getMessagesFieldBuilder().addBuilder(
+            com.example.aiins.proto.Basic.Message.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * 对话信息
+       * </pre>
+       *
+       * <code>repeated .Message messages = 3;</code>
+       */
+      public com.example.aiins.proto.Basic.Message.Builder addMessagesBuilder(
+          int index) {
+        return getMessagesFieldBuilder().addBuilder(
+            index, com.example.aiins.proto.Basic.Message.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * 对话信息
+       * </pre>
+       *
+       * <code>repeated .Message messages = 3;</code>
+       */
+      public java.util.List<com.example.aiins.proto.Basic.Message.Builder> 
+           getMessagesBuilderList() {
+        return getMessagesFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.example.aiins.proto.Basic.Message, com.example.aiins.proto.Basic.Message.Builder, com.example.aiins.proto.Basic.MessageOrBuilder> 
+          getMessagesFieldBuilder() {
+        if (messagesBuilder_ == null) {
+          messagesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              com.example.aiins.proto.Basic.Message, com.example.aiins.proto.Basic.Message.Builder, com.example.aiins.proto.Basic.MessageOrBuilder>(
+                  messages_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          messages_ = null;
+        }
+        return messagesBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:LocalData)
+    }
+
+    // @@protoc_insertion_point(class_scope:LocalData)
+    private static final com.example.aiins.proto.Basic.LocalData DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.example.aiins.proto.Basic.LocalData();
+    }
+
+    public static com.example.aiins.proto.Basic.LocalData getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<LocalData>
+        PARSER = new com.google.protobuf.AbstractParser<LocalData>() {
+      @java.lang.Override
+      public LocalData parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new LocalData(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<LocalData> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<LocalData> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.example.aiins.proto.Basic.LocalData getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface MessageOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:Message)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>int32 from = 1;</code>
+     * @return The from.
+     */
+    int getFrom();
+
+    /**
+     * <code>repeated int32 to = 2;</code>
+     * @return A list containing the to.
+     */
+    java.util.List<java.lang.Integer> getToList();
+    /**
+     * <code>repeated int32 to = 2;</code>
+     * @return The count of to.
+     */
+    int getToCount();
+    /**
+     * <code>repeated int32 to = 2;</code>
+     * @param index The index of the element to return.
+     * @return The to at the given index.
+     */
+    int getTo(int index);
+
+    /**
+     * <code>string text = 3;</code>
+     * @return The text.
+     */
+    java.lang.String getText();
+    /**
+     * <code>string text = 3;</code>
+     * @return The bytes for text.
+     */
+    com.google.protobuf.ByteString
+        getTextBytes();
+
+    /**
+     * <code>bytes image = 4;</code>
+     * @return The image.
+     */
+    com.google.protobuf.ByteString getImage();
+  }
+  /**
+   * <pre>
+   * 每一个对话信息
+   * </pre>
+   *
+   * Protobuf type {@code Message}
+   */
+  public static final class Message extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:Message)
+      MessageOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use Message.newBuilder() to construct.
+    private Message(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private Message() {
+      to_ = emptyIntList();
+      text_ = "";
+      image_ = com.google.protobuf.ByteString.EMPTY;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new Message();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private Message(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -81,586 +3932,39 @@ public final class Basic {
               break;
             case 8: {
 
-              reqId_ = input.readInt32();
+              from_ = input.readInt32();
               break;
             }
             case 16: {
-
-              reqCustomerId_ = input.readInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                to_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
               }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.example.aiins.proto.Basic.internal_static_BasicReq_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.example.aiins.proto.Basic.internal_static_BasicReq_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.example.aiins.proto.Basic.BasicReq.class, com.example.aiins.proto.Basic.BasicReq.Builder.class);
-    }
-
-    public static final int REQID_FIELD_NUMBER = 1;
-    private int reqId_;
-    /**
-     * <code>int32 reqId = 1;</code>
-     * @return The reqId.
-     */
-    @java.lang.Override
-    public int getReqId() {
-      return reqId_;
-    }
-
-    public static final int REQCUSTOMERID_FIELD_NUMBER = 2;
-    private int reqCustomerId_;
-    /**
-     * <code>int32 reqCustomerId = 2;</code>
-     * @return The reqCustomerId.
-     */
-    @java.lang.Override
-    public int getReqCustomerId() {
-      return reqCustomerId_;
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (reqId_ != 0) {
-        output.writeInt32(1, reqId_);
-      }
-      if (reqCustomerId_ != 0) {
-        output.writeInt32(2, reqCustomerId_);
-      }
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (reqId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(1, reqId_);
-      }
-      if (reqCustomerId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(2, reqCustomerId_);
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof com.example.aiins.proto.Basic.BasicReq)) {
-        return super.equals(obj);
-      }
-      com.example.aiins.proto.Basic.BasicReq other = (com.example.aiins.proto.Basic.BasicReq) obj;
-
-      if (getReqId()
-          != other.getReqId()) return false;
-      if (getReqCustomerId()
-          != other.getReqCustomerId()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + REQID_FIELD_NUMBER;
-      hash = (53 * hash) + getReqId();
-      hash = (37 * hash) + REQCUSTOMERID_FIELD_NUMBER;
-      hash = (53 * hash) + getReqCustomerId();
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static com.example.aiins.proto.Basic.BasicReq parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.example.aiins.proto.Basic.BasicReq parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.example.aiins.proto.Basic.BasicReq parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.example.aiins.proto.Basic.BasicReq parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.example.aiins.proto.Basic.BasicReq parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.example.aiins.proto.Basic.BasicReq parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.example.aiins.proto.Basic.BasicReq parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.example.aiins.proto.Basic.BasicReq parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.example.aiins.proto.Basic.BasicReq parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static com.example.aiins.proto.Basic.BasicReq parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.example.aiins.proto.Basic.BasicReq parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.example.aiins.proto.Basic.BasicReq parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(com.example.aiins.proto.Basic.BasicReq prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * <pre>
-     * 基础询问信息
-     * </pre>
-     *
-     * Protobuf type {@code BasicReq}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:BasicReq)
-        com.example.aiins.proto.Basic.BasicReqOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.example.aiins.proto.Basic.internal_static_BasicReq_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.example.aiins.proto.Basic.internal_static_BasicReq_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.example.aiins.proto.Basic.BasicReq.class, com.example.aiins.proto.Basic.BasicReq.Builder.class);
-      }
-
-      // Construct using com.example.aiins.proto.Basic.BasicReq.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        reqId_ = 0;
-
-        reqCustomerId_ = 0;
-
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.example.aiins.proto.Basic.internal_static_BasicReq_descriptor;
-      }
-
-      @java.lang.Override
-      public com.example.aiins.proto.Basic.BasicReq getDefaultInstanceForType() {
-        return com.example.aiins.proto.Basic.BasicReq.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public com.example.aiins.proto.Basic.BasicReq build() {
-        com.example.aiins.proto.Basic.BasicReq result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public com.example.aiins.proto.Basic.BasicReq buildPartial() {
-        com.example.aiins.proto.Basic.BasicReq result = new com.example.aiins.proto.Basic.BasicReq(this);
-        result.reqId_ = reqId_;
-        result.reqCustomerId_ = reqCustomerId_;
-        onBuilt();
-        return result;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.example.aiins.proto.Basic.BasicReq) {
-          return mergeFrom((com.example.aiins.proto.Basic.BasicReq)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(com.example.aiins.proto.Basic.BasicReq other) {
-        if (other == com.example.aiins.proto.Basic.BasicReq.getDefaultInstance()) return this;
-        if (other.getReqId() != 0) {
-          setReqId(other.getReqId());
-        }
-        if (other.getReqCustomerId() != 0) {
-          setReqCustomerId(other.getReqCustomerId());
-        }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        com.example.aiins.proto.Basic.BasicReq parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.example.aiins.proto.Basic.BasicReq) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      private int reqId_ ;
-      /**
-       * <code>int32 reqId = 1;</code>
-       * @return The reqId.
-       */
-      @java.lang.Override
-      public int getReqId() {
-        return reqId_;
-      }
-      /**
-       * <code>int32 reqId = 1;</code>
-       * @param value The reqId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setReqId(int value) {
-        
-        reqId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>int32 reqId = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearReqId() {
-        
-        reqId_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int reqCustomerId_ ;
-      /**
-       * <code>int32 reqCustomerId = 2;</code>
-       * @return The reqCustomerId.
-       */
-      @java.lang.Override
-      public int getReqCustomerId() {
-        return reqCustomerId_;
-      }
-      /**
-       * <code>int32 reqCustomerId = 2;</code>
-       * @param value The reqCustomerId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setReqCustomerId(int value) {
-        
-        reqCustomerId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>int32 reqCustomerId = 2;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearReqCustomerId() {
-        
-        reqCustomerId_ = 0;
-        onChanged();
-        return this;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:BasicReq)
-    }
-
-    // @@protoc_insertion_point(class_scope:BasicReq)
-    private static final com.example.aiins.proto.Basic.BasicReq DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new com.example.aiins.proto.Basic.BasicReq();
-    }
-
-    public static com.example.aiins.proto.Basic.BasicReq getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<BasicReq>
-        PARSER = new com.google.protobuf.AbstractParser<BasicReq>() {
-      @java.lang.Override
-      public BasicReq parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new BasicReq(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<BasicReq> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<BasicReq> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.example.aiins.proto.Basic.BasicReq getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface BasicRspOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:BasicRsp)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>int32 resultCode = 1;</code>
-     * @return The resultCode.
-     */
-    int getResultCode();
-
-    /**
-     * <code>string msg = 2;</code>
-     * @return The msg.
-     */
-    java.lang.String getMsg();
-    /**
-     * <code>string msg = 2;</code>
-     * @return The bytes for msg.
-     */
-    com.google.protobuf.ByteString
-        getMsgBytes();
-  }
-  /**
-   * <pre>
-   * 基础回应信息
-   * </pre>
-   *
-   * Protobuf type {@code BasicRsp}
-   */
-  public static final class BasicRsp extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:BasicRsp)
-      BasicRspOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use BasicRsp.newBuilder() to construct.
-    private BasicRsp(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private BasicRsp() {
-      msg_ = "";
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new BasicRsp();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private BasicRsp(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-
-              resultCode_ = input.readInt32();
+              to_.addInt(input.readInt32());
               break;
             }
             case 18: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
+                to_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                to_.addInt(input.readInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            case 26: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              msg_ = s;
+              text_ = s;
+              break;
+            }
+            case 34: {
+
+              image_ = input.readBytes();
               break;
             }
             default: {
@@ -678,72 +3982,114 @@ public final class Basic {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          to_.makeImmutable(); // C
+        }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.example.aiins.proto.Basic.internal_static_BasicRsp_descriptor;
+      return com.example.aiins.proto.Basic.internal_static_Message_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.example.aiins.proto.Basic.internal_static_BasicRsp_fieldAccessorTable
+      return com.example.aiins.proto.Basic.internal_static_Message_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.example.aiins.proto.Basic.BasicRsp.class, com.example.aiins.proto.Basic.BasicRsp.Builder.class);
+              com.example.aiins.proto.Basic.Message.class, com.example.aiins.proto.Basic.Message.Builder.class);
     }
 
-    public static final int RESULTCODE_FIELD_NUMBER = 1;
-    private int resultCode_;
+    public static final int FROM_FIELD_NUMBER = 1;
+    private int from_;
     /**
-     * <code>int32 resultCode = 1;</code>
-     * @return The resultCode.
+     * <code>int32 from = 1;</code>
+     * @return The from.
      */
     @java.lang.Override
-    public int getResultCode() {
-      return resultCode_;
+    public int getFrom() {
+      return from_;
     }
 
-    public static final int MSG_FIELD_NUMBER = 2;
-    private volatile java.lang.Object msg_;
+    public static final int TO_FIELD_NUMBER = 2;
+    private com.google.protobuf.Internal.IntList to_;
     /**
-     * <code>string msg = 2;</code>
-     * @return The msg.
+     * <code>repeated int32 to = 2;</code>
+     * @return A list containing the to.
      */
     @java.lang.Override
-    public java.lang.String getMsg() {
-      java.lang.Object ref = msg_;
+    public java.util.List<java.lang.Integer>
+        getToList() {
+      return to_;
+    }
+    /**
+     * <code>repeated int32 to = 2;</code>
+     * @return The count of to.
+     */
+    public int getToCount() {
+      return to_.size();
+    }
+    /**
+     * <code>repeated int32 to = 2;</code>
+     * @param index The index of the element to return.
+     * @return The to at the given index.
+     */
+    public int getTo(int index) {
+      return to_.getInt(index);
+    }
+    private int toMemoizedSerializedSize = -1;
+
+    public static final int TEXT_FIELD_NUMBER = 3;
+    private volatile java.lang.Object text_;
+    /**
+     * <code>string text = 3;</code>
+     * @return The text.
+     */
+    @java.lang.Override
+    public java.lang.String getText() {
+      java.lang.Object ref = text_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        msg_ = s;
+        text_ = s;
         return s;
       }
     }
     /**
-     * <code>string msg = 2;</code>
-     * @return The bytes for msg.
+     * <code>string text = 3;</code>
+     * @return The bytes for text.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getMsgBytes() {
-      java.lang.Object ref = msg_;
+        getTextBytes() {
+      java.lang.Object ref = text_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        msg_ = b;
+        text_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
 
+    public static final int IMAGE_FIELD_NUMBER = 4;
+    private com.google.protobuf.ByteString image_;
+    /**
+     * <code>bytes image = 4;</code>
+     * @return The image.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getImage() {
+      return image_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -758,11 +4104,22 @@ public final class Basic {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (resultCode_ != 0) {
-        output.writeInt32(1, resultCode_);
+      getSerializedSize();
+      if (from_ != 0) {
+        output.writeInt32(1, from_);
       }
-      if (!getMsgBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, msg_);
+      if (getToList().size() > 0) {
+        output.writeUInt32NoTag(18);
+        output.writeUInt32NoTag(toMemoizedSerializedSize);
+      }
+      for (int i = 0; i < to_.size(); i++) {
+        output.writeInt32NoTag(to_.getInt(i));
+      }
+      if (!getTextBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, text_);
+      }
+      if (!image_.isEmpty()) {
+        output.writeBytes(4, image_);
       }
       unknownFields.writeTo(output);
     }
@@ -773,12 +4130,30 @@ public final class Basic {
       if (size != -1) return size;
 
       size = 0;
-      if (resultCode_ != 0) {
+      if (from_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(1, resultCode_);
+          .computeInt32Size(1, from_);
       }
-      if (!getMsgBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, msg_);
+      {
+        int dataSize = 0;
+        for (int i = 0; i < to_.size(); i++) {
+          dataSize += com.google.protobuf.CodedOutputStream
+            .computeInt32SizeNoTag(to_.getInt(i));
+        }
+        size += dataSize;
+        if (!getToList().isEmpty()) {
+          size += 1;
+          size += com.google.protobuf.CodedOutputStream
+              .computeInt32SizeNoTag(dataSize);
+        }
+        toMemoizedSerializedSize = dataSize;
+      }
+      if (!getTextBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, text_);
+      }
+      if (!image_.isEmpty()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(4, image_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -790,15 +4165,19 @@ public final class Basic {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.example.aiins.proto.Basic.BasicRsp)) {
+      if (!(obj instanceof com.example.aiins.proto.Basic.Message)) {
         return super.equals(obj);
       }
-      com.example.aiins.proto.Basic.BasicRsp other = (com.example.aiins.proto.Basic.BasicRsp) obj;
+      com.example.aiins.proto.Basic.Message other = (com.example.aiins.proto.Basic.Message) obj;
 
-      if (getResultCode()
-          != other.getResultCode()) return false;
-      if (!getMsg()
-          .equals(other.getMsg())) return false;
+      if (getFrom()
+          != other.getFrom()) return false;
+      if (!getToList()
+          .equals(other.getToList())) return false;
+      if (!getText()
+          .equals(other.getText())) return false;
+      if (!getImage()
+          .equals(other.getImage())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -810,78 +4189,84 @@ public final class Basic {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + RESULTCODE_FIELD_NUMBER;
-      hash = (53 * hash) + getResultCode();
-      hash = (37 * hash) + MSG_FIELD_NUMBER;
-      hash = (53 * hash) + getMsg().hashCode();
+      hash = (37 * hash) + FROM_FIELD_NUMBER;
+      hash = (53 * hash) + getFrom();
+      if (getToCount() > 0) {
+        hash = (37 * hash) + TO_FIELD_NUMBER;
+        hash = (53 * hash) + getToList().hashCode();
+      }
+      hash = (37 * hash) + TEXT_FIELD_NUMBER;
+      hash = (53 * hash) + getText().hashCode();
+      hash = (37 * hash) + IMAGE_FIELD_NUMBER;
+      hash = (53 * hash) + getImage().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
 
-    public static com.example.aiins.proto.Basic.BasicRsp parseFrom(
+    public static com.example.aiins.proto.Basic.Message parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.example.aiins.proto.Basic.BasicRsp parseFrom(
+    public static com.example.aiins.proto.Basic.Message parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.example.aiins.proto.Basic.BasicRsp parseFrom(
+    public static com.example.aiins.proto.Basic.Message parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.example.aiins.proto.Basic.BasicRsp parseFrom(
+    public static com.example.aiins.proto.Basic.Message parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.example.aiins.proto.Basic.BasicRsp parseFrom(byte[] data)
+    public static com.example.aiins.proto.Basic.Message parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.example.aiins.proto.Basic.BasicRsp parseFrom(
+    public static com.example.aiins.proto.Basic.Message parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.example.aiins.proto.Basic.BasicRsp parseFrom(java.io.InputStream input)
+    public static com.example.aiins.proto.Basic.Message parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.example.aiins.proto.Basic.BasicRsp parseFrom(
+    public static com.example.aiins.proto.Basic.Message parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.example.aiins.proto.Basic.BasicRsp parseDelimitedFrom(java.io.InputStream input)
+    public static com.example.aiins.proto.Basic.Message parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.example.aiins.proto.Basic.BasicRsp parseDelimitedFrom(
+    public static com.example.aiins.proto.Basic.Message parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.example.aiins.proto.Basic.BasicRsp parseFrom(
+    public static com.example.aiins.proto.Basic.Message parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.example.aiins.proto.Basic.BasicRsp parseFrom(
+    public static com.example.aiins.proto.Basic.Message parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -894,7 +4279,7 @@ public final class Basic {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.example.aiins.proto.Basic.BasicRsp prototype) {
+    public static Builder newBuilder(com.example.aiins.proto.Basic.Message prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -911,29 +4296,29 @@ public final class Basic {
     }
     /**
      * <pre>
-     * 基础回应信息
+     * 每一个对话信息
      * </pre>
      *
-     * Protobuf type {@code BasicRsp}
+     * Protobuf type {@code Message}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:BasicRsp)
-        com.example.aiins.proto.Basic.BasicRspOrBuilder {
+        // @@protoc_insertion_point(builder_implements:Message)
+        com.example.aiins.proto.Basic.MessageOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.example.aiins.proto.Basic.internal_static_BasicRsp_descriptor;
+        return com.example.aiins.proto.Basic.internal_static_Message_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.example.aiins.proto.Basic.internal_static_BasicRsp_fieldAccessorTable
+        return com.example.aiins.proto.Basic.internal_static_Message_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.example.aiins.proto.Basic.BasicRsp.class, com.example.aiins.proto.Basic.BasicRsp.Builder.class);
+                com.example.aiins.proto.Basic.Message.class, com.example.aiins.proto.Basic.Message.Builder.class);
       }
 
-      // Construct using com.example.aiins.proto.Basic.BasicRsp.newBuilder()
+      // Construct using com.example.aiins.proto.Basic.Message.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -951,9 +4336,13 @@ public final class Basic {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        resultCode_ = 0;
+        from_ = 0;
 
-        msg_ = "";
+        to_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        text_ = "";
+
+        image_ = com.google.protobuf.ByteString.EMPTY;
 
         return this;
       }
@@ -961,17 +4350,17 @@ public final class Basic {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.example.aiins.proto.Basic.internal_static_BasicRsp_descriptor;
+        return com.example.aiins.proto.Basic.internal_static_Message_descriptor;
       }
 
       @java.lang.Override
-      public com.example.aiins.proto.Basic.BasicRsp getDefaultInstanceForType() {
-        return com.example.aiins.proto.Basic.BasicRsp.getDefaultInstance();
+      public com.example.aiins.proto.Basic.Message getDefaultInstanceForType() {
+        return com.example.aiins.proto.Basic.Message.getDefaultInstance();
       }
 
       @java.lang.Override
-      public com.example.aiins.proto.Basic.BasicRsp build() {
-        com.example.aiins.proto.Basic.BasicRsp result = buildPartial();
+      public com.example.aiins.proto.Basic.Message build() {
+        com.example.aiins.proto.Basic.Message result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -979,10 +4368,17 @@ public final class Basic {
       }
 
       @java.lang.Override
-      public com.example.aiins.proto.Basic.BasicRsp buildPartial() {
-        com.example.aiins.proto.Basic.BasicRsp result = new com.example.aiins.proto.Basic.BasicRsp(this);
-        result.resultCode_ = resultCode_;
-        result.msg_ = msg_;
+      public com.example.aiins.proto.Basic.Message buildPartial() {
+        com.example.aiins.proto.Basic.Message result = new com.example.aiins.proto.Basic.Message(this);
+        int from_bitField0_ = bitField0_;
+        result.from_ = from_;
+        if (((bitField0_ & 0x00000001) != 0)) {
+          to_.makeImmutable();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.to_ = to_;
+        result.text_ = text_;
+        result.image_ = image_;
         onBuilt();
         return result;
       }
@@ -1021,22 +4417,35 @@ public final class Basic {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.example.aiins.proto.Basic.BasicRsp) {
-          return mergeFrom((com.example.aiins.proto.Basic.BasicRsp)other);
+        if (other instanceof com.example.aiins.proto.Basic.Message) {
+          return mergeFrom((com.example.aiins.proto.Basic.Message)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.example.aiins.proto.Basic.BasicRsp other) {
-        if (other == com.example.aiins.proto.Basic.BasicRsp.getDefaultInstance()) return this;
-        if (other.getResultCode() != 0) {
-          setResultCode(other.getResultCode());
+      public Builder mergeFrom(com.example.aiins.proto.Basic.Message other) {
+        if (other == com.example.aiins.proto.Basic.Message.getDefaultInstance()) return this;
+        if (other.getFrom() != 0) {
+          setFrom(other.getFrom());
         }
-        if (!other.getMsg().isEmpty()) {
-          msg_ = other.msg_;
+        if (!other.to_.isEmpty()) {
+          if (to_.isEmpty()) {
+            to_ = other.to_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensureToIsMutable();
+            to_.addAll(other.to_);
+          }
           onChanged();
+        }
+        if (!other.getText().isEmpty()) {
+          text_ = other.text_;
+          onChanged();
+        }
+        if (other.getImage() != com.google.protobuf.ByteString.EMPTY) {
+          setImage(other.getImage());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -1053,11 +4462,11 @@ public final class Basic {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.example.aiins.proto.Basic.BasicRsp parsedMessage = null;
+        com.example.aiins.proto.Basic.Message parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.example.aiins.proto.Basic.BasicRsp) e.getUnfinishedMessage();
+          parsedMessage = (com.example.aiins.proto.Basic.Message) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -1066,889 +4475,224 @@ public final class Basic {
         }
         return this;
       }
+      private int bitField0_;
 
-      private int resultCode_ ;
+      private int from_ ;
       /**
-       * <code>int32 resultCode = 1;</code>
-       * @return The resultCode.
+       * <code>int32 from = 1;</code>
+       * @return The from.
        */
       @java.lang.Override
-      public int getResultCode() {
-        return resultCode_;
+      public int getFrom() {
+        return from_;
       }
       /**
-       * <code>int32 resultCode = 1;</code>
-       * @param value The resultCode to set.
+       * <code>int32 from = 1;</code>
+       * @param value The from to set.
        * @return This builder for chaining.
        */
-      public Builder setResultCode(int value) {
+      public Builder setFrom(int value) {
         
-        resultCode_ = value;
+        from_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>int32 resultCode = 1;</code>
+       * <code>int32 from = 1;</code>
        * @return This builder for chaining.
        */
-      public Builder clearResultCode() {
+      public Builder clearFrom() {
         
-        resultCode_ = 0;
+        from_ = 0;
         onChanged();
         return this;
       }
 
-      private java.lang.Object msg_ = "";
+      private com.google.protobuf.Internal.IntList to_ = emptyIntList();
+      private void ensureToIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          to_ = mutableCopy(to_);
+          bitField0_ |= 0x00000001;
+         }
+      }
       /**
-       * <code>string msg = 2;</code>
-       * @return The msg.
+       * <code>repeated int32 to = 2;</code>
+       * @return A list containing the to.
        */
-      public java.lang.String getMsg() {
-        java.lang.Object ref = msg_;
+      public java.util.List<java.lang.Integer>
+          getToList() {
+        return ((bitField0_ & 0x00000001) != 0) ?
+                 java.util.Collections.unmodifiableList(to_) : to_;
+      }
+      /**
+       * <code>repeated int32 to = 2;</code>
+       * @return The count of to.
+       */
+      public int getToCount() {
+        return to_.size();
+      }
+      /**
+       * <code>repeated int32 to = 2;</code>
+       * @param index The index of the element to return.
+       * @return The to at the given index.
+       */
+      public int getTo(int index) {
+        return to_.getInt(index);
+      }
+      /**
+       * <code>repeated int32 to = 2;</code>
+       * @param index The index to set the value at.
+       * @param value The to to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTo(
+          int index, int value) {
+        ensureToIsMutable();
+        to_.setInt(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated int32 to = 2;</code>
+       * @param value The to to add.
+       * @return This builder for chaining.
+       */
+      public Builder addTo(int value) {
+        ensureToIsMutable();
+        to_.addInt(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated int32 to = 2;</code>
+       * @param values The to to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllTo(
+          java.lang.Iterable<? extends java.lang.Integer> values) {
+        ensureToIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, to_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated int32 to = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTo() {
+        to_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object text_ = "";
+      /**
+       * <code>string text = 3;</code>
+       * @return The text.
+       */
+      public java.lang.String getText() {
+        java.lang.Object ref = text_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          msg_ = s;
+          text_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>string msg = 2;</code>
-       * @return The bytes for msg.
+       * <code>string text = 3;</code>
+       * @return The bytes for text.
        */
       public com.google.protobuf.ByteString
-          getMsgBytes() {
-        java.lang.Object ref = msg_;
+          getTextBytes() {
+        java.lang.Object ref = text_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          msg_ = b;
+          text_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>string msg = 2;</code>
-       * @param value The msg to set.
+       * <code>string text = 3;</code>
+       * @param value The text to set.
        * @return This builder for chaining.
        */
-      public Builder setMsg(
+      public Builder setText(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        msg_ = value;
+        text_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>string msg = 2;</code>
+       * <code>string text = 3;</code>
        * @return This builder for chaining.
        */
-      public Builder clearMsg() {
+      public Builder clearText() {
         
-        msg_ = getDefaultInstance().getMsg();
+        text_ = getDefaultInstance().getText();
         onChanged();
         return this;
       }
       /**
-       * <code>string msg = 2;</code>
-       * @param value The bytes for msg to set.
+       * <code>string text = 3;</code>
+       * @param value The bytes for text to set.
        * @return This builder for chaining.
        */
-      public Builder setMsgBytes(
+      public Builder setTextBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        msg_ = value;
-        onChanged();
-        return this;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:BasicRsp)
-    }
-
-    // @@protoc_insertion_point(class_scope:BasicRsp)
-    private static final com.example.aiins.proto.Basic.BasicRsp DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new com.example.aiins.proto.Basic.BasicRsp();
-    }
-
-    public static com.example.aiins.proto.Basic.BasicRsp getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<BasicRsp>
-        PARSER = new com.google.protobuf.AbstractParser<BasicRsp>() {
-      @java.lang.Override
-      public BasicRsp parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new BasicRsp(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<BasicRsp> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<BasicRsp> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.example.aiins.proto.Basic.BasicRsp getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface FindFriendReqOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:FindFriendReq)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>.BasicReq basicReq = 1;</code>
-     * @return Whether the basicReq field is set.
-     */
-    boolean hasBasicReq();
-    /**
-     * <code>.BasicReq basicReq = 1;</code>
-     * @return The basicReq.
-     */
-    com.example.aiins.proto.Basic.BasicReq getBasicReq();
-    /**
-     * <code>.BasicReq basicReq = 1;</code>
-     */
-    com.example.aiins.proto.Basic.BasicReqOrBuilder getBasicReqOrBuilder();
-
-    /**
-     * <code>string targetName = 2;</code>
-     * @return The targetName.
-     */
-    java.lang.String getTargetName();
-    /**
-     * <code>string targetName = 2;</code>
-     * @return The bytes for targetName.
-     */
-    com.google.protobuf.ByteString
-        getTargetNameBytes();
-  }
-  /**
-   * <pre>
-   * 查找好友请求
-   * </pre>
-   *
-   * Protobuf type {@code FindFriendReq}
-   */
-  public static final class FindFriendReq extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:FindFriendReq)
-      FindFriendReqOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use FindFriendReq.newBuilder() to construct.
-    private FindFriendReq(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private FindFriendReq() {
-      targetName_ = "";
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new FindFriendReq();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private FindFriendReq(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              com.example.aiins.proto.Basic.BasicReq.Builder subBuilder = null;
-              if (basicReq_ != null) {
-                subBuilder = basicReq_.toBuilder();
-              }
-              basicReq_ = input.readMessage(com.example.aiins.proto.Basic.BasicReq.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(basicReq_);
-                basicReq_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              targetName_ = s;
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.example.aiins.proto.Basic.internal_static_FindFriendReq_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.example.aiins.proto.Basic.internal_static_FindFriendReq_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.example.aiins.proto.Basic.FindFriendReq.class, com.example.aiins.proto.Basic.FindFriendReq.Builder.class);
-    }
-
-    public static final int BASICREQ_FIELD_NUMBER = 1;
-    private com.example.aiins.proto.Basic.BasicReq basicReq_;
-    /**
-     * <code>.BasicReq basicReq = 1;</code>
-     * @return Whether the basicReq field is set.
-     */
-    @java.lang.Override
-    public boolean hasBasicReq() {
-      return basicReq_ != null;
-    }
-    /**
-     * <code>.BasicReq basicReq = 1;</code>
-     * @return The basicReq.
-     */
-    @java.lang.Override
-    public com.example.aiins.proto.Basic.BasicReq getBasicReq() {
-      return basicReq_ == null ? com.example.aiins.proto.Basic.BasicReq.getDefaultInstance() : basicReq_;
-    }
-    /**
-     * <code>.BasicReq basicReq = 1;</code>
-     */
-    @java.lang.Override
-    public com.example.aiins.proto.Basic.BasicReqOrBuilder getBasicReqOrBuilder() {
-      return getBasicReq();
-    }
-
-    public static final int TARGETNAME_FIELD_NUMBER = 2;
-    private volatile java.lang.Object targetName_;
-    /**
-     * <code>string targetName = 2;</code>
-     * @return The targetName.
-     */
-    @java.lang.Override
-    public java.lang.String getTargetName() {
-      java.lang.Object ref = targetName_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        targetName_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string targetName = 2;</code>
-     * @return The bytes for targetName.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getTargetNameBytes() {
-      java.lang.Object ref = targetName_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        targetName_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (basicReq_ != null) {
-        output.writeMessage(1, getBasicReq());
-      }
-      if (!getTargetNameBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, targetName_);
-      }
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (basicReq_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, getBasicReq());
-      }
-      if (!getTargetNameBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, targetName_);
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof com.example.aiins.proto.Basic.FindFriendReq)) {
-        return super.equals(obj);
-      }
-      com.example.aiins.proto.Basic.FindFriendReq other = (com.example.aiins.proto.Basic.FindFriendReq) obj;
-
-      if (hasBasicReq() != other.hasBasicReq()) return false;
-      if (hasBasicReq()) {
-        if (!getBasicReq()
-            .equals(other.getBasicReq())) return false;
-      }
-      if (!getTargetName()
-          .equals(other.getTargetName())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      if (hasBasicReq()) {
-        hash = (37 * hash) + BASICREQ_FIELD_NUMBER;
-        hash = (53 * hash) + getBasicReq().hashCode();
-      }
-      hash = (37 * hash) + TARGETNAME_FIELD_NUMBER;
-      hash = (53 * hash) + getTargetName().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static com.example.aiins.proto.Basic.FindFriendReq parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.example.aiins.proto.Basic.FindFriendReq parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.example.aiins.proto.Basic.FindFriendReq parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.example.aiins.proto.Basic.FindFriendReq parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.example.aiins.proto.Basic.FindFriendReq parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.example.aiins.proto.Basic.FindFriendReq parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.example.aiins.proto.Basic.FindFriendReq parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.example.aiins.proto.Basic.FindFriendReq parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.example.aiins.proto.Basic.FindFriendReq parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static com.example.aiins.proto.Basic.FindFriendReq parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.example.aiins.proto.Basic.FindFriendReq parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.example.aiins.proto.Basic.FindFriendReq parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(com.example.aiins.proto.Basic.FindFriendReq prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * <pre>
-     * 查找好友请求
-     * </pre>
-     *
-     * Protobuf type {@code FindFriendReq}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:FindFriendReq)
-        com.example.aiins.proto.Basic.FindFriendReqOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.example.aiins.proto.Basic.internal_static_FindFriendReq_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.example.aiins.proto.Basic.internal_static_FindFriendReq_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.example.aiins.proto.Basic.FindFriendReq.class, com.example.aiins.proto.Basic.FindFriendReq.Builder.class);
-      }
-
-      // Construct using com.example.aiins.proto.Basic.FindFriendReq.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        if (basicReqBuilder_ == null) {
-          basicReq_ = null;
-        } else {
-          basicReq_ = null;
-          basicReqBuilder_ = null;
-        }
-        targetName_ = "";
-
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.example.aiins.proto.Basic.internal_static_FindFriendReq_descriptor;
-      }
-
-      @java.lang.Override
-      public com.example.aiins.proto.Basic.FindFriendReq getDefaultInstanceForType() {
-        return com.example.aiins.proto.Basic.FindFriendReq.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public com.example.aiins.proto.Basic.FindFriendReq build() {
-        com.example.aiins.proto.Basic.FindFriendReq result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public com.example.aiins.proto.Basic.FindFriendReq buildPartial() {
-        com.example.aiins.proto.Basic.FindFriendReq result = new com.example.aiins.proto.Basic.FindFriendReq(this);
-        if (basicReqBuilder_ == null) {
-          result.basicReq_ = basicReq_;
-        } else {
-          result.basicReq_ = basicReqBuilder_.build();
-        }
-        result.targetName_ = targetName_;
-        onBuilt();
-        return result;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.example.aiins.proto.Basic.FindFriendReq) {
-          return mergeFrom((com.example.aiins.proto.Basic.FindFriendReq)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(com.example.aiins.proto.Basic.FindFriendReq other) {
-        if (other == com.example.aiins.proto.Basic.FindFriendReq.getDefaultInstance()) return this;
-        if (other.hasBasicReq()) {
-          mergeBasicReq(other.getBasicReq());
-        }
-        if (!other.getTargetName().isEmpty()) {
-          targetName_ = other.targetName_;
-          onChanged();
-        }
-        this.mergeUnknownFields(other.unknownFields);
+        text_ = value;
         onChanged();
         return this;
       }
 
+      private com.google.protobuf.ByteString image_ = com.google.protobuf.ByteString.EMPTY;
+      /**
+       * <code>bytes image = 4;</code>
+       * @return The image.
+       */
       @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        com.example.aiins.proto.Basic.FindFriendReq parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.example.aiins.proto.Basic.FindFriendReq) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      private com.example.aiins.proto.Basic.BasicReq basicReq_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.example.aiins.proto.Basic.BasicReq, com.example.aiins.proto.Basic.BasicReq.Builder, com.example.aiins.proto.Basic.BasicReqOrBuilder> basicReqBuilder_;
-      /**
-       * <code>.BasicReq basicReq = 1;</code>
-       * @return Whether the basicReq field is set.
-       */
-      public boolean hasBasicReq() {
-        return basicReqBuilder_ != null || basicReq_ != null;
+      public com.google.protobuf.ByteString getImage() {
+        return image_;
       }
       /**
-       * <code>.BasicReq basicReq = 1;</code>
-       * @return The basicReq.
-       */
-      public com.example.aiins.proto.Basic.BasicReq getBasicReq() {
-        if (basicReqBuilder_ == null) {
-          return basicReq_ == null ? com.example.aiins.proto.Basic.BasicReq.getDefaultInstance() : basicReq_;
-        } else {
-          return basicReqBuilder_.getMessage();
-        }
-      }
-      /**
-       * <code>.BasicReq basicReq = 1;</code>
-       */
-      public Builder setBasicReq(com.example.aiins.proto.Basic.BasicReq value) {
-        if (basicReqBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          basicReq_ = value;
-          onChanged();
-        } else {
-          basicReqBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.BasicReq basicReq = 1;</code>
-       */
-      public Builder setBasicReq(
-          com.example.aiins.proto.Basic.BasicReq.Builder builderForValue) {
-        if (basicReqBuilder_ == null) {
-          basicReq_ = builderForValue.build();
-          onChanged();
-        } else {
-          basicReqBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <code>.BasicReq basicReq = 1;</code>
-       */
-      public Builder mergeBasicReq(com.example.aiins.proto.Basic.BasicReq value) {
-        if (basicReqBuilder_ == null) {
-          if (basicReq_ != null) {
-            basicReq_ =
-              com.example.aiins.proto.Basic.BasicReq.newBuilder(basicReq_).mergeFrom(value).buildPartial();
-          } else {
-            basicReq_ = value;
-          }
-          onChanged();
-        } else {
-          basicReqBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.BasicReq basicReq = 1;</code>
-       */
-      public Builder clearBasicReq() {
-        if (basicReqBuilder_ == null) {
-          basicReq_ = null;
-          onChanged();
-        } else {
-          basicReq_ = null;
-          basicReqBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <code>.BasicReq basicReq = 1;</code>
-       */
-      public com.example.aiins.proto.Basic.BasicReq.Builder getBasicReqBuilder() {
-        
-        onChanged();
-        return getBasicReqFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.BasicReq basicReq = 1;</code>
-       */
-      public com.example.aiins.proto.Basic.BasicReqOrBuilder getBasicReqOrBuilder() {
-        if (basicReqBuilder_ != null) {
-          return basicReqBuilder_.getMessageOrBuilder();
-        } else {
-          return basicReq_ == null ?
-              com.example.aiins.proto.Basic.BasicReq.getDefaultInstance() : basicReq_;
-        }
-      }
-      /**
-       * <code>.BasicReq basicReq = 1;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.example.aiins.proto.Basic.BasicReq, com.example.aiins.proto.Basic.BasicReq.Builder, com.example.aiins.proto.Basic.BasicReqOrBuilder> 
-          getBasicReqFieldBuilder() {
-        if (basicReqBuilder_ == null) {
-          basicReqBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.example.aiins.proto.Basic.BasicReq, com.example.aiins.proto.Basic.BasicReq.Builder, com.example.aiins.proto.Basic.BasicReqOrBuilder>(
-                  getBasicReq(),
-                  getParentForChildren(),
-                  isClean());
-          basicReq_ = null;
-        }
-        return basicReqBuilder_;
-      }
-
-      private java.lang.Object targetName_ = "";
-      /**
-       * <code>string targetName = 2;</code>
-       * @return The targetName.
-       */
-      public java.lang.String getTargetName() {
-        java.lang.Object ref = targetName_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          targetName_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string targetName = 2;</code>
-       * @return The bytes for targetName.
-       */
-      public com.google.protobuf.ByteString
-          getTargetNameBytes() {
-        java.lang.Object ref = targetName_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          targetName_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string targetName = 2;</code>
-       * @param value The targetName to set.
+       * <code>bytes image = 4;</code>
+       * @param value The image to set.
        * @return This builder for chaining.
        */
-      public Builder setTargetName(
-          java.lang.String value) {
+      public Builder setImage(com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        targetName_ = value;
+        image_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>string targetName = 2;</code>
+       * <code>bytes image = 4;</code>
        * @return This builder for chaining.
        */
-      public Builder clearTargetName() {
+      public Builder clearImage() {
         
-        targetName_ = getDefaultInstance().getTargetName();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string targetName = 2;</code>
-       * @param value The bytes for targetName to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTargetNameBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        targetName_ = value;
+        image_ = getDefaultInstance().getImage();
         onChanged();
         return this;
       }
@@ -1965,3985 +4709,71 @@ public final class Basic {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:FindFriendReq)
+      // @@protoc_insertion_point(builder_scope:Message)
     }
 
-    // @@protoc_insertion_point(class_scope:FindFriendReq)
-    private static final com.example.aiins.proto.Basic.FindFriendReq DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:Message)
+    private static final com.example.aiins.proto.Basic.Message DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.example.aiins.proto.Basic.FindFriendReq();
+      DEFAULT_INSTANCE = new com.example.aiins.proto.Basic.Message();
     }
 
-    public static com.example.aiins.proto.Basic.FindFriendReq getDefaultInstance() {
+    public static com.example.aiins.proto.Basic.Message getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<FindFriendReq>
-        PARSER = new com.google.protobuf.AbstractParser<FindFriendReq>() {
+    private static final com.google.protobuf.Parser<Message>
+        PARSER = new com.google.protobuf.AbstractParser<Message>() {
       @java.lang.Override
-      public FindFriendReq parsePartialFrom(
+      public Message parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new FindFriendReq(input, extensionRegistry);
+        return new Message(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<FindFriendReq> parser() {
+    public static com.google.protobuf.Parser<Message> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<FindFriendReq> getParserForType() {
+    public com.google.protobuf.Parser<Message> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.example.aiins.proto.Basic.FindFriendReq getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface FindFriendRspOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:FindFriendRsp)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>.BasicRsp basicRsp = 1;</code>
-     * @return Whether the basicRsp field is set.
-     */
-    boolean hasBasicRsp();
-    /**
-     * <code>.BasicRsp basicRsp = 1;</code>
-     * @return The basicRsp.
-     */
-    com.example.aiins.proto.Basic.BasicRsp getBasicRsp();
-    /**
-     * <code>.BasicRsp basicRsp = 1;</code>
-     */
-    com.example.aiins.proto.Basic.BasicRspOrBuilder getBasicRspOrBuilder();
-
-    /**
-     * <code>int32 targetId = 2;</code>
-     * @return The targetId.
-     */
-    int getTargetId();
-  }
-  /**
-   * <pre>
-   * 查找好友响应
-   * </pre>
-   *
-   * Protobuf type {@code FindFriendRsp}
-   */
-  public static final class FindFriendRsp extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:FindFriendRsp)
-      FindFriendRspOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use FindFriendRsp.newBuilder() to construct.
-    private FindFriendRsp(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private FindFriendRsp() {
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new FindFriendRsp();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private FindFriendRsp(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              com.example.aiins.proto.Basic.BasicRsp.Builder subBuilder = null;
-              if (basicRsp_ != null) {
-                subBuilder = basicRsp_.toBuilder();
-              }
-              basicRsp_ = input.readMessage(com.example.aiins.proto.Basic.BasicRsp.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(basicRsp_);
-                basicRsp_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 16: {
-
-              targetId_ = input.readInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.example.aiins.proto.Basic.internal_static_FindFriendRsp_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.example.aiins.proto.Basic.internal_static_FindFriendRsp_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.example.aiins.proto.Basic.FindFriendRsp.class, com.example.aiins.proto.Basic.FindFriendRsp.Builder.class);
-    }
-
-    public static final int BASICRSP_FIELD_NUMBER = 1;
-    private com.example.aiins.proto.Basic.BasicRsp basicRsp_;
-    /**
-     * <code>.BasicRsp basicRsp = 1;</code>
-     * @return Whether the basicRsp field is set.
-     */
-    @java.lang.Override
-    public boolean hasBasicRsp() {
-      return basicRsp_ != null;
-    }
-    /**
-     * <code>.BasicRsp basicRsp = 1;</code>
-     * @return The basicRsp.
-     */
-    @java.lang.Override
-    public com.example.aiins.proto.Basic.BasicRsp getBasicRsp() {
-      return basicRsp_ == null ? com.example.aiins.proto.Basic.BasicRsp.getDefaultInstance() : basicRsp_;
-    }
-    /**
-     * <code>.BasicRsp basicRsp = 1;</code>
-     */
-    @java.lang.Override
-    public com.example.aiins.proto.Basic.BasicRspOrBuilder getBasicRspOrBuilder() {
-      return getBasicRsp();
-    }
-
-    public static final int TARGETID_FIELD_NUMBER = 2;
-    private int targetId_;
-    /**
-     * <code>int32 targetId = 2;</code>
-     * @return The targetId.
-     */
-    @java.lang.Override
-    public int getTargetId() {
-      return targetId_;
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (basicRsp_ != null) {
-        output.writeMessage(1, getBasicRsp());
-      }
-      if (targetId_ != 0) {
-        output.writeInt32(2, targetId_);
-      }
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (basicRsp_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, getBasicRsp());
-      }
-      if (targetId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(2, targetId_);
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof com.example.aiins.proto.Basic.FindFriendRsp)) {
-        return super.equals(obj);
-      }
-      com.example.aiins.proto.Basic.FindFriendRsp other = (com.example.aiins.proto.Basic.FindFriendRsp) obj;
-
-      if (hasBasicRsp() != other.hasBasicRsp()) return false;
-      if (hasBasicRsp()) {
-        if (!getBasicRsp()
-            .equals(other.getBasicRsp())) return false;
-      }
-      if (getTargetId()
-          != other.getTargetId()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      if (hasBasicRsp()) {
-        hash = (37 * hash) + BASICRSP_FIELD_NUMBER;
-        hash = (53 * hash) + getBasicRsp().hashCode();
-      }
-      hash = (37 * hash) + TARGETID_FIELD_NUMBER;
-      hash = (53 * hash) + getTargetId();
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static com.example.aiins.proto.Basic.FindFriendRsp parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.example.aiins.proto.Basic.FindFriendRsp parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.example.aiins.proto.Basic.FindFriendRsp parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.example.aiins.proto.Basic.FindFriendRsp parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.example.aiins.proto.Basic.FindFriendRsp parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.example.aiins.proto.Basic.FindFriendRsp parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.example.aiins.proto.Basic.FindFriendRsp parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.example.aiins.proto.Basic.FindFriendRsp parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.example.aiins.proto.Basic.FindFriendRsp parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static com.example.aiins.proto.Basic.FindFriendRsp parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.example.aiins.proto.Basic.FindFriendRsp parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.example.aiins.proto.Basic.FindFriendRsp parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(com.example.aiins.proto.Basic.FindFriendRsp prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * <pre>
-     * 查找好友响应
-     * </pre>
-     *
-     * Protobuf type {@code FindFriendRsp}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:FindFriendRsp)
-        com.example.aiins.proto.Basic.FindFriendRspOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.example.aiins.proto.Basic.internal_static_FindFriendRsp_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.example.aiins.proto.Basic.internal_static_FindFriendRsp_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.example.aiins.proto.Basic.FindFriendRsp.class, com.example.aiins.proto.Basic.FindFriendRsp.Builder.class);
-      }
-
-      // Construct using com.example.aiins.proto.Basic.FindFriendRsp.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        if (basicRspBuilder_ == null) {
-          basicRsp_ = null;
-        } else {
-          basicRsp_ = null;
-          basicRspBuilder_ = null;
-        }
-        targetId_ = 0;
-
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.example.aiins.proto.Basic.internal_static_FindFriendRsp_descriptor;
-      }
-
-      @java.lang.Override
-      public com.example.aiins.proto.Basic.FindFriendRsp getDefaultInstanceForType() {
-        return com.example.aiins.proto.Basic.FindFriendRsp.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public com.example.aiins.proto.Basic.FindFriendRsp build() {
-        com.example.aiins.proto.Basic.FindFriendRsp result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public com.example.aiins.proto.Basic.FindFriendRsp buildPartial() {
-        com.example.aiins.proto.Basic.FindFriendRsp result = new com.example.aiins.proto.Basic.FindFriendRsp(this);
-        if (basicRspBuilder_ == null) {
-          result.basicRsp_ = basicRsp_;
-        } else {
-          result.basicRsp_ = basicRspBuilder_.build();
-        }
-        result.targetId_ = targetId_;
-        onBuilt();
-        return result;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.example.aiins.proto.Basic.FindFriendRsp) {
-          return mergeFrom((com.example.aiins.proto.Basic.FindFriendRsp)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(com.example.aiins.proto.Basic.FindFriendRsp other) {
-        if (other == com.example.aiins.proto.Basic.FindFriendRsp.getDefaultInstance()) return this;
-        if (other.hasBasicRsp()) {
-          mergeBasicRsp(other.getBasicRsp());
-        }
-        if (other.getTargetId() != 0) {
-          setTargetId(other.getTargetId());
-        }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        com.example.aiins.proto.Basic.FindFriendRsp parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.example.aiins.proto.Basic.FindFriendRsp) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      private com.example.aiins.proto.Basic.BasicRsp basicRsp_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.example.aiins.proto.Basic.BasicRsp, com.example.aiins.proto.Basic.BasicRsp.Builder, com.example.aiins.proto.Basic.BasicRspOrBuilder> basicRspBuilder_;
-      /**
-       * <code>.BasicRsp basicRsp = 1;</code>
-       * @return Whether the basicRsp field is set.
-       */
-      public boolean hasBasicRsp() {
-        return basicRspBuilder_ != null || basicRsp_ != null;
-      }
-      /**
-       * <code>.BasicRsp basicRsp = 1;</code>
-       * @return The basicRsp.
-       */
-      public com.example.aiins.proto.Basic.BasicRsp getBasicRsp() {
-        if (basicRspBuilder_ == null) {
-          return basicRsp_ == null ? com.example.aiins.proto.Basic.BasicRsp.getDefaultInstance() : basicRsp_;
-        } else {
-          return basicRspBuilder_.getMessage();
-        }
-      }
-      /**
-       * <code>.BasicRsp basicRsp = 1;</code>
-       */
-      public Builder setBasicRsp(com.example.aiins.proto.Basic.BasicRsp value) {
-        if (basicRspBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          basicRsp_ = value;
-          onChanged();
-        } else {
-          basicRspBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.BasicRsp basicRsp = 1;</code>
-       */
-      public Builder setBasicRsp(
-          com.example.aiins.proto.Basic.BasicRsp.Builder builderForValue) {
-        if (basicRspBuilder_ == null) {
-          basicRsp_ = builderForValue.build();
-          onChanged();
-        } else {
-          basicRspBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <code>.BasicRsp basicRsp = 1;</code>
-       */
-      public Builder mergeBasicRsp(com.example.aiins.proto.Basic.BasicRsp value) {
-        if (basicRspBuilder_ == null) {
-          if (basicRsp_ != null) {
-            basicRsp_ =
-              com.example.aiins.proto.Basic.BasicRsp.newBuilder(basicRsp_).mergeFrom(value).buildPartial();
-          } else {
-            basicRsp_ = value;
-          }
-          onChanged();
-        } else {
-          basicRspBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.BasicRsp basicRsp = 1;</code>
-       */
-      public Builder clearBasicRsp() {
-        if (basicRspBuilder_ == null) {
-          basicRsp_ = null;
-          onChanged();
-        } else {
-          basicRsp_ = null;
-          basicRspBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <code>.BasicRsp basicRsp = 1;</code>
-       */
-      public com.example.aiins.proto.Basic.BasicRsp.Builder getBasicRspBuilder() {
-        
-        onChanged();
-        return getBasicRspFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.BasicRsp basicRsp = 1;</code>
-       */
-      public com.example.aiins.proto.Basic.BasicRspOrBuilder getBasicRspOrBuilder() {
-        if (basicRspBuilder_ != null) {
-          return basicRspBuilder_.getMessageOrBuilder();
-        } else {
-          return basicRsp_ == null ?
-              com.example.aiins.proto.Basic.BasicRsp.getDefaultInstance() : basicRsp_;
-        }
-      }
-      /**
-       * <code>.BasicRsp basicRsp = 1;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.example.aiins.proto.Basic.BasicRsp, com.example.aiins.proto.Basic.BasicRsp.Builder, com.example.aiins.proto.Basic.BasicRspOrBuilder> 
-          getBasicRspFieldBuilder() {
-        if (basicRspBuilder_ == null) {
-          basicRspBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.example.aiins.proto.Basic.BasicRsp, com.example.aiins.proto.Basic.BasicRsp.Builder, com.example.aiins.proto.Basic.BasicRspOrBuilder>(
-                  getBasicRsp(),
-                  getParentForChildren(),
-                  isClean());
-          basicRsp_ = null;
-        }
-        return basicRspBuilder_;
-      }
-
-      private int targetId_ ;
-      /**
-       * <code>int32 targetId = 2;</code>
-       * @return The targetId.
-       */
-      @java.lang.Override
-      public int getTargetId() {
-        return targetId_;
-      }
-      /**
-       * <code>int32 targetId = 2;</code>
-       * @param value The targetId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTargetId(int value) {
-        
-        targetId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>int32 targetId = 2;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearTargetId() {
-        
-        targetId_ = 0;
-        onChanged();
-        return this;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:FindFriendRsp)
-    }
-
-    // @@protoc_insertion_point(class_scope:FindFriendRsp)
-    private static final com.example.aiins.proto.Basic.FindFriendRsp DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new com.example.aiins.proto.Basic.FindFriendRsp();
-    }
-
-    public static com.example.aiins.proto.Basic.FindFriendRsp getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<FindFriendRsp>
-        PARSER = new com.google.protobuf.AbstractParser<FindFriendRsp>() {
-      @java.lang.Override
-      public FindFriendRsp parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new FindFriendRsp(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<FindFriendRsp> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<FindFriendRsp> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.example.aiins.proto.Basic.FindFriendRsp getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface AddFriendReqOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:AddFriendReq)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>.BasicReq basicReq = 1;</code>
-     * @return Whether the basicReq field is set.
-     */
-    boolean hasBasicReq();
-    /**
-     * <code>.BasicReq basicReq = 1;</code>
-     * @return The basicReq.
-     */
-    com.example.aiins.proto.Basic.BasicReq getBasicReq();
-    /**
-     * <code>.BasicReq basicReq = 1;</code>
-     */
-    com.example.aiins.proto.Basic.BasicReqOrBuilder getBasicReqOrBuilder();
-  }
-  /**
-   * <pre>
-   * 添加好友, 返回 BasicRsp
-   * </pre>
-   *
-   * Protobuf type {@code AddFriendReq}
-   */
-  public static final class AddFriendReq extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:AddFriendReq)
-      AddFriendReqOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use AddFriendReq.newBuilder() to construct.
-    private AddFriendReq(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private AddFriendReq() {
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new AddFriendReq();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private AddFriendReq(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              com.example.aiins.proto.Basic.BasicReq.Builder subBuilder = null;
-              if (basicReq_ != null) {
-                subBuilder = basicReq_.toBuilder();
-              }
-              basicReq_ = input.readMessage(com.example.aiins.proto.Basic.BasicReq.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(basicReq_);
-                basicReq_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.example.aiins.proto.Basic.internal_static_AddFriendReq_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.example.aiins.proto.Basic.internal_static_AddFriendReq_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.example.aiins.proto.Basic.AddFriendReq.class, com.example.aiins.proto.Basic.AddFriendReq.Builder.class);
-    }
-
-    public static final int BASICREQ_FIELD_NUMBER = 1;
-    private com.example.aiins.proto.Basic.BasicReq basicReq_;
-    /**
-     * <code>.BasicReq basicReq = 1;</code>
-     * @return Whether the basicReq field is set.
-     */
-    @java.lang.Override
-    public boolean hasBasicReq() {
-      return basicReq_ != null;
-    }
-    /**
-     * <code>.BasicReq basicReq = 1;</code>
-     * @return The basicReq.
-     */
-    @java.lang.Override
-    public com.example.aiins.proto.Basic.BasicReq getBasicReq() {
-      return basicReq_ == null ? com.example.aiins.proto.Basic.BasicReq.getDefaultInstance() : basicReq_;
-    }
-    /**
-     * <code>.BasicReq basicReq = 1;</code>
-     */
-    @java.lang.Override
-    public com.example.aiins.proto.Basic.BasicReqOrBuilder getBasicReqOrBuilder() {
-      return getBasicReq();
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (basicReq_ != null) {
-        output.writeMessage(1, getBasicReq());
-      }
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (basicReq_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, getBasicReq());
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof com.example.aiins.proto.Basic.AddFriendReq)) {
-        return super.equals(obj);
-      }
-      com.example.aiins.proto.Basic.AddFriendReq other = (com.example.aiins.proto.Basic.AddFriendReq) obj;
-
-      if (hasBasicReq() != other.hasBasicReq()) return false;
-      if (hasBasicReq()) {
-        if (!getBasicReq()
-            .equals(other.getBasicReq())) return false;
-      }
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      if (hasBasicReq()) {
-        hash = (37 * hash) + BASICREQ_FIELD_NUMBER;
-        hash = (53 * hash) + getBasicReq().hashCode();
-      }
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static com.example.aiins.proto.Basic.AddFriendReq parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.example.aiins.proto.Basic.AddFriendReq parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.example.aiins.proto.Basic.AddFriendReq parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.example.aiins.proto.Basic.AddFriendReq parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.example.aiins.proto.Basic.AddFriendReq parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.example.aiins.proto.Basic.AddFriendReq parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.example.aiins.proto.Basic.AddFriendReq parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.example.aiins.proto.Basic.AddFriendReq parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.example.aiins.proto.Basic.AddFriendReq parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static com.example.aiins.proto.Basic.AddFriendReq parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.example.aiins.proto.Basic.AddFriendReq parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.example.aiins.proto.Basic.AddFriendReq parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(com.example.aiins.proto.Basic.AddFriendReq prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * <pre>
-     * 添加好友, 返回 BasicRsp
-     * </pre>
-     *
-     * Protobuf type {@code AddFriendReq}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:AddFriendReq)
-        com.example.aiins.proto.Basic.AddFriendReqOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.example.aiins.proto.Basic.internal_static_AddFriendReq_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.example.aiins.proto.Basic.internal_static_AddFriendReq_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.example.aiins.proto.Basic.AddFriendReq.class, com.example.aiins.proto.Basic.AddFriendReq.Builder.class);
-      }
-
-      // Construct using com.example.aiins.proto.Basic.AddFriendReq.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        if (basicReqBuilder_ == null) {
-          basicReq_ = null;
-        } else {
-          basicReq_ = null;
-          basicReqBuilder_ = null;
-        }
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.example.aiins.proto.Basic.internal_static_AddFriendReq_descriptor;
-      }
-
-      @java.lang.Override
-      public com.example.aiins.proto.Basic.AddFriendReq getDefaultInstanceForType() {
-        return com.example.aiins.proto.Basic.AddFriendReq.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public com.example.aiins.proto.Basic.AddFriendReq build() {
-        com.example.aiins.proto.Basic.AddFriendReq result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public com.example.aiins.proto.Basic.AddFriendReq buildPartial() {
-        com.example.aiins.proto.Basic.AddFriendReq result = new com.example.aiins.proto.Basic.AddFriendReq(this);
-        if (basicReqBuilder_ == null) {
-          result.basicReq_ = basicReq_;
-        } else {
-          result.basicReq_ = basicReqBuilder_.build();
-        }
-        onBuilt();
-        return result;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.example.aiins.proto.Basic.AddFriendReq) {
-          return mergeFrom((com.example.aiins.proto.Basic.AddFriendReq)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(com.example.aiins.proto.Basic.AddFriendReq other) {
-        if (other == com.example.aiins.proto.Basic.AddFriendReq.getDefaultInstance()) return this;
-        if (other.hasBasicReq()) {
-          mergeBasicReq(other.getBasicReq());
-        }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        com.example.aiins.proto.Basic.AddFriendReq parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.example.aiins.proto.Basic.AddFriendReq) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      private com.example.aiins.proto.Basic.BasicReq basicReq_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.example.aiins.proto.Basic.BasicReq, com.example.aiins.proto.Basic.BasicReq.Builder, com.example.aiins.proto.Basic.BasicReqOrBuilder> basicReqBuilder_;
-      /**
-       * <code>.BasicReq basicReq = 1;</code>
-       * @return Whether the basicReq field is set.
-       */
-      public boolean hasBasicReq() {
-        return basicReqBuilder_ != null || basicReq_ != null;
-      }
-      /**
-       * <code>.BasicReq basicReq = 1;</code>
-       * @return The basicReq.
-       */
-      public com.example.aiins.proto.Basic.BasicReq getBasicReq() {
-        if (basicReqBuilder_ == null) {
-          return basicReq_ == null ? com.example.aiins.proto.Basic.BasicReq.getDefaultInstance() : basicReq_;
-        } else {
-          return basicReqBuilder_.getMessage();
-        }
-      }
-      /**
-       * <code>.BasicReq basicReq = 1;</code>
-       */
-      public Builder setBasicReq(com.example.aiins.proto.Basic.BasicReq value) {
-        if (basicReqBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          basicReq_ = value;
-          onChanged();
-        } else {
-          basicReqBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.BasicReq basicReq = 1;</code>
-       */
-      public Builder setBasicReq(
-          com.example.aiins.proto.Basic.BasicReq.Builder builderForValue) {
-        if (basicReqBuilder_ == null) {
-          basicReq_ = builderForValue.build();
-          onChanged();
-        } else {
-          basicReqBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <code>.BasicReq basicReq = 1;</code>
-       */
-      public Builder mergeBasicReq(com.example.aiins.proto.Basic.BasicReq value) {
-        if (basicReqBuilder_ == null) {
-          if (basicReq_ != null) {
-            basicReq_ =
-              com.example.aiins.proto.Basic.BasicReq.newBuilder(basicReq_).mergeFrom(value).buildPartial();
-          } else {
-            basicReq_ = value;
-          }
-          onChanged();
-        } else {
-          basicReqBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.BasicReq basicReq = 1;</code>
-       */
-      public Builder clearBasicReq() {
-        if (basicReqBuilder_ == null) {
-          basicReq_ = null;
-          onChanged();
-        } else {
-          basicReq_ = null;
-          basicReqBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <code>.BasicReq basicReq = 1;</code>
-       */
-      public com.example.aiins.proto.Basic.BasicReq.Builder getBasicReqBuilder() {
-        
-        onChanged();
-        return getBasicReqFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.BasicReq basicReq = 1;</code>
-       */
-      public com.example.aiins.proto.Basic.BasicReqOrBuilder getBasicReqOrBuilder() {
-        if (basicReqBuilder_ != null) {
-          return basicReqBuilder_.getMessageOrBuilder();
-        } else {
-          return basicReq_ == null ?
-              com.example.aiins.proto.Basic.BasicReq.getDefaultInstance() : basicReq_;
-        }
-      }
-      /**
-       * <code>.BasicReq basicReq = 1;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.example.aiins.proto.Basic.BasicReq, com.example.aiins.proto.Basic.BasicReq.Builder, com.example.aiins.proto.Basic.BasicReqOrBuilder> 
-          getBasicReqFieldBuilder() {
-        if (basicReqBuilder_ == null) {
-          basicReqBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.example.aiins.proto.Basic.BasicReq, com.example.aiins.proto.Basic.BasicReq.Builder, com.example.aiins.proto.Basic.BasicReqOrBuilder>(
-                  getBasicReq(),
-                  getParentForChildren(),
-                  isClean());
-          basicReq_ = null;
-        }
-        return basicReqBuilder_;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:AddFriendReq)
-    }
-
-    // @@protoc_insertion_point(class_scope:AddFriendReq)
-    private static final com.example.aiins.proto.Basic.AddFriendReq DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new com.example.aiins.proto.Basic.AddFriendReq();
-    }
-
-    public static com.example.aiins.proto.Basic.AddFriendReq getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<AddFriendReq>
-        PARSER = new com.google.protobuf.AbstractParser<AddFriendReq>() {
-      @java.lang.Override
-      public AddFriendReq parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new AddFriendReq(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<AddFriendReq> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<AddFriendReq> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.example.aiins.proto.Basic.AddFriendReq getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface TalkToReqOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:TalkToReq)
-      com.google.protobuf.MessageOrBuilder {
-  }
-  /**
-   * <pre>
-   * 发送信息给好友/群聊, 返回 BasicRsp
-   * </pre>
-   *
-   * Protobuf type {@code TalkToReq}
-   */
-  public static final class TalkToReq extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:TalkToReq)
-      TalkToReqOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use TalkToReq.newBuilder() to construct.
-    private TalkToReq(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private TalkToReq() {
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new TalkToReq();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private TalkToReq(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.example.aiins.proto.Basic.internal_static_TalkToReq_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.example.aiins.proto.Basic.internal_static_TalkToReq_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.example.aiins.proto.Basic.TalkToReq.class, com.example.aiins.proto.Basic.TalkToReq.Builder.class);
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof com.example.aiins.proto.Basic.TalkToReq)) {
-        return super.equals(obj);
-      }
-      com.example.aiins.proto.Basic.TalkToReq other = (com.example.aiins.proto.Basic.TalkToReq) obj;
-
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static com.example.aiins.proto.Basic.TalkToReq parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.example.aiins.proto.Basic.TalkToReq parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.example.aiins.proto.Basic.TalkToReq parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.example.aiins.proto.Basic.TalkToReq parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.example.aiins.proto.Basic.TalkToReq parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.example.aiins.proto.Basic.TalkToReq parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.example.aiins.proto.Basic.TalkToReq parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.example.aiins.proto.Basic.TalkToReq parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.example.aiins.proto.Basic.TalkToReq parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static com.example.aiins.proto.Basic.TalkToReq parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.example.aiins.proto.Basic.TalkToReq parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.example.aiins.proto.Basic.TalkToReq parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(com.example.aiins.proto.Basic.TalkToReq prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * <pre>
-     * 发送信息给好友/群聊, 返回 BasicRsp
-     * </pre>
-     *
-     * Protobuf type {@code TalkToReq}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:TalkToReq)
-        com.example.aiins.proto.Basic.TalkToReqOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.example.aiins.proto.Basic.internal_static_TalkToReq_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.example.aiins.proto.Basic.internal_static_TalkToReq_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.example.aiins.proto.Basic.TalkToReq.class, com.example.aiins.proto.Basic.TalkToReq.Builder.class);
-      }
-
-      // Construct using com.example.aiins.proto.Basic.TalkToReq.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.example.aiins.proto.Basic.internal_static_TalkToReq_descriptor;
-      }
-
-      @java.lang.Override
-      public com.example.aiins.proto.Basic.TalkToReq getDefaultInstanceForType() {
-        return com.example.aiins.proto.Basic.TalkToReq.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public com.example.aiins.proto.Basic.TalkToReq build() {
-        com.example.aiins.proto.Basic.TalkToReq result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public com.example.aiins.proto.Basic.TalkToReq buildPartial() {
-        com.example.aiins.proto.Basic.TalkToReq result = new com.example.aiins.proto.Basic.TalkToReq(this);
-        onBuilt();
-        return result;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.example.aiins.proto.Basic.TalkToReq) {
-          return mergeFrom((com.example.aiins.proto.Basic.TalkToReq)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(com.example.aiins.proto.Basic.TalkToReq other) {
-        if (other == com.example.aiins.proto.Basic.TalkToReq.getDefaultInstance()) return this;
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        com.example.aiins.proto.Basic.TalkToReq parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.example.aiins.proto.Basic.TalkToReq) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:TalkToReq)
-    }
-
-    // @@protoc_insertion_point(class_scope:TalkToReq)
-    private static final com.example.aiins.proto.Basic.TalkToReq DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new com.example.aiins.proto.Basic.TalkToReq();
-    }
-
-    public static com.example.aiins.proto.Basic.TalkToReq getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<TalkToReq>
-        PARSER = new com.google.protobuf.AbstractParser<TalkToReq>() {
-      @java.lang.Override
-      public TalkToReq parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new TalkToReq(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<TalkToReq> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<TalkToReq> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.example.aiins.proto.Basic.TalkToReq getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface MakeGroupReqOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:MakeGroupReq)
-      com.google.protobuf.MessageOrBuilder {
-  }
-  /**
-   * <pre>
-   * 建立群聊, 返回 BasicRsp
-   * </pre>
-   *
-   * Protobuf type {@code MakeGroupReq}
-   */
-  public static final class MakeGroupReq extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:MakeGroupReq)
-      MakeGroupReqOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use MakeGroupReq.newBuilder() to construct.
-    private MakeGroupReq(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private MakeGroupReq() {
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new MakeGroupReq();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private MakeGroupReq(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.example.aiins.proto.Basic.internal_static_MakeGroupReq_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.example.aiins.proto.Basic.internal_static_MakeGroupReq_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.example.aiins.proto.Basic.MakeGroupReq.class, com.example.aiins.proto.Basic.MakeGroupReq.Builder.class);
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof com.example.aiins.proto.Basic.MakeGroupReq)) {
-        return super.equals(obj);
-      }
-      com.example.aiins.proto.Basic.MakeGroupReq other = (com.example.aiins.proto.Basic.MakeGroupReq) obj;
-
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static com.example.aiins.proto.Basic.MakeGroupReq parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.example.aiins.proto.Basic.MakeGroupReq parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.example.aiins.proto.Basic.MakeGroupReq parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.example.aiins.proto.Basic.MakeGroupReq parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.example.aiins.proto.Basic.MakeGroupReq parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.example.aiins.proto.Basic.MakeGroupReq parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.example.aiins.proto.Basic.MakeGroupReq parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.example.aiins.proto.Basic.MakeGroupReq parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.example.aiins.proto.Basic.MakeGroupReq parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static com.example.aiins.proto.Basic.MakeGroupReq parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.example.aiins.proto.Basic.MakeGroupReq parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.example.aiins.proto.Basic.MakeGroupReq parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(com.example.aiins.proto.Basic.MakeGroupReq prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * <pre>
-     * 建立群聊, 返回 BasicRsp
-     * </pre>
-     *
-     * Protobuf type {@code MakeGroupReq}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:MakeGroupReq)
-        com.example.aiins.proto.Basic.MakeGroupReqOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.example.aiins.proto.Basic.internal_static_MakeGroupReq_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.example.aiins.proto.Basic.internal_static_MakeGroupReq_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.example.aiins.proto.Basic.MakeGroupReq.class, com.example.aiins.proto.Basic.MakeGroupReq.Builder.class);
-      }
-
-      // Construct using com.example.aiins.proto.Basic.MakeGroupReq.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.example.aiins.proto.Basic.internal_static_MakeGroupReq_descriptor;
-      }
-
-      @java.lang.Override
-      public com.example.aiins.proto.Basic.MakeGroupReq getDefaultInstanceForType() {
-        return com.example.aiins.proto.Basic.MakeGroupReq.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public com.example.aiins.proto.Basic.MakeGroupReq build() {
-        com.example.aiins.proto.Basic.MakeGroupReq result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public com.example.aiins.proto.Basic.MakeGroupReq buildPartial() {
-        com.example.aiins.proto.Basic.MakeGroupReq result = new com.example.aiins.proto.Basic.MakeGroupReq(this);
-        onBuilt();
-        return result;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.example.aiins.proto.Basic.MakeGroupReq) {
-          return mergeFrom((com.example.aiins.proto.Basic.MakeGroupReq)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(com.example.aiins.proto.Basic.MakeGroupReq other) {
-        if (other == com.example.aiins.proto.Basic.MakeGroupReq.getDefaultInstance()) return this;
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        com.example.aiins.proto.Basic.MakeGroupReq parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.example.aiins.proto.Basic.MakeGroupReq) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:MakeGroupReq)
-    }
-
-    // @@protoc_insertion_point(class_scope:MakeGroupReq)
-    private static final com.example.aiins.proto.Basic.MakeGroupReq DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new com.example.aiins.proto.Basic.MakeGroupReq();
-    }
-
-    public static com.example.aiins.proto.Basic.MakeGroupReq getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<MakeGroupReq>
-        PARSER = new com.google.protobuf.AbstractParser<MakeGroupReq>() {
-      @java.lang.Override
-      public MakeGroupReq parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new MakeGroupReq(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<MakeGroupReq> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<MakeGroupReq> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.example.aiins.proto.Basic.MakeGroupReq getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface FindOthersReqOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:FindOthersReq)
-      com.google.protobuf.MessageOrBuilder {
-  }
-  /**
-   * <pre>
-   * 获取推送信息请求
-   * </pre>
-   *
-   * Protobuf type {@code FindOthersReq}
-   */
-  public static final class FindOthersReq extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:FindOthersReq)
-      FindOthersReqOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use FindOthersReq.newBuilder() to construct.
-    private FindOthersReq(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private FindOthersReq() {
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new FindOthersReq();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private FindOthersReq(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.example.aiins.proto.Basic.internal_static_FindOthersReq_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.example.aiins.proto.Basic.internal_static_FindOthersReq_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.example.aiins.proto.Basic.FindOthersReq.class, com.example.aiins.proto.Basic.FindOthersReq.Builder.class);
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof com.example.aiins.proto.Basic.FindOthersReq)) {
-        return super.equals(obj);
-      }
-      com.example.aiins.proto.Basic.FindOthersReq other = (com.example.aiins.proto.Basic.FindOthersReq) obj;
-
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static com.example.aiins.proto.Basic.FindOthersReq parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.example.aiins.proto.Basic.FindOthersReq parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.example.aiins.proto.Basic.FindOthersReq parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.example.aiins.proto.Basic.FindOthersReq parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.example.aiins.proto.Basic.FindOthersReq parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.example.aiins.proto.Basic.FindOthersReq parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.example.aiins.proto.Basic.FindOthersReq parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.example.aiins.proto.Basic.FindOthersReq parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.example.aiins.proto.Basic.FindOthersReq parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static com.example.aiins.proto.Basic.FindOthersReq parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.example.aiins.proto.Basic.FindOthersReq parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.example.aiins.proto.Basic.FindOthersReq parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(com.example.aiins.proto.Basic.FindOthersReq prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * <pre>
-     * 获取推送信息请求
-     * </pre>
-     *
-     * Protobuf type {@code FindOthersReq}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:FindOthersReq)
-        com.example.aiins.proto.Basic.FindOthersReqOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.example.aiins.proto.Basic.internal_static_FindOthersReq_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.example.aiins.proto.Basic.internal_static_FindOthersReq_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.example.aiins.proto.Basic.FindOthersReq.class, com.example.aiins.proto.Basic.FindOthersReq.Builder.class);
-      }
-
-      // Construct using com.example.aiins.proto.Basic.FindOthersReq.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.example.aiins.proto.Basic.internal_static_FindOthersReq_descriptor;
-      }
-
-      @java.lang.Override
-      public com.example.aiins.proto.Basic.FindOthersReq getDefaultInstanceForType() {
-        return com.example.aiins.proto.Basic.FindOthersReq.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public com.example.aiins.proto.Basic.FindOthersReq build() {
-        com.example.aiins.proto.Basic.FindOthersReq result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public com.example.aiins.proto.Basic.FindOthersReq buildPartial() {
-        com.example.aiins.proto.Basic.FindOthersReq result = new com.example.aiins.proto.Basic.FindOthersReq(this);
-        onBuilt();
-        return result;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.example.aiins.proto.Basic.FindOthersReq) {
-          return mergeFrom((com.example.aiins.proto.Basic.FindOthersReq)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(com.example.aiins.proto.Basic.FindOthersReq other) {
-        if (other == com.example.aiins.proto.Basic.FindOthersReq.getDefaultInstance()) return this;
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        com.example.aiins.proto.Basic.FindOthersReq parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.example.aiins.proto.Basic.FindOthersReq) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:FindOthersReq)
-    }
-
-    // @@protoc_insertion_point(class_scope:FindOthersReq)
-    private static final com.example.aiins.proto.Basic.FindOthersReq DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new com.example.aiins.proto.Basic.FindOthersReq();
-    }
-
-    public static com.example.aiins.proto.Basic.FindOthersReq getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<FindOthersReq>
-        PARSER = new com.google.protobuf.AbstractParser<FindOthersReq>() {
-      @java.lang.Override
-      public FindOthersReq parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new FindOthersReq(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<FindOthersReq> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<FindOthersReq> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.example.aiins.proto.Basic.FindOthersReq getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface FindOthersRspOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:FindOthersRsp)
-      com.google.protobuf.MessageOrBuilder {
-  }
-  /**
-   * <pre>
-   * 获取推送信息响应
-   * </pre>
-   *
-   * Protobuf type {@code FindOthersRsp}
-   */
-  public static final class FindOthersRsp extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:FindOthersRsp)
-      FindOthersRspOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use FindOthersRsp.newBuilder() to construct.
-    private FindOthersRsp(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private FindOthersRsp() {
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new FindOthersRsp();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private FindOthersRsp(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.example.aiins.proto.Basic.internal_static_FindOthersRsp_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.example.aiins.proto.Basic.internal_static_FindOthersRsp_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.example.aiins.proto.Basic.FindOthersRsp.class, com.example.aiins.proto.Basic.FindOthersRsp.Builder.class);
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof com.example.aiins.proto.Basic.FindOthersRsp)) {
-        return super.equals(obj);
-      }
-      com.example.aiins.proto.Basic.FindOthersRsp other = (com.example.aiins.proto.Basic.FindOthersRsp) obj;
-
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static com.example.aiins.proto.Basic.FindOthersRsp parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.example.aiins.proto.Basic.FindOthersRsp parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.example.aiins.proto.Basic.FindOthersRsp parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.example.aiins.proto.Basic.FindOthersRsp parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.example.aiins.proto.Basic.FindOthersRsp parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.example.aiins.proto.Basic.FindOthersRsp parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.example.aiins.proto.Basic.FindOthersRsp parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.example.aiins.proto.Basic.FindOthersRsp parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.example.aiins.proto.Basic.FindOthersRsp parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static com.example.aiins.proto.Basic.FindOthersRsp parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.example.aiins.proto.Basic.FindOthersRsp parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.example.aiins.proto.Basic.FindOthersRsp parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(com.example.aiins.proto.Basic.FindOthersRsp prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * <pre>
-     * 获取推送信息响应
-     * </pre>
-     *
-     * Protobuf type {@code FindOthersRsp}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:FindOthersRsp)
-        com.example.aiins.proto.Basic.FindOthersRspOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.example.aiins.proto.Basic.internal_static_FindOthersRsp_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.example.aiins.proto.Basic.internal_static_FindOthersRsp_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.example.aiins.proto.Basic.FindOthersRsp.class, com.example.aiins.proto.Basic.FindOthersRsp.Builder.class);
-      }
-
-      // Construct using com.example.aiins.proto.Basic.FindOthersRsp.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.example.aiins.proto.Basic.internal_static_FindOthersRsp_descriptor;
-      }
-
-      @java.lang.Override
-      public com.example.aiins.proto.Basic.FindOthersRsp getDefaultInstanceForType() {
-        return com.example.aiins.proto.Basic.FindOthersRsp.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public com.example.aiins.proto.Basic.FindOthersRsp build() {
-        com.example.aiins.proto.Basic.FindOthersRsp result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public com.example.aiins.proto.Basic.FindOthersRsp buildPartial() {
-        com.example.aiins.proto.Basic.FindOthersRsp result = new com.example.aiins.proto.Basic.FindOthersRsp(this);
-        onBuilt();
-        return result;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.example.aiins.proto.Basic.FindOthersRsp) {
-          return mergeFrom((com.example.aiins.proto.Basic.FindOthersRsp)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(com.example.aiins.proto.Basic.FindOthersRsp other) {
-        if (other == com.example.aiins.proto.Basic.FindOthersRsp.getDefaultInstance()) return this;
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        com.example.aiins.proto.Basic.FindOthersRsp parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.example.aiins.proto.Basic.FindOthersRsp) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:FindOthersRsp)
-    }
-
-    // @@protoc_insertion_point(class_scope:FindOthersRsp)
-    private static final com.example.aiins.proto.Basic.FindOthersRsp DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new com.example.aiins.proto.Basic.FindOthersRsp();
-    }
-
-    public static com.example.aiins.proto.Basic.FindOthersRsp getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<FindOthersRsp>
-        PARSER = new com.google.protobuf.AbstractParser<FindOthersRsp>() {
-      @java.lang.Override
-      public FindOthersRsp parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new FindOthersRsp(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<FindOthersRsp> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<FindOthersRsp> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.example.aiins.proto.Basic.FindOthersRsp getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface SetIconReqOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:SetIconReq)
-      com.google.protobuf.MessageOrBuilder {
-  }
-  /**
-   * <pre>
-   * 设置头像, 成功返回 BasicRsp
-   * </pre>
-   *
-   * Protobuf type {@code SetIconReq}
-   */
-  public static final class SetIconReq extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:SetIconReq)
-      SetIconReqOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use SetIconReq.newBuilder() to construct.
-    private SetIconReq(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private SetIconReq() {
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new SetIconReq();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private SetIconReq(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.example.aiins.proto.Basic.internal_static_SetIconReq_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.example.aiins.proto.Basic.internal_static_SetIconReq_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.example.aiins.proto.Basic.SetIconReq.class, com.example.aiins.proto.Basic.SetIconReq.Builder.class);
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof com.example.aiins.proto.Basic.SetIconReq)) {
-        return super.equals(obj);
-      }
-      com.example.aiins.proto.Basic.SetIconReq other = (com.example.aiins.proto.Basic.SetIconReq) obj;
-
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static com.example.aiins.proto.Basic.SetIconReq parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.example.aiins.proto.Basic.SetIconReq parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.example.aiins.proto.Basic.SetIconReq parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.example.aiins.proto.Basic.SetIconReq parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.example.aiins.proto.Basic.SetIconReq parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.example.aiins.proto.Basic.SetIconReq parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.example.aiins.proto.Basic.SetIconReq parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.example.aiins.proto.Basic.SetIconReq parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.example.aiins.proto.Basic.SetIconReq parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static com.example.aiins.proto.Basic.SetIconReq parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.example.aiins.proto.Basic.SetIconReq parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.example.aiins.proto.Basic.SetIconReq parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(com.example.aiins.proto.Basic.SetIconReq prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * <pre>
-     * 设置头像, 成功返回 BasicRsp
-     * </pre>
-     *
-     * Protobuf type {@code SetIconReq}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:SetIconReq)
-        com.example.aiins.proto.Basic.SetIconReqOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.example.aiins.proto.Basic.internal_static_SetIconReq_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.example.aiins.proto.Basic.internal_static_SetIconReq_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.example.aiins.proto.Basic.SetIconReq.class, com.example.aiins.proto.Basic.SetIconReq.Builder.class);
-      }
-
-      // Construct using com.example.aiins.proto.Basic.SetIconReq.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.example.aiins.proto.Basic.internal_static_SetIconReq_descriptor;
-      }
-
-      @java.lang.Override
-      public com.example.aiins.proto.Basic.SetIconReq getDefaultInstanceForType() {
-        return com.example.aiins.proto.Basic.SetIconReq.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public com.example.aiins.proto.Basic.SetIconReq build() {
-        com.example.aiins.proto.Basic.SetIconReq result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public com.example.aiins.proto.Basic.SetIconReq buildPartial() {
-        com.example.aiins.proto.Basic.SetIconReq result = new com.example.aiins.proto.Basic.SetIconReq(this);
-        onBuilt();
-        return result;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.example.aiins.proto.Basic.SetIconReq) {
-          return mergeFrom((com.example.aiins.proto.Basic.SetIconReq)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(com.example.aiins.proto.Basic.SetIconReq other) {
-        if (other == com.example.aiins.proto.Basic.SetIconReq.getDefaultInstance()) return this;
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        com.example.aiins.proto.Basic.SetIconReq parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.example.aiins.proto.Basic.SetIconReq) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:SetIconReq)
-    }
-
-    // @@protoc_insertion_point(class_scope:SetIconReq)
-    private static final com.example.aiins.proto.Basic.SetIconReq DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new com.example.aiins.proto.Basic.SetIconReq();
-    }
-
-    public static com.example.aiins.proto.Basic.SetIconReq getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<SetIconReq>
-        PARSER = new com.google.protobuf.AbstractParser<SetIconReq>() {
-      @java.lang.Override
-      public SetIconReq parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new SetIconReq(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<SetIconReq> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<SetIconReq> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.example.aiins.proto.Basic.SetIconReq getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface SetNickNameReqOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:SetNickNameReq)
-      com.google.protobuf.MessageOrBuilder {
-  }
-  /**
-   * <pre>
-   * 设置昵称, 成功返回 BasicReq
-   * </pre>
-   *
-   * Protobuf type {@code SetNickNameReq}
-   */
-  public static final class SetNickNameReq extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:SetNickNameReq)
-      SetNickNameReqOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use SetNickNameReq.newBuilder() to construct.
-    private SetNickNameReq(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private SetNickNameReq() {
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new SetNickNameReq();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private SetNickNameReq(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.example.aiins.proto.Basic.internal_static_SetNickNameReq_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.example.aiins.proto.Basic.internal_static_SetNickNameReq_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.example.aiins.proto.Basic.SetNickNameReq.class, com.example.aiins.proto.Basic.SetNickNameReq.Builder.class);
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof com.example.aiins.proto.Basic.SetNickNameReq)) {
-        return super.equals(obj);
-      }
-      com.example.aiins.proto.Basic.SetNickNameReq other = (com.example.aiins.proto.Basic.SetNickNameReq) obj;
-
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static com.example.aiins.proto.Basic.SetNickNameReq parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.example.aiins.proto.Basic.SetNickNameReq parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.example.aiins.proto.Basic.SetNickNameReq parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.example.aiins.proto.Basic.SetNickNameReq parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.example.aiins.proto.Basic.SetNickNameReq parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.example.aiins.proto.Basic.SetNickNameReq parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.example.aiins.proto.Basic.SetNickNameReq parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.example.aiins.proto.Basic.SetNickNameReq parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.example.aiins.proto.Basic.SetNickNameReq parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static com.example.aiins.proto.Basic.SetNickNameReq parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.example.aiins.proto.Basic.SetNickNameReq parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.example.aiins.proto.Basic.SetNickNameReq parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(com.example.aiins.proto.Basic.SetNickNameReq prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * <pre>
-     * 设置昵称, 成功返回 BasicReq
-     * </pre>
-     *
-     * Protobuf type {@code SetNickNameReq}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:SetNickNameReq)
-        com.example.aiins.proto.Basic.SetNickNameReqOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.example.aiins.proto.Basic.internal_static_SetNickNameReq_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.example.aiins.proto.Basic.internal_static_SetNickNameReq_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.example.aiins.proto.Basic.SetNickNameReq.class, com.example.aiins.proto.Basic.SetNickNameReq.Builder.class);
-      }
-
-      // Construct using com.example.aiins.proto.Basic.SetNickNameReq.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.example.aiins.proto.Basic.internal_static_SetNickNameReq_descriptor;
-      }
-
-      @java.lang.Override
-      public com.example.aiins.proto.Basic.SetNickNameReq getDefaultInstanceForType() {
-        return com.example.aiins.proto.Basic.SetNickNameReq.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public com.example.aiins.proto.Basic.SetNickNameReq build() {
-        com.example.aiins.proto.Basic.SetNickNameReq result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public com.example.aiins.proto.Basic.SetNickNameReq buildPartial() {
-        com.example.aiins.proto.Basic.SetNickNameReq result = new com.example.aiins.proto.Basic.SetNickNameReq(this);
-        onBuilt();
-        return result;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.example.aiins.proto.Basic.SetNickNameReq) {
-          return mergeFrom((com.example.aiins.proto.Basic.SetNickNameReq)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(com.example.aiins.proto.Basic.SetNickNameReq other) {
-        if (other == com.example.aiins.proto.Basic.SetNickNameReq.getDefaultInstance()) return this;
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        com.example.aiins.proto.Basic.SetNickNameReq parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.example.aiins.proto.Basic.SetNickNameReq) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:SetNickNameReq)
-    }
-
-    // @@protoc_insertion_point(class_scope:SetNickNameReq)
-    private static final com.example.aiins.proto.Basic.SetNickNameReq DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new com.example.aiins.proto.Basic.SetNickNameReq();
-    }
-
-    public static com.example.aiins.proto.Basic.SetNickNameReq getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<SetNickNameReq>
-        PARSER = new com.google.protobuf.AbstractParser<SetNickNameReq>() {
-      @java.lang.Override
-      public SetNickNameReq parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new SetNickNameReq(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<SetNickNameReq> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<SetNickNameReq> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.example.aiins.proto.Basic.SetNickNameReq getDefaultInstanceForType() {
+    public com.example.aiins.proto.Basic.Message getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_BasicReq_descriptor;
+    internal_static_UserDataReq_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_BasicReq_fieldAccessorTable;
+      internal_static_UserDataReq_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_BasicRsp_descriptor;
+    internal_static_UserDataRsp_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_BasicRsp_fieldAccessorTable;
+      internal_static_UserDataRsp_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_FindFriendReq_descriptor;
+    internal_static_BasicUserData_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_FindFriendReq_fieldAccessorTable;
+      internal_static_BasicUserData_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_FindFriendRsp_descriptor;
+    internal_static_LocalData_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_FindFriendRsp_fieldAccessorTable;
+      internal_static_LocalData_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_AddFriendReq_descriptor;
+    internal_static_Message_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_AddFriendReq_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_TalkToReq_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_TalkToReq_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_MakeGroupReq_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_MakeGroupReq_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_FindOthersReq_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_FindOthersReq_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_FindOthersRsp_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_FindOthersRsp_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_SetIconReq_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_SetIconReq_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_SetNickNameReq_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_SetNickNameReq_fieldAccessorTable;
+      internal_static_Message_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -5953,88 +4783,51 @@ public final class Basic {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\021proto/Basic.proto\"0\n\010BasicReq\022\r\n\005reqId" +
-      "\030\001 \001(\005\022\025\n\rreqCustomerId\030\002 \001(\005\"+\n\010BasicRs" +
-      "p\022\022\n\nresultCode\030\001 \001(\005\022\013\n\003msg\030\002 \001(\t\"@\n\rFi" +
-      "ndFriendReq\022\033\n\010basicReq\030\001 \001(\0132\t.BasicReq" +
-      "\022\022\n\ntargetName\030\002 \001(\t\">\n\rFindFriendRsp\022\033\n" +
-      "\010basicRsp\030\001 \001(\0132\t.BasicRsp\022\020\n\010targetId\030\002" +
-      " \001(\005\"+\n\014AddFriendReq\022\033\n\010basicReq\030\001 \001(\0132\t" +
-      ".BasicReq\"\013\n\tTalkToReq\"\016\n\014MakeGroupReq\"\017" +
-      "\n\rFindOthersReq\"\017\n\rFindOthersRsp\"\014\n\nSetI" +
-      "conReq\"\020\n\016SetNickNameReqB\031\n\027com.example." +
-      "aiins.protob\006proto3"
+      "\n\021proto/Basic.proto\"\032\n\013UserDataReq\022\013\n\003ui" +
+      "d\030\001 \003(\005\"?\n\013UserDataRsp\022\020\n\010nickname\030\001 \003(\t" +
+      "\022\020\n\010username\030\002 \003(\t\022\014\n\004icon\030\003 \003(\014\"R\n\rBasi" +
+      "cUserData\022\020\n\010nickname\030\001 \001(\t\022\020\n\010username\030" +
+      "\002 \001(\t\022\020\n\010password\030\003 \001(\t\022\013\n\003uid\030\004 \001(\005\"S\n\t" +
+      "LocalData\022\034\n\004user\030\001 \001(\0132\016.BasicUserData\022" +
+      "\014\n\004icon\030\002 \001(\014\022\032\n\010messages\030\003 \003(\0132\010.Messag" +
+      "e\"@\n\007Message\022\014\n\004from\030\001 \001(\005\022\n\n\002to\030\002 \003(\005\022\014" +
+      "\n\004text\030\003 \001(\t\022\r\n\005image\030\004 \001(\014B\031\n\027com.examp" +
+      "le.aiins.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
         });
-    internal_static_BasicReq_descriptor =
+    internal_static_UserDataReq_descriptor =
       getDescriptor().getMessageTypes().get(0);
-    internal_static_BasicReq_fieldAccessorTable = new
+    internal_static_UserDataReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_BasicReq_descriptor,
-        new java.lang.String[] { "ReqId", "ReqCustomerId", });
-    internal_static_BasicRsp_descriptor =
+        internal_static_UserDataReq_descriptor,
+        new java.lang.String[] { "Uid", });
+    internal_static_UserDataRsp_descriptor =
       getDescriptor().getMessageTypes().get(1);
-    internal_static_BasicRsp_fieldAccessorTable = new
+    internal_static_UserDataRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_BasicRsp_descriptor,
-        new java.lang.String[] { "ResultCode", "Msg", });
-    internal_static_FindFriendReq_descriptor =
+        internal_static_UserDataRsp_descriptor,
+        new java.lang.String[] { "Nickname", "Username", "Icon", });
+    internal_static_BasicUserData_descriptor =
       getDescriptor().getMessageTypes().get(2);
-    internal_static_FindFriendReq_fieldAccessorTable = new
+    internal_static_BasicUserData_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_FindFriendReq_descriptor,
-        new java.lang.String[] { "BasicReq", "TargetName", });
-    internal_static_FindFriendRsp_descriptor =
+        internal_static_BasicUserData_descriptor,
+        new java.lang.String[] { "Nickname", "Username", "Password", "Uid", });
+    internal_static_LocalData_descriptor =
       getDescriptor().getMessageTypes().get(3);
-    internal_static_FindFriendRsp_fieldAccessorTable = new
+    internal_static_LocalData_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_FindFriendRsp_descriptor,
-        new java.lang.String[] { "BasicRsp", "TargetId", });
-    internal_static_AddFriendReq_descriptor =
+        internal_static_LocalData_descriptor,
+        new java.lang.String[] { "User", "Icon", "Messages", });
+    internal_static_Message_descriptor =
       getDescriptor().getMessageTypes().get(4);
-    internal_static_AddFriendReq_fieldAccessorTable = new
+    internal_static_Message_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_AddFriendReq_descriptor,
-        new java.lang.String[] { "BasicReq", });
-    internal_static_TalkToReq_descriptor =
-      getDescriptor().getMessageTypes().get(5);
-    internal_static_TalkToReq_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_TalkToReq_descriptor,
-        new java.lang.String[] { });
-    internal_static_MakeGroupReq_descriptor =
-      getDescriptor().getMessageTypes().get(6);
-    internal_static_MakeGroupReq_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_MakeGroupReq_descriptor,
-        new java.lang.String[] { });
-    internal_static_FindOthersReq_descriptor =
-      getDescriptor().getMessageTypes().get(7);
-    internal_static_FindOthersReq_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_FindOthersReq_descriptor,
-        new java.lang.String[] { });
-    internal_static_FindOthersRsp_descriptor =
-      getDescriptor().getMessageTypes().get(8);
-    internal_static_FindOthersRsp_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_FindOthersRsp_descriptor,
-        new java.lang.String[] { });
-    internal_static_SetIconReq_descriptor =
-      getDescriptor().getMessageTypes().get(9);
-    internal_static_SetIconReq_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_SetIconReq_descriptor,
-        new java.lang.String[] { });
-    internal_static_SetNickNameReq_descriptor =
-      getDescriptor().getMessageTypes().get(10);
-    internal_static_SetNickNameReq_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_SetNickNameReq_descriptor,
-        new java.lang.String[] { });
+        internal_static_Message_descriptor,
+        new java.lang.String[] { "From", "To", "Text", "Image", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

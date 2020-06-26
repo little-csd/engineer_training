@@ -22,7 +22,6 @@ class FirstActivity : BaseActivity() {
         }
         btn_register.setOnClickListener {
             val intent = Intent(this, RegisterActivity::class.java)
-            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK)
             startActivity(intent)
         }
     }

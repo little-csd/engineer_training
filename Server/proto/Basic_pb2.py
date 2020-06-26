@@ -19,31 +19,24 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\027com.example.aiins.proto',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x0b\x42\x61sic.proto\"0\n\x08\x42\x61sicReq\x12\r\n\x05reqId\x18\x01 \x01(\x05\x12\x15\n\rreqCustomerId\x18\x02 \x01(\x05\"+\n\x08\x42\x61sicRsp\x12\x12\n\nresultCode\x18\x01 \x01(\x05\x12\x0b\n\x03msg\x18\x02 \x01(\t\"@\n\rFindFriendReq\x12\x1b\n\x08\x62\x61sicReq\x18\x01 \x01(\x0b\x32\t.BasicReq\x12\x12\n\ntargetName\x18\x02 \x01(\t\">\n\rFindFriendRsp\x12\x1b\n\x08\x62\x61sicRsp\x18\x01 \x01(\x0b\x32\t.BasicRsp\x12\x10\n\x08targetId\x18\x02 \x01(\x05\"+\n\x0c\x41\x64\x64\x46riendReq\x12\x1b\n\x08\x62\x61sicReq\x18\x01 \x01(\x0b\x32\t.BasicReq\"\x0b\n\tTalkToReq\"\x0e\n\x0cMakeGroupReq\"\x0f\n\rFindOthersReq\"\x0f\n\rFindOthersRsp\"\x0c\n\nSetIconReq\"\x10\n\x0eSetNickNameReqB\x19\n\x17\x63om.example.aiins.protob\x06proto3'
+  serialized_pb=b'\n\x0b\x42\x61sic.proto\"\x1a\n\x0bUserDataReq\x12\x0b\n\x03uid\x18\x01 \x03(\x05\"?\n\x0bUserDataRsp\x12\x10\n\x08nickname\x18\x01 \x03(\t\x12\x10\n\x08username\x18\x02 \x03(\t\x12\x0c\n\x04icon\x18\x03 \x03(\x0c\"R\n\rBasicUserData\x12\x10\n\x08nickname\x18\x01 \x01(\t\x12\x10\n\x08username\x18\x02 \x01(\t\x12\x10\n\x08password\x18\x03 \x01(\t\x12\x0b\n\x03uid\x18\x04 \x01(\x05\"S\n\tLocalData\x12\x1c\n\x04user\x18\x01 \x01(\x0b\x32\x0e.BasicUserData\x12\x0c\n\x04icon\x18\x02 \x01(\x0c\x12\x1a\n\x08messages\x18\x03 \x03(\x0b\x32\x08.Message\"@\n\x07Message\x12\x0c\n\x04\x66rom\x18\x01 \x01(\x05\x12\n\n\x02to\x18\x02 \x03(\x05\x12\x0c\n\x04text\x18\x03 \x01(\t\x12\r\n\x05image\x18\x04 \x01(\x0c\x42\x19\n\x17\x63om.example.aiins.protob\x06proto3'
 )
 
 
 
 
-_BASICREQ = _descriptor.Descriptor(
-  name='BasicReq',
-  full_name='BasicReq',
+_USERDATAREQ = _descriptor.Descriptor(
+  name='UserDataReq',
+  full_name='UserDataReq',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='reqId', full_name='BasicReq.reqId', index=0,
-      number=1, type=5, cpp_type=1, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='reqCustomerId', full_name='BasicReq.reqCustomerId', index=1,
-      number=2, type=5, cpp_type=1, label=1,
-      has_default_value=False, default_value=0,
+      name='uid', full_name='UserDataReq.uid', index=0,
+      number=1, type=5, cpp_type=1, label=3,
+      has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
@@ -60,68 +53,188 @@ _BASICREQ = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=15,
-  serialized_end=63,
+  serialized_end=41,
 )
 
 
-_BASICRSP = _descriptor.Descriptor(
-  name='BasicRsp',
-  full_name='BasicRsp',
+_USERDATARSP = _descriptor.Descriptor(
+  name='UserDataRsp',
+  full_name='UserDataRsp',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='resultCode', full_name='BasicRsp.resultCode', index=0,
+      name='nickname', full_name='UserDataRsp.nickname', index=0,
+      number=1, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='username', full_name='UserDataRsp.username', index=1,
+      number=2, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='icon', full_name='UserDataRsp.icon', index=2,
+      number=3, type=12, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=43,
+  serialized_end=106,
+)
+
+
+_BASICUSERDATA = _descriptor.Descriptor(
+  name='BasicUserData',
+  full_name='BasicUserData',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='nickname', full_name='BasicUserData.nickname', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='username', full_name='BasicUserData.username', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='password', full_name='BasicUserData.password', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='uid', full_name='BasicUserData.uid', index=3,
+      number=4, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=108,
+  serialized_end=190,
+)
+
+
+_LOCALDATA = _descriptor.Descriptor(
+  name='LocalData',
+  full_name='LocalData',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='user', full_name='LocalData.user', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='icon', full_name='LocalData.icon', index=1,
+      number=2, type=12, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"",
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='messages', full_name='LocalData.messages', index=2,
+      number=3, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=192,
+  serialized_end=275,
+)
+
+
+_MESSAGE = _descriptor.Descriptor(
+  name='Message',
+  full_name='Message',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='from', full_name='Message.from', index=0,
       number=1, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='msg', full_name='BasicRsp.msg', index=1,
-      number=2, type=9, cpp_type=9, label=1,
+      name='to', full_name='Message.to', index=1,
+      number=2, type=5, cpp_type=1, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='text', full_name='Message.text', index=2,
+      number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=65,
-  serialized_end=108,
-)
-
-
-_FINDFRIENDREQ = _descriptor.Descriptor(
-  name='FindFriendReq',
-  full_name='FindFriendReq',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
     _descriptor.FieldDescriptor(
-      name='basicReq', full_name='FindFriendReq.basicReq', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='targetName', full_name='FindFriendReq.targetName', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
+      name='image', full_name='Message.image', index=3,
+      number=4, type=12, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
@@ -137,323 +250,53 @@ _FINDFRIENDREQ = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=110,
-  serialized_end=174,
+  serialized_start=277,
+  serialized_end=341,
 )
 
-
-_FINDFRIENDRSP = _descriptor.Descriptor(
-  name='FindFriendRsp',
-  full_name='FindFriendRsp',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='basicRsp', full_name='FindFriendRsp.basicRsp', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='targetId', full_name='FindFriendRsp.targetId', index=1,
-      number=2, type=5, cpp_type=1, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=176,
-  serialized_end=238,
-)
-
-
-_ADDFRIENDREQ = _descriptor.Descriptor(
-  name='AddFriendReq',
-  full_name='AddFriendReq',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='basicReq', full_name='AddFriendReq.basicReq', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=240,
-  serialized_end=283,
-)
-
-
-_TALKTOREQ = _descriptor.Descriptor(
-  name='TalkToReq',
-  full_name='TalkToReq',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=285,
-  serialized_end=296,
-)
-
-
-_MAKEGROUPREQ = _descriptor.Descriptor(
-  name='MakeGroupReq',
-  full_name='MakeGroupReq',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=298,
-  serialized_end=312,
-)
-
-
-_FINDOTHERSREQ = _descriptor.Descriptor(
-  name='FindOthersReq',
-  full_name='FindOthersReq',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=314,
-  serialized_end=329,
-)
-
-
-_FINDOTHERSRSP = _descriptor.Descriptor(
-  name='FindOthersRsp',
-  full_name='FindOthersRsp',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=331,
-  serialized_end=346,
-)
-
-
-_SETICONREQ = _descriptor.Descriptor(
-  name='SetIconReq',
-  full_name='SetIconReq',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=348,
-  serialized_end=360,
-)
-
-
-_SETNICKNAMEREQ = _descriptor.Descriptor(
-  name='SetNickNameReq',
-  full_name='SetNickNameReq',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=362,
-  serialized_end=378,
-)
-
-_FINDFRIENDREQ.fields_by_name['basicReq'].message_type = _BASICREQ
-_FINDFRIENDRSP.fields_by_name['basicRsp'].message_type = _BASICRSP
-_ADDFRIENDREQ.fields_by_name['basicReq'].message_type = _BASICREQ
-DESCRIPTOR.message_types_by_name['BasicReq'] = _BASICREQ
-DESCRIPTOR.message_types_by_name['BasicRsp'] = _BASICRSP
-DESCRIPTOR.message_types_by_name['FindFriendReq'] = _FINDFRIENDREQ
-DESCRIPTOR.message_types_by_name['FindFriendRsp'] = _FINDFRIENDRSP
-DESCRIPTOR.message_types_by_name['AddFriendReq'] = _ADDFRIENDREQ
-DESCRIPTOR.message_types_by_name['TalkToReq'] = _TALKTOREQ
-DESCRIPTOR.message_types_by_name['MakeGroupReq'] = _MAKEGROUPREQ
-DESCRIPTOR.message_types_by_name['FindOthersReq'] = _FINDOTHERSREQ
-DESCRIPTOR.message_types_by_name['FindOthersRsp'] = _FINDOTHERSRSP
-DESCRIPTOR.message_types_by_name['SetIconReq'] = _SETICONREQ
-DESCRIPTOR.message_types_by_name['SetNickNameReq'] = _SETNICKNAMEREQ
+_LOCALDATA.fields_by_name['user'].message_type = _BASICUSERDATA
+_LOCALDATA.fields_by_name['messages'].message_type = _MESSAGE
+DESCRIPTOR.message_types_by_name['UserDataReq'] = _USERDATAREQ
+DESCRIPTOR.message_types_by_name['UserDataRsp'] = _USERDATARSP
+DESCRIPTOR.message_types_by_name['BasicUserData'] = _BASICUSERDATA
+DESCRIPTOR.message_types_by_name['LocalData'] = _LOCALDATA
+DESCRIPTOR.message_types_by_name['Message'] = _MESSAGE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
-BasicReq = _reflection.GeneratedProtocolMessageType('BasicReq', (_message.Message,), {
-  'DESCRIPTOR' : _BASICREQ,
+UserDataReq = _reflection.GeneratedProtocolMessageType('UserDataReq', (_message.Message,), {
+  'DESCRIPTOR' : _USERDATAREQ,
   '__module__' : 'Basic_pb2'
-  # @@protoc_insertion_point(class_scope:BasicReq)
+  # @@protoc_insertion_point(class_scope:UserDataReq)
   })
-_sym_db.RegisterMessage(BasicReq)
+_sym_db.RegisterMessage(UserDataReq)
 
-BasicRsp = _reflection.GeneratedProtocolMessageType('BasicRsp', (_message.Message,), {
-  'DESCRIPTOR' : _BASICRSP,
+UserDataRsp = _reflection.GeneratedProtocolMessageType('UserDataRsp', (_message.Message,), {
+  'DESCRIPTOR' : _USERDATARSP,
   '__module__' : 'Basic_pb2'
-  # @@protoc_insertion_point(class_scope:BasicRsp)
+  # @@protoc_insertion_point(class_scope:UserDataRsp)
   })
-_sym_db.RegisterMessage(BasicRsp)
+_sym_db.RegisterMessage(UserDataRsp)
 
-FindFriendReq = _reflection.GeneratedProtocolMessageType('FindFriendReq', (_message.Message,), {
-  'DESCRIPTOR' : _FINDFRIENDREQ,
+BasicUserData = _reflection.GeneratedProtocolMessageType('BasicUserData', (_message.Message,), {
+  'DESCRIPTOR' : _BASICUSERDATA,
   '__module__' : 'Basic_pb2'
-  # @@protoc_insertion_point(class_scope:FindFriendReq)
+  # @@protoc_insertion_point(class_scope:BasicUserData)
   })
-_sym_db.RegisterMessage(FindFriendReq)
+_sym_db.RegisterMessage(BasicUserData)
 
-FindFriendRsp = _reflection.GeneratedProtocolMessageType('FindFriendRsp', (_message.Message,), {
-  'DESCRIPTOR' : _FINDFRIENDRSP,
+LocalData = _reflection.GeneratedProtocolMessageType('LocalData', (_message.Message,), {
+  'DESCRIPTOR' : _LOCALDATA,
   '__module__' : 'Basic_pb2'
-  # @@protoc_insertion_point(class_scope:FindFriendRsp)
+  # @@protoc_insertion_point(class_scope:LocalData)
   })
-_sym_db.RegisterMessage(FindFriendRsp)
+_sym_db.RegisterMessage(LocalData)
 
-AddFriendReq = _reflection.GeneratedProtocolMessageType('AddFriendReq', (_message.Message,), {
-  'DESCRIPTOR' : _ADDFRIENDREQ,
+Message = _reflection.GeneratedProtocolMessageType('Message', (_message.Message,), {
+  'DESCRIPTOR' : _MESSAGE,
   '__module__' : 'Basic_pb2'
-  # @@protoc_insertion_point(class_scope:AddFriendReq)
+  # @@protoc_insertion_point(class_scope:Message)
   })
-_sym_db.RegisterMessage(AddFriendReq)
-
-TalkToReq = _reflection.GeneratedProtocolMessageType('TalkToReq', (_message.Message,), {
-  'DESCRIPTOR' : _TALKTOREQ,
-  '__module__' : 'Basic_pb2'
-  # @@protoc_insertion_point(class_scope:TalkToReq)
-  })
-_sym_db.RegisterMessage(TalkToReq)
-
-MakeGroupReq = _reflection.GeneratedProtocolMessageType('MakeGroupReq', (_message.Message,), {
-  'DESCRIPTOR' : _MAKEGROUPREQ,
-  '__module__' : 'Basic_pb2'
-  # @@protoc_insertion_point(class_scope:MakeGroupReq)
-  })
-_sym_db.RegisterMessage(MakeGroupReq)
-
-FindOthersReq = _reflection.GeneratedProtocolMessageType('FindOthersReq', (_message.Message,), {
-  'DESCRIPTOR' : _FINDOTHERSREQ,
-  '__module__' : 'Basic_pb2'
-  # @@protoc_insertion_point(class_scope:FindOthersReq)
-  })
-_sym_db.RegisterMessage(FindOthersReq)
-
-FindOthersRsp = _reflection.GeneratedProtocolMessageType('FindOthersRsp', (_message.Message,), {
-  'DESCRIPTOR' : _FINDOTHERSRSP,
-  '__module__' : 'Basic_pb2'
-  # @@protoc_insertion_point(class_scope:FindOthersRsp)
-  })
-_sym_db.RegisterMessage(FindOthersRsp)
-
-SetIconReq = _reflection.GeneratedProtocolMessageType('SetIconReq', (_message.Message,), {
-  'DESCRIPTOR' : _SETICONREQ,
-  '__module__' : 'Basic_pb2'
-  # @@protoc_insertion_point(class_scope:SetIconReq)
-  })
-_sym_db.RegisterMessage(SetIconReq)
-
-SetNickNameReq = _reflection.GeneratedProtocolMessageType('SetNickNameReq', (_message.Message,), {
-  'DESCRIPTOR' : _SETNICKNAMEREQ,
-  '__module__' : 'Basic_pb2'
-  # @@protoc_insertion_point(class_scope:SetNickNameReq)
-  })
-_sym_db.RegisterMessage(SetNickNameReq)
+_sym_db.RegisterMessage(Message)
 
 
 DESCRIPTOR._options = None

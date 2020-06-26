@@ -2,62 +2,37 @@ syntax = "proto3"; // PB协议版本
 
 option java_package = "com.example.aiins.proto";
 
-// 基础询问信息
-message BasicReq {
-    int32 reqId = 1;
-    int32 reqCustomerId = 2;
+// 获取一系列用户基本信息请求
+message UserDataReq {
+    repeated int32 uid = 1;
 }
 
-// 基础回应信息
-message BasicRsp {
-    int32 resultCode = 1;
-    string msg = 2;
+// 一系列用户基本信息响应
+message UserDataRsp {
+    repeated string nickname = 1;
+    repeated string username = 2;
+    repeated bytes icon = 3;
 }
 
-// 查找好友请求
-message FindFriendReq {
-    BasicReq basicReq = 1;
-    string targetName = 2;
+// 每个用户都有的基本信息
+message BasicUserData {
+    string nickname = 1;
+    string username = 2;
+    string password = 3;
+    int32 uid = 4;
 }
 
-// 查找好友响应
-message FindFriendRsp {
-    BasicRsp basicRsp = 1;
-    int32 targetId = 2;
+// 本地需要保存的数据
+message LocalData {
+    BasicUserData user = 1;
+    bytes icon = 2; // 自己的头像
+    repeated Message messages = 3; // 对话信息
 }
 
-// 添加好友, 返回 BasicRsp
-message AddFriendReq {
-    BasicReq basicReq = 1;
-
-}
-
-// 发送信息给好友/群聊, 返回 BasicRsp
-message TalkToReq {
-
-}
-
-// 建立群聊, 返回 BasicRsp
-message MakeGroupReq {
-
-}
-
-// 获取推送信息请求
-message FindOthersReq {
-
-}
-
-// 获取推送信息响应
-message FindOthersRsp {
-
-}
-
-// 设置头像, 成功返回 BasicRsp
-message SetIconReq {
-
-}
-
-// 设置昵称, 成功返回 BasicReq
-message SetNickNameReq {
-
+// 每一个对话信息
+message Message {
+    int32 from = 1;
+    repeated int32 to = 2;
+    string text = 3;
+    bytes image = 4;
 }
