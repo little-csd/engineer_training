@@ -9,16 +9,19 @@ message SettingReq {
   SetPasswordReq passwordReq = 4;
 }
 
+// type = 0
 message SetIconReq {
   int32 uid = 1;
   bytes icon = 2;
 }
 
+// type = 1
 message SetNicknameReq {
   int32 uid = 1;
   string nickname = 2;
 }
 
+// type = 2
 message SetPasswordReq {
   int32 uid = 1;
   string old = 2;

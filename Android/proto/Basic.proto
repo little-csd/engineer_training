@@ -22,7 +22,7 @@ message BasicUserData {
     int32 uid = 4;
 }
 
-// 本地需要保存的数据
+// 本地需要保存的数据, 自己的信息已经隔开
 message LocalData {
     BasicUserData user = 1;
     bytes icon = 2; // 自己的头像

@@ -1,8 +1,10 @@
 package com.example.aiins.util
 
 import android.content.Context
+import android.net.Uri
 import android.util.Log
 import java.io.File
+import java.net.URI
 
 object FileUtil {
 
@@ -13,24 +15,30 @@ object FileUtil {
     fun init(context: Context) {
         filePath = "${context.filesDir.absolutePath}/"
         cachePath = "${context.cacheDir.absolutePath}/"
+        context.filesDir.toURI()
         Log.i(TAG, "init: $filePath  $cachePath")
     }
 
-    private fun getPathInFile(string: String): String {
+    fun getPathInFile(string: String): String {
         return filePath + string
     }
 
-    private fun getPathInCache(string: String): String {
+    fun getPathInCache(string: String): String {
         return cachePath + string
+    }
+
+    fun getUriInFile(name: String): Uri {
+        return Uri.parse("file://${getPathInFile(name)}")
     }
 
     fun readFileInFiles(name: String): ByteArray {
         val path = getPathInFile(name)
         val file = File(path)
         return if (!file.exists()) {
-            Log.e(TAG, "readFile: $path")
+            Log.i(TAG, "readFile: $path failed")
             ByteArray(0)
         } else {
+            Log.i(TAG, "read file at $path")
             file.readBytes()
         }
     }
@@ -49,6 +57,7 @@ object FileUtil {
 
     fun writeFileInFiles(data: ByteArray, name: String) {
         val path = getPathInFile(name)
+        Log.i(TAG, "write file at $path")
         writeToFile(data, path)
     }
 
