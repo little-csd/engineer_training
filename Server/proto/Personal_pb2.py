@@ -15,11 +15,11 @@ _sym_db = _symbol_database.Default()
 
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='Personal.proto',
-  package='',
+  package='aiins',
   syntax='proto3',
   serialized_options=b'\n\027com.example.aiins.proto',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x0ePersonal.proto\"\x84\x01\n\nSettingReq\x12\x0c\n\x04type\x18\x01 \x01(\x05\x12\x1c\n\x07iconReq\x18\x02 \x01(\x0b\x32\x0b.SetIconReq\x12$\n\x0bnicknameReq\x18\x03 \x01(\x0b\x32\x0f.SetNicknameReq\x12$\n\x0bpasswordReq\x18\x04 \x01(\x0b\x32\x0f.SetPasswordReq\"\'\n\nSetIconReq\x12\x0b\n\x03uid\x18\x01 \x01(\x05\x12\x0c\n\x04icon\x18\x02 \x01(\x0c\"/\n\x0eSetNicknameReq\x12\x0b\n\x03uid\x18\x01 \x01(\x05\x12\x10\n\x08nickname\x18\x02 \x01(\t\"7\n\x0eSetPasswordReq\x12\x0b\n\x03uid\x18\x01 \x01(\x05\x12\x0b\n\x03old\x18\x02 \x01(\t\x12\x0b\n\x03new\x18\x03 \x01(\t\"-\n\nSettingRsp\x12\x12\n\nresultCode\x18\x01 \x01(\x05\x12\x0b\n\x03msg\x18\x02 \x01(\tB\x19\n\x17\x63om.example.aiins.protob\x06proto3'
+  serialized_pb=b'\n\x0ePersonal.proto\x12\x05\x61iins\"\x96\x01\n\nSettingReq\x12\x0c\n\x04type\x18\x01 \x01(\x05\x12\"\n\x07iconReq\x18\x02 \x01(\x0b\x32\x11.aiins.SetIconReq\x12*\n\x0bnicknameReq\x18\x03 \x01(\x0b\x32\x15.aiins.SetNicknameReq\x12*\n\x0bpasswordReq\x18\x04 \x01(\x0b\x32\x15.aiins.SetPasswordReq\"\'\n\nSetIconReq\x12\x0b\n\x03uid\x18\x01 \x01(\x05\x12\x0c\n\x04icon\x18\x02 \x01(\x0c\"/\n\x0eSetNicknameReq\x12\x0b\n\x03uid\x18\x01 \x01(\x05\x12\x10\n\x08nickname\x18\x02 \x01(\t\"7\n\x0eSetPasswordReq\x12\x0b\n\x03uid\x18\x01 \x01(\x05\x12\x0b\n\x03old\x18\x02 \x01(\t\x12\x0b\n\x03new\x18\x03 \x01(\t\"-\n\nSettingRsp\x12\x12\n\nresultCode\x18\x01 \x01(\x05\x12\x0b\n\x03msg\x18\x02 \x01(\tB\x19\n\x17\x63om.example.aiins.protob\x06proto3'
 )
 
 
@@ -27,35 +27,35 @@ DESCRIPTOR = _descriptor.FileDescriptor(
 
 _SETTINGREQ = _descriptor.Descriptor(
   name='SettingReq',
-  full_name='SettingReq',
+  full_name='aiins.SettingReq',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='type', full_name='SettingReq.type', index=0,
+      name='type', full_name='aiins.SettingReq.type', index=0,
       number=1, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='iconReq', full_name='SettingReq.iconReq', index=1,
+      name='iconReq', full_name='aiins.SettingReq.iconReq', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='nicknameReq', full_name='SettingReq.nicknameReq', index=2,
+      name='nicknameReq', full_name='aiins.SettingReq.nicknameReq', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='passwordReq', full_name='SettingReq.passwordReq', index=3,
+      name='passwordReq', full_name='aiins.SettingReq.passwordReq', index=3,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -73,28 +73,28 @@ _SETTINGREQ = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=19,
-  serialized_end=151,
+  serialized_start=26,
+  serialized_end=176,
 )
 
 
 _SETICONREQ = _descriptor.Descriptor(
   name='SetIconReq',
-  full_name='SetIconReq',
+  full_name='aiins.SetIconReq',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='uid', full_name='SetIconReq.uid', index=0,
+      name='uid', full_name='aiins.SetIconReq.uid', index=0,
       number=1, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='icon', full_name='SetIconReq.icon', index=1,
+      name='icon', full_name='aiins.SetIconReq.icon', index=1,
       number=2, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
@@ -112,28 +112,28 @@ _SETICONREQ = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=153,
-  serialized_end=192,
+  serialized_start=178,
+  serialized_end=217,
 )
 
 
 _SETNICKNAMEREQ = _descriptor.Descriptor(
   name='SetNicknameReq',
-  full_name='SetNicknameReq',
+  full_name='aiins.SetNicknameReq',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='uid', full_name='SetNicknameReq.uid', index=0,
+      name='uid', full_name='aiins.SetNicknameReq.uid', index=0,
       number=1, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='nickname', full_name='SetNicknameReq.nickname', index=1,
+      name='nickname', full_name='aiins.SetNicknameReq.nickname', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -151,35 +151,35 @@ _SETNICKNAMEREQ = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=194,
-  serialized_end=241,
+  serialized_start=219,
+  serialized_end=266,
 )
 
 
 _SETPASSWORDREQ = _descriptor.Descriptor(
   name='SetPasswordReq',
-  full_name='SetPasswordReq',
+  full_name='aiins.SetPasswordReq',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='uid', full_name='SetPasswordReq.uid', index=0,
+      name='uid', full_name='aiins.SetPasswordReq.uid', index=0,
       number=1, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='old', full_name='SetPasswordReq.old', index=1,
+      name='old', full_name='aiins.SetPasswordReq.old', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='new', full_name='SetPasswordReq.new', index=2,
+      name='new', full_name='aiins.SetPasswordReq.new', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -197,28 +197,28 @@ _SETPASSWORDREQ = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=243,
-  serialized_end=298,
+  serialized_start=268,
+  serialized_end=323,
 )
 
 
 _SETTINGRSP = _descriptor.Descriptor(
   name='SettingRsp',
-  full_name='SettingRsp',
+  full_name='aiins.SettingRsp',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='resultCode', full_name='SettingRsp.resultCode', index=0,
+      name='resultCode', full_name='aiins.SettingRsp.resultCode', index=0,
       number=1, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='msg', full_name='SettingRsp.msg', index=1,
+      name='msg', full_name='aiins.SettingRsp.msg', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -236,8 +236,8 @@ _SETTINGRSP = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=300,
-  serialized_end=345,
+  serialized_start=325,
+  serialized_end=370,
 )
 
 _SETTINGREQ.fields_by_name['iconReq'].message_type = _SETICONREQ
@@ -253,35 +253,35 @@ _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 SettingReq = _reflection.GeneratedProtocolMessageType('SettingReq', (_message.Message,), {
   'DESCRIPTOR' : _SETTINGREQ,
   '__module__' : 'Personal_pb2'
-  # @@protoc_insertion_point(class_scope:SettingReq)
+  # @@protoc_insertion_point(class_scope:aiins.SettingReq)
   })
 _sym_db.RegisterMessage(SettingReq)
 
 SetIconReq = _reflection.GeneratedProtocolMessageType('SetIconReq', (_message.Message,), {
   'DESCRIPTOR' : _SETICONREQ,
   '__module__' : 'Personal_pb2'
-  # @@protoc_insertion_point(class_scope:SetIconReq)
+  # @@protoc_insertion_point(class_scope:aiins.SetIconReq)
   })
 _sym_db.RegisterMessage(SetIconReq)
 
 SetNicknameReq = _reflection.GeneratedProtocolMessageType('SetNicknameReq', (_message.Message,), {
   'DESCRIPTOR' : _SETNICKNAMEREQ,
   '__module__' : 'Personal_pb2'
-  # @@protoc_insertion_point(class_scope:SetNicknameReq)
+  # @@protoc_insertion_point(class_scope:aiins.SetNicknameReq)
   })
 _sym_db.RegisterMessage(SetNicknameReq)
 
 SetPasswordReq = _reflection.GeneratedProtocolMessageType('SetPasswordReq', (_message.Message,), {
   'DESCRIPTOR' : _SETPASSWORDREQ,
   '__module__' : 'Personal_pb2'
-  # @@protoc_insertion_point(class_scope:SetPasswordReq)
+  # @@protoc_insertion_point(class_scope:aiins.SetPasswordReq)
   })
 _sym_db.RegisterMessage(SetPasswordReq)
 
 SettingRsp = _reflection.GeneratedProtocolMessageType('SettingRsp', (_message.Message,), {
   'DESCRIPTOR' : _SETTINGRSP,
   '__module__' : 'Personal_pb2'
-  # @@protoc_insertion_point(class_scope:SettingRsp)
+  # @@protoc_insertion_point(class_scope:aiins.SettingRsp)
   })
 _sym_db.RegisterMessage(SettingRsp)
 

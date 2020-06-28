@@ -15,7 +15,7 @@ public final class Basic {
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   public interface UserDataReqOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:UserDataReq)
+      // @@protoc_insertion_point(interface_extends:aiins.UserDataReq)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -34,17 +34,23 @@ public final class Basic {
      * @return The uid at the given index.
      */
     int getUid(int index);
+
+    /**
+     * <code>int64 time = 2;</code>
+     * @return The time.
+     */
+    long getTime();
   }
   /**
    * <pre>
    * 获取一系列用户基本信息请求
    * </pre>
    *
-   * Protobuf type {@code UserDataReq}
+   * Protobuf type {@code aiins.UserDataReq}
    */
   public static final class UserDataReq extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:UserDataReq)
+      // @@protoc_insertion_point(message_implements:aiins.UserDataReq)
       UserDataReqOrBuilder {
   private static final long serialVersionUID = 0L;
     // Use UserDataReq.newBuilder() to construct.
@@ -107,6 +113,11 @@ public final class Basic {
               input.popLimit(limit);
               break;
             }
+            case 16: {
+
+              time_ = input.readInt64();
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -131,13 +142,13 @@ public final class Basic {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.example.aiins.proto.Basic.internal_static_UserDataReq_descriptor;
+      return com.example.aiins.proto.Basic.internal_static_aiins_UserDataReq_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.example.aiins.proto.Basic.internal_static_UserDataReq_fieldAccessorTable
+      return com.example.aiins.proto.Basic.internal_static_aiins_UserDataReq_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.example.aiins.proto.Basic.UserDataReq.class, com.example.aiins.proto.Basic.UserDataReq.Builder.class);
     }
@@ -170,6 +181,17 @@ public final class Basic {
     }
     private int uidMemoizedSerializedSize = -1;
 
+    public static final int TIME_FIELD_NUMBER = 2;
+    private long time_;
+    /**
+     * <code>int64 time = 2;</code>
+     * @return The time.
+     */
+    @java.lang.Override
+    public long getTime() {
+      return time_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -191,6 +213,9 @@ public final class Basic {
       }
       for (int i = 0; i < uid_.size(); i++) {
         output.writeInt32NoTag(uid_.getInt(i));
+      }
+      if (time_ != 0L) {
+        output.writeInt64(2, time_);
       }
       unknownFields.writeTo(output);
     }
@@ -215,6 +240,10 @@ public final class Basic {
         }
         uidMemoizedSerializedSize = dataSize;
       }
+      if (time_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(2, time_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -232,6 +261,8 @@ public final class Basic {
 
       if (!getUidList()
           .equals(other.getUidList())) return false;
+      if (getTime()
+          != other.getTime()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -247,6 +278,9 @@ public final class Basic {
         hash = (37 * hash) + UID_FIELD_NUMBER;
         hash = (53 * hash) + getUidList().hashCode();
       }
+      hash = (37 * hash) + TIME_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getTime());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -347,21 +381,21 @@ public final class Basic {
      * 获取一系列用户基本信息请求
      * </pre>
      *
-     * Protobuf type {@code UserDataReq}
+     * Protobuf type {@code aiins.UserDataReq}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:UserDataReq)
+        // @@protoc_insertion_point(builder_implements:aiins.UserDataReq)
         com.example.aiins.proto.Basic.UserDataReqOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.example.aiins.proto.Basic.internal_static_UserDataReq_descriptor;
+        return com.example.aiins.proto.Basic.internal_static_aiins_UserDataReq_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.example.aiins.proto.Basic.internal_static_UserDataReq_fieldAccessorTable
+        return com.example.aiins.proto.Basic.internal_static_aiins_UserDataReq_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
                 com.example.aiins.proto.Basic.UserDataReq.class, com.example.aiins.proto.Basic.UserDataReq.Builder.class);
       }
@@ -386,13 +420,15 @@ public final class Basic {
         super.clear();
         uid_ = emptyIntList();
         bitField0_ = (bitField0_ & ~0x00000001);
+        time_ = 0L;
+
         return this;
       }
 
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.example.aiins.proto.Basic.internal_static_UserDataReq_descriptor;
+        return com.example.aiins.proto.Basic.internal_static_aiins_UserDataReq_descriptor;
       }
 
       @java.lang.Override
@@ -418,6 +454,7 @@ public final class Basic {
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.uid_ = uid_;
+        result.time_ = time_;
         onBuilt();
         return result;
       }
@@ -475,6 +512,9 @@ public final class Basic {
             uid_.addAll(other.uid_);
           }
           onChanged();
+        }
+        if (other.getTime() != 0L) {
+          setTime(other.getTime());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -584,6 +624,37 @@ public final class Basic {
         onChanged();
         return this;
       }
+
+      private long time_ ;
+      /**
+       * <code>int64 time = 2;</code>
+       * @return The time.
+       */
+      @java.lang.Override
+      public long getTime() {
+        return time_;
+      }
+      /**
+       * <code>int64 time = 2;</code>
+       * @param value The time to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTime(long value) {
+        
+        time_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int64 time = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTime() {
+        
+        time_ = 0L;
+        onChanged();
+        return this;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -597,10 +668,10 @@ public final class Basic {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:UserDataReq)
+      // @@protoc_insertion_point(builder_scope:aiins.UserDataReq)
     }
 
-    // @@protoc_insertion_point(class_scope:UserDataReq)
+    // @@protoc_insertion_point(class_scope:aiins.UserDataReq)
     private static final com.example.aiins.proto.Basic.UserDataReq DEFAULT_INSTANCE;
     static {
       DEFAULT_INSTANCE = new com.example.aiins.proto.Basic.UserDataReq();
@@ -638,7 +709,7 @@ public final class Basic {
   }
 
   public interface UserDataRspOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:UserDataRsp)
+      // @@protoc_insertion_point(interface_extends:aiins.UserDataRsp)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -707,17 +778,34 @@ public final class Basic {
      * @return The icon at the given index.
      */
     com.google.protobuf.ByteString getIcon(int index);
+
+    /**
+     * <code>repeated int32 uid = 4;</code>
+     * @return A list containing the uid.
+     */
+    java.util.List<java.lang.Integer> getUidList();
+    /**
+     * <code>repeated int32 uid = 4;</code>
+     * @return The count of uid.
+     */
+    int getUidCount();
+    /**
+     * <code>repeated int32 uid = 4;</code>
+     * @param index The index of the element to return.
+     * @return The uid at the given index.
+     */
+    int getUid(int index);
   }
   /**
    * <pre>
-   * 一系列用户基本信息响应
+   * 一系列用户基本信息响应, 根据时间戳返回
    * </pre>
    *
-   * Protobuf type {@code UserDataRsp}
+   * Protobuf type {@code aiins.UserDataRsp}
    */
   public static final class UserDataRsp extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:UserDataRsp)
+      // @@protoc_insertion_point(message_implements:aiins.UserDataRsp)
       UserDataRspOrBuilder {
   private static final long serialVersionUID = 0L;
     // Use UserDataRsp.newBuilder() to construct.
@@ -728,6 +816,7 @@ public final class Basic {
       nickname_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       username_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       icon_ = java.util.Collections.emptyList();
+      uid_ = emptyIntList();
     }
 
     @java.lang.Override
@@ -787,6 +876,27 @@ public final class Basic {
               icon_.add(input.readBytes());
               break;
             }
+            case 32: {
+              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+                uid_ = newIntList();
+                mutable_bitField0_ |= 0x00000008;
+              }
+              uid_.addInt(input.readInt32());
+              break;
+            }
+            case 34: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000008) != 0) && input.getBytesUntilLimit() > 0) {
+                uid_ = newIntList();
+                mutable_bitField0_ |= 0x00000008;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                uid_.addInt(input.readInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -811,19 +921,22 @@ public final class Basic {
         if (((mutable_bitField0_ & 0x00000004) != 0)) {
           icon_ = java.util.Collections.unmodifiableList(icon_); // C
         }
+        if (((mutable_bitField0_ & 0x00000008) != 0)) {
+          uid_.makeImmutable(); // C
+        }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.example.aiins.proto.Basic.internal_static_UserDataRsp_descriptor;
+      return com.example.aiins.proto.Basic.internal_static_aiins_UserDataRsp_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.example.aiins.proto.Basic.internal_static_UserDataRsp_fieldAccessorTable
+      return com.example.aiins.proto.Basic.internal_static_aiins_UserDataRsp_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.example.aiins.proto.Basic.UserDataRsp.class, com.example.aiins.proto.Basic.UserDataRsp.Builder.class);
     }
@@ -925,6 +1038,34 @@ public final class Basic {
       return icon_.get(index);
     }
 
+    public static final int UID_FIELD_NUMBER = 4;
+    private com.google.protobuf.Internal.IntList uid_;
+    /**
+     * <code>repeated int32 uid = 4;</code>
+     * @return A list containing the uid.
+     */
+    @java.lang.Override
+    public java.util.List<java.lang.Integer>
+        getUidList() {
+      return uid_;
+    }
+    /**
+     * <code>repeated int32 uid = 4;</code>
+     * @return The count of uid.
+     */
+    public int getUidCount() {
+      return uid_.size();
+    }
+    /**
+     * <code>repeated int32 uid = 4;</code>
+     * @param index The index of the element to return.
+     * @return The uid at the given index.
+     */
+    public int getUid(int index) {
+      return uid_.getInt(index);
+    }
+    private int uidMemoizedSerializedSize = -1;
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -939,6 +1080,7 @@ public final class Basic {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      getSerializedSize();
       for (int i = 0; i < nickname_.size(); i++) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, nickname_.getRaw(i));
       }
@@ -947,6 +1089,13 @@ public final class Basic {
       }
       for (int i = 0; i < icon_.size(); i++) {
         output.writeBytes(3, icon_.get(i));
+      }
+      if (getUidList().size() > 0) {
+        output.writeUInt32NoTag(34);
+        output.writeUInt32NoTag(uidMemoizedSerializedSize);
+      }
+      for (int i = 0; i < uid_.size(); i++) {
+        output.writeInt32NoTag(uid_.getInt(i));
       }
       unknownFields.writeTo(output);
     }
@@ -982,6 +1131,20 @@ public final class Basic {
         size += dataSize;
         size += 1 * getIconList().size();
       }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < uid_.size(); i++) {
+          dataSize += com.google.protobuf.CodedOutputStream
+            .computeInt32SizeNoTag(uid_.getInt(i));
+        }
+        size += dataSize;
+        if (!getUidList().isEmpty()) {
+          size += 1;
+          size += com.google.protobuf.CodedOutputStream
+              .computeInt32SizeNoTag(dataSize);
+        }
+        uidMemoizedSerializedSize = dataSize;
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -1003,6 +1166,8 @@ public final class Basic {
           .equals(other.getUsernameList())) return false;
       if (!getIconList()
           .equals(other.getIconList())) return false;
+      if (!getUidList()
+          .equals(other.getUidList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -1025,6 +1190,10 @@ public final class Basic {
       if (getIconCount() > 0) {
         hash = (37 * hash) + ICON_FIELD_NUMBER;
         hash = (53 * hash) + getIconList().hashCode();
+      }
+      if (getUidCount() > 0) {
+        hash = (37 * hash) + UID_FIELD_NUMBER;
+        hash = (53 * hash) + getUidList().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -1123,24 +1292,24 @@ public final class Basic {
     }
     /**
      * <pre>
-     * 一系列用户基本信息响应
+     * 一系列用户基本信息响应, 根据时间戳返回
      * </pre>
      *
-     * Protobuf type {@code UserDataRsp}
+     * Protobuf type {@code aiins.UserDataRsp}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:UserDataRsp)
+        // @@protoc_insertion_point(builder_implements:aiins.UserDataRsp)
         com.example.aiins.proto.Basic.UserDataRspOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.example.aiins.proto.Basic.internal_static_UserDataRsp_descriptor;
+        return com.example.aiins.proto.Basic.internal_static_aiins_UserDataRsp_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.example.aiins.proto.Basic.internal_static_UserDataRsp_fieldAccessorTable
+        return com.example.aiins.proto.Basic.internal_static_aiins_UserDataRsp_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
                 com.example.aiins.proto.Basic.UserDataRsp.class, com.example.aiins.proto.Basic.UserDataRsp.Builder.class);
       }
@@ -1169,13 +1338,15 @@ public final class Basic {
         bitField0_ = (bitField0_ & ~0x00000002);
         icon_ = java.util.Collections.emptyList();
         bitField0_ = (bitField0_ & ~0x00000004);
+        uid_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000008);
         return this;
       }
 
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.example.aiins.proto.Basic.internal_static_UserDataRsp_descriptor;
+        return com.example.aiins.proto.Basic.internal_static_aiins_UserDataRsp_descriptor;
       }
 
       @java.lang.Override
@@ -1211,6 +1382,11 @@ public final class Basic {
           bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.icon_ = icon_;
+        if (((bitField0_ & 0x00000008) != 0)) {
+          uid_.makeImmutable();
+          bitField0_ = (bitField0_ & ~0x00000008);
+        }
+        result.uid_ = uid_;
         onBuilt();
         return result;
       }
@@ -1286,6 +1462,16 @@ public final class Basic {
           } else {
             ensureIconIsMutable();
             icon_.addAll(other.icon_);
+          }
+          onChanged();
+        }
+        if (!other.uid_.isEmpty()) {
+          if (uid_.isEmpty()) {
+            uid_ = other.uid_;
+            bitField0_ = (bitField0_ & ~0x00000008);
+          } else {
+            ensureUidIsMutable();
+            uid_.addAll(other.uid_);
           }
           onChanged();
         }
@@ -1623,6 +1809,85 @@ public final class Basic {
         onChanged();
         return this;
       }
+
+      private com.google.protobuf.Internal.IntList uid_ = emptyIntList();
+      private void ensureUidIsMutable() {
+        if (!((bitField0_ & 0x00000008) != 0)) {
+          uid_ = mutableCopy(uid_);
+          bitField0_ |= 0x00000008;
+         }
+      }
+      /**
+       * <code>repeated int32 uid = 4;</code>
+       * @return A list containing the uid.
+       */
+      public java.util.List<java.lang.Integer>
+          getUidList() {
+        return ((bitField0_ & 0x00000008) != 0) ?
+                 java.util.Collections.unmodifiableList(uid_) : uid_;
+      }
+      /**
+       * <code>repeated int32 uid = 4;</code>
+       * @return The count of uid.
+       */
+      public int getUidCount() {
+        return uid_.size();
+      }
+      /**
+       * <code>repeated int32 uid = 4;</code>
+       * @param index The index of the element to return.
+       * @return The uid at the given index.
+       */
+      public int getUid(int index) {
+        return uid_.getInt(index);
+      }
+      /**
+       * <code>repeated int32 uid = 4;</code>
+       * @param index The index to set the value at.
+       * @param value The uid to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUid(
+          int index, int value) {
+        ensureUidIsMutable();
+        uid_.setInt(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated int32 uid = 4;</code>
+       * @param value The uid to add.
+       * @return This builder for chaining.
+       */
+      public Builder addUid(int value) {
+        ensureUidIsMutable();
+        uid_.addInt(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated int32 uid = 4;</code>
+       * @param values The uid to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllUid(
+          java.lang.Iterable<? extends java.lang.Integer> values) {
+        ensureUidIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, uid_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated int32 uid = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearUid() {
+        uid_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000008);
+        onChanged();
+        return this;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -1636,10 +1901,10 @@ public final class Basic {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:UserDataRsp)
+      // @@protoc_insertion_point(builder_scope:aiins.UserDataRsp)
     }
 
-    // @@protoc_insertion_point(class_scope:UserDataRsp)
+    // @@protoc_insertion_point(class_scope:aiins.UserDataRsp)
     private static final com.example.aiins.proto.Basic.UserDataRsp DEFAULT_INSTANCE;
     static {
       DEFAULT_INSTANCE = new com.example.aiins.proto.Basic.UserDataRsp();
@@ -1677,7 +1942,7 @@ public final class Basic {
   }
 
   public interface BasicUserDataOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:BasicUserData)
+      // @@protoc_insertion_point(interface_extends:aiins.BasicUserData)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -1727,11 +1992,11 @@ public final class Basic {
    * 每个用户都有的基本信息
    * </pre>
    *
-   * Protobuf type {@code BasicUserData}
+   * Protobuf type {@code aiins.BasicUserData}
    */
   public static final class BasicUserData extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:BasicUserData)
+      // @@protoc_insertion_point(message_implements:aiins.BasicUserData)
       BasicUserDataOrBuilder {
   private static final long serialVersionUID = 0L;
     // Use BasicUserData.newBuilder() to construct.
@@ -1818,13 +2083,13 @@ public final class Basic {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.example.aiins.proto.Basic.internal_static_BasicUserData_descriptor;
+      return com.example.aiins.proto.Basic.internal_static_aiins_BasicUserData_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.example.aiins.proto.Basic.internal_static_BasicUserData_fieldAccessorTable
+      return com.example.aiins.proto.Basic.internal_static_aiins_BasicUserData_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.example.aiins.proto.Basic.BasicUserData.class, com.example.aiins.proto.Basic.BasicUserData.Builder.class);
     }
@@ -2144,21 +2409,21 @@ public final class Basic {
      * 每个用户都有的基本信息
      * </pre>
      *
-     * Protobuf type {@code BasicUserData}
+     * Protobuf type {@code aiins.BasicUserData}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:BasicUserData)
+        // @@protoc_insertion_point(builder_implements:aiins.BasicUserData)
         com.example.aiins.proto.Basic.BasicUserDataOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.example.aiins.proto.Basic.internal_static_BasicUserData_descriptor;
+        return com.example.aiins.proto.Basic.internal_static_aiins_BasicUserData_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.example.aiins.proto.Basic.internal_static_BasicUserData_fieldAccessorTable
+        return com.example.aiins.proto.Basic.internal_static_aiins_BasicUserData_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
                 com.example.aiins.proto.Basic.BasicUserData.class, com.example.aiins.proto.Basic.BasicUserData.Builder.class);
       }
@@ -2195,7 +2460,7 @@ public final class Basic {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.example.aiins.proto.Basic.internal_static_BasicUserData_descriptor;
+        return com.example.aiins.proto.Basic.internal_static_aiins_BasicUserData_descriptor;
       }
 
       @java.lang.Override
@@ -2582,10 +2847,10 @@ public final class Basic {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:BasicUserData)
+      // @@protoc_insertion_point(builder_scope:aiins.BasicUserData)
     }
 
-    // @@protoc_insertion_point(class_scope:BasicUserData)
+    // @@protoc_insertion_point(class_scope:aiins.BasicUserData)
     private static final com.example.aiins.proto.Basic.BasicUserData DEFAULT_INSTANCE;
     static {
       DEFAULT_INSTANCE = new com.example.aiins.proto.Basic.BasicUserData();
@@ -2623,40 +2888,15 @@ public final class Basic {
   }
 
   public interface LocalDataOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:LocalData)
+      // @@protoc_insertion_point(interface_extends:aiins.LocalData)
       com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>.BasicUserData user = 1;</code>
-     * @return Whether the user field is set.
-     */
-    boolean hasUser();
-    /**
-     * <code>.BasicUserData user = 1;</code>
-     * @return The user.
-     */
-    com.example.aiins.proto.Basic.BasicUserData getUser();
-    /**
-     * <code>.BasicUserData user = 1;</code>
-     */
-    com.example.aiins.proto.Basic.BasicUserDataOrBuilder getUserOrBuilder();
-
-    /**
-     * <pre>
-     * 自己的头像
-     * </pre>
-     *
-     * <code>bytes icon = 2;</code>
-     * @return The icon.
-     */
-    com.google.protobuf.ByteString getIcon();
 
     /**
      * <pre>
      * 对话信息
      * </pre>
      *
-     * <code>repeated .Message messages = 3;</code>
+     * <code>repeated .aiins.Message messages = 3;</code>
      */
     java.util.List<com.example.aiins.proto.Basic.Message> 
         getMessagesList();
@@ -2665,7 +2905,7 @@ public final class Basic {
      * 对话信息
      * </pre>
      *
-     * <code>repeated .Message messages = 3;</code>
+     * <code>repeated .aiins.Message messages = 3;</code>
      */
     com.example.aiins.proto.Basic.Message getMessages(int index);
     /**
@@ -2673,7 +2913,7 @@ public final class Basic {
      * 对话信息
      * </pre>
      *
-     * <code>repeated .Message messages = 3;</code>
+     * <code>repeated .aiins.Message messages = 3;</code>
      */
     int getMessagesCount();
     /**
@@ -2681,7 +2921,7 @@ public final class Basic {
      * 对话信息
      * </pre>
      *
-     * <code>repeated .Message messages = 3;</code>
+     * <code>repeated .aiins.Message messages = 3;</code>
      */
     java.util.List<? extends com.example.aiins.proto.Basic.MessageOrBuilder> 
         getMessagesOrBuilderList();
@@ -2690,21 +2930,21 @@ public final class Basic {
      * 对话信息
      * </pre>
      *
-     * <code>repeated .Message messages = 3;</code>
+     * <code>repeated .aiins.Message messages = 3;</code>
      */
     com.example.aiins.proto.Basic.MessageOrBuilder getMessagesOrBuilder(
         int index);
   }
   /**
    * <pre>
-   * 本地需要保存的数据
+   * 本地需要保存的数据, 自己的信息已经隔开
    * </pre>
    *
-   * Protobuf type {@code LocalData}
+   * Protobuf type {@code aiins.LocalData}
    */
   public static final class LocalData extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:LocalData)
+      // @@protoc_insertion_point(message_implements:aiins.LocalData)
       LocalDataOrBuilder {
   private static final long serialVersionUID = 0L;
     // Use LocalData.newBuilder() to construct.
@@ -2712,7 +2952,6 @@ public final class Basic {
       super(builder);
     }
     private LocalData() {
-      icon_ = com.google.protobuf.ByteString.EMPTY;
       messages_ = java.util.Collections.emptyList();
     }
 
@@ -2747,24 +2986,6 @@ public final class Basic {
             case 0:
               done = true;
               break;
-            case 10: {
-              com.example.aiins.proto.Basic.BasicUserData.Builder subBuilder = null;
-              if (user_ != null) {
-                subBuilder = user_.toBuilder();
-              }
-              user_ = input.readMessage(com.example.aiins.proto.Basic.BasicUserData.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(user_);
-                user_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 18: {
-
-              icon_ = input.readBytes();
-              break;
-            }
             case 26: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 messages_ = new java.util.ArrayList<com.example.aiins.proto.Basic.Message>();
@@ -2798,56 +3019,15 @@ public final class Basic {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.example.aiins.proto.Basic.internal_static_LocalData_descriptor;
+      return com.example.aiins.proto.Basic.internal_static_aiins_LocalData_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.example.aiins.proto.Basic.internal_static_LocalData_fieldAccessorTable
+      return com.example.aiins.proto.Basic.internal_static_aiins_LocalData_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.example.aiins.proto.Basic.LocalData.class, com.example.aiins.proto.Basic.LocalData.Builder.class);
-    }
-
-    public static final int USER_FIELD_NUMBER = 1;
-    private com.example.aiins.proto.Basic.BasicUserData user_;
-    /**
-     * <code>.BasicUserData user = 1;</code>
-     * @return Whether the user field is set.
-     */
-    @java.lang.Override
-    public boolean hasUser() {
-      return user_ != null;
-    }
-    /**
-     * <code>.BasicUserData user = 1;</code>
-     * @return The user.
-     */
-    @java.lang.Override
-    public com.example.aiins.proto.Basic.BasicUserData getUser() {
-      return user_ == null ? com.example.aiins.proto.Basic.BasicUserData.getDefaultInstance() : user_;
-    }
-    /**
-     * <code>.BasicUserData user = 1;</code>
-     */
-    @java.lang.Override
-    public com.example.aiins.proto.Basic.BasicUserDataOrBuilder getUserOrBuilder() {
-      return getUser();
-    }
-
-    public static final int ICON_FIELD_NUMBER = 2;
-    private com.google.protobuf.ByteString icon_;
-    /**
-     * <pre>
-     * 自己的头像
-     * </pre>
-     *
-     * <code>bytes icon = 2;</code>
-     * @return The icon.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString getIcon() {
-      return icon_;
     }
 
     public static final int MESSAGES_FIELD_NUMBER = 3;
@@ -2857,7 +3037,7 @@ public final class Basic {
      * 对话信息
      * </pre>
      *
-     * <code>repeated .Message messages = 3;</code>
+     * <code>repeated .aiins.Message messages = 3;</code>
      */
     @java.lang.Override
     public java.util.List<com.example.aiins.proto.Basic.Message> getMessagesList() {
@@ -2868,7 +3048,7 @@ public final class Basic {
      * 对话信息
      * </pre>
      *
-     * <code>repeated .Message messages = 3;</code>
+     * <code>repeated .aiins.Message messages = 3;</code>
      */
     @java.lang.Override
     public java.util.List<? extends com.example.aiins.proto.Basic.MessageOrBuilder> 
@@ -2880,7 +3060,7 @@ public final class Basic {
      * 对话信息
      * </pre>
      *
-     * <code>repeated .Message messages = 3;</code>
+     * <code>repeated .aiins.Message messages = 3;</code>
      */
     @java.lang.Override
     public int getMessagesCount() {
@@ -2891,7 +3071,7 @@ public final class Basic {
      * 对话信息
      * </pre>
      *
-     * <code>repeated .Message messages = 3;</code>
+     * <code>repeated .aiins.Message messages = 3;</code>
      */
     @java.lang.Override
     public com.example.aiins.proto.Basic.Message getMessages(int index) {
@@ -2902,7 +3082,7 @@ public final class Basic {
      * 对话信息
      * </pre>
      *
-     * <code>repeated .Message messages = 3;</code>
+     * <code>repeated .aiins.Message messages = 3;</code>
      */
     @java.lang.Override
     public com.example.aiins.proto.Basic.MessageOrBuilder getMessagesOrBuilder(
@@ -2924,12 +3104,6 @@ public final class Basic {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (user_ != null) {
-        output.writeMessage(1, getUser());
-      }
-      if (!icon_.isEmpty()) {
-        output.writeBytes(2, icon_);
-      }
       for (int i = 0; i < messages_.size(); i++) {
         output.writeMessage(3, messages_.get(i));
       }
@@ -2942,14 +3116,6 @@ public final class Basic {
       if (size != -1) return size;
 
       size = 0;
-      if (user_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, getUser());
-      }
-      if (!icon_.isEmpty()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(2, icon_);
-      }
       for (int i = 0; i < messages_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(3, messages_.get(i));
@@ -2969,13 +3135,6 @@ public final class Basic {
       }
       com.example.aiins.proto.Basic.LocalData other = (com.example.aiins.proto.Basic.LocalData) obj;
 
-      if (hasUser() != other.hasUser()) return false;
-      if (hasUser()) {
-        if (!getUser()
-            .equals(other.getUser())) return false;
-      }
-      if (!getIcon()
-          .equals(other.getIcon())) return false;
       if (!getMessagesList()
           .equals(other.getMessagesList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -2989,12 +3148,6 @@ public final class Basic {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (hasUser()) {
-        hash = (37 * hash) + USER_FIELD_NUMBER;
-        hash = (53 * hash) + getUser().hashCode();
-      }
-      hash = (37 * hash) + ICON_FIELD_NUMBER;
-      hash = (53 * hash) + getIcon().hashCode();
       if (getMessagesCount() > 0) {
         hash = (37 * hash) + MESSAGES_FIELD_NUMBER;
         hash = (53 * hash) + getMessagesList().hashCode();
@@ -3096,24 +3249,24 @@ public final class Basic {
     }
     /**
      * <pre>
-     * 本地需要保存的数据
+     * 本地需要保存的数据, 自己的信息已经隔开
      * </pre>
      *
-     * Protobuf type {@code LocalData}
+     * Protobuf type {@code aiins.LocalData}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:LocalData)
+        // @@protoc_insertion_point(builder_implements:aiins.LocalData)
         com.example.aiins.proto.Basic.LocalDataOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.example.aiins.proto.Basic.internal_static_LocalData_descriptor;
+        return com.example.aiins.proto.Basic.internal_static_aiins_LocalData_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.example.aiins.proto.Basic.internal_static_LocalData_fieldAccessorTable
+        return com.example.aiins.proto.Basic.internal_static_aiins_LocalData_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
                 com.example.aiins.proto.Basic.LocalData.class, com.example.aiins.proto.Basic.LocalData.Builder.class);
       }
@@ -3137,14 +3290,6 @@ public final class Basic {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (userBuilder_ == null) {
-          user_ = null;
-        } else {
-          user_ = null;
-          userBuilder_ = null;
-        }
-        icon_ = com.google.protobuf.ByteString.EMPTY;
-
         if (messagesBuilder_ == null) {
           messages_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000001);
@@ -3157,7 +3302,7 @@ public final class Basic {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.example.aiins.proto.Basic.internal_static_LocalData_descriptor;
+        return com.example.aiins.proto.Basic.internal_static_aiins_LocalData_descriptor;
       }
 
       @java.lang.Override
@@ -3178,12 +3323,6 @@ public final class Basic {
       public com.example.aiins.proto.Basic.LocalData buildPartial() {
         com.example.aiins.proto.Basic.LocalData result = new com.example.aiins.proto.Basic.LocalData(this);
         int from_bitField0_ = bitField0_;
-        if (userBuilder_ == null) {
-          result.user_ = user_;
-        } else {
-          result.user_ = userBuilder_.build();
-        }
-        result.icon_ = icon_;
         if (messagesBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             messages_ = java.util.Collections.unmodifiableList(messages_);
@@ -3241,12 +3380,6 @@ public final class Basic {
 
       public Builder mergeFrom(com.example.aiins.proto.Basic.LocalData other) {
         if (other == com.example.aiins.proto.Basic.LocalData.getDefaultInstance()) return this;
-        if (other.hasUser()) {
-          mergeUser(other.getUser());
-        }
-        if (other.getIcon() != com.google.protobuf.ByteString.EMPTY) {
-          setIcon(other.getIcon());
-        }
         if (messagesBuilder_ == null) {
           if (!other.messages_.isEmpty()) {
             if (messages_.isEmpty()) {
@@ -3303,171 +3436,6 @@ public final class Basic {
       }
       private int bitField0_;
 
-      private com.example.aiins.proto.Basic.BasicUserData user_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.example.aiins.proto.Basic.BasicUserData, com.example.aiins.proto.Basic.BasicUserData.Builder, com.example.aiins.proto.Basic.BasicUserDataOrBuilder> userBuilder_;
-      /**
-       * <code>.BasicUserData user = 1;</code>
-       * @return Whether the user field is set.
-       */
-      public boolean hasUser() {
-        return userBuilder_ != null || user_ != null;
-      }
-      /**
-       * <code>.BasicUserData user = 1;</code>
-       * @return The user.
-       */
-      public com.example.aiins.proto.Basic.BasicUserData getUser() {
-        if (userBuilder_ == null) {
-          return user_ == null ? com.example.aiins.proto.Basic.BasicUserData.getDefaultInstance() : user_;
-        } else {
-          return userBuilder_.getMessage();
-        }
-      }
-      /**
-       * <code>.BasicUserData user = 1;</code>
-       */
-      public Builder setUser(com.example.aiins.proto.Basic.BasicUserData value) {
-        if (userBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          user_ = value;
-          onChanged();
-        } else {
-          userBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.BasicUserData user = 1;</code>
-       */
-      public Builder setUser(
-          com.example.aiins.proto.Basic.BasicUserData.Builder builderForValue) {
-        if (userBuilder_ == null) {
-          user_ = builderForValue.build();
-          onChanged();
-        } else {
-          userBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <code>.BasicUserData user = 1;</code>
-       */
-      public Builder mergeUser(com.example.aiins.proto.Basic.BasicUserData value) {
-        if (userBuilder_ == null) {
-          if (user_ != null) {
-            user_ =
-              com.example.aiins.proto.Basic.BasicUserData.newBuilder(user_).mergeFrom(value).buildPartial();
-          } else {
-            user_ = value;
-          }
-          onChanged();
-        } else {
-          userBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.BasicUserData user = 1;</code>
-       */
-      public Builder clearUser() {
-        if (userBuilder_ == null) {
-          user_ = null;
-          onChanged();
-        } else {
-          user_ = null;
-          userBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <code>.BasicUserData user = 1;</code>
-       */
-      public com.example.aiins.proto.Basic.BasicUserData.Builder getUserBuilder() {
-        
-        onChanged();
-        return getUserFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.BasicUserData user = 1;</code>
-       */
-      public com.example.aiins.proto.Basic.BasicUserDataOrBuilder getUserOrBuilder() {
-        if (userBuilder_ != null) {
-          return userBuilder_.getMessageOrBuilder();
-        } else {
-          return user_ == null ?
-              com.example.aiins.proto.Basic.BasicUserData.getDefaultInstance() : user_;
-        }
-      }
-      /**
-       * <code>.BasicUserData user = 1;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.example.aiins.proto.Basic.BasicUserData, com.example.aiins.proto.Basic.BasicUserData.Builder, com.example.aiins.proto.Basic.BasicUserDataOrBuilder> 
-          getUserFieldBuilder() {
-        if (userBuilder_ == null) {
-          userBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.example.aiins.proto.Basic.BasicUserData, com.example.aiins.proto.Basic.BasicUserData.Builder, com.example.aiins.proto.Basic.BasicUserDataOrBuilder>(
-                  getUser(),
-                  getParentForChildren(),
-                  isClean());
-          user_ = null;
-        }
-        return userBuilder_;
-      }
-
-      private com.google.protobuf.ByteString icon_ = com.google.protobuf.ByteString.EMPTY;
-      /**
-       * <pre>
-       * 自己的头像
-       * </pre>
-       *
-       * <code>bytes icon = 2;</code>
-       * @return The icon.
-       */
-      @java.lang.Override
-      public com.google.protobuf.ByteString getIcon() {
-        return icon_;
-      }
-      /**
-       * <pre>
-       * 自己的头像
-       * </pre>
-       *
-       * <code>bytes icon = 2;</code>
-       * @param value The icon to set.
-       * @return This builder for chaining.
-       */
-      public Builder setIcon(com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        icon_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * 自己的头像
-       * </pre>
-       *
-       * <code>bytes icon = 2;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearIcon() {
-        
-        icon_ = getDefaultInstance().getIcon();
-        onChanged();
-        return this;
-      }
-
       private java.util.List<com.example.aiins.proto.Basic.Message> messages_ =
         java.util.Collections.emptyList();
       private void ensureMessagesIsMutable() {
@@ -3485,7 +3453,7 @@ public final class Basic {
        * 对话信息
        * </pre>
        *
-       * <code>repeated .Message messages = 3;</code>
+       * <code>repeated .aiins.Message messages = 3;</code>
        */
       public java.util.List<com.example.aiins.proto.Basic.Message> getMessagesList() {
         if (messagesBuilder_ == null) {
@@ -3499,7 +3467,7 @@ public final class Basic {
        * 对话信息
        * </pre>
        *
-       * <code>repeated .Message messages = 3;</code>
+       * <code>repeated .aiins.Message messages = 3;</code>
        */
       public int getMessagesCount() {
         if (messagesBuilder_ == null) {
@@ -3513,7 +3481,7 @@ public final class Basic {
        * 对话信息
        * </pre>
        *
-       * <code>repeated .Message messages = 3;</code>
+       * <code>repeated .aiins.Message messages = 3;</code>
        */
       public com.example.aiins.proto.Basic.Message getMessages(int index) {
         if (messagesBuilder_ == null) {
@@ -3527,7 +3495,7 @@ public final class Basic {
        * 对话信息
        * </pre>
        *
-       * <code>repeated .Message messages = 3;</code>
+       * <code>repeated .aiins.Message messages = 3;</code>
        */
       public Builder setMessages(
           int index, com.example.aiins.proto.Basic.Message value) {
@@ -3548,7 +3516,7 @@ public final class Basic {
        * 对话信息
        * </pre>
        *
-       * <code>repeated .Message messages = 3;</code>
+       * <code>repeated .aiins.Message messages = 3;</code>
        */
       public Builder setMessages(
           int index, com.example.aiins.proto.Basic.Message.Builder builderForValue) {
@@ -3566,7 +3534,7 @@ public final class Basic {
        * 对话信息
        * </pre>
        *
-       * <code>repeated .Message messages = 3;</code>
+       * <code>repeated .aiins.Message messages = 3;</code>
        */
       public Builder addMessages(com.example.aiins.proto.Basic.Message value) {
         if (messagesBuilder_ == null) {
@@ -3586,7 +3554,7 @@ public final class Basic {
        * 对话信息
        * </pre>
        *
-       * <code>repeated .Message messages = 3;</code>
+       * <code>repeated .aiins.Message messages = 3;</code>
        */
       public Builder addMessages(
           int index, com.example.aiins.proto.Basic.Message value) {
@@ -3607,7 +3575,7 @@ public final class Basic {
        * 对话信息
        * </pre>
        *
-       * <code>repeated .Message messages = 3;</code>
+       * <code>repeated .aiins.Message messages = 3;</code>
        */
       public Builder addMessages(
           com.example.aiins.proto.Basic.Message.Builder builderForValue) {
@@ -3625,7 +3593,7 @@ public final class Basic {
        * 对话信息
        * </pre>
        *
-       * <code>repeated .Message messages = 3;</code>
+       * <code>repeated .aiins.Message messages = 3;</code>
        */
       public Builder addMessages(
           int index, com.example.aiins.proto.Basic.Message.Builder builderForValue) {
@@ -3643,7 +3611,7 @@ public final class Basic {
        * 对话信息
        * </pre>
        *
-       * <code>repeated .Message messages = 3;</code>
+       * <code>repeated .aiins.Message messages = 3;</code>
        */
       public Builder addAllMessages(
           java.lang.Iterable<? extends com.example.aiins.proto.Basic.Message> values) {
@@ -3662,7 +3630,7 @@ public final class Basic {
        * 对话信息
        * </pre>
        *
-       * <code>repeated .Message messages = 3;</code>
+       * <code>repeated .aiins.Message messages = 3;</code>
        */
       public Builder clearMessages() {
         if (messagesBuilder_ == null) {
@@ -3679,7 +3647,7 @@ public final class Basic {
        * 对话信息
        * </pre>
        *
-       * <code>repeated .Message messages = 3;</code>
+       * <code>repeated .aiins.Message messages = 3;</code>
        */
       public Builder removeMessages(int index) {
         if (messagesBuilder_ == null) {
@@ -3696,7 +3664,7 @@ public final class Basic {
        * 对话信息
        * </pre>
        *
-       * <code>repeated .Message messages = 3;</code>
+       * <code>repeated .aiins.Message messages = 3;</code>
        */
       public com.example.aiins.proto.Basic.Message.Builder getMessagesBuilder(
           int index) {
@@ -3707,7 +3675,7 @@ public final class Basic {
        * 对话信息
        * </pre>
        *
-       * <code>repeated .Message messages = 3;</code>
+       * <code>repeated .aiins.Message messages = 3;</code>
        */
       public com.example.aiins.proto.Basic.MessageOrBuilder getMessagesOrBuilder(
           int index) {
@@ -3721,7 +3689,7 @@ public final class Basic {
        * 对话信息
        * </pre>
        *
-       * <code>repeated .Message messages = 3;</code>
+       * <code>repeated .aiins.Message messages = 3;</code>
        */
       public java.util.List<? extends com.example.aiins.proto.Basic.MessageOrBuilder> 
            getMessagesOrBuilderList() {
@@ -3736,7 +3704,7 @@ public final class Basic {
        * 对话信息
        * </pre>
        *
-       * <code>repeated .Message messages = 3;</code>
+       * <code>repeated .aiins.Message messages = 3;</code>
        */
       public com.example.aiins.proto.Basic.Message.Builder addMessagesBuilder() {
         return getMessagesFieldBuilder().addBuilder(
@@ -3747,7 +3715,7 @@ public final class Basic {
        * 对话信息
        * </pre>
        *
-       * <code>repeated .Message messages = 3;</code>
+       * <code>repeated .aiins.Message messages = 3;</code>
        */
       public com.example.aiins.proto.Basic.Message.Builder addMessagesBuilder(
           int index) {
@@ -3759,7 +3727,7 @@ public final class Basic {
        * 对话信息
        * </pre>
        *
-       * <code>repeated .Message messages = 3;</code>
+       * <code>repeated .aiins.Message messages = 3;</code>
        */
       public java.util.List<com.example.aiins.proto.Basic.Message.Builder> 
            getMessagesBuilderList() {
@@ -3792,10 +3760,10 @@ public final class Basic {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:LocalData)
+      // @@protoc_insertion_point(builder_scope:aiins.LocalData)
     }
 
-    // @@protoc_insertion_point(class_scope:LocalData)
+    // @@protoc_insertion_point(class_scope:aiins.LocalData)
     private static final com.example.aiins.proto.Basic.LocalData DEFAULT_INSTANCE;
     static {
       DEFAULT_INSTANCE = new com.example.aiins.proto.Basic.LocalData();
@@ -3833,7 +3801,7 @@ public final class Basic {
   }
 
   public interface MessageOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:Message)
+      // @@protoc_insertion_point(interface_extends:aiins.Message)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -3860,19 +3828,25 @@ public final class Basic {
     int getTo(int index);
 
     /**
-     * <code>string text = 3;</code>
+     * <code>int32 time = 3;</code>
+     * @return The time.
+     */
+    int getTime();
+
+    /**
+     * <code>string text = 4;</code>
      * @return The text.
      */
     java.lang.String getText();
     /**
-     * <code>string text = 3;</code>
+     * <code>string text = 4;</code>
      * @return The bytes for text.
      */
     com.google.protobuf.ByteString
         getTextBytes();
 
     /**
-     * <code>bytes image = 4;</code>
+     * <code>bytes image = 5;</code>
      * @return The image.
      */
     com.google.protobuf.ByteString getImage();
@@ -3882,11 +3856,11 @@ public final class Basic {
    * 每一个对话信息
    * </pre>
    *
-   * Protobuf type {@code Message}
+   * Protobuf type {@code aiins.Message}
    */
   public static final class Message extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:Message)
+      // @@protoc_insertion_point(message_implements:aiins.Message)
       MessageOrBuilder {
   private static final long serialVersionUID = 0L;
     // Use Message.newBuilder() to construct.
@@ -3956,13 +3930,18 @@ public final class Basic {
               input.popLimit(limit);
               break;
             }
-            case 26: {
+            case 24: {
+
+              time_ = input.readInt32();
+              break;
+            }
+            case 34: {
               java.lang.String s = input.readStringRequireUtf8();
 
               text_ = s;
               break;
             }
-            case 34: {
+            case 42: {
 
               image_ = input.readBytes();
               break;
@@ -3991,13 +3970,13 @@ public final class Basic {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.example.aiins.proto.Basic.internal_static_Message_descriptor;
+      return com.example.aiins.proto.Basic.internal_static_aiins_Message_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.example.aiins.proto.Basic.internal_static_Message_fieldAccessorTable
+      return com.example.aiins.proto.Basic.internal_static_aiins_Message_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.example.aiins.proto.Basic.Message.class, com.example.aiins.proto.Basic.Message.Builder.class);
     }
@@ -4041,10 +4020,21 @@ public final class Basic {
     }
     private int toMemoizedSerializedSize = -1;
 
-    public static final int TEXT_FIELD_NUMBER = 3;
+    public static final int TIME_FIELD_NUMBER = 3;
+    private int time_;
+    /**
+     * <code>int32 time = 3;</code>
+     * @return The time.
+     */
+    @java.lang.Override
+    public int getTime() {
+      return time_;
+    }
+
+    public static final int TEXT_FIELD_NUMBER = 4;
     private volatile java.lang.Object text_;
     /**
-     * <code>string text = 3;</code>
+     * <code>string text = 4;</code>
      * @return The text.
      */
     @java.lang.Override
@@ -4061,7 +4051,7 @@ public final class Basic {
       }
     }
     /**
-     * <code>string text = 3;</code>
+     * <code>string text = 4;</code>
      * @return The bytes for text.
      */
     @java.lang.Override
@@ -4079,10 +4069,10 @@ public final class Basic {
       }
     }
 
-    public static final int IMAGE_FIELD_NUMBER = 4;
+    public static final int IMAGE_FIELD_NUMBER = 5;
     private com.google.protobuf.ByteString image_;
     /**
-     * <code>bytes image = 4;</code>
+     * <code>bytes image = 5;</code>
      * @return The image.
      */
     @java.lang.Override
@@ -4115,11 +4105,14 @@ public final class Basic {
       for (int i = 0; i < to_.size(); i++) {
         output.writeInt32NoTag(to_.getInt(i));
       }
+      if (time_ != 0) {
+        output.writeInt32(3, time_);
+      }
       if (!getTextBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, text_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, text_);
       }
       if (!image_.isEmpty()) {
-        output.writeBytes(4, image_);
+        output.writeBytes(5, image_);
       }
       unknownFields.writeTo(output);
     }
@@ -4148,12 +4141,16 @@ public final class Basic {
         }
         toMemoizedSerializedSize = dataSize;
       }
+      if (time_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(3, time_);
+      }
       if (!getTextBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, text_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, text_);
       }
       if (!image_.isEmpty()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(4, image_);
+          .computeBytesSize(5, image_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -4174,6 +4171,8 @@ public final class Basic {
           != other.getFrom()) return false;
       if (!getToList()
           .equals(other.getToList())) return false;
+      if (getTime()
+          != other.getTime()) return false;
       if (!getText()
           .equals(other.getText())) return false;
       if (!getImage()
@@ -4195,6 +4194,8 @@ public final class Basic {
         hash = (37 * hash) + TO_FIELD_NUMBER;
         hash = (53 * hash) + getToList().hashCode();
       }
+      hash = (37 * hash) + TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getTime();
       hash = (37 * hash) + TEXT_FIELD_NUMBER;
       hash = (53 * hash) + getText().hashCode();
       hash = (37 * hash) + IMAGE_FIELD_NUMBER;
@@ -4299,21 +4300,21 @@ public final class Basic {
      * 每一个对话信息
      * </pre>
      *
-     * Protobuf type {@code Message}
+     * Protobuf type {@code aiins.Message}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:Message)
+        // @@protoc_insertion_point(builder_implements:aiins.Message)
         com.example.aiins.proto.Basic.MessageOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.example.aiins.proto.Basic.internal_static_Message_descriptor;
+        return com.example.aiins.proto.Basic.internal_static_aiins_Message_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.example.aiins.proto.Basic.internal_static_Message_fieldAccessorTable
+        return com.example.aiins.proto.Basic.internal_static_aiins_Message_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
                 com.example.aiins.proto.Basic.Message.class, com.example.aiins.proto.Basic.Message.Builder.class);
       }
@@ -4340,6 +4341,8 @@ public final class Basic {
 
         to_ = emptyIntList();
         bitField0_ = (bitField0_ & ~0x00000001);
+        time_ = 0;
+
         text_ = "";
 
         image_ = com.google.protobuf.ByteString.EMPTY;
@@ -4350,7 +4353,7 @@ public final class Basic {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.example.aiins.proto.Basic.internal_static_Message_descriptor;
+        return com.example.aiins.proto.Basic.internal_static_aiins_Message_descriptor;
       }
 
       @java.lang.Override
@@ -4377,6 +4380,7 @@ public final class Basic {
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.to_ = to_;
+        result.time_ = time_;
         result.text_ = text_;
         result.image_ = image_;
         onBuilt();
@@ -4439,6 +4443,9 @@ public final class Basic {
             to_.addAll(other.to_);
           }
           onChanged();
+        }
+        if (other.getTime() != 0) {
+          setTime(other.getTime());
         }
         if (!other.getText().isEmpty()) {
           text_ = other.text_;
@@ -4587,9 +4594,40 @@ public final class Basic {
         return this;
       }
 
+      private int time_ ;
+      /**
+       * <code>int32 time = 3;</code>
+       * @return The time.
+       */
+      @java.lang.Override
+      public int getTime() {
+        return time_;
+      }
+      /**
+       * <code>int32 time = 3;</code>
+       * @param value The time to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTime(int value) {
+        
+        time_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 time = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTime() {
+        
+        time_ = 0;
+        onChanged();
+        return this;
+      }
+
       private java.lang.Object text_ = "";
       /**
-       * <code>string text = 3;</code>
+       * <code>string text = 4;</code>
        * @return The text.
        */
       public java.lang.String getText() {
@@ -4605,7 +4643,7 @@ public final class Basic {
         }
       }
       /**
-       * <code>string text = 3;</code>
+       * <code>string text = 4;</code>
        * @return The bytes for text.
        */
       public com.google.protobuf.ByteString
@@ -4622,7 +4660,7 @@ public final class Basic {
         }
       }
       /**
-       * <code>string text = 3;</code>
+       * <code>string text = 4;</code>
        * @param value The text to set.
        * @return This builder for chaining.
        */
@@ -4637,7 +4675,7 @@ public final class Basic {
         return this;
       }
       /**
-       * <code>string text = 3;</code>
+       * <code>string text = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearText() {
@@ -4647,7 +4685,7 @@ public final class Basic {
         return this;
       }
       /**
-       * <code>string text = 3;</code>
+       * <code>string text = 4;</code>
        * @param value The bytes for text to set.
        * @return This builder for chaining.
        */
@@ -4665,7 +4703,7 @@ public final class Basic {
 
       private com.google.protobuf.ByteString image_ = com.google.protobuf.ByteString.EMPTY;
       /**
-       * <code>bytes image = 4;</code>
+       * <code>bytes image = 5;</code>
        * @return The image.
        */
       @java.lang.Override
@@ -4673,7 +4711,7 @@ public final class Basic {
         return image_;
       }
       /**
-       * <code>bytes image = 4;</code>
+       * <code>bytes image = 5;</code>
        * @param value The image to set.
        * @return This builder for chaining.
        */
@@ -4687,7 +4725,7 @@ public final class Basic {
         return this;
       }
       /**
-       * <code>bytes image = 4;</code>
+       * <code>bytes image = 5;</code>
        * @return This builder for chaining.
        */
       public Builder clearImage() {
@@ -4709,10 +4747,10 @@ public final class Basic {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:Message)
+      // @@protoc_insertion_point(builder_scope:aiins.Message)
     }
 
-    // @@protoc_insertion_point(class_scope:Message)
+    // @@protoc_insertion_point(class_scope:aiins.Message)
     private static final com.example.aiins.proto.Basic.Message DEFAULT_INSTANCE;
     static {
       DEFAULT_INSTANCE = new com.example.aiins.proto.Basic.Message();
@@ -4750,30 +4788,30 @@ public final class Basic {
   }
 
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_UserDataReq_descriptor;
+    internal_static_aiins_UserDataReq_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_UserDataReq_fieldAccessorTable;
+      internal_static_aiins_UserDataReq_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_UserDataRsp_descriptor;
+    internal_static_aiins_UserDataRsp_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_UserDataRsp_fieldAccessorTable;
+      internal_static_aiins_UserDataRsp_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_BasicUserData_descriptor;
+    internal_static_aiins_BasicUserData_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_BasicUserData_fieldAccessorTable;
+      internal_static_aiins_BasicUserData_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_LocalData_descriptor;
+    internal_static_aiins_LocalData_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_LocalData_fieldAccessorTable;
+      internal_static_aiins_LocalData_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_Message_descriptor;
+    internal_static_aiins_Message_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_Message_fieldAccessorTable;
+      internal_static_aiins_Message_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -4783,51 +4821,51 @@ public final class Basic {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\021proto/Basic.proto\"\032\n\013UserDataReq\022\013\n\003ui" +
-      "d\030\001 \003(\005\"?\n\013UserDataRsp\022\020\n\010nickname\030\001 \003(\t" +
-      "\022\020\n\010username\030\002 \003(\t\022\014\n\004icon\030\003 \003(\014\"R\n\rBasi" +
-      "cUserData\022\020\n\010nickname\030\001 \001(\t\022\020\n\010username\030" +
-      "\002 \001(\t\022\020\n\010password\030\003 \001(\t\022\013\n\003uid\030\004 \001(\005\"S\n\t" +
-      "LocalData\022\034\n\004user\030\001 \001(\0132\016.BasicUserData\022" +
-      "\014\n\004icon\030\002 \001(\014\022\032\n\010messages\030\003 \003(\0132\010.Messag" +
-      "e\"@\n\007Message\022\014\n\004from\030\001 \001(\005\022\n\n\002to\030\002 \003(\005\022\014" +
-      "\n\004text\030\003 \001(\t\022\r\n\005image\030\004 \001(\014B\031\n\027com.examp" +
-      "le.aiins.protob\006proto3"
+      "\n\021proto/Basic.proto\022\005aiins\"(\n\013UserDataRe" +
+      "q\022\013\n\003uid\030\001 \003(\005\022\014\n\004time\030\002 \001(\003\"L\n\013UserData" +
+      "Rsp\022\020\n\010nickname\030\001 \003(\t\022\020\n\010username\030\002 \003(\t\022" +
+      "\014\n\004icon\030\003 \003(\014\022\013\n\003uid\030\004 \003(\005\"R\n\rBasicUserD" +
+      "ata\022\020\n\010nickname\030\001 \001(\t\022\020\n\010username\030\002 \001(\t\022" +
+      "\020\n\010password\030\003 \001(\t\022\013\n\003uid\030\004 \001(\005\"-\n\tLocalD" +
+      "ata\022 \n\010messages\030\003 \003(\0132\016.aiins.Message\"N\n" +
+      "\007Message\022\014\n\004from\030\001 \001(\005\022\n\n\002to\030\002 \003(\005\022\014\n\004ti" +
+      "me\030\003 \001(\005\022\014\n\004text\030\004 \001(\t\022\r\n\005image\030\005 \001(\014B\031\n" +
+      "\027com.example.aiins.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
         });
-    internal_static_UserDataReq_descriptor =
+    internal_static_aiins_UserDataReq_descriptor =
       getDescriptor().getMessageTypes().get(0);
-    internal_static_UserDataReq_fieldAccessorTable = new
+    internal_static_aiins_UserDataReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_UserDataReq_descriptor,
-        new java.lang.String[] { "Uid", });
-    internal_static_UserDataRsp_descriptor =
+        internal_static_aiins_UserDataReq_descriptor,
+        new java.lang.String[] { "Uid", "Time", });
+    internal_static_aiins_UserDataRsp_descriptor =
       getDescriptor().getMessageTypes().get(1);
-    internal_static_UserDataRsp_fieldAccessorTable = new
+    internal_static_aiins_UserDataRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_UserDataRsp_descriptor,
-        new java.lang.String[] { "Nickname", "Username", "Icon", });
-    internal_static_BasicUserData_descriptor =
+        internal_static_aiins_UserDataRsp_descriptor,
+        new java.lang.String[] { "Nickname", "Username", "Icon", "Uid", });
+    internal_static_aiins_BasicUserData_descriptor =
       getDescriptor().getMessageTypes().get(2);
-    internal_static_BasicUserData_fieldAccessorTable = new
+    internal_static_aiins_BasicUserData_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_BasicUserData_descriptor,
+        internal_static_aiins_BasicUserData_descriptor,
         new java.lang.String[] { "Nickname", "Username", "Password", "Uid", });
-    internal_static_LocalData_descriptor =
+    internal_static_aiins_LocalData_descriptor =
       getDescriptor().getMessageTypes().get(3);
-    internal_static_LocalData_fieldAccessorTable = new
+    internal_static_aiins_LocalData_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_LocalData_descriptor,
-        new java.lang.String[] { "User", "Icon", "Messages", });
-    internal_static_Message_descriptor =
+        internal_static_aiins_LocalData_descriptor,
+        new java.lang.String[] { "Messages", });
+    internal_static_aiins_Message_descriptor =
       getDescriptor().getMessageTypes().get(4);
-    internal_static_Message_fieldAccessorTable = new
+    internal_static_aiins_Message_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_Message_descriptor,
-        new java.lang.String[] { "From", "To", "Text", "Image", });
+        internal_static_aiins_Message_descriptor,
+        new java.lang.String[] { "From", "To", "Time", "Text", "Image", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

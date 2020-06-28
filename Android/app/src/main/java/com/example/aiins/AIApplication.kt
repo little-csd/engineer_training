@@ -1,6 +1,7 @@
 package com.example.aiins
 
 import android.app.Application
+import android.util.Log
 import com.example.aiins.util.BasicUtil
 import com.example.aiins.util.FileUtil
 

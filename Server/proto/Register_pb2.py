@@ -15,11 +15,11 @@ _sym_db = _symbol_database.Default()
 
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='Register.proto',
-  package='',
+  package='aiins',
   syntax='proto3',
   serialized_options=b'\n\027com.example.aiins.proto',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x0eRegister.proto\"C\n\x0bRegisterReq\x12\x10\n\x08username\x18\x01 \x01(\t\x12\x10\n\x08nickname\x18\x02 \x01(\t\x12\x10\n\x08password\x18\x03 \x01(\t\".\n\x0bRegisterRsp\x12\x12\n\nresultCode\x18\x01 \x01(\x05\x12\x0b\n\x03uid\x18\x02 \x01(\x05\x42\x19\n\x17\x63om.example.aiins.protob\x06proto3'
+  serialized_pb=b'\n\x0eRegister.proto\x12\x05\x61iins\"C\n\x0bRegisterReq\x12\x10\n\x08username\x18\x01 \x01(\t\x12\x10\n\x08nickname\x18\x02 \x01(\t\x12\x10\n\x08password\x18\x03 \x01(\t\".\n\x0bRegisterRsp\x12\x12\n\nresultCode\x18\x01 \x01(\x05\x12\x0b\n\x03uid\x18\x02 \x01(\x05\x42\x19\n\x17\x63om.example.aiins.protob\x06proto3'
 )
 
 
@@ -27,28 +27,28 @@ DESCRIPTOR = _descriptor.FileDescriptor(
 
 _REGISTERREQ = _descriptor.Descriptor(
   name='RegisterReq',
-  full_name='RegisterReq',
+  full_name='aiins.RegisterReq',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='username', full_name='RegisterReq.username', index=0,
+      name='username', full_name='aiins.RegisterReq.username', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='nickname', full_name='RegisterReq.nickname', index=1,
+      name='nickname', full_name='aiins.RegisterReq.nickname', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='password', full_name='RegisterReq.password', index=2,
+      name='password', full_name='aiins.RegisterReq.password', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -66,28 +66,28 @@ _REGISTERREQ = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=18,
-  serialized_end=85,
+  serialized_start=25,
+  serialized_end=92,
 )
 
 
 _REGISTERRSP = _descriptor.Descriptor(
   name='RegisterRsp',
-  full_name='RegisterRsp',
+  full_name='aiins.RegisterRsp',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='resultCode', full_name='RegisterRsp.resultCode', index=0,
+      name='resultCode', full_name='aiins.RegisterRsp.resultCode', index=0,
       number=1, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='uid', full_name='RegisterRsp.uid', index=1,
+      name='uid', full_name='aiins.RegisterRsp.uid', index=1,
       number=2, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -105,8 +105,8 @@ _REGISTERRSP = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=87,
-  serialized_end=133,
+  serialized_start=94,
+  serialized_end=140,
 )
 
 DESCRIPTOR.message_types_by_name['RegisterReq'] = _REGISTERREQ
@@ -116,14 +116,14 @@ _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 RegisterReq = _reflection.GeneratedProtocolMessageType('RegisterReq', (_message.Message,), {
   'DESCRIPTOR' : _REGISTERREQ,
   '__module__' : 'Register_pb2'
-  # @@protoc_insertion_point(class_scope:RegisterReq)
+  # @@protoc_insertion_point(class_scope:aiins.RegisterReq)
   })
 _sym_db.RegisterMessage(RegisterReq)
 
 RegisterRsp = _reflection.GeneratedProtocolMessageType('RegisterRsp', (_message.Message,), {
   'DESCRIPTOR' : _REGISTERRSP,
   '__module__' : 'Register_pb2'
-  # @@protoc_insertion_point(class_scope:RegisterRsp)
+  # @@protoc_insertion_point(class_scope:aiins.RegisterRsp)
   })
 _sym_db.RegisterMessage(RegisterRsp)
 

@@ -15,7 +15,7 @@ public final class Register {
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   public interface RegisterReqOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:RegisterReq)
+      // @@protoc_insertion_point(interface_extends:aiins.RegisterReq)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -59,11 +59,11 @@ public final class Register {
    * 登录请求
    * </pre>
    *
-   * Protobuf type {@code RegisterReq}
+   * Protobuf type {@code aiins.RegisterReq}
    */
   public static final class RegisterReq extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:RegisterReq)
+      // @@protoc_insertion_point(message_implements:aiins.RegisterReq)
       RegisterReqOrBuilder {
   private static final long serialVersionUID = 0L;
     // Use RegisterReq.newBuilder() to construct.
@@ -145,13 +145,13 @@ public final class Register {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.example.aiins.proto.Register.internal_static_RegisterReq_descriptor;
+      return com.example.aiins.proto.Register.internal_static_aiins_RegisterReq_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.example.aiins.proto.Register.internal_static_RegisterReq_fieldAccessorTable
+      return com.example.aiins.proto.Register.internal_static_aiins_RegisterReq_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.example.aiins.proto.Register.RegisterReq.class, com.example.aiins.proto.Register.RegisterReq.Builder.class);
     }
@@ -449,21 +449,21 @@ public final class Register {
      * 登录请求
      * </pre>
      *
-     * Protobuf type {@code RegisterReq}
+     * Protobuf type {@code aiins.RegisterReq}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:RegisterReq)
+        // @@protoc_insertion_point(builder_implements:aiins.RegisterReq)
         com.example.aiins.proto.Register.RegisterReqOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.example.aiins.proto.Register.internal_static_RegisterReq_descriptor;
+        return com.example.aiins.proto.Register.internal_static_aiins_RegisterReq_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.example.aiins.proto.Register.internal_static_RegisterReq_fieldAccessorTable
+        return com.example.aiins.proto.Register.internal_static_aiins_RegisterReq_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
                 com.example.aiins.proto.Register.RegisterReq.class, com.example.aiins.proto.Register.RegisterReq.Builder.class);
       }
@@ -498,7 +498,7 @@ public final class Register {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.example.aiins.proto.Register.internal_static_RegisterReq_descriptor;
+        return com.example.aiins.proto.Register.internal_static_aiins_RegisterReq_descriptor;
       }
 
       @java.lang.Override
@@ -850,10 +850,10 @@ public final class Register {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:RegisterReq)
+      // @@protoc_insertion_point(builder_scope:aiins.RegisterReq)
     }
 
-    // @@protoc_insertion_point(class_scope:RegisterReq)
+    // @@protoc_insertion_point(class_scope:aiins.RegisterReq)
     private static final com.example.aiins.proto.Register.RegisterReq DEFAULT_INSTANCE;
     static {
       DEFAULT_INSTANCE = new com.example.aiins.proto.Register.RegisterReq();
@@ -891,7 +891,7 @@ public final class Register {
   }
 
   public interface RegisterRspOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:RegisterRsp)
+      // @@protoc_insertion_point(interface_extends:aiins.RegisterRsp)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -911,11 +911,11 @@ public final class Register {
    * 登录响应
    * </pre>
    *
-   * Protobuf type {@code RegisterRsp}
+   * Protobuf type {@code aiins.RegisterRsp}
    */
   public static final class RegisterRsp extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:RegisterRsp)
+      // @@protoc_insertion_point(message_implements:aiins.RegisterRsp)
       RegisterRspOrBuilder {
   private static final long serialVersionUID = 0L;
     // Use RegisterRsp.newBuilder() to construct.
@@ -986,13 +986,13 @@ public final class Register {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.example.aiins.proto.Register.internal_static_RegisterRsp_descriptor;
+      return com.example.aiins.proto.Register.internal_static_aiins_RegisterRsp_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.example.aiins.proto.Register.internal_static_RegisterRsp_fieldAccessorTable
+      return com.example.aiins.proto.Register.internal_static_aiins_RegisterRsp_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.example.aiins.proto.Register.RegisterRsp.class, com.example.aiins.proto.Register.RegisterRsp.Builder.class);
     }
@@ -1190,21 +1190,21 @@ public final class Register {
      * 登录响应
      * </pre>
      *
-     * Protobuf type {@code RegisterRsp}
+     * Protobuf type {@code aiins.RegisterRsp}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:RegisterRsp)
+        // @@protoc_insertion_point(builder_implements:aiins.RegisterRsp)
         com.example.aiins.proto.Register.RegisterRspOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.example.aiins.proto.Register.internal_static_RegisterRsp_descriptor;
+        return com.example.aiins.proto.Register.internal_static_aiins_RegisterRsp_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.example.aiins.proto.Register.internal_static_RegisterRsp_fieldAccessorTable
+        return com.example.aiins.proto.Register.internal_static_aiins_RegisterRsp_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
                 com.example.aiins.proto.Register.RegisterRsp.class, com.example.aiins.proto.Register.RegisterRsp.Builder.class);
       }
@@ -1237,7 +1237,7 @@ public final class Register {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.example.aiins.proto.Register.internal_static_RegisterRsp_descriptor;
+        return com.example.aiins.proto.Register.internal_static_aiins_RegisterRsp_descriptor;
       }
 
       @java.lang.Override
@@ -1416,10 +1416,10 @@ public final class Register {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:RegisterRsp)
+      // @@protoc_insertion_point(builder_scope:aiins.RegisterRsp)
     }
 
-    // @@protoc_insertion_point(class_scope:RegisterRsp)
+    // @@protoc_insertion_point(class_scope:aiins.RegisterRsp)
     private static final com.example.aiins.proto.Register.RegisterRsp DEFAULT_INSTANCE;
     static {
       DEFAULT_INSTANCE = new com.example.aiins.proto.Register.RegisterRsp();
@@ -1457,15 +1457,15 @@ public final class Register {
   }
 
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_RegisterReq_descriptor;
+    internal_static_aiins_RegisterReq_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_RegisterReq_fieldAccessorTable;
+      internal_static_aiins_RegisterReq_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_RegisterRsp_descriptor;
+    internal_static_aiins_RegisterRsp_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_RegisterRsp_fieldAccessorTable;
+      internal_static_aiins_RegisterRsp_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -1475,27 +1475,27 @@ public final class Register {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\024proto/Register.proto\"C\n\013RegisterReq\022\020\n" +
-      "\010username\030\001 \001(\t\022\020\n\010nickname\030\002 \001(\t\022\020\n\010pas" +
-      "sword\030\003 \001(\t\".\n\013RegisterRsp\022\022\n\nresultCode" +
-      "\030\001 \001(\005\022\013\n\003uid\030\002 \001(\005B\031\n\027com.example.aiins" +
-      ".protob\006proto3"
+      "\n\024proto/Register.proto\022\005aiins\"C\n\013Registe" +
+      "rReq\022\020\n\010username\030\001 \001(\t\022\020\n\010nickname\030\002 \001(\t" +
+      "\022\020\n\010password\030\003 \001(\t\".\n\013RegisterRsp\022\022\n\nres" +
+      "ultCode\030\001 \001(\005\022\013\n\003uid\030\002 \001(\005B\031\n\027com.exampl" +
+      "e.aiins.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
         });
-    internal_static_RegisterReq_descriptor =
+    internal_static_aiins_RegisterReq_descriptor =
       getDescriptor().getMessageTypes().get(0);
-    internal_static_RegisterReq_fieldAccessorTable = new
+    internal_static_aiins_RegisterReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_RegisterReq_descriptor,
+        internal_static_aiins_RegisterReq_descriptor,
         new java.lang.String[] { "Username", "Nickname", "Password", });
-    internal_static_RegisterRsp_descriptor =
+    internal_static_aiins_RegisterRsp_descriptor =
       getDescriptor().getMessageTypes().get(1);
-    internal_static_RegisterRsp_fieldAccessorTable = new
+    internal_static_aiins_RegisterRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_RegisterRsp_descriptor,
+        internal_static_aiins_RegisterRsp_descriptor,
         new java.lang.String[] { "ResultCode", "Uid", });
   }
 

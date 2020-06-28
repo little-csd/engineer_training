@@ -133,7 +133,9 @@ class HomeFragment : Fragment() {
 
     private fun initIcon() {
         val bytes = FileUtil.readFileInFiles(Config.iconName)
-        home_icon.setImageBitmap(BitmapFactory.decodeByteArray(bytes, 0, bytes.size))
+        if (bytes.isNotEmpty()) {
+            home_icon.setImageBitmap(BitmapFactory.decodeByteArray(bytes, 0, bytes.size))
+        }
         home_icon.setOnClickListener {
             val activity = activity as MainActivity
             activity.onClickIcon()

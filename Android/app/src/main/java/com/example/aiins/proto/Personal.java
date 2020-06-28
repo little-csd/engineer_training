@@ -15,7 +15,7 @@ public final class Personal {
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   public interface SettingReqOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:SettingReq)
+      // @@protoc_insertion_point(interface_extends:aiins.SettingReq)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -25,56 +25,56 @@ public final class Personal {
     int getType();
 
     /**
-     * <code>.SetIconReq iconReq = 2;</code>
+     * <code>.aiins.SetIconReq iconReq = 2;</code>
      * @return Whether the iconReq field is set.
      */
     boolean hasIconReq();
     /**
-     * <code>.SetIconReq iconReq = 2;</code>
+     * <code>.aiins.SetIconReq iconReq = 2;</code>
      * @return The iconReq.
      */
     com.example.aiins.proto.Personal.SetIconReq getIconReq();
     /**
-     * <code>.SetIconReq iconReq = 2;</code>
+     * <code>.aiins.SetIconReq iconReq = 2;</code>
      */
     com.example.aiins.proto.Personal.SetIconReqOrBuilder getIconReqOrBuilder();
 
     /**
-     * <code>.SetNicknameReq nicknameReq = 3;</code>
+     * <code>.aiins.SetNicknameReq nicknameReq = 3;</code>
      * @return Whether the nicknameReq field is set.
      */
     boolean hasNicknameReq();
     /**
-     * <code>.SetNicknameReq nicknameReq = 3;</code>
+     * <code>.aiins.SetNicknameReq nicknameReq = 3;</code>
      * @return The nicknameReq.
      */
     com.example.aiins.proto.Personal.SetNicknameReq getNicknameReq();
     /**
-     * <code>.SetNicknameReq nicknameReq = 3;</code>
+     * <code>.aiins.SetNicknameReq nicknameReq = 3;</code>
      */
     com.example.aiins.proto.Personal.SetNicknameReqOrBuilder getNicknameReqOrBuilder();
 
     /**
-     * <code>.SetPasswordReq passwordReq = 4;</code>
+     * <code>.aiins.SetPasswordReq passwordReq = 4;</code>
      * @return Whether the passwordReq field is set.
      */
     boolean hasPasswordReq();
     /**
-     * <code>.SetPasswordReq passwordReq = 4;</code>
+     * <code>.aiins.SetPasswordReq passwordReq = 4;</code>
      * @return The passwordReq.
      */
     com.example.aiins.proto.Personal.SetPasswordReq getPasswordReq();
     /**
-     * <code>.SetPasswordReq passwordReq = 4;</code>
+     * <code>.aiins.SetPasswordReq passwordReq = 4;</code>
      */
     com.example.aiins.proto.Personal.SetPasswordReqOrBuilder getPasswordReqOrBuilder();
   }
   /**
-   * Protobuf type {@code SettingReq}
+   * Protobuf type {@code aiins.SettingReq}
    */
   public static final class SettingReq extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:SettingReq)
+      // @@protoc_insertion_point(message_implements:aiins.SettingReq)
       SettingReqOrBuilder {
   private static final long serialVersionUID = 0L;
     // Use SettingReq.newBuilder() to construct.
@@ -179,13 +179,13 @@ public final class Personal {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.example.aiins.proto.Personal.internal_static_SettingReq_descriptor;
+      return com.example.aiins.proto.Personal.internal_static_aiins_SettingReq_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.example.aiins.proto.Personal.internal_static_SettingReq_fieldAccessorTable
+      return com.example.aiins.proto.Personal.internal_static_aiins_SettingReq_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.example.aiins.proto.Personal.SettingReq.class, com.example.aiins.proto.Personal.SettingReq.Builder.class);
     }
@@ -204,7 +204,7 @@ public final class Personal {
     public static final int ICONREQ_FIELD_NUMBER = 2;
     private com.example.aiins.proto.Personal.SetIconReq iconReq_;
     /**
-     * <code>.SetIconReq iconReq = 2;</code>
+     * <code>.aiins.SetIconReq iconReq = 2;</code>
      * @return Whether the iconReq field is set.
      */
     @java.lang.Override
@@ -212,7 +212,7 @@ public final class Personal {
       return iconReq_ != null;
     }
     /**
-     * <code>.SetIconReq iconReq = 2;</code>
+     * <code>.aiins.SetIconReq iconReq = 2;</code>
      * @return The iconReq.
      */
     @java.lang.Override
@@ -220,7 +220,7 @@ public final class Personal {
       return iconReq_ == null ? com.example.aiins.proto.Personal.SetIconReq.getDefaultInstance() : iconReq_;
     }
     /**
-     * <code>.SetIconReq iconReq = 2;</code>
+     * <code>.aiins.SetIconReq iconReq = 2;</code>
      */
     @java.lang.Override
     public com.example.aiins.proto.Personal.SetIconReqOrBuilder getIconReqOrBuilder() {
@@ -230,7 +230,7 @@ public final class Personal {
     public static final int NICKNAMEREQ_FIELD_NUMBER = 3;
     private com.example.aiins.proto.Personal.SetNicknameReq nicknameReq_;
     /**
-     * <code>.SetNicknameReq nicknameReq = 3;</code>
+     * <code>.aiins.SetNicknameReq nicknameReq = 3;</code>
      * @return Whether the nicknameReq field is set.
      */
     @java.lang.Override
@@ -238,7 +238,7 @@ public final class Personal {
       return nicknameReq_ != null;
     }
     /**
-     * <code>.SetNicknameReq nicknameReq = 3;</code>
+     * <code>.aiins.SetNicknameReq nicknameReq = 3;</code>
      * @return The nicknameReq.
      */
     @java.lang.Override
@@ -246,7 +246,7 @@ public final class Personal {
       return nicknameReq_ == null ? com.example.aiins.proto.Personal.SetNicknameReq.getDefaultInstance() : nicknameReq_;
     }
     /**
-     * <code>.SetNicknameReq nicknameReq = 3;</code>
+     * <code>.aiins.SetNicknameReq nicknameReq = 3;</code>
      */
     @java.lang.Override
     public com.example.aiins.proto.Personal.SetNicknameReqOrBuilder getNicknameReqOrBuilder() {
@@ -256,7 +256,7 @@ public final class Personal {
     public static final int PASSWORDREQ_FIELD_NUMBER = 4;
     private com.example.aiins.proto.Personal.SetPasswordReq passwordReq_;
     /**
-     * <code>.SetPasswordReq passwordReq = 4;</code>
+     * <code>.aiins.SetPasswordReq passwordReq = 4;</code>
      * @return Whether the passwordReq field is set.
      */
     @java.lang.Override
@@ -264,7 +264,7 @@ public final class Personal {
       return passwordReq_ != null;
     }
     /**
-     * <code>.SetPasswordReq passwordReq = 4;</code>
+     * <code>.aiins.SetPasswordReq passwordReq = 4;</code>
      * @return The passwordReq.
      */
     @java.lang.Override
@@ -272,7 +272,7 @@ public final class Personal {
       return passwordReq_ == null ? com.example.aiins.proto.Personal.SetPasswordReq.getDefaultInstance() : passwordReq_;
     }
     /**
-     * <code>.SetPasswordReq passwordReq = 4;</code>
+     * <code>.aiins.SetPasswordReq passwordReq = 4;</code>
      */
     @java.lang.Override
     public com.example.aiins.proto.Personal.SetPasswordReqOrBuilder getPasswordReqOrBuilder() {
@@ -483,21 +483,21 @@ public final class Personal {
       return builder;
     }
     /**
-     * Protobuf type {@code SettingReq}
+     * Protobuf type {@code aiins.SettingReq}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:SettingReq)
+        // @@protoc_insertion_point(builder_implements:aiins.SettingReq)
         com.example.aiins.proto.Personal.SettingReqOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.example.aiins.proto.Personal.internal_static_SettingReq_descriptor;
+        return com.example.aiins.proto.Personal.internal_static_aiins_SettingReq_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.example.aiins.proto.Personal.internal_static_SettingReq_fieldAccessorTable
+        return com.example.aiins.proto.Personal.internal_static_aiins_SettingReq_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
                 com.example.aiins.proto.Personal.SettingReq.class, com.example.aiins.proto.Personal.SettingReq.Builder.class);
       }
@@ -546,7 +546,7 @@ public final class Personal {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.example.aiins.proto.Personal.internal_static_SettingReq_descriptor;
+        return com.example.aiins.proto.Personal.internal_static_aiins_SettingReq_descriptor;
       }
 
       @java.lang.Override
@@ -706,14 +706,14 @@ public final class Personal {
       private com.google.protobuf.SingleFieldBuilderV3<
           com.example.aiins.proto.Personal.SetIconReq, com.example.aiins.proto.Personal.SetIconReq.Builder, com.example.aiins.proto.Personal.SetIconReqOrBuilder> iconReqBuilder_;
       /**
-       * <code>.SetIconReq iconReq = 2;</code>
+       * <code>.aiins.SetIconReq iconReq = 2;</code>
        * @return Whether the iconReq field is set.
        */
       public boolean hasIconReq() {
         return iconReqBuilder_ != null || iconReq_ != null;
       }
       /**
-       * <code>.SetIconReq iconReq = 2;</code>
+       * <code>.aiins.SetIconReq iconReq = 2;</code>
        * @return The iconReq.
        */
       public com.example.aiins.proto.Personal.SetIconReq getIconReq() {
@@ -724,7 +724,7 @@ public final class Personal {
         }
       }
       /**
-       * <code>.SetIconReq iconReq = 2;</code>
+       * <code>.aiins.SetIconReq iconReq = 2;</code>
        */
       public Builder setIconReq(com.example.aiins.proto.Personal.SetIconReq value) {
         if (iconReqBuilder_ == null) {
@@ -740,7 +740,7 @@ public final class Personal {
         return this;
       }
       /**
-       * <code>.SetIconReq iconReq = 2;</code>
+       * <code>.aiins.SetIconReq iconReq = 2;</code>
        */
       public Builder setIconReq(
           com.example.aiins.proto.Personal.SetIconReq.Builder builderForValue) {
@@ -754,7 +754,7 @@ public final class Personal {
         return this;
       }
       /**
-       * <code>.SetIconReq iconReq = 2;</code>
+       * <code>.aiins.SetIconReq iconReq = 2;</code>
        */
       public Builder mergeIconReq(com.example.aiins.proto.Personal.SetIconReq value) {
         if (iconReqBuilder_ == null) {
@@ -772,7 +772,7 @@ public final class Personal {
         return this;
       }
       /**
-       * <code>.SetIconReq iconReq = 2;</code>
+       * <code>.aiins.SetIconReq iconReq = 2;</code>
        */
       public Builder clearIconReq() {
         if (iconReqBuilder_ == null) {
@@ -786,7 +786,7 @@ public final class Personal {
         return this;
       }
       /**
-       * <code>.SetIconReq iconReq = 2;</code>
+       * <code>.aiins.SetIconReq iconReq = 2;</code>
        */
       public com.example.aiins.proto.Personal.SetIconReq.Builder getIconReqBuilder() {
         
@@ -794,7 +794,7 @@ public final class Personal {
         return getIconReqFieldBuilder().getBuilder();
       }
       /**
-       * <code>.SetIconReq iconReq = 2;</code>
+       * <code>.aiins.SetIconReq iconReq = 2;</code>
        */
       public com.example.aiins.proto.Personal.SetIconReqOrBuilder getIconReqOrBuilder() {
         if (iconReqBuilder_ != null) {
@@ -805,7 +805,7 @@ public final class Personal {
         }
       }
       /**
-       * <code>.SetIconReq iconReq = 2;</code>
+       * <code>.aiins.SetIconReq iconReq = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.example.aiins.proto.Personal.SetIconReq, com.example.aiins.proto.Personal.SetIconReq.Builder, com.example.aiins.proto.Personal.SetIconReqOrBuilder> 
@@ -825,14 +825,14 @@ public final class Personal {
       private com.google.protobuf.SingleFieldBuilderV3<
           com.example.aiins.proto.Personal.SetNicknameReq, com.example.aiins.proto.Personal.SetNicknameReq.Builder, com.example.aiins.proto.Personal.SetNicknameReqOrBuilder> nicknameReqBuilder_;
       /**
-       * <code>.SetNicknameReq nicknameReq = 3;</code>
+       * <code>.aiins.SetNicknameReq nicknameReq = 3;</code>
        * @return Whether the nicknameReq field is set.
        */
       public boolean hasNicknameReq() {
         return nicknameReqBuilder_ != null || nicknameReq_ != null;
       }
       /**
-       * <code>.SetNicknameReq nicknameReq = 3;</code>
+       * <code>.aiins.SetNicknameReq nicknameReq = 3;</code>
        * @return The nicknameReq.
        */
       public com.example.aiins.proto.Personal.SetNicknameReq getNicknameReq() {
@@ -843,7 +843,7 @@ public final class Personal {
         }
       }
       /**
-       * <code>.SetNicknameReq nicknameReq = 3;</code>
+       * <code>.aiins.SetNicknameReq nicknameReq = 3;</code>
        */
       public Builder setNicknameReq(com.example.aiins.proto.Personal.SetNicknameReq value) {
         if (nicknameReqBuilder_ == null) {
@@ -859,7 +859,7 @@ public final class Personal {
         return this;
       }
       /**
-       * <code>.SetNicknameReq nicknameReq = 3;</code>
+       * <code>.aiins.SetNicknameReq nicknameReq = 3;</code>
        */
       public Builder setNicknameReq(
           com.example.aiins.proto.Personal.SetNicknameReq.Builder builderForValue) {
@@ -873,7 +873,7 @@ public final class Personal {
         return this;
       }
       /**
-       * <code>.SetNicknameReq nicknameReq = 3;</code>
+       * <code>.aiins.SetNicknameReq nicknameReq = 3;</code>
        */
       public Builder mergeNicknameReq(com.example.aiins.proto.Personal.SetNicknameReq value) {
         if (nicknameReqBuilder_ == null) {
@@ -891,7 +891,7 @@ public final class Personal {
         return this;
       }
       /**
-       * <code>.SetNicknameReq nicknameReq = 3;</code>
+       * <code>.aiins.SetNicknameReq nicknameReq = 3;</code>
        */
       public Builder clearNicknameReq() {
         if (nicknameReqBuilder_ == null) {
@@ -905,7 +905,7 @@ public final class Personal {
         return this;
       }
       /**
-       * <code>.SetNicknameReq nicknameReq = 3;</code>
+       * <code>.aiins.SetNicknameReq nicknameReq = 3;</code>
        */
       public com.example.aiins.proto.Personal.SetNicknameReq.Builder getNicknameReqBuilder() {
         
@@ -913,7 +913,7 @@ public final class Personal {
         return getNicknameReqFieldBuilder().getBuilder();
       }
       /**
-       * <code>.SetNicknameReq nicknameReq = 3;</code>
+       * <code>.aiins.SetNicknameReq nicknameReq = 3;</code>
        */
       public com.example.aiins.proto.Personal.SetNicknameReqOrBuilder getNicknameReqOrBuilder() {
         if (nicknameReqBuilder_ != null) {
@@ -924,7 +924,7 @@ public final class Personal {
         }
       }
       /**
-       * <code>.SetNicknameReq nicknameReq = 3;</code>
+       * <code>.aiins.SetNicknameReq nicknameReq = 3;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.example.aiins.proto.Personal.SetNicknameReq, com.example.aiins.proto.Personal.SetNicknameReq.Builder, com.example.aiins.proto.Personal.SetNicknameReqOrBuilder> 
@@ -944,14 +944,14 @@ public final class Personal {
       private com.google.protobuf.SingleFieldBuilderV3<
           com.example.aiins.proto.Personal.SetPasswordReq, com.example.aiins.proto.Personal.SetPasswordReq.Builder, com.example.aiins.proto.Personal.SetPasswordReqOrBuilder> passwordReqBuilder_;
       /**
-       * <code>.SetPasswordReq passwordReq = 4;</code>
+       * <code>.aiins.SetPasswordReq passwordReq = 4;</code>
        * @return Whether the passwordReq field is set.
        */
       public boolean hasPasswordReq() {
         return passwordReqBuilder_ != null || passwordReq_ != null;
       }
       /**
-       * <code>.SetPasswordReq passwordReq = 4;</code>
+       * <code>.aiins.SetPasswordReq passwordReq = 4;</code>
        * @return The passwordReq.
        */
       public com.example.aiins.proto.Personal.SetPasswordReq getPasswordReq() {
@@ -962,7 +962,7 @@ public final class Personal {
         }
       }
       /**
-       * <code>.SetPasswordReq passwordReq = 4;</code>
+       * <code>.aiins.SetPasswordReq passwordReq = 4;</code>
        */
       public Builder setPasswordReq(com.example.aiins.proto.Personal.SetPasswordReq value) {
         if (passwordReqBuilder_ == null) {
@@ -978,7 +978,7 @@ public final class Personal {
         return this;
       }
       /**
-       * <code>.SetPasswordReq passwordReq = 4;</code>
+       * <code>.aiins.SetPasswordReq passwordReq = 4;</code>
        */
       public Builder setPasswordReq(
           com.example.aiins.proto.Personal.SetPasswordReq.Builder builderForValue) {
@@ -992,7 +992,7 @@ public final class Personal {
         return this;
       }
       /**
-       * <code>.SetPasswordReq passwordReq = 4;</code>
+       * <code>.aiins.SetPasswordReq passwordReq = 4;</code>
        */
       public Builder mergePasswordReq(com.example.aiins.proto.Personal.SetPasswordReq value) {
         if (passwordReqBuilder_ == null) {
@@ -1010,7 +1010,7 @@ public final class Personal {
         return this;
       }
       /**
-       * <code>.SetPasswordReq passwordReq = 4;</code>
+       * <code>.aiins.SetPasswordReq passwordReq = 4;</code>
        */
       public Builder clearPasswordReq() {
         if (passwordReqBuilder_ == null) {
@@ -1024,7 +1024,7 @@ public final class Personal {
         return this;
       }
       /**
-       * <code>.SetPasswordReq passwordReq = 4;</code>
+       * <code>.aiins.SetPasswordReq passwordReq = 4;</code>
        */
       public com.example.aiins.proto.Personal.SetPasswordReq.Builder getPasswordReqBuilder() {
         
@@ -1032,7 +1032,7 @@ public final class Personal {
         return getPasswordReqFieldBuilder().getBuilder();
       }
       /**
-       * <code>.SetPasswordReq passwordReq = 4;</code>
+       * <code>.aiins.SetPasswordReq passwordReq = 4;</code>
        */
       public com.example.aiins.proto.Personal.SetPasswordReqOrBuilder getPasswordReqOrBuilder() {
         if (passwordReqBuilder_ != null) {
@@ -1043,7 +1043,7 @@ public final class Personal {
         }
       }
       /**
-       * <code>.SetPasswordReq passwordReq = 4;</code>
+       * <code>.aiins.SetPasswordReq passwordReq = 4;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.example.aiins.proto.Personal.SetPasswordReq, com.example.aiins.proto.Personal.SetPasswordReq.Builder, com.example.aiins.proto.Personal.SetPasswordReqOrBuilder> 
@@ -1071,10 +1071,10 @@ public final class Personal {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:SettingReq)
+      // @@protoc_insertion_point(builder_scope:aiins.SettingReq)
     }
 
-    // @@protoc_insertion_point(class_scope:SettingReq)
+    // @@protoc_insertion_point(class_scope:aiins.SettingReq)
     private static final com.example.aiins.proto.Personal.SettingReq DEFAULT_INSTANCE;
     static {
       DEFAULT_INSTANCE = new com.example.aiins.proto.Personal.SettingReq();
@@ -1112,7 +1112,7 @@ public final class Personal {
   }
 
   public interface SetIconReqOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:SetIconReq)
+      // @@protoc_insertion_point(interface_extends:aiins.SetIconReq)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -1128,11 +1128,15 @@ public final class Personal {
     com.google.protobuf.ByteString getIcon();
   }
   /**
-   * Protobuf type {@code SetIconReq}
+   * <pre>
+   * type = 0
+   * </pre>
+   *
+   * Protobuf type {@code aiins.SetIconReq}
    */
   public static final class SetIconReq extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:SetIconReq)
+      // @@protoc_insertion_point(message_implements:aiins.SetIconReq)
       SetIconReqOrBuilder {
   private static final long serialVersionUID = 0L;
     // Use SetIconReq.newBuilder() to construct.
@@ -1204,13 +1208,13 @@ public final class Personal {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.example.aiins.proto.Personal.internal_static_SetIconReq_descriptor;
+      return com.example.aiins.proto.Personal.internal_static_aiins_SetIconReq_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.example.aiins.proto.Personal.internal_static_SetIconReq_fieldAccessorTable
+      return com.example.aiins.proto.Personal.internal_static_aiins_SetIconReq_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.example.aiins.proto.Personal.SetIconReq.class, com.example.aiins.proto.Personal.SetIconReq.Builder.class);
     }
@@ -1404,21 +1408,25 @@ public final class Personal {
       return builder;
     }
     /**
-     * Protobuf type {@code SetIconReq}
+     * <pre>
+     * type = 0
+     * </pre>
+     *
+     * Protobuf type {@code aiins.SetIconReq}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:SetIconReq)
+        // @@protoc_insertion_point(builder_implements:aiins.SetIconReq)
         com.example.aiins.proto.Personal.SetIconReqOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.example.aiins.proto.Personal.internal_static_SetIconReq_descriptor;
+        return com.example.aiins.proto.Personal.internal_static_aiins_SetIconReq_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.example.aiins.proto.Personal.internal_static_SetIconReq_fieldAccessorTable
+        return com.example.aiins.proto.Personal.internal_static_aiins_SetIconReq_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
                 com.example.aiins.proto.Personal.SetIconReq.class, com.example.aiins.proto.Personal.SetIconReq.Builder.class);
       }
@@ -1451,7 +1459,7 @@ public final class Personal {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.example.aiins.proto.Personal.internal_static_SetIconReq_descriptor;
+        return com.example.aiins.proto.Personal.internal_static_aiins_SetIconReq_descriptor;
       }
 
       @java.lang.Override
@@ -1633,10 +1641,10 @@ public final class Personal {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:SetIconReq)
+      // @@protoc_insertion_point(builder_scope:aiins.SetIconReq)
     }
 
-    // @@protoc_insertion_point(class_scope:SetIconReq)
+    // @@protoc_insertion_point(class_scope:aiins.SetIconReq)
     private static final com.example.aiins.proto.Personal.SetIconReq DEFAULT_INSTANCE;
     static {
       DEFAULT_INSTANCE = new com.example.aiins.proto.Personal.SetIconReq();
@@ -1674,7 +1682,7 @@ public final class Personal {
   }
 
   public interface SetNicknameReqOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:SetNicknameReq)
+      // @@protoc_insertion_point(interface_extends:aiins.SetNicknameReq)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -1696,11 +1704,15 @@ public final class Personal {
         getNicknameBytes();
   }
   /**
-   * Protobuf type {@code SetNicknameReq}
+   * <pre>
+   * type = 1
+   * </pre>
+   *
+   * Protobuf type {@code aiins.SetNicknameReq}
    */
   public static final class SetNicknameReq extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:SetNicknameReq)
+      // @@protoc_insertion_point(message_implements:aiins.SetNicknameReq)
       SetNicknameReqOrBuilder {
   private static final long serialVersionUID = 0L;
     // Use SetNicknameReq.newBuilder() to construct.
@@ -1773,13 +1785,13 @@ public final class Personal {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.example.aiins.proto.Personal.internal_static_SetNicknameReq_descriptor;
+      return com.example.aiins.proto.Personal.internal_static_aiins_SetNicknameReq_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.example.aiins.proto.Personal.internal_static_SetNicknameReq_fieldAccessorTable
+      return com.example.aiins.proto.Personal.internal_static_aiins_SetNicknameReq_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.example.aiins.proto.Personal.SetNicknameReq.class, com.example.aiins.proto.Personal.SetNicknameReq.Builder.class);
     }
@@ -1999,21 +2011,25 @@ public final class Personal {
       return builder;
     }
     /**
-     * Protobuf type {@code SetNicknameReq}
+     * <pre>
+     * type = 1
+     * </pre>
+     *
+     * Protobuf type {@code aiins.SetNicknameReq}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:SetNicknameReq)
+        // @@protoc_insertion_point(builder_implements:aiins.SetNicknameReq)
         com.example.aiins.proto.Personal.SetNicknameReqOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.example.aiins.proto.Personal.internal_static_SetNicknameReq_descriptor;
+        return com.example.aiins.proto.Personal.internal_static_aiins_SetNicknameReq_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.example.aiins.proto.Personal.internal_static_SetNicknameReq_fieldAccessorTable
+        return com.example.aiins.proto.Personal.internal_static_aiins_SetNicknameReq_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
                 com.example.aiins.proto.Personal.SetNicknameReq.class, com.example.aiins.proto.Personal.SetNicknameReq.Builder.class);
       }
@@ -2046,7 +2062,7 @@ public final class Personal {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.example.aiins.proto.Personal.internal_static_SetNicknameReq_descriptor;
+        return com.example.aiins.proto.Personal.internal_static_aiins_SetNicknameReq_descriptor;
       }
 
       @java.lang.Override
@@ -2271,10 +2287,10 @@ public final class Personal {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:SetNicknameReq)
+      // @@protoc_insertion_point(builder_scope:aiins.SetNicknameReq)
     }
 
-    // @@protoc_insertion_point(class_scope:SetNicknameReq)
+    // @@protoc_insertion_point(class_scope:aiins.SetNicknameReq)
     private static final com.example.aiins.proto.Personal.SetNicknameReq DEFAULT_INSTANCE;
     static {
       DEFAULT_INSTANCE = new com.example.aiins.proto.Personal.SetNicknameReq();
@@ -2312,7 +2328,7 @@ public final class Personal {
   }
 
   public interface SetPasswordReqOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:SetPasswordReq)
+      // @@protoc_insertion_point(interface_extends:aiins.SetPasswordReq)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -2346,11 +2362,15 @@ public final class Personal {
         getNewBytes();
   }
   /**
-   * Protobuf type {@code SetPasswordReq}
+   * <pre>
+   * type = 2
+   * </pre>
+   *
+   * Protobuf type {@code aiins.SetPasswordReq}
    */
   public static final class SetPasswordReq extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:SetPasswordReq)
+      // @@protoc_insertion_point(message_implements:aiins.SetPasswordReq)
       SetPasswordReqOrBuilder {
   private static final long serialVersionUID = 0L;
     // Use SetPasswordReq.newBuilder() to construct.
@@ -2430,13 +2450,13 @@ public final class Personal {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.example.aiins.proto.Personal.internal_static_SetPasswordReq_descriptor;
+      return com.example.aiins.proto.Personal.internal_static_aiins_SetPasswordReq_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.example.aiins.proto.Personal.internal_static_SetPasswordReq_fieldAccessorTable
+      return com.example.aiins.proto.Personal.internal_static_aiins_SetPasswordReq_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.example.aiins.proto.Personal.SetPasswordReq.class, com.example.aiins.proto.Personal.SetPasswordReq.Builder.class);
     }
@@ -2704,21 +2724,25 @@ public final class Personal {
       return builder;
     }
     /**
-     * Protobuf type {@code SetPasswordReq}
+     * <pre>
+     * type = 2
+     * </pre>
+     *
+     * Protobuf type {@code aiins.SetPasswordReq}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:SetPasswordReq)
+        // @@protoc_insertion_point(builder_implements:aiins.SetPasswordReq)
         com.example.aiins.proto.Personal.SetPasswordReqOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.example.aiins.proto.Personal.internal_static_SetPasswordReq_descriptor;
+        return com.example.aiins.proto.Personal.internal_static_aiins_SetPasswordReq_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.example.aiins.proto.Personal.internal_static_SetPasswordReq_fieldAccessorTable
+        return com.example.aiins.proto.Personal.internal_static_aiins_SetPasswordReq_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
                 com.example.aiins.proto.Personal.SetPasswordReq.class, com.example.aiins.proto.Personal.SetPasswordReq.Builder.class);
       }
@@ -2753,7 +2777,7 @@ public final class Personal {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.example.aiins.proto.Personal.internal_static_SetPasswordReq_descriptor;
+        return com.example.aiins.proto.Personal.internal_static_aiins_SetPasswordReq_descriptor;
       }
 
       @java.lang.Override
@@ -3059,10 +3083,10 @@ public final class Personal {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:SetPasswordReq)
+      // @@protoc_insertion_point(builder_scope:aiins.SetPasswordReq)
     }
 
-    // @@protoc_insertion_point(class_scope:SetPasswordReq)
+    // @@protoc_insertion_point(class_scope:aiins.SetPasswordReq)
     private static final com.example.aiins.proto.Personal.SetPasswordReq DEFAULT_INSTANCE;
     static {
       DEFAULT_INSTANCE = new com.example.aiins.proto.Personal.SetPasswordReq();
@@ -3100,7 +3124,7 @@ public final class Personal {
   }
 
   public interface SettingRspOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:SettingRsp)
+      // @@protoc_insertion_point(interface_extends:aiins.SettingRsp)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -3122,11 +3146,11 @@ public final class Personal {
         getMsgBytes();
   }
   /**
-   * Protobuf type {@code SettingRsp}
+   * Protobuf type {@code aiins.SettingRsp}
    */
   public static final class SettingRsp extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:SettingRsp)
+      // @@protoc_insertion_point(message_implements:aiins.SettingRsp)
       SettingRspOrBuilder {
   private static final long serialVersionUID = 0L;
     // Use SettingRsp.newBuilder() to construct.
@@ -3199,13 +3223,13 @@ public final class Personal {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.example.aiins.proto.Personal.internal_static_SettingRsp_descriptor;
+      return com.example.aiins.proto.Personal.internal_static_aiins_SettingRsp_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.example.aiins.proto.Personal.internal_static_SettingRsp_fieldAccessorTable
+      return com.example.aiins.proto.Personal.internal_static_aiins_SettingRsp_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.example.aiins.proto.Personal.SettingRsp.class, com.example.aiins.proto.Personal.SettingRsp.Builder.class);
     }
@@ -3425,21 +3449,21 @@ public final class Personal {
       return builder;
     }
     /**
-     * Protobuf type {@code SettingRsp}
+     * Protobuf type {@code aiins.SettingRsp}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:SettingRsp)
+        // @@protoc_insertion_point(builder_implements:aiins.SettingRsp)
         com.example.aiins.proto.Personal.SettingRspOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.example.aiins.proto.Personal.internal_static_SettingRsp_descriptor;
+        return com.example.aiins.proto.Personal.internal_static_aiins_SettingRsp_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.example.aiins.proto.Personal.internal_static_SettingRsp_fieldAccessorTable
+        return com.example.aiins.proto.Personal.internal_static_aiins_SettingRsp_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
                 com.example.aiins.proto.Personal.SettingRsp.class, com.example.aiins.proto.Personal.SettingRsp.Builder.class);
       }
@@ -3472,7 +3496,7 @@ public final class Personal {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.example.aiins.proto.Personal.internal_static_SettingRsp_descriptor;
+        return com.example.aiins.proto.Personal.internal_static_aiins_SettingRsp_descriptor;
       }
 
       @java.lang.Override
@@ -3697,10 +3721,10 @@ public final class Personal {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:SettingRsp)
+      // @@protoc_insertion_point(builder_scope:aiins.SettingRsp)
     }
 
-    // @@protoc_insertion_point(class_scope:SettingRsp)
+    // @@protoc_insertion_point(class_scope:aiins.SettingRsp)
     private static final com.example.aiins.proto.Personal.SettingRsp DEFAULT_INSTANCE;
     static {
       DEFAULT_INSTANCE = new com.example.aiins.proto.Personal.SettingRsp();
@@ -3738,30 +3762,30 @@ public final class Personal {
   }
 
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_SettingReq_descriptor;
+    internal_static_aiins_SettingReq_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_SettingReq_fieldAccessorTable;
+      internal_static_aiins_SettingReq_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_SetIconReq_descriptor;
+    internal_static_aiins_SetIconReq_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_SetIconReq_fieldAccessorTable;
+      internal_static_aiins_SetIconReq_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_SetNicknameReq_descriptor;
+    internal_static_aiins_SetNicknameReq_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_SetNicknameReq_fieldAccessorTable;
+      internal_static_aiins_SetNicknameReq_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_SetPasswordReq_descriptor;
+    internal_static_aiins_SetPasswordReq_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_SetPasswordReq_fieldAccessorTable;
+      internal_static_aiins_SetPasswordReq_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_SettingRsp_descriptor;
+    internal_static_aiins_SettingRsp_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_SettingRsp_fieldAccessorTable;
+      internal_static_aiins_SettingRsp_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -3771,50 +3795,51 @@ public final class Personal {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\024proto/Personal.proto\"\204\001\n\nSettingReq\022\014\n" +
-      "\004type\030\001 \001(\005\022\034\n\007iconReq\030\002 \001(\0132\013.SetIconRe" +
-      "q\022$\n\013nicknameReq\030\003 \001(\0132\017.SetNicknameReq\022" +
-      "$\n\013passwordReq\030\004 \001(\0132\017.SetPasswordReq\"\'\n" +
-      "\nSetIconReq\022\013\n\003uid\030\001 \001(\005\022\014\n\004icon\030\002 \001(\014\"/" +
-      "\n\016SetNicknameReq\022\013\n\003uid\030\001 \001(\005\022\020\n\010nicknam" +
-      "e\030\002 \001(\t\"7\n\016SetPasswordReq\022\013\n\003uid\030\001 \001(\005\022\013" +
-      "\n\003old\030\002 \001(\t\022\013\n\003new\030\003 \001(\t\"-\n\nSettingRsp\022\022" +
-      "\n\nresultCode\030\001 \001(\005\022\013\n\003msg\030\002 \001(\tB\031\n\027com.e" +
-      "xample.aiins.protob\006proto3"
+      "\n\024proto/Personal.proto\022\005aiins\"\226\001\n\nSettin" +
+      "gReq\022\014\n\004type\030\001 \001(\005\022\"\n\007iconReq\030\002 \001(\0132\021.ai" +
+      "ins.SetIconReq\022*\n\013nicknameReq\030\003 \001(\0132\025.ai" +
+      "ins.SetNicknameReq\022*\n\013passwordReq\030\004 \001(\0132" +
+      "\025.aiins.SetPasswordReq\"\'\n\nSetIconReq\022\013\n\003" +
+      "uid\030\001 \001(\005\022\014\n\004icon\030\002 \001(\014\"/\n\016SetNicknameRe" +
+      "q\022\013\n\003uid\030\001 \001(\005\022\020\n\010nickname\030\002 \001(\t\"7\n\016SetP" +
+      "asswordReq\022\013\n\003uid\030\001 \001(\005\022\013\n\003old\030\002 \001(\t\022\013\n\003" +
+      "new\030\003 \001(\t\"-\n\nSettingRsp\022\022\n\nresultCode\030\001 " +
+      "\001(\005\022\013\n\003msg\030\002 \001(\tB\031\n\027com.example.aiins.pr" +
+      "otob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
         });
-    internal_static_SettingReq_descriptor =
+    internal_static_aiins_SettingReq_descriptor =
       getDescriptor().getMessageTypes().get(0);
-    internal_static_SettingReq_fieldAccessorTable = new
+    internal_static_aiins_SettingReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_SettingReq_descriptor,
+        internal_static_aiins_SettingReq_descriptor,
         new java.lang.String[] { "Type", "IconReq", "NicknameReq", "PasswordReq", });
-    internal_static_SetIconReq_descriptor =
+    internal_static_aiins_SetIconReq_descriptor =
       getDescriptor().getMessageTypes().get(1);
-    internal_static_SetIconReq_fieldAccessorTable = new
+    internal_static_aiins_SetIconReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_SetIconReq_descriptor,
+        internal_static_aiins_SetIconReq_descriptor,
         new java.lang.String[] { "Uid", "Icon", });
-    internal_static_SetNicknameReq_descriptor =
+    internal_static_aiins_SetNicknameReq_descriptor =
       getDescriptor().getMessageTypes().get(2);
-    internal_static_SetNicknameReq_fieldAccessorTable = new
+    internal_static_aiins_SetNicknameReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_SetNicknameReq_descriptor,
+        internal_static_aiins_SetNicknameReq_descriptor,
         new java.lang.String[] { "Uid", "Nickname", });
-    internal_static_SetPasswordReq_descriptor =
+    internal_static_aiins_SetPasswordReq_descriptor =
       getDescriptor().getMessageTypes().get(3);
-    internal_static_SetPasswordReq_fieldAccessorTable = new
+    internal_static_aiins_SetPasswordReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_SetPasswordReq_descriptor,
+        internal_static_aiins_SetPasswordReq_descriptor,
         new java.lang.String[] { "Uid", "Old", "New", });
-    internal_static_SettingRsp_descriptor =
+    internal_static_aiins_SettingRsp_descriptor =
       getDescriptor().getMessageTypes().get(4);
-    internal_static_SettingRsp_fieldAccessorTable = new
+    internal_static_aiins_SettingRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_SettingRsp_descriptor,
+        internal_static_aiins_SettingRsp_descriptor,
         new java.lang.String[] { "ResultCode", "Msg", });
   }
 

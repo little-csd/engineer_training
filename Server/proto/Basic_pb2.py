@@ -15,11 +15,11 @@ _sym_db = _symbol_database.Default()
 
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='Basic.proto',
-  package='',
+  package='aiins',
   syntax='proto3',
   serialized_options=b'\n\027com.example.aiins.proto',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x0b\x42\x61sic.proto\"\x1a\n\x0bUserDataReq\x12\x0b\n\x03uid\x18\x01 \x03(\x05\"?\n\x0bUserDataRsp\x12\x10\n\x08nickname\x18\x01 \x03(\t\x12\x10\n\x08username\x18\x02 \x03(\t\x12\x0c\n\x04icon\x18\x03 \x03(\x0c\"R\n\rBasicUserData\x12\x10\n\x08nickname\x18\x01 \x01(\t\x12\x10\n\x08username\x18\x02 \x01(\t\x12\x10\n\x08password\x18\x03 \x01(\t\x12\x0b\n\x03uid\x18\x04 \x01(\x05\"S\n\tLocalData\x12\x1c\n\x04user\x18\x01 \x01(\x0b\x32\x0e.BasicUserData\x12\x0c\n\x04icon\x18\x02 \x01(\x0c\x12\x1a\n\x08messages\x18\x03 \x03(\x0b\x32\x08.Message\"@\n\x07Message\x12\x0c\n\x04\x66rom\x18\x01 \x01(\x05\x12\n\n\x02to\x18\x02 \x03(\x05\x12\x0c\n\x04text\x18\x03 \x01(\t\x12\r\n\x05image\x18\x04 \x01(\x0c\x42\x19\n\x17\x63om.example.aiins.protob\x06proto3'
+  serialized_pb=b'\n\x0b\x42\x61sic.proto\x12\x05\x61iins\"(\n\x0bUserDataReq\x12\x0b\n\x03uid\x18\x01 \x03(\x05\x12\x0c\n\x04time\x18\x02 \x01(\x03\"L\n\x0bUserDataRsp\x12\x10\n\x08nickname\x18\x01 \x03(\t\x12\x10\n\x08username\x18\x02 \x03(\t\x12\x0c\n\x04icon\x18\x03 \x03(\x0c\x12\x0b\n\x03uid\x18\x04 \x03(\x05\"R\n\rBasicUserData\x12\x10\n\x08nickname\x18\x01 \x01(\t\x12\x10\n\x08username\x18\x02 \x01(\t\x12\x10\n\x08password\x18\x03 \x01(\t\x12\x0b\n\x03uid\x18\x04 \x01(\x05\"-\n\tLocalData\x12 \n\x08messages\x18\x03 \x03(\x0b\x32\x0e.aiins.Message\"N\n\x07Message\x12\x0c\n\x04\x66rom\x18\x01 \x01(\x05\x12\n\n\x02to\x18\x02 \x03(\x05\x12\x0c\n\x04time\x18\x03 \x01(\x05\x12\x0c\n\x04text\x18\x04 \x01(\t\x12\r\n\x05image\x18\x05 \x01(\x0c\x42\x19\n\x17\x63om.example.aiins.protob\x06proto3'
 )
 
 
@@ -27,16 +27,23 @@ DESCRIPTOR = _descriptor.FileDescriptor(
 
 _USERDATAREQ = _descriptor.Descriptor(
   name='UserDataReq',
-  full_name='UserDataReq',
+  full_name='aiins.UserDataReq',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='uid', full_name='UserDataReq.uid', index=0,
+      name='uid', full_name='aiins.UserDataReq.uid', index=0,
       number=1, type=5, cpp_type=1, label=3,
       has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='time', full_name='aiins.UserDataReq.time', index=1,
+      number=2, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
@@ -52,36 +59,43 @@ _USERDATAREQ = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=15,
-  serialized_end=41,
+  serialized_start=22,
+  serialized_end=62,
 )
 
 
 _USERDATARSP = _descriptor.Descriptor(
   name='UserDataRsp',
-  full_name='UserDataRsp',
+  full_name='aiins.UserDataRsp',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='nickname', full_name='UserDataRsp.nickname', index=0,
+      name='nickname', full_name='aiins.UserDataRsp.nickname', index=0,
       number=1, type=9, cpp_type=9, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='username', full_name='UserDataRsp.username', index=1,
+      name='username', full_name='aiins.UserDataRsp.username', index=1,
       number=2, type=9, cpp_type=9, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='icon', full_name='UserDataRsp.icon', index=2,
+      name='icon', full_name='aiins.UserDataRsp.icon', index=2,
       number=3, type=12, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='uid', full_name='aiins.UserDataRsp.uid', index=3,
+      number=4, type=5, cpp_type=1, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -98,42 +112,42 @@ _USERDATARSP = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=43,
-  serialized_end=106,
+  serialized_start=64,
+  serialized_end=140,
 )
 
 
 _BASICUSERDATA = _descriptor.Descriptor(
   name='BasicUserData',
-  full_name='BasicUserData',
+  full_name='aiins.BasicUserData',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='nickname', full_name='BasicUserData.nickname', index=0,
+      name='nickname', full_name='aiins.BasicUserData.nickname', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='username', full_name='BasicUserData.username', index=1,
+      name='username', full_name='aiins.BasicUserData.username', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='password', full_name='BasicUserData.password', index=2,
+      name='password', full_name='aiins.BasicUserData.password', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='uid', full_name='BasicUserData.uid', index=3,
+      name='uid', full_name='aiins.BasicUserData.uid', index=3,
       number=4, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -151,35 +165,21 @@ _BASICUSERDATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=108,
-  serialized_end=190,
+  serialized_start=142,
+  serialized_end=224,
 )
 
 
 _LOCALDATA = _descriptor.Descriptor(
   name='LocalData',
-  full_name='LocalData',
+  full_name='aiins.LocalData',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='user', full_name='LocalData.user', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='icon', full_name='LocalData.icon', index=1,
-      number=2, type=12, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"",
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='messages', full_name='LocalData.messages', index=2,
+      name='messages', full_name='aiins.LocalData.messages', index=0,
       number=3, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -197,43 +197,50 @@ _LOCALDATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=192,
-  serialized_end=275,
+  serialized_start=226,
+  serialized_end=271,
 )
 
 
 _MESSAGE = _descriptor.Descriptor(
   name='Message',
-  full_name='Message',
+  full_name='aiins.Message',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='from', full_name='Message.from', index=0,
+      name='from', full_name='aiins.Message.from', index=0,
       number=1, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='to', full_name='Message.to', index=1,
+      name='to', full_name='aiins.Message.to', index=1,
       number=2, type=5, cpp_type=1, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='text', full_name='Message.text', index=2,
-      number=3, type=9, cpp_type=9, label=1,
+      name='time', full_name='aiins.Message.time', index=2,
+      number=3, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='text', full_name='aiins.Message.text', index=3,
+      number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='image', full_name='Message.image', index=3,
-      number=4, type=12, cpp_type=9, label=1,
+      name='image', full_name='aiins.Message.image', index=4,
+      number=5, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -250,11 +257,10 @@ _MESSAGE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=277,
-  serialized_end=341,
+  serialized_start=273,
+  serialized_end=351,
 )
 
-_LOCALDATA.fields_by_name['user'].message_type = _BASICUSERDATA
 _LOCALDATA.fields_by_name['messages'].message_type = _MESSAGE
 DESCRIPTOR.message_types_by_name['UserDataReq'] = _USERDATAREQ
 DESCRIPTOR.message_types_by_name['UserDataRsp'] = _USERDATARSP
@@ -266,35 +272,35 @@ _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 UserDataReq = _reflection.GeneratedProtocolMessageType('UserDataReq', (_message.Message,), {
   'DESCRIPTOR' : _USERDATAREQ,
   '__module__' : 'Basic_pb2'
-  # @@protoc_insertion_point(class_scope:UserDataReq)
+  # @@protoc_insertion_point(class_scope:aiins.UserDataReq)
   })
 _sym_db.RegisterMessage(UserDataReq)
 
 UserDataRsp = _reflection.GeneratedProtocolMessageType('UserDataRsp', (_message.Message,), {
   'DESCRIPTOR' : _USERDATARSP,
   '__module__' : 'Basic_pb2'
-  # @@protoc_insertion_point(class_scope:UserDataRsp)
+  # @@protoc_insertion_point(class_scope:aiins.UserDataRsp)
   })
 _sym_db.RegisterMessage(UserDataRsp)
 
 BasicUserData = _reflection.GeneratedProtocolMessageType('BasicUserData', (_message.Message,), {
   'DESCRIPTOR' : _BASICUSERDATA,
   '__module__' : 'Basic_pb2'
-  # @@protoc_insertion_point(class_scope:BasicUserData)
+  # @@protoc_insertion_point(class_scope:aiins.BasicUserData)
   })
 _sym_db.RegisterMessage(BasicUserData)
 
 LocalData = _reflection.GeneratedProtocolMessageType('LocalData', (_message.Message,), {
   'DESCRIPTOR' : _LOCALDATA,
   '__module__' : 'Basic_pb2'
-  # @@protoc_insertion_point(class_scope:LocalData)
+  # @@protoc_insertion_point(class_scope:aiins.LocalData)
   })
 _sym_db.RegisterMessage(LocalData)
 
 Message = _reflection.GeneratedProtocolMessageType('Message', (_message.Message,), {
   'DESCRIPTOR' : _MESSAGE,
   '__module__' : 'Basic_pb2'
-  # @@protoc_insertion_point(class_scope:Message)
+  # @@protoc_insertion_point(class_scope:aiins.Message)
   })
 _sym_db.RegisterMessage(Message)
 

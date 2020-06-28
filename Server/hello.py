@@ -91,9 +91,24 @@ def process_password(req):
     mongo.setting_reset(res, 'password', new)
     return 0,'ok'
 
+# 最近的信息
+@app.route('/search')
+def search():
+    return ''
+
+# 查询用户信息
+@app.route('/user')
+def user():
+    return ''
+
+# 添加好友相关
+@app.route('/friend')
+def friend():
+    return ''
+
 @app.route('/')
 def hello_world():
-    return 'Hello World!'
+    return 'Welcome to AI Ins application'
 
 '''
 数据库使用 mongodb 存储
@@ -101,9 +116,9 @@ def hello_world():
 0. / 主界面, 暂无功能
 1. /login 登录界面, 负责处理登录请求
 2. /search 附近的人, 请求时返回
-3. /talk 对话, 传入对话信息
-4. /setting 设置信息
-5. /friend 添加好友
+3. /setting 设置信息
+4. /friend 添加好友
+5. /user 查询用户信息
 
 resultCode:
 1: 注册用户名重复

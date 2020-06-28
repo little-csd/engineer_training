@@ -1,17 +1,20 @@
 syntax = "proto3"; // PB协议版本
+package aiins;
 
 option java_package = "com.example.aiins.proto";
 
 // 获取一系列用户基本信息请求
 message UserDataReq {
     repeated int32 uid = 1;
+    int64 time = 2;
 }
 
-// 一系列用户基本信息响应
+// 一系列用户基本信息响应, 根据时间戳返回
 message UserDataRsp {
     repeated string nickname = 1;
     repeated string username = 2;
     repeated bytes icon = 3;
+    repeated int32 uid = 4;
 }
 
 // 每个用户都有的基本信息
@@ -24,8 +27,6 @@ message BasicUserData {
 
 // 本地需要保存的数据, 自己的信息已经隔开
 message LocalData {
-    BasicUserData user = 1;
-    bytes icon = 2; // 自己的头像
     repeated Message messages = 3; // 对话信息
 }
 
@@ -33,6 +34,7 @@ message LocalData {
 message Message {
     int32 from = 1;
     repeated int32 to = 2;
-    string text = 3;
-    bytes image = 4;
+    int32 time = 3;
+    string text = 4;
+    bytes image = 5;
 }

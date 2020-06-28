@@ -1,4 +1,5 @@
 syntax = "proto3"; // PB协议版本
+package aiins;
 
 option java_package = "com.example.aiins.proto";
 
