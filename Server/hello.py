@@ -2,6 +2,7 @@ from flask import Flask
 from flask import request
 import proto.Register_pb2 as Register
 import proto.Personal_pb2 as Personal
+import proto.Friend_pb2 as Friend
 from src.db import Mongo
 
 app = Flask("AI ins")
@@ -64,6 +65,7 @@ def setting():
     return rsp.SerializeToString()
 
 def process_iconreq(req):
+    print('process_iconreq')
     uid = req.uid
     data = req.icon
     res = mongo.setting_find(uid)
@@ -73,6 +75,7 @@ def process_iconreq(req):
     return 0,'ok'
 
 def process_nicknamereq(req):
+    print('process_nicknamereq')
     uid = req.uid
     name = req.nickname
     res = mongo.setting_find(uid)
@@ -83,6 +86,7 @@ def process_nicknamereq(req):
 
 # password 检查交给本地
 def process_password(req):
+    print('process_password')
     uid = req.uid
     new = req.new
     res = mongo.setting_find(uid)
@@ -91,19 +95,65 @@ def process_password(req):
     mongo.setting_reset(res, 'password', new)
     return 0,'ok'
 
-# 最近的信息
-@app.route('/search')
-def search():
-    return ''
+# 添加好友相关
+@app.route('/friend', methods=['POST'])
+def friend():
+    req = Friend.FriendReq()
+    data = request.data
+    req.ParseFromString(data)
+    if req.type == 0:
+        req = req.searchUserReq
+        return process_search_user(req)
+    elif req.type == 1:
+        req = req.addFriendReq
+        print('process_friend_add')
+        mongo.friend_add(req.src, req.dst)
+        return ''
+    elif req.type == 2:
+        req = req.pullFriendReq
+        return process_pull_friend_req(req)
+    else:
+        print('unknown error')
+        return ''
+
+def process_search_user(req):
+    print('process_search_user')
+    name = req.username
+    res = mongo.login_find(name)
+    rsp = Friend.SearchUserRsp()
+    if res is None:
+        rsp.resultCode = 1
+    else:
+        rsp.resultCode = 0
+        rsp.nickname = res['nickname']
+        rsp.username = res['username']
+        rsp.uid = res['uid']
+        if 'icon' in res.keys():
+            rsp.icon = res['icon']
+    return rsp.SerializeToString()
+
+def process_pull_friend_req(req):
+    print('process_pull_friend_req')
+    uid = req.uid
+    l1 = mongo.friend_find_remove_src(uid, True)
+    l2 = mongo.friend_find_remove_dst(uid, False)
+    rsp = Friend.PullAddFriendRsp()
+    l = l1 + l2
+    for r in l:
+        _r = rsp.reqs.add()
+        _r.src = r['src']
+        _r.dst = r['dst']
+        _r.isAccept = r['accept']
+    return rsp.SerializeToString()
 
 # 查询用户信息
 @app.route('/user')
 def user():
     return ''
 
-# 添加好友相关
-@app.route('/friend')
-def friend():
+# 最近的信息
+@app.route('/search')
+def search():
     return ''
 
 @app.route('/')
@@ -125,4 +175,5 @@ resultCode:
 2: 登录密码错误或用户名不存在
 3: setting 请求 type 不合法
 4: setting uid not found
+5. friend type error
 '''

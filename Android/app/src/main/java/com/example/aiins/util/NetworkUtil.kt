@@ -1,5 +1,6 @@
 package com.example.aiins.util
 
+import com.example.aiins.proto.Friend
 import com.example.aiins.proto.Personal
 import com.example.aiins.proto.Register
 import com.google.protobuf.ByteString
@@ -66,5 +67,49 @@ object NetworkUtil {
                 .setIconReq(req)
                 .build()
         setting(req2, callback)
+    }
+
+    private fun friend(req: Friend.FriendReq, callback: Callback) {
+        val request = Request.Builder()
+                .url(Config.friend)
+                .post(req.toByteArray().toRequestBody())
+                .build()
+        val call = okHttpClient.newCall(request)
+        call.enqueue(callback)
+    }
+
+    fun friendSearch(name: String, callback: Callback) {
+        val req = Friend.SearchUserReq.newBuilder()
+                .setUsername(name)
+                .build()
+        val req2 = Friend.FriendReq.newBuilder()
+                .setType(Config.TYPE_SEARCH)
+                .setSearchUserReq(req)
+                .build()
+        friend(req2, callback)
+    }
+
+    fun friendAdd(uid: Int, callback: Callback) {
+        val req = Friend.AddFriendReq.newBuilder()
+                .setSrc(Config.userData.uid)
+                .setDst(uid)
+                .setIsAccept(false)
+                .build()
+        val req2 = Friend.FriendReq.newBuilder()
+                .setType(Config.TYPE_ADD)
+                .setAddFriendReq(req)
+                .build()
+        friend(req2, callback)
+    }
+
+    fun friendPull(callback: Callback) {
+        val req = Friend.PullAddFriendReq.newBuilder()
+                .setUid(Config.userData.uid)
+                .build()
+        val req2 = Friend.FriendReq.newBuilder()
+                .setType(Config.TYPE_PULL)
+                .setPullFriendReq(req)
+                .build()
+        friend(req2, callback)
     }
 }

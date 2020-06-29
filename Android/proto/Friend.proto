@@ -5,10 +5,17 @@ option java_package = "com.example.aiins.proto";
 
 // 好友模块, 每次启动时从服务器中查找, 如果当前 uid 的用户在线(websocket), 则直接发送
 // 是否有好友添加请求, 有则拉取下来进行处理
-// 1. 有 to 为自己 uid 的请求, 则拉取下来, 如果接受, 发送回去并将 isAccept 设置为 true
+// 1. 有 to 为自己 uid 的请求, 并且 isAccept = false, 则拉取下来, 如果接受, 发送回去并将 isAccept 设置为 true
 // 2. 有 from 为自己 uid 的请求, 并且 isAccept = true, 则说明已经同意, 拉取下来可进行正常对话
 
-// 查找好友请求
+message FriendReq {
+  int32 type = 1;
+  SearchUserReq searchUserReq = 2;
+  AddFriendReq addFriendReq = 3;
+  PullAddFriendReq pullFriendReq = 4;
+}
+
+// 查找好友请求, type = 0
 message SearchUserReq {
   string username = 1;
 }
@@ -17,13 +24,24 @@ message SearchUserReq {
 message SearchUserRsp {
   int32 resultCode = 1;
   string nickname = 2;
-  int32 uid = 3;
-  bytes icon = 4;
+  string username = 3;
+  int32 uid = 4;
+  bytes icon = 5;
 }
 
-// 添加好友请求, isAccept 标志目标用户是否已经接受请求
+// 添加好友请求, isAccept 标志目标用户是否已经接受请求, type = 1
 message AddFriendReq {
-  int32 from = 1;
-  int32 to = 2;
+  int32 src = 1;
+  int32 dst = 2;
   bool isAccept = 3;
+}
+
+// 从服务器中拉取请求 type = 2
+message PullAddFriendReq {
+  int32 uid = 1;
+}
+
+// 拉取返回值
+message PullAddFriendRsp {
+  repeated AddFriendReq reqs = 1;
 }
