@@ -23,10 +23,21 @@ message Message {
     bytes image = 5;
 }
 
-// 每一个发布的 post
+// Post 请求, type = 0 表示拉取信息(time 为拉取的页数), type = 1 表示原始, type = 2 表示 transfer, type = 3 表示转文本
+message PostReq {
+    int32 type = 1;
+    int32 uid = 2;
+    int32 time = 3;
+    string text = 4;
+    bytes img1 = 5;
+    bytes img2 = 6;
+}
+
+// 存在数据库的每一个 Post 类
 message Post {
     int32 uid = 1;
     string text = 2;
     bytes image = 3;
     int32 time = 4;
+    string desc = 5;
 }

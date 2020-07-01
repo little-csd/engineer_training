@@ -8,6 +8,7 @@ object Config {
     const val setting = "$host/setting"
     const val friend = "$host/friend"
     const val user = "$host/user"
+    const val post = "$host/post"
 
     const val iconName = "icon.png"
 

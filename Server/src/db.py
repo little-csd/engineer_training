@@ -27,6 +27,7 @@ class Mongo:
         uid = find_res['uid']
         find_res[item] = data
         cond = {'uid': uid}
+        print(data)
         res = self.login.update_one(cond, {'$set': find_res})
 
     # 好友部分
@@ -84,12 +85,27 @@ class Mongo:
     
     def post_add(self, post):
         data = {
-
+            'uid': post.uid,
+            'text': post.text,
+            'image': post.image,
+            'time': post.time,
+            'desc': post.desc
         }
         self.post.insert_one(data)
+        return ''
 
-    def post_find(self, uid, number):
-        
+    def post_find(self, number):
+        if number <= 0:
+            return []
+        res = self.post.find(sort=[("time", -1)])
+        t = 0
+        l = []
+        for r in res:
+            l.append(r)
+            t += 1
+            if t >= number:
+                break
+        return l
 
     def __init__(self):
         self.client = pymongo.MongoClient(host='localhost')
