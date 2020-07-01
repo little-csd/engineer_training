@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\027com.example.aiins.proto',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x0c\x46riend.proto\x12\x05\x61iins\"\xa1\x01\n\tFriendReq\x12\x0c\n\x04type\x18\x01 \x01(\x05\x12+\n\rsearchUserReq\x18\x02 \x01(\x0b\x32\x14.aiins.SearchUserReq\x12)\n\x0c\x61\x64\x64\x46riendReq\x18\x03 \x01(\x0b\x32\x13.aiins.AddFriendReq\x12.\n\rpullFriendReq\x18\x04 \x01(\x0b\x32\x17.aiins.PullAddFriendReq\"!\n\rSearchUserReq\x12\x10\n\x08username\x18\x01 \x01(\t\"b\n\rSearchUserRsp\x12\x12\n\nresultCode\x18\x01 \x01(\x05\x12\x10\n\x08nickname\x18\x02 \x01(\t\x12\x10\n\x08username\x18\x03 \x01(\t\x12\x0b\n\x03uid\x18\x04 \x01(\x05\x12\x0c\n\x04icon\x18\x05 \x01(\x0c\":\n\x0c\x41\x64\x64\x46riendReq\x12\x0b\n\x03src\x18\x01 \x01(\x05\x12\x0b\n\x03\x64st\x18\x02 \x01(\x05\x12\x10\n\x08isAccept\x18\x03 \x01(\x08\"\x1f\n\x10PullAddFriendReq\x12\x0b\n\x03uid\x18\x01 \x01(\x05\"5\n\x10PullAddFriendRsp\x12!\n\x04reqs\x18\x01 \x03(\x0b\x32\x13.aiins.AddFriendReqB\x19\n\x17\x63om.example.aiins.protob\x06proto3'
+  serialized_pb=b'\n\x0c\x46riend.proto\x12\x05\x61iins\"\xd5\x01\n\tFriendReq\x12\x0c\n\x04type\x18\x01 \x01(\x05\x12+\n\rsearchUserReq\x18\x02 \x01(\x0b\x32\x14.aiins.SearchUserReq\x12)\n\x0c\x61\x64\x64\x46riendReq\x18\x03 \x01(\x0b\x32\x13.aiins.AddFriendReq\x12\x31\n\x10pullAddFriendReq\x18\x04 \x01(\x0b\x32\x17.aiins.PullAddFriendReq\x12/\n\x0fremoveFriendReq\x18\x05 \x01(\x0b\x32\x16.aiins.RemoveFriendReq\"!\n\rSearchUserReq\x12\x10\n\x08username\x18\x01 \x01(\t\"b\n\rSearchUserRsp\x12\x12\n\nresultCode\x18\x01 \x01(\x05\x12\x10\n\x08nickname\x18\x02 \x01(\t\x12\x10\n\x08username\x18\x03 \x01(\t\x12\x0b\n\x03uid\x18\x04 \x01(\x05\x12\x0c\n\x04icon\x18\x05 \x01(\x0c\":\n\x0c\x41\x64\x64\x46riendReq\x12\x0b\n\x03src\x18\x01 \x01(\x05\x12\x0b\n\x03\x64st\x18\x02 \x01(\x05\x12\x10\n\x08isAccept\x18\x03 \x01(\x08\"\x1f\n\x10PullAddFriendReq\x12\x0b\n\x03uid\x18\x01 \x01(\x05\"=\n\x0fRemoveFriendReq\x12\x0b\n\x03src\x18\x01 \x01(\x05\x12\x0b\n\x03\x64st\x18\x02 \x01(\x05\x12\x10\n\x08isAccept\x18\x03 \x01(\x08\"5\n\x10PullAddFriendRsp\x12!\n\x04reqs\x18\x01 \x03(\x0b\x32\x13.aiins.AddFriendReqB\x19\n\x17\x63om.example.aiins.protob\x06proto3'
 )
 
 
@@ -55,8 +55,15 @@ _FRIENDREQ = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='pullFriendReq', full_name='aiins.FriendReq.pullFriendReq', index=3,
+      name='pullAddFriendReq', full_name='aiins.FriendReq.pullAddFriendReq', index=3,
       number=4, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='removeFriendReq', full_name='aiins.FriendReq.removeFriendReq', index=4,
+      number=5, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -74,7 +81,7 @@ _FRIENDREQ = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=24,
-  serialized_end=185,
+  serialized_end=237,
 )
 
 
@@ -105,8 +112,8 @@ _SEARCHUSERREQ = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=187,
-  serialized_end=220,
+  serialized_start=239,
+  serialized_end=272,
 )
 
 
@@ -165,8 +172,8 @@ _SEARCHUSERRSP = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=222,
-  serialized_end=320,
+  serialized_start=274,
+  serialized_end=372,
 )
 
 
@@ -211,8 +218,8 @@ _ADDFRIENDREQ = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=322,
-  serialized_end=380,
+  serialized_start=374,
+  serialized_end=432,
 )
 
 
@@ -243,8 +250,54 @@ _PULLADDFRIENDREQ = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=382,
-  serialized_end=413,
+  serialized_start=434,
+  serialized_end=465,
+)
+
+
+_REMOVEFRIENDREQ = _descriptor.Descriptor(
+  name='RemoveFriendReq',
+  full_name='aiins.RemoveFriendReq',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='src', full_name='aiins.RemoveFriendReq.src', index=0,
+      number=1, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='dst', full_name='aiins.RemoveFriendReq.dst', index=1,
+      number=2, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='isAccept', full_name='aiins.RemoveFriendReq.isAccept', index=2,
+      number=3, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=467,
+  serialized_end=528,
 )
 
 
@@ -275,19 +328,21 @@ _PULLADDFRIENDRSP = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=415,
-  serialized_end=468,
+  serialized_start=530,
+  serialized_end=583,
 )
 
 _FRIENDREQ.fields_by_name['searchUserReq'].message_type = _SEARCHUSERREQ
 _FRIENDREQ.fields_by_name['addFriendReq'].message_type = _ADDFRIENDREQ
-_FRIENDREQ.fields_by_name['pullFriendReq'].message_type = _PULLADDFRIENDREQ
+_FRIENDREQ.fields_by_name['pullAddFriendReq'].message_type = _PULLADDFRIENDREQ
+_FRIENDREQ.fields_by_name['removeFriendReq'].message_type = _REMOVEFRIENDREQ
 _PULLADDFRIENDRSP.fields_by_name['reqs'].message_type = _ADDFRIENDREQ
 DESCRIPTOR.message_types_by_name['FriendReq'] = _FRIENDREQ
 DESCRIPTOR.message_types_by_name['SearchUserReq'] = _SEARCHUSERREQ
 DESCRIPTOR.message_types_by_name['SearchUserRsp'] = _SEARCHUSERRSP
 DESCRIPTOR.message_types_by_name['AddFriendReq'] = _ADDFRIENDREQ
 DESCRIPTOR.message_types_by_name['PullAddFriendReq'] = _PULLADDFRIENDREQ
+DESCRIPTOR.message_types_by_name['RemoveFriendReq'] = _REMOVEFRIENDREQ
 DESCRIPTOR.message_types_by_name['PullAddFriendRsp'] = _PULLADDFRIENDRSP
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
@@ -325,6 +380,13 @@ PullAddFriendReq = _reflection.GeneratedProtocolMessageType('PullAddFriendReq', 
   # @@protoc_insertion_point(class_scope:aiins.PullAddFriendReq)
   })
 _sym_db.RegisterMessage(PullAddFriendReq)
+
+RemoveFriendReq = _reflection.GeneratedProtocolMessageType('RemoveFriendReq', (_message.Message,), {
+  'DESCRIPTOR' : _REMOVEFRIENDREQ,
+  '__module__' : 'Friend_pb2'
+  # @@protoc_insertion_point(class_scope:aiins.RemoveFriendReq)
+  })
+_sym_db.RegisterMessage(RemoveFriendReq)
 
 PullAddFriendRsp = _reflection.GeneratedProtocolMessageType('PullAddFriendRsp', (_message.Message,), {
   'DESCRIPTOR' : _PULLADDFRIENDRSP,

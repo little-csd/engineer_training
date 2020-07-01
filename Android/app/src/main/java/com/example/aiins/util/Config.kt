@@ -7,6 +7,7 @@ object Config {
     const val login = "$host/login"
     const val setting = "$host/setting"
     const val friend = "$host/friend"
+    const val user = "$host/user"
 
     const val iconName = "icon.png"
 
@@ -20,6 +21,7 @@ object Config {
     const val TYPE_SEARCH = 0
     const val TYPE_ADD = 1
     const val TYPE_PULL = 2
+    const val TYPE_REMOVE = 3
 
     fun getUserDataName(id: Int): String {
         return "$userDataName.$id"

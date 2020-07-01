@@ -3,7 +3,7 @@ package aiins;
 
 option java_package = "com.example.aiins.proto";
 
-// 好友模块, 每次启动时从服务器中查找, 如果当前 uid 的用户在线(websocket), 则直接发送
+// 好友模块, 每次启动时从服务器中查找
 // 是否有好友添加请求, 有则拉取下来进行处理
 // 1. 有 to 为自己 uid 的请求, 并且 isAccept = false, 则拉取下来, 如果接受, 发送回去并将 isAccept 设置为 true
 // 2. 有 from 为自己 uid 的请求, 并且 isAccept = true, 则说明已经同意, 拉取下来可进行正常对话
@@ -12,7 +12,8 @@ message FriendReq {
   int32 type = 1;
   SearchUserReq searchUserReq = 2;
   AddFriendReq addFriendReq = 3;
-  PullAddFriendReq pullFriendReq = 4;
+  PullAddFriendReq pullAddFriendReq = 4;
+  RemoveFriendReq removeFriendReq = 5;
 }
 
 // 查找好友请求, type = 0
@@ -39,6 +40,13 @@ message AddFriendReq {
 // 从服务器中拉取请求 type = 2
 message PullAddFriendReq {
   int32 uid = 1;
+}
+
+// 删除朋友请求, type = 3
+message RemoveFriendReq {
+  int32 src = 1;
+  int32 dst = 2;
+  bool isAccept = 3;
 }
 
 // 拉取返回值

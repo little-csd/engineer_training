@@ -2,6 +2,8 @@ package com.example.aiins
 
 import android.Manifest
 import android.app.Activity
+import android.app.AlertDialog
+import android.content.DialogInterface
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Bundle
@@ -16,7 +18,9 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
+import com.example.aiins.proto.Basic
 import com.example.aiins.proto.Friend
+import com.example.aiins.repository.Repository
 import com.example.aiins.util.BaseActivity
 import com.example.aiins.util.Config
 import com.example.aiins.util.FileUtil
@@ -34,7 +38,7 @@ import okhttp3.Callback
 import okhttp3.Response
 import java.io.IOException
 
-class MainActivity : BaseActivity() {
+class MainActivity : BaseActivity(), Repository.OnAddFriendReq {
 
     val list = arrayOf(TalkFragment(), FriendFragment(), FinderFragment(), HomeFragment())
 
@@ -46,21 +50,7 @@ class MainActivity : BaseActivity() {
         init()
     }
 
-    private val pullCallback = object : Callback {
-        override fun onFailure(call: Call, e: IOException) {
-            Log.i(TAG, "onFailure: ")
-            e.printStackTrace()
-        }
 
-        override fun onResponse(call: Call, response: Response) {
-            Log.i(TAG, "onResponse: ")
-            val res = response.body!!.byteString().toByteArray()
-            val rsp = Friend.PullAddFriendRsp.parseFrom(res)
-            for (l in rsp.reqsList) {
-                Log.i(TAG, "onResponse: $l")
-            }
-        }
-    }
 
     private fun init() {
         setSupportActionBar(toolbar)
@@ -96,9 +86,8 @@ class MainActivity : BaseActivity() {
                 }
             }
         }).attach()
-        // TODO: Move to other place
-        Log.i(TAG, "init: here")
-        NetworkUtil.friendPull(pullCallback)
+        Repository.addFriendListener(this)
+        Repository.init()
     }
 
     fun onClickIcon() {
@@ -174,6 +163,25 @@ class MainActivity : BaseActivity() {
             }
         }
         return true
+    }
+
+    override fun onAdd(list: List<Basic.UserData>, len: Int) {
+        if (len <= 0) return
+        val data = list[len - 1]
+        val txt = TextView(this)
+        txt.text = "${data.nickname}(${data.username}) wants to add you!"
+        AlertDialog.Builder(this)
+                .setTitle("Friend request")
+                .setView(txt)
+                .setPositiveButton("Accept") { _, _ ->
+                    NetworkUtil.friendAdd(data.uid, Config.userData.uid, NetworkUtil.emptyCallback)
+                    onAdd(list, len - 1)
+                }
+                .setNegativeButton("Reject") { _, _ ->
+                    NetworkUtil.friendRemove(data.uid, Config.userData.uid, false, NetworkUtil.emptyCallback)
+                }
+                .create()
+                .show()
     }
 
     companion object {

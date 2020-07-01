@@ -104,7 +104,7 @@ class AddFriendActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
             processing = true
-            NetworkUtil.friendAdd(uid, addCallback)
+            NetworkUtil.friendAdd(Config.userData.uid, uid, addCallback)
         }
     }
 

@@ -1,18 +1,32 @@
 package com.example.aiins.util
 
+import android.util.Log
+import com.example.aiins.proto.Basic
 import com.example.aiins.proto.Friend
 import com.example.aiins.proto.Personal
 import com.example.aiins.proto.Register
 import com.google.protobuf.ByteString
-import okhttp3.Callback
-import okhttp3.OkHttpClient
-import okhttp3.Request
+import okhttp3.*
 import okhttp3.RequestBody.Companion.toRequestBody
+import java.io.IOException
 
 object NetworkUtil {
 
     private val okHttpClient = OkHttpClient()
     private const val TAG = "NetworkUtil"
+    val emptyCallback = object : Callback {
+        override fun onFailure(call: Call, e: IOException) {
+            Log.i(TAG, "onFailure: ")
+        }
+
+        override fun onResponse(call: Call, response: Response) {
+            if (response.code != 200) {
+                Log.i(TAG, "onResponse: failed")
+            } else {
+                Log.i(TAG, "onResponse: success")
+            }
+        }
+    }
 
     fun login(req: Register.RegisterReq, callback: Callback) {
         val request = Request.Builder()
@@ -89,10 +103,10 @@ object NetworkUtil {
         friend(req2, callback)
     }
 
-    fun friendAdd(uid: Int, callback: Callback) {
+    fun friendAdd(src: Int, dst: Int, callback: Callback) {
         val req = Friend.AddFriendReq.newBuilder()
-                .setSrc(Config.userData.uid)
-                .setDst(uid)
+                .setSrc(src)
+                .setDst(dst)
                 .setIsAccept(false)
                 .build()
         val req2 = Friend.FriendReq.newBuilder()
@@ -108,8 +122,33 @@ object NetworkUtil {
                 .build()
         val req2 = Friend.FriendReq.newBuilder()
                 .setType(Config.TYPE_PULL)
-                .setPullFriendReq(req)
+                .setPullAddFriendReq(req)
                 .build()
         friend(req2, callback)
+    }
+
+    fun friendRemove(src: Int, dst: Int, isAccept: Boolean, callback: Callback) {
+        val req = Friend.RemoveFriendReq.newBuilder()
+                .setSrc(src)
+                .setDst(dst)
+                .setIsAccept(isAccept)
+                .build()
+        val req2 = Friend.FriendReq.newBuilder()
+                .setType(Config.TYPE_REMOVE)
+                .setRemoveFriendReq(req)
+                .build()
+        friend(req2, callback)
+    }
+
+    fun userGet(list: List<Int>, callback: Callback) {
+        val req = Basic.UserDataReq.newBuilder()
+                .addAllUid(list)
+                .build()
+        val request = Request.Builder()
+                .url(Config.user)
+                .post(req.toByteArray().toRequestBody())
+                .build()
+        val call = okHttpClient.newCall(request)
+        call.enqueue(callback)
     }
 }

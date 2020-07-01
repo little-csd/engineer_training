@@ -3,7 +3,7 @@ import pymongo
 class Mongo:
     
     # 登录注册部分
-    def login_find(self, username):
+    def find_by_name(self, username):
         res = self.login.find_one({'username': username})
         return res
     
@@ -19,7 +19,7 @@ class Mongo:
         return uid
 
     # 设置部分
-    def setting_find(self, uid):
+    def find_by_uid(self, uid):
         res = self.login.find_one({'uid': uid})
         return res
 
@@ -29,9 +29,14 @@ class Mongo:
         cond = {'uid': uid}
         res = self.login.update_one(cond, {'$set': find_res})
 
+    # 好友部分
     def friend_add(self, src, dst):
-        res = self.friend.find_one({'src': src, 'dst': dst})
+        cond = {'src': src, 'dst': dst}
+        res = self.friend.find_one(cond)
         if res is not None:
+            res['accept'] = True
+            self.friend.update_one(cond, {'$set': res})
+            print('{} and {} become friend!'.format(src, dst))
             return
         data = {
             'src': src,
@@ -41,24 +46,20 @@ class Mongo:
         self.friend.insert_one(data)
         print('insert data {}'.format(data))
     
-    def friend_find_remove_src(self, src, accept):
+    def friend_find(self, src, dst, accept, remove):
         l = []
-        cond = {'src': src, 'accept': accept}
+        cond = {}
+        if src != None:
+            cond['src'] = src
+        if dst != None:
+            cond['dst'] = dst
+        if accept != None:
+            cond['accept'] = accept
         results = self.friend.find(cond)
         for result in results:
             l.append(result)
-        res = self.friend.remove(cond)
-        print(res)
-        return l
-
-    def friend_find_remove_dst(self, dst, accept):
-        l = []
-        cond = {'dst': dst, 'accept': accept}
-        results = self.friend.find(cond)
-        for result in results:
-            l.append(result)
-        res = self.friend.remove(cond)
-        print(res)
+        if remove == True:
+            self.friend.remove(cond)
         return l
 
     def __init__(self):
@@ -69,6 +70,8 @@ class Mongo:
         self.login = self.db.login
         # friend request part
         self.friend = self.db.friend
+        # message part
+        self.message = self.db.message
         m = self.login.find_one(sort=[("uid",-1)])
         if m is None:
             self.max_uid = 0

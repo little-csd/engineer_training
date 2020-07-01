@@ -3,6 +3,7 @@ from flask import request
 import proto.Register_pb2 as Register
 import proto.Personal_pb2 as Personal
 import proto.Friend_pb2 as Friend
+import proto.Basic_pb2 as Basic
 from src.db import Mongo
 
 app = Flask("AI ins")
@@ -17,7 +18,7 @@ def login():
     print(req)
 
     rsp = Register.RegisterRsp()
-    res = mongo.login_find(req.username)
+    res = mongo.find_by_name(req.username)
 
     # 不含昵称则是登录请求
     if req.nickname == '':
@@ -68,7 +69,7 @@ def process_iconreq(req):
     print('process_iconreq')
     uid = req.uid
     data = req.icon
-    res = mongo.setting_find(uid)
+    res = mongo.find_by_uid(uid)
     if res is None:
         return 4,'uid not found'
     mongo.setting_reset(res, 'icon', data)
@@ -78,7 +79,7 @@ def process_nicknamereq(req):
     print('process_nicknamereq')
     uid = req.uid
     name = req.nickname
-    res = mongo.setting_find(uid)
+    res = mongo.find_by_uid(uid)
     if res is None:
         return 4,'uid not found'
     mongo.setting_reset(res, 'nickname', name)
@@ -89,7 +90,7 @@ def process_password(req):
     print('process_password')
     uid = req.uid
     new = req.new
-    res = mongo.setting_find(uid)
+    res = mongo.find_by_uid(uid)
     if res is None:
         return 4,'uid not found'
     mongo.setting_reset(res, 'password', new)
@@ -110,8 +111,12 @@ def friend():
         mongo.friend_add(req.src, req.dst)
         return ''
     elif req.type == 2:
-        req = req.pullFriendReq
+        req = req.pullAddFriendReq
         return process_pull_friend_req(req)
+    elif req.type == 3:
+        req = req.removeFriendReq
+        process_remove_friend_req(req)
+        return ''
     else:
         print('unknown error')
         return ''
@@ -119,7 +124,7 @@ def friend():
 def process_search_user(req):
     print('process_search_user')
     name = req.username
-    res = mongo.login_find(name)
+    res = mongo.find_by_name(name)
     rsp = Friend.SearchUserRsp()
     if res is None:
         rsp.resultCode = 1
@@ -135,8 +140,8 @@ def process_search_user(req):
 def process_pull_friend_req(req):
     print('process_pull_friend_req')
     uid = req.uid
-    l1 = mongo.friend_find_remove_src(uid, True)
-    l2 = mongo.friend_find_remove_dst(uid, False)
+    l1 = mongo.friend_find(uid, None, True, False)
+    l2 = mongo.friend_find(None, uid, None, False)
     rsp = Friend.PullAddFriendRsp()
     l = l1 + l2
     for r in l:
@@ -144,12 +149,33 @@ def process_pull_friend_req(req):
         _r.src = r['src']
         _r.dst = r['dst']
         _r.isAccept = r['accept']
+    print(l)
     return rsp.SerializeToString()
 
+def process_remove_friend_req(req):
+    print('process_remove_friend_req')
+    mongo.friend_find(req.src, req.dst, req.isAccept, True)
+
 # 查询用户信息
-@app.route('/user')
+@app.route('/user', methods=['POST'])
 def user():
-    return ''
+    req = Basic.UserDataReq()
+    data = request.data
+    req.ParseFromString(data)
+    rsp = Basic.UserDataRsp()
+    for u in req.uid:
+        res = mongo.find_by_uid(u)
+        if res == None:
+            continue
+        r = rsp.userData.add()
+        r.nickname = res['nickname']
+        r.username = res['username']
+        if 'icon' in res.keys():
+            r.icon = res['icon']
+        else:
+            r.icon = b''
+        r.uid = res['uid']
+    return rsp.SerializeToString()
 
 # 最近的信息
 @app.route('/search')
@@ -169,6 +195,7 @@ def hello_world():
 3. /setting 设置信息
 4. /friend 添加好友
 5. /user 查询用户信息
+6. /message 获取消息记录
 
 resultCode:
 1: 注册用户名重复
