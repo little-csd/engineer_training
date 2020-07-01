@@ -177,10 +177,26 @@ def user():
         r.uid = res['uid']
     return rsp.SerializeToString()
 
-# 最近的信息
+# 最近的 Post 信息
 @app.route('/search')
 def search():
     return ''
+
+@app.route('/message', methods=['POST'])
+def message():
+    req = Message.MessageReq()
+    data = request.data
+    req.ParseFromString(data)
+    res = mongo.message_find(req.uid, req.time)
+    rsp = Message.MessageRsp()
+    for data in res:
+        r = rsp.msgs.add()
+        r.src = data['src']
+        r.dst = data['dst']
+        r.time = data['time']
+        r.text = data['text']
+        r.image = data['image']
+    return rsp.SerializeToString()
 
 @app.route('/')
 def hello_world():

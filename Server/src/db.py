@@ -62,6 +62,35 @@ class Mongo:
             self.friend.remove(cond)
         return l
 
+    def message_add(self, msg):
+        data = {
+            'src': msg.src,
+            'dst': msg.dst,
+            'time': msg.time,
+            'text': msg.text,
+            'image': msg.image
+        }
+        self.message.insert_one(data)
+
+    def message_find(self, uid, time):
+        l = []
+        r1 = self.friend.find({'src': uid, 'time': {"$gt": time}})
+        r2 = self.friend.find({'dst': uid, 'time': {"$gt": time}})
+        for r in r1:
+            l.append(r)
+        for r in r2:
+            l.append(r)
+        return l
+    
+    def post_add(self, post):
+        data = {
+
+        }
+        self.post.insert_one(data)
+
+    def post_find(self, uid, number):
+        
+
     def __init__(self):
         self.client = pymongo.MongoClient(host='localhost')
         # 在此处更改 db 即可
@@ -72,6 +101,8 @@ class Mongo:
         self.friend = self.db.friend
         # message part
         self.message = self.db.message
+        # post part
+        self.post = self.db.post
         m = self.login.find_one(sort=[("uid",-1)])
         if m is None:
             self.max_uid = 0
