@@ -14,6 +14,1306 @@ public final class Friend {
     registerAllExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
+  public interface FriendReqOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:aiins.FriendReq)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>int32 type = 1;</code>
+     * @return The type.
+     */
+    int getType();
+
+    /**
+     * <code>.aiins.SearchUserReq searchUserReq = 2;</code>
+     * @return Whether the searchUserReq field is set.
+     */
+    boolean hasSearchUserReq();
+    /**
+     * <code>.aiins.SearchUserReq searchUserReq = 2;</code>
+     * @return The searchUserReq.
+     */
+    com.example.aiins.proto.Friend.SearchUserReq getSearchUserReq();
+    /**
+     * <code>.aiins.SearchUserReq searchUserReq = 2;</code>
+     */
+    com.example.aiins.proto.Friend.SearchUserReqOrBuilder getSearchUserReqOrBuilder();
+
+    /**
+     * <code>.aiins.AddFriendReq addFriendReq = 3;</code>
+     * @return Whether the addFriendReq field is set.
+     */
+    boolean hasAddFriendReq();
+    /**
+     * <code>.aiins.AddFriendReq addFriendReq = 3;</code>
+     * @return The addFriendReq.
+     */
+    com.example.aiins.proto.Friend.AddFriendReq getAddFriendReq();
+    /**
+     * <code>.aiins.AddFriendReq addFriendReq = 3;</code>
+     */
+    com.example.aiins.proto.Friend.AddFriendReqOrBuilder getAddFriendReqOrBuilder();
+
+    /**
+     * <code>.aiins.PullAddFriendReq pullAddFriendReq = 4;</code>
+     * @return Whether the pullAddFriendReq field is set.
+     */
+    boolean hasPullAddFriendReq();
+    /**
+     * <code>.aiins.PullAddFriendReq pullAddFriendReq = 4;</code>
+     * @return The pullAddFriendReq.
+     */
+    com.example.aiins.proto.Friend.PullAddFriendReq getPullAddFriendReq();
+    /**
+     * <code>.aiins.PullAddFriendReq pullAddFriendReq = 4;</code>
+     */
+    com.example.aiins.proto.Friend.PullAddFriendReqOrBuilder getPullAddFriendReqOrBuilder();
+
+    /**
+     * <code>.aiins.RemoveFriendReq removeFriendReq = 5;</code>
+     * @return Whether the removeFriendReq field is set.
+     */
+    boolean hasRemoveFriendReq();
+    /**
+     * <code>.aiins.RemoveFriendReq removeFriendReq = 5;</code>
+     * @return The removeFriendReq.
+     */
+    com.example.aiins.proto.Friend.RemoveFriendReq getRemoveFriendReq();
+    /**
+     * <code>.aiins.RemoveFriendReq removeFriendReq = 5;</code>
+     */
+    com.example.aiins.proto.Friend.RemoveFriendReqOrBuilder getRemoveFriendReqOrBuilder();
+  }
+  /**
+   * Protobuf type {@code aiins.FriendReq}
+   */
+  public static final class FriendReq extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:aiins.FriendReq)
+      FriendReqOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use FriendReq.newBuilder() to construct.
+    private FriendReq(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private FriendReq() {
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new FriendReq();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private FriendReq(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              type_ = input.readInt32();
+              break;
+            }
+            case 18: {
+              com.example.aiins.proto.Friend.SearchUserReq.Builder subBuilder = null;
+              if (searchUserReq_ != null) {
+                subBuilder = searchUserReq_.toBuilder();
+              }
+              searchUserReq_ = input.readMessage(com.example.aiins.proto.Friend.SearchUserReq.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(searchUserReq_);
+                searchUserReq_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 26: {
+              com.example.aiins.proto.Friend.AddFriendReq.Builder subBuilder = null;
+              if (addFriendReq_ != null) {
+                subBuilder = addFriendReq_.toBuilder();
+              }
+              addFriendReq_ = input.readMessage(com.example.aiins.proto.Friend.AddFriendReq.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(addFriendReq_);
+                addFriendReq_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 34: {
+              com.example.aiins.proto.Friend.PullAddFriendReq.Builder subBuilder = null;
+              if (pullAddFriendReq_ != null) {
+                subBuilder = pullAddFriendReq_.toBuilder();
+              }
+              pullAddFriendReq_ = input.readMessage(com.example.aiins.proto.Friend.PullAddFriendReq.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(pullAddFriendReq_);
+                pullAddFriendReq_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 42: {
+              com.example.aiins.proto.Friend.RemoveFriendReq.Builder subBuilder = null;
+              if (removeFriendReq_ != null) {
+                subBuilder = removeFriendReq_.toBuilder();
+              }
+              removeFriendReq_ = input.readMessage(com.example.aiins.proto.Friend.RemoveFriendReq.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(removeFriendReq_);
+                removeFriendReq_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.example.aiins.proto.Friend.internal_static_aiins_FriendReq_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.example.aiins.proto.Friend.internal_static_aiins_FriendReq_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.example.aiins.proto.Friend.FriendReq.class, com.example.aiins.proto.Friend.FriendReq.Builder.class);
+    }
+
+    public static final int TYPE_FIELD_NUMBER = 1;
+    private int type_;
+    /**
+     * <code>int32 type = 1;</code>
+     * @return The type.
+     */
+    @java.lang.Override
+    public int getType() {
+      return type_;
+    }
+
+    public static final int SEARCHUSERREQ_FIELD_NUMBER = 2;
+    private com.example.aiins.proto.Friend.SearchUserReq searchUserReq_;
+    /**
+     * <code>.aiins.SearchUserReq searchUserReq = 2;</code>
+     * @return Whether the searchUserReq field is set.
+     */
+    @java.lang.Override
+    public boolean hasSearchUserReq() {
+      return searchUserReq_ != null;
+    }
+    /**
+     * <code>.aiins.SearchUserReq searchUserReq = 2;</code>
+     * @return The searchUserReq.
+     */
+    @java.lang.Override
+    public com.example.aiins.proto.Friend.SearchUserReq getSearchUserReq() {
+      return searchUserReq_ == null ? com.example.aiins.proto.Friend.SearchUserReq.getDefaultInstance() : searchUserReq_;
+    }
+    /**
+     * <code>.aiins.SearchUserReq searchUserReq = 2;</code>
+     */
+    @java.lang.Override
+    public com.example.aiins.proto.Friend.SearchUserReqOrBuilder getSearchUserReqOrBuilder() {
+      return getSearchUserReq();
+    }
+
+    public static final int ADDFRIENDREQ_FIELD_NUMBER = 3;
+    private com.example.aiins.proto.Friend.AddFriendReq addFriendReq_;
+    /**
+     * <code>.aiins.AddFriendReq addFriendReq = 3;</code>
+     * @return Whether the addFriendReq field is set.
+     */
+    @java.lang.Override
+    public boolean hasAddFriendReq() {
+      return addFriendReq_ != null;
+    }
+    /**
+     * <code>.aiins.AddFriendReq addFriendReq = 3;</code>
+     * @return The addFriendReq.
+     */
+    @java.lang.Override
+    public com.example.aiins.proto.Friend.AddFriendReq getAddFriendReq() {
+      return addFriendReq_ == null ? com.example.aiins.proto.Friend.AddFriendReq.getDefaultInstance() : addFriendReq_;
+    }
+    /**
+     * <code>.aiins.AddFriendReq addFriendReq = 3;</code>
+     */
+    @java.lang.Override
+    public com.example.aiins.proto.Friend.AddFriendReqOrBuilder getAddFriendReqOrBuilder() {
+      return getAddFriendReq();
+    }
+
+    public static final int PULLADDFRIENDREQ_FIELD_NUMBER = 4;
+    private com.example.aiins.proto.Friend.PullAddFriendReq pullAddFriendReq_;
+    /**
+     * <code>.aiins.PullAddFriendReq pullAddFriendReq = 4;</code>
+     * @return Whether the pullAddFriendReq field is set.
+     */
+    @java.lang.Override
+    public boolean hasPullAddFriendReq() {
+      return pullAddFriendReq_ != null;
+    }
+    /**
+     * <code>.aiins.PullAddFriendReq pullAddFriendReq = 4;</code>
+     * @return The pullAddFriendReq.
+     */
+    @java.lang.Override
+    public com.example.aiins.proto.Friend.PullAddFriendReq getPullAddFriendReq() {
+      return pullAddFriendReq_ == null ? com.example.aiins.proto.Friend.PullAddFriendReq.getDefaultInstance() : pullAddFriendReq_;
+    }
+    /**
+     * <code>.aiins.PullAddFriendReq pullAddFriendReq = 4;</code>
+     */
+    @java.lang.Override
+    public com.example.aiins.proto.Friend.PullAddFriendReqOrBuilder getPullAddFriendReqOrBuilder() {
+      return getPullAddFriendReq();
+    }
+
+    public static final int REMOVEFRIENDREQ_FIELD_NUMBER = 5;
+    private com.example.aiins.proto.Friend.RemoveFriendReq removeFriendReq_;
+    /**
+     * <code>.aiins.RemoveFriendReq removeFriendReq = 5;</code>
+     * @return Whether the removeFriendReq field is set.
+     */
+    @java.lang.Override
+    public boolean hasRemoveFriendReq() {
+      return removeFriendReq_ != null;
+    }
+    /**
+     * <code>.aiins.RemoveFriendReq removeFriendReq = 5;</code>
+     * @return The removeFriendReq.
+     */
+    @java.lang.Override
+    public com.example.aiins.proto.Friend.RemoveFriendReq getRemoveFriendReq() {
+      return removeFriendReq_ == null ? com.example.aiins.proto.Friend.RemoveFriendReq.getDefaultInstance() : removeFriendReq_;
+    }
+    /**
+     * <code>.aiins.RemoveFriendReq removeFriendReq = 5;</code>
+     */
+    @java.lang.Override
+    public com.example.aiins.proto.Friend.RemoveFriendReqOrBuilder getRemoveFriendReqOrBuilder() {
+      return getRemoveFriendReq();
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (type_ != 0) {
+        output.writeInt32(1, type_);
+      }
+      if (searchUserReq_ != null) {
+        output.writeMessage(2, getSearchUserReq());
+      }
+      if (addFriendReq_ != null) {
+        output.writeMessage(3, getAddFriendReq());
+      }
+      if (pullAddFriendReq_ != null) {
+        output.writeMessage(4, getPullAddFriendReq());
+      }
+      if (removeFriendReq_ != null) {
+        output.writeMessage(5, getRemoveFriendReq());
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (type_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(1, type_);
+      }
+      if (searchUserReq_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, getSearchUserReq());
+      }
+      if (addFriendReq_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(3, getAddFriendReq());
+      }
+      if (pullAddFriendReq_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(4, getPullAddFriendReq());
+      }
+      if (removeFriendReq_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(5, getRemoveFriendReq());
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.example.aiins.proto.Friend.FriendReq)) {
+        return super.equals(obj);
+      }
+      com.example.aiins.proto.Friend.FriendReq other = (com.example.aiins.proto.Friend.FriendReq) obj;
+
+      if (getType()
+          != other.getType()) return false;
+      if (hasSearchUserReq() != other.hasSearchUserReq()) return false;
+      if (hasSearchUserReq()) {
+        if (!getSearchUserReq()
+            .equals(other.getSearchUserReq())) return false;
+      }
+      if (hasAddFriendReq() != other.hasAddFriendReq()) return false;
+      if (hasAddFriendReq()) {
+        if (!getAddFriendReq()
+            .equals(other.getAddFriendReq())) return false;
+      }
+      if (hasPullAddFriendReq() != other.hasPullAddFriendReq()) return false;
+      if (hasPullAddFriendReq()) {
+        if (!getPullAddFriendReq()
+            .equals(other.getPullAddFriendReq())) return false;
+      }
+      if (hasRemoveFriendReq() != other.hasRemoveFriendReq()) return false;
+      if (hasRemoveFriendReq()) {
+        if (!getRemoveFriendReq()
+            .equals(other.getRemoveFriendReq())) return false;
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + getType();
+      if (hasSearchUserReq()) {
+        hash = (37 * hash) + SEARCHUSERREQ_FIELD_NUMBER;
+        hash = (53 * hash) + getSearchUserReq().hashCode();
+      }
+      if (hasAddFriendReq()) {
+        hash = (37 * hash) + ADDFRIENDREQ_FIELD_NUMBER;
+        hash = (53 * hash) + getAddFriendReq().hashCode();
+      }
+      if (hasPullAddFriendReq()) {
+        hash = (37 * hash) + PULLADDFRIENDREQ_FIELD_NUMBER;
+        hash = (53 * hash) + getPullAddFriendReq().hashCode();
+      }
+      if (hasRemoveFriendReq()) {
+        hash = (37 * hash) + REMOVEFRIENDREQ_FIELD_NUMBER;
+        hash = (53 * hash) + getRemoveFriendReq().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.example.aiins.proto.Friend.FriendReq parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.example.aiins.proto.Friend.FriendReq parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.example.aiins.proto.Friend.FriendReq parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.example.aiins.proto.Friend.FriendReq parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.example.aiins.proto.Friend.FriendReq parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.example.aiins.proto.Friend.FriendReq parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.example.aiins.proto.Friend.FriendReq parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.example.aiins.proto.Friend.FriendReq parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.example.aiins.proto.Friend.FriendReq parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.example.aiins.proto.Friend.FriendReq parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.example.aiins.proto.Friend.FriendReq parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.example.aiins.proto.Friend.FriendReq parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.example.aiins.proto.Friend.FriendReq prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code aiins.FriendReq}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:aiins.FriendReq)
+        com.example.aiins.proto.Friend.FriendReqOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.example.aiins.proto.Friend.internal_static_aiins_FriendReq_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.example.aiins.proto.Friend.internal_static_aiins_FriendReq_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.example.aiins.proto.Friend.FriendReq.class, com.example.aiins.proto.Friend.FriendReq.Builder.class);
+      }
+
+      // Construct using com.example.aiins.proto.Friend.FriendReq.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        type_ = 0;
+
+        if (searchUserReqBuilder_ == null) {
+          searchUserReq_ = null;
+        } else {
+          searchUserReq_ = null;
+          searchUserReqBuilder_ = null;
+        }
+        if (addFriendReqBuilder_ == null) {
+          addFriendReq_ = null;
+        } else {
+          addFriendReq_ = null;
+          addFriendReqBuilder_ = null;
+        }
+        if (pullAddFriendReqBuilder_ == null) {
+          pullAddFriendReq_ = null;
+        } else {
+          pullAddFriendReq_ = null;
+          pullAddFriendReqBuilder_ = null;
+        }
+        if (removeFriendReqBuilder_ == null) {
+          removeFriendReq_ = null;
+        } else {
+          removeFriendReq_ = null;
+          removeFriendReqBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.example.aiins.proto.Friend.internal_static_aiins_FriendReq_descriptor;
+      }
+
+      @java.lang.Override
+      public com.example.aiins.proto.Friend.FriendReq getDefaultInstanceForType() {
+        return com.example.aiins.proto.Friend.FriendReq.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.example.aiins.proto.Friend.FriendReq build() {
+        com.example.aiins.proto.Friend.FriendReq result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.example.aiins.proto.Friend.FriendReq buildPartial() {
+        com.example.aiins.proto.Friend.FriendReq result = new com.example.aiins.proto.Friend.FriendReq(this);
+        result.type_ = type_;
+        if (searchUserReqBuilder_ == null) {
+          result.searchUserReq_ = searchUserReq_;
+        } else {
+          result.searchUserReq_ = searchUserReqBuilder_.build();
+        }
+        if (addFriendReqBuilder_ == null) {
+          result.addFriendReq_ = addFriendReq_;
+        } else {
+          result.addFriendReq_ = addFriendReqBuilder_.build();
+        }
+        if (pullAddFriendReqBuilder_ == null) {
+          result.pullAddFriendReq_ = pullAddFriendReq_;
+        } else {
+          result.pullAddFriendReq_ = pullAddFriendReqBuilder_.build();
+        }
+        if (removeFriendReqBuilder_ == null) {
+          result.removeFriendReq_ = removeFriendReq_;
+        } else {
+          result.removeFriendReq_ = removeFriendReqBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.example.aiins.proto.Friend.FriendReq) {
+          return mergeFrom((com.example.aiins.proto.Friend.FriendReq)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.example.aiins.proto.Friend.FriendReq other) {
+        if (other == com.example.aiins.proto.Friend.FriendReq.getDefaultInstance()) return this;
+        if (other.getType() != 0) {
+          setType(other.getType());
+        }
+        if (other.hasSearchUserReq()) {
+          mergeSearchUserReq(other.getSearchUserReq());
+        }
+        if (other.hasAddFriendReq()) {
+          mergeAddFriendReq(other.getAddFriendReq());
+        }
+        if (other.hasPullAddFriendReq()) {
+          mergePullAddFriendReq(other.getPullAddFriendReq());
+        }
+        if (other.hasRemoveFriendReq()) {
+          mergeRemoveFriendReq(other.getRemoveFriendReq());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.example.aiins.proto.Friend.FriendReq parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.example.aiins.proto.Friend.FriendReq) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private int type_ ;
+      /**
+       * <code>int32 type = 1;</code>
+       * @return The type.
+       */
+      @java.lang.Override
+      public int getType() {
+        return type_;
+      }
+      /**
+       * <code>int32 type = 1;</code>
+       * @param value The type to set.
+       * @return This builder for chaining.
+       */
+      public Builder setType(int value) {
+        
+        type_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 type = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearType() {
+        
+        type_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private com.example.aiins.proto.Friend.SearchUserReq searchUserReq_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.example.aiins.proto.Friend.SearchUserReq, com.example.aiins.proto.Friend.SearchUserReq.Builder, com.example.aiins.proto.Friend.SearchUserReqOrBuilder> searchUserReqBuilder_;
+      /**
+       * <code>.aiins.SearchUserReq searchUserReq = 2;</code>
+       * @return Whether the searchUserReq field is set.
+       */
+      public boolean hasSearchUserReq() {
+        return searchUserReqBuilder_ != null || searchUserReq_ != null;
+      }
+      /**
+       * <code>.aiins.SearchUserReq searchUserReq = 2;</code>
+       * @return The searchUserReq.
+       */
+      public com.example.aiins.proto.Friend.SearchUserReq getSearchUserReq() {
+        if (searchUserReqBuilder_ == null) {
+          return searchUserReq_ == null ? com.example.aiins.proto.Friend.SearchUserReq.getDefaultInstance() : searchUserReq_;
+        } else {
+          return searchUserReqBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.aiins.SearchUserReq searchUserReq = 2;</code>
+       */
+      public Builder setSearchUserReq(com.example.aiins.proto.Friend.SearchUserReq value) {
+        if (searchUserReqBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          searchUserReq_ = value;
+          onChanged();
+        } else {
+          searchUserReqBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.aiins.SearchUserReq searchUserReq = 2;</code>
+       */
+      public Builder setSearchUserReq(
+          com.example.aiins.proto.Friend.SearchUserReq.Builder builderForValue) {
+        if (searchUserReqBuilder_ == null) {
+          searchUserReq_ = builderForValue.build();
+          onChanged();
+        } else {
+          searchUserReqBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.aiins.SearchUserReq searchUserReq = 2;</code>
+       */
+      public Builder mergeSearchUserReq(com.example.aiins.proto.Friend.SearchUserReq value) {
+        if (searchUserReqBuilder_ == null) {
+          if (searchUserReq_ != null) {
+            searchUserReq_ =
+              com.example.aiins.proto.Friend.SearchUserReq.newBuilder(searchUserReq_).mergeFrom(value).buildPartial();
+          } else {
+            searchUserReq_ = value;
+          }
+          onChanged();
+        } else {
+          searchUserReqBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.aiins.SearchUserReq searchUserReq = 2;</code>
+       */
+      public Builder clearSearchUserReq() {
+        if (searchUserReqBuilder_ == null) {
+          searchUserReq_ = null;
+          onChanged();
+        } else {
+          searchUserReq_ = null;
+          searchUserReqBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.aiins.SearchUserReq searchUserReq = 2;</code>
+       */
+      public com.example.aiins.proto.Friend.SearchUserReq.Builder getSearchUserReqBuilder() {
+        
+        onChanged();
+        return getSearchUserReqFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.aiins.SearchUserReq searchUserReq = 2;</code>
+       */
+      public com.example.aiins.proto.Friend.SearchUserReqOrBuilder getSearchUserReqOrBuilder() {
+        if (searchUserReqBuilder_ != null) {
+          return searchUserReqBuilder_.getMessageOrBuilder();
+        } else {
+          return searchUserReq_ == null ?
+              com.example.aiins.proto.Friend.SearchUserReq.getDefaultInstance() : searchUserReq_;
+        }
+      }
+      /**
+       * <code>.aiins.SearchUserReq searchUserReq = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.example.aiins.proto.Friend.SearchUserReq, com.example.aiins.proto.Friend.SearchUserReq.Builder, com.example.aiins.proto.Friend.SearchUserReqOrBuilder> 
+          getSearchUserReqFieldBuilder() {
+        if (searchUserReqBuilder_ == null) {
+          searchUserReqBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.example.aiins.proto.Friend.SearchUserReq, com.example.aiins.proto.Friend.SearchUserReq.Builder, com.example.aiins.proto.Friend.SearchUserReqOrBuilder>(
+                  getSearchUserReq(),
+                  getParentForChildren(),
+                  isClean());
+          searchUserReq_ = null;
+        }
+        return searchUserReqBuilder_;
+      }
+
+      private com.example.aiins.proto.Friend.AddFriendReq addFriendReq_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.example.aiins.proto.Friend.AddFriendReq, com.example.aiins.proto.Friend.AddFriendReq.Builder, com.example.aiins.proto.Friend.AddFriendReqOrBuilder> addFriendReqBuilder_;
+      /**
+       * <code>.aiins.AddFriendReq addFriendReq = 3;</code>
+       * @return Whether the addFriendReq field is set.
+       */
+      public boolean hasAddFriendReq() {
+        return addFriendReqBuilder_ != null || addFriendReq_ != null;
+      }
+      /**
+       * <code>.aiins.AddFriendReq addFriendReq = 3;</code>
+       * @return The addFriendReq.
+       */
+      public com.example.aiins.proto.Friend.AddFriendReq getAddFriendReq() {
+        if (addFriendReqBuilder_ == null) {
+          return addFriendReq_ == null ? com.example.aiins.proto.Friend.AddFriendReq.getDefaultInstance() : addFriendReq_;
+        } else {
+          return addFriendReqBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.aiins.AddFriendReq addFriendReq = 3;</code>
+       */
+      public Builder setAddFriendReq(com.example.aiins.proto.Friend.AddFriendReq value) {
+        if (addFriendReqBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          addFriendReq_ = value;
+          onChanged();
+        } else {
+          addFriendReqBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.aiins.AddFriendReq addFriendReq = 3;</code>
+       */
+      public Builder setAddFriendReq(
+          com.example.aiins.proto.Friend.AddFriendReq.Builder builderForValue) {
+        if (addFriendReqBuilder_ == null) {
+          addFriendReq_ = builderForValue.build();
+          onChanged();
+        } else {
+          addFriendReqBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.aiins.AddFriendReq addFriendReq = 3;</code>
+       */
+      public Builder mergeAddFriendReq(com.example.aiins.proto.Friend.AddFriendReq value) {
+        if (addFriendReqBuilder_ == null) {
+          if (addFriendReq_ != null) {
+            addFriendReq_ =
+              com.example.aiins.proto.Friend.AddFriendReq.newBuilder(addFriendReq_).mergeFrom(value).buildPartial();
+          } else {
+            addFriendReq_ = value;
+          }
+          onChanged();
+        } else {
+          addFriendReqBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.aiins.AddFriendReq addFriendReq = 3;</code>
+       */
+      public Builder clearAddFriendReq() {
+        if (addFriendReqBuilder_ == null) {
+          addFriendReq_ = null;
+          onChanged();
+        } else {
+          addFriendReq_ = null;
+          addFriendReqBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.aiins.AddFriendReq addFriendReq = 3;</code>
+       */
+      public com.example.aiins.proto.Friend.AddFriendReq.Builder getAddFriendReqBuilder() {
+        
+        onChanged();
+        return getAddFriendReqFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.aiins.AddFriendReq addFriendReq = 3;</code>
+       */
+      public com.example.aiins.proto.Friend.AddFriendReqOrBuilder getAddFriendReqOrBuilder() {
+        if (addFriendReqBuilder_ != null) {
+          return addFriendReqBuilder_.getMessageOrBuilder();
+        } else {
+          return addFriendReq_ == null ?
+              com.example.aiins.proto.Friend.AddFriendReq.getDefaultInstance() : addFriendReq_;
+        }
+      }
+      /**
+       * <code>.aiins.AddFriendReq addFriendReq = 3;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.example.aiins.proto.Friend.AddFriendReq, com.example.aiins.proto.Friend.AddFriendReq.Builder, com.example.aiins.proto.Friend.AddFriendReqOrBuilder> 
+          getAddFriendReqFieldBuilder() {
+        if (addFriendReqBuilder_ == null) {
+          addFriendReqBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.example.aiins.proto.Friend.AddFriendReq, com.example.aiins.proto.Friend.AddFriendReq.Builder, com.example.aiins.proto.Friend.AddFriendReqOrBuilder>(
+                  getAddFriendReq(),
+                  getParentForChildren(),
+                  isClean());
+          addFriendReq_ = null;
+        }
+        return addFriendReqBuilder_;
+      }
+
+      private com.example.aiins.proto.Friend.PullAddFriendReq pullAddFriendReq_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.example.aiins.proto.Friend.PullAddFriendReq, com.example.aiins.proto.Friend.PullAddFriendReq.Builder, com.example.aiins.proto.Friend.PullAddFriendReqOrBuilder> pullAddFriendReqBuilder_;
+      /**
+       * <code>.aiins.PullAddFriendReq pullAddFriendReq = 4;</code>
+       * @return Whether the pullAddFriendReq field is set.
+       */
+      public boolean hasPullAddFriendReq() {
+        return pullAddFriendReqBuilder_ != null || pullAddFriendReq_ != null;
+      }
+      /**
+       * <code>.aiins.PullAddFriendReq pullAddFriendReq = 4;</code>
+       * @return The pullAddFriendReq.
+       */
+      public com.example.aiins.proto.Friend.PullAddFriendReq getPullAddFriendReq() {
+        if (pullAddFriendReqBuilder_ == null) {
+          return pullAddFriendReq_ == null ? com.example.aiins.proto.Friend.PullAddFriendReq.getDefaultInstance() : pullAddFriendReq_;
+        } else {
+          return pullAddFriendReqBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.aiins.PullAddFriendReq pullAddFriendReq = 4;</code>
+       */
+      public Builder setPullAddFriendReq(com.example.aiins.proto.Friend.PullAddFriendReq value) {
+        if (pullAddFriendReqBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          pullAddFriendReq_ = value;
+          onChanged();
+        } else {
+          pullAddFriendReqBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.aiins.PullAddFriendReq pullAddFriendReq = 4;</code>
+       */
+      public Builder setPullAddFriendReq(
+          com.example.aiins.proto.Friend.PullAddFriendReq.Builder builderForValue) {
+        if (pullAddFriendReqBuilder_ == null) {
+          pullAddFriendReq_ = builderForValue.build();
+          onChanged();
+        } else {
+          pullAddFriendReqBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.aiins.PullAddFriendReq pullAddFriendReq = 4;</code>
+       */
+      public Builder mergePullAddFriendReq(com.example.aiins.proto.Friend.PullAddFriendReq value) {
+        if (pullAddFriendReqBuilder_ == null) {
+          if (pullAddFriendReq_ != null) {
+            pullAddFriendReq_ =
+              com.example.aiins.proto.Friend.PullAddFriendReq.newBuilder(pullAddFriendReq_).mergeFrom(value).buildPartial();
+          } else {
+            pullAddFriendReq_ = value;
+          }
+          onChanged();
+        } else {
+          pullAddFriendReqBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.aiins.PullAddFriendReq pullAddFriendReq = 4;</code>
+       */
+      public Builder clearPullAddFriendReq() {
+        if (pullAddFriendReqBuilder_ == null) {
+          pullAddFriendReq_ = null;
+          onChanged();
+        } else {
+          pullAddFriendReq_ = null;
+          pullAddFriendReqBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.aiins.PullAddFriendReq pullAddFriendReq = 4;</code>
+       */
+      public com.example.aiins.proto.Friend.PullAddFriendReq.Builder getPullAddFriendReqBuilder() {
+        
+        onChanged();
+        return getPullAddFriendReqFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.aiins.PullAddFriendReq pullAddFriendReq = 4;</code>
+       */
+      public com.example.aiins.proto.Friend.PullAddFriendReqOrBuilder getPullAddFriendReqOrBuilder() {
+        if (pullAddFriendReqBuilder_ != null) {
+          return pullAddFriendReqBuilder_.getMessageOrBuilder();
+        } else {
+          return pullAddFriendReq_ == null ?
+              com.example.aiins.proto.Friend.PullAddFriendReq.getDefaultInstance() : pullAddFriendReq_;
+        }
+      }
+      /**
+       * <code>.aiins.PullAddFriendReq pullAddFriendReq = 4;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.example.aiins.proto.Friend.PullAddFriendReq, com.example.aiins.proto.Friend.PullAddFriendReq.Builder, com.example.aiins.proto.Friend.PullAddFriendReqOrBuilder> 
+          getPullAddFriendReqFieldBuilder() {
+        if (pullAddFriendReqBuilder_ == null) {
+          pullAddFriendReqBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.example.aiins.proto.Friend.PullAddFriendReq, com.example.aiins.proto.Friend.PullAddFriendReq.Builder, com.example.aiins.proto.Friend.PullAddFriendReqOrBuilder>(
+                  getPullAddFriendReq(),
+                  getParentForChildren(),
+                  isClean());
+          pullAddFriendReq_ = null;
+        }
+        return pullAddFriendReqBuilder_;
+      }
+
+      private com.example.aiins.proto.Friend.RemoveFriendReq removeFriendReq_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.example.aiins.proto.Friend.RemoveFriendReq, com.example.aiins.proto.Friend.RemoveFriendReq.Builder, com.example.aiins.proto.Friend.RemoveFriendReqOrBuilder> removeFriendReqBuilder_;
+      /**
+       * <code>.aiins.RemoveFriendReq removeFriendReq = 5;</code>
+       * @return Whether the removeFriendReq field is set.
+       */
+      public boolean hasRemoveFriendReq() {
+        return removeFriendReqBuilder_ != null || removeFriendReq_ != null;
+      }
+      /**
+       * <code>.aiins.RemoveFriendReq removeFriendReq = 5;</code>
+       * @return The removeFriendReq.
+       */
+      public com.example.aiins.proto.Friend.RemoveFriendReq getRemoveFriendReq() {
+        if (removeFriendReqBuilder_ == null) {
+          return removeFriendReq_ == null ? com.example.aiins.proto.Friend.RemoveFriendReq.getDefaultInstance() : removeFriendReq_;
+        } else {
+          return removeFriendReqBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.aiins.RemoveFriendReq removeFriendReq = 5;</code>
+       */
+      public Builder setRemoveFriendReq(com.example.aiins.proto.Friend.RemoveFriendReq value) {
+        if (removeFriendReqBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          removeFriendReq_ = value;
+          onChanged();
+        } else {
+          removeFriendReqBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.aiins.RemoveFriendReq removeFriendReq = 5;</code>
+       */
+      public Builder setRemoveFriendReq(
+          com.example.aiins.proto.Friend.RemoveFriendReq.Builder builderForValue) {
+        if (removeFriendReqBuilder_ == null) {
+          removeFriendReq_ = builderForValue.build();
+          onChanged();
+        } else {
+          removeFriendReqBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.aiins.RemoveFriendReq removeFriendReq = 5;</code>
+       */
+      public Builder mergeRemoveFriendReq(com.example.aiins.proto.Friend.RemoveFriendReq value) {
+        if (removeFriendReqBuilder_ == null) {
+          if (removeFriendReq_ != null) {
+            removeFriendReq_ =
+              com.example.aiins.proto.Friend.RemoveFriendReq.newBuilder(removeFriendReq_).mergeFrom(value).buildPartial();
+          } else {
+            removeFriendReq_ = value;
+          }
+          onChanged();
+        } else {
+          removeFriendReqBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.aiins.RemoveFriendReq removeFriendReq = 5;</code>
+       */
+      public Builder clearRemoveFriendReq() {
+        if (removeFriendReqBuilder_ == null) {
+          removeFriendReq_ = null;
+          onChanged();
+        } else {
+          removeFriendReq_ = null;
+          removeFriendReqBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.aiins.RemoveFriendReq removeFriendReq = 5;</code>
+       */
+      public com.example.aiins.proto.Friend.RemoveFriendReq.Builder getRemoveFriendReqBuilder() {
+        
+        onChanged();
+        return getRemoveFriendReqFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.aiins.RemoveFriendReq removeFriendReq = 5;</code>
+       */
+      public com.example.aiins.proto.Friend.RemoveFriendReqOrBuilder getRemoveFriendReqOrBuilder() {
+        if (removeFriendReqBuilder_ != null) {
+          return removeFriendReqBuilder_.getMessageOrBuilder();
+        } else {
+          return removeFriendReq_ == null ?
+              com.example.aiins.proto.Friend.RemoveFriendReq.getDefaultInstance() : removeFriendReq_;
+        }
+      }
+      /**
+       * <code>.aiins.RemoveFriendReq removeFriendReq = 5;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.example.aiins.proto.Friend.RemoveFriendReq, com.example.aiins.proto.Friend.RemoveFriendReq.Builder, com.example.aiins.proto.Friend.RemoveFriendReqOrBuilder> 
+          getRemoveFriendReqFieldBuilder() {
+        if (removeFriendReqBuilder_ == null) {
+          removeFriendReqBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.example.aiins.proto.Friend.RemoveFriendReq, com.example.aiins.proto.Friend.RemoveFriendReq.Builder, com.example.aiins.proto.Friend.RemoveFriendReqOrBuilder>(
+                  getRemoveFriendReq(),
+                  getParentForChildren(),
+                  isClean());
+          removeFriendReq_ = null;
+        }
+        return removeFriendReqBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:aiins.FriendReq)
+    }
+
+    // @@protoc_insertion_point(class_scope:aiins.FriendReq)
+    private static final com.example.aiins.proto.Friend.FriendReq DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.example.aiins.proto.Friend.FriendReq();
+    }
+
+    public static com.example.aiins.proto.Friend.FriendReq getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<FriendReq>
+        PARSER = new com.google.protobuf.AbstractParser<FriendReq>() {
+      @java.lang.Override
+      public FriendReq parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new FriendReq(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<FriendReq> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<FriendReq> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.example.aiins.proto.Friend.FriendReq getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface SearchUserReqOrBuilder extends
       // @@protoc_insertion_point(interface_extends:aiins.SearchUserReq)
       com.google.protobuf.MessageOrBuilder {
@@ -32,7 +1332,7 @@ public final class Friend {
   }
   /**
    * <pre>
-   * 查找好友请求
+   * 查找好友请求, type = 0
    * </pre>
    *
    * Protobuf type {@code aiins.SearchUserReq}
@@ -312,7 +1612,7 @@ public final class Friend {
     }
     /**
      * <pre>
-     * 查找好友请求
+     * 查找好友请求, type = 0
      * </pre>
      *
      * Protobuf type {@code aiins.SearchUserReq}
@@ -613,13 +1913,25 @@ public final class Friend {
         getNicknameBytes();
 
     /**
-     * <code>int32 uid = 3;</code>
+     * <code>string username = 3;</code>
+     * @return The username.
+     */
+    java.lang.String getUsername();
+    /**
+     * <code>string username = 3;</code>
+     * @return The bytes for username.
+     */
+    com.google.protobuf.ByteString
+        getUsernameBytes();
+
+    /**
+     * <code>int32 uid = 4;</code>
      * @return The uid.
      */
     int getUid();
 
     /**
-     * <code>bytes icon = 4;</code>
+     * <code>bytes icon = 5;</code>
      * @return The icon.
      */
     com.google.protobuf.ByteString getIcon();
@@ -642,6 +1954,7 @@ public final class Friend {
     }
     private SearchUserRsp() {
       nickname_ = "";
+      username_ = "";
       icon_ = com.google.protobuf.ByteString.EMPTY;
     }
 
@@ -686,12 +1999,18 @@ public final class Friend {
               nickname_ = s;
               break;
             }
-            case 24: {
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              username_ = s;
+              break;
+            }
+            case 32: {
 
               uid_ = input.readInt32();
               break;
             }
-            case 34: {
+            case 42: {
 
               icon_ = input.readBytes();
               break;
@@ -777,10 +2096,48 @@ public final class Friend {
       }
     }
 
-    public static final int UID_FIELD_NUMBER = 3;
+    public static final int USERNAME_FIELD_NUMBER = 3;
+    private volatile java.lang.Object username_;
+    /**
+     * <code>string username = 3;</code>
+     * @return The username.
+     */
+    @java.lang.Override
+    public java.lang.String getUsername() {
+      java.lang.Object ref = username_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        username_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string username = 3;</code>
+     * @return The bytes for username.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getUsernameBytes() {
+      java.lang.Object ref = username_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        username_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int UID_FIELD_NUMBER = 4;
     private int uid_;
     /**
-     * <code>int32 uid = 3;</code>
+     * <code>int32 uid = 4;</code>
      * @return The uid.
      */
     @java.lang.Override
@@ -788,10 +2145,10 @@ public final class Friend {
       return uid_;
     }
 
-    public static final int ICON_FIELD_NUMBER = 4;
+    public static final int ICON_FIELD_NUMBER = 5;
     private com.google.protobuf.ByteString icon_;
     /**
-     * <code>bytes icon = 4;</code>
+     * <code>bytes icon = 5;</code>
      * @return The icon.
      */
     @java.lang.Override
@@ -819,11 +2176,14 @@ public final class Friend {
       if (!getNicknameBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, nickname_);
       }
+      if (!getUsernameBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, username_);
+      }
       if (uid_ != 0) {
-        output.writeInt32(3, uid_);
+        output.writeInt32(4, uid_);
       }
       if (!icon_.isEmpty()) {
-        output.writeBytes(4, icon_);
+        output.writeBytes(5, icon_);
       }
       unknownFields.writeTo(output);
     }
@@ -841,13 +2201,16 @@ public final class Friend {
       if (!getNicknameBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, nickname_);
       }
+      if (!getUsernameBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, username_);
+      }
       if (uid_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(3, uid_);
+          .computeInt32Size(4, uid_);
       }
       if (!icon_.isEmpty()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(4, icon_);
+          .computeBytesSize(5, icon_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -868,6 +2231,8 @@ public final class Friend {
           != other.getResultCode()) return false;
       if (!getNickname()
           .equals(other.getNickname())) return false;
+      if (!getUsername()
+          .equals(other.getUsername())) return false;
       if (getUid()
           != other.getUid()) return false;
       if (!getIcon()
@@ -887,6 +2252,8 @@ public final class Friend {
       hash = (53 * hash) + getResultCode();
       hash = (37 * hash) + NICKNAME_FIELD_NUMBER;
       hash = (53 * hash) + getNickname().hashCode();
+      hash = (37 * hash) + USERNAME_FIELD_NUMBER;
+      hash = (53 * hash) + getUsername().hashCode();
       hash = (37 * hash) + UID_FIELD_NUMBER;
       hash = (53 * hash) + getUid();
       hash = (37 * hash) + ICON_FIELD_NUMBER;
@@ -1032,6 +2399,8 @@ public final class Friend {
 
         nickname_ = "";
 
+        username_ = "";
+
         uid_ = 0;
 
         icon_ = com.google.protobuf.ByteString.EMPTY;
@@ -1064,6 +2433,7 @@ public final class Friend {
         com.example.aiins.proto.Friend.SearchUserRsp result = new com.example.aiins.proto.Friend.SearchUserRsp(this);
         result.resultCode_ = resultCode_;
         result.nickname_ = nickname_;
+        result.username_ = username_;
         result.uid_ = uid_;
         result.icon_ = icon_;
         onBuilt();
@@ -1119,6 +2489,10 @@ public final class Friend {
         }
         if (!other.getNickname().isEmpty()) {
           nickname_ = other.nickname_;
+          onChanged();
+        }
+        if (!other.getUsername().isEmpty()) {
+          username_ = other.username_;
           onChanged();
         }
         if (other.getUid() != 0) {
@@ -1263,9 +2637,85 @@ public final class Friend {
         return this;
       }
 
+      private java.lang.Object username_ = "";
+      /**
+       * <code>string username = 3;</code>
+       * @return The username.
+       */
+      public java.lang.String getUsername() {
+        java.lang.Object ref = username_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          username_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string username = 3;</code>
+       * @return The bytes for username.
+       */
+      public com.google.protobuf.ByteString
+          getUsernameBytes() {
+        java.lang.Object ref = username_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          username_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string username = 3;</code>
+       * @param value The username to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUsername(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        username_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string username = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearUsername() {
+        
+        username_ = getDefaultInstance().getUsername();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string username = 3;</code>
+       * @param value The bytes for username to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUsernameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        username_ = value;
+        onChanged();
+        return this;
+      }
+
       private int uid_ ;
       /**
-       * <code>int32 uid = 3;</code>
+       * <code>int32 uid = 4;</code>
        * @return The uid.
        */
       @java.lang.Override
@@ -1273,7 +2723,7 @@ public final class Friend {
         return uid_;
       }
       /**
-       * <code>int32 uid = 3;</code>
+       * <code>int32 uid = 4;</code>
        * @param value The uid to set.
        * @return This builder for chaining.
        */
@@ -1284,7 +2734,7 @@ public final class Friend {
         return this;
       }
       /**
-       * <code>int32 uid = 3;</code>
+       * <code>int32 uid = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearUid() {
@@ -1296,7 +2746,7 @@ public final class Friend {
 
       private com.google.protobuf.ByteString icon_ = com.google.protobuf.ByteString.EMPTY;
       /**
-       * <code>bytes icon = 4;</code>
+       * <code>bytes icon = 5;</code>
        * @return The icon.
        */
       @java.lang.Override
@@ -1304,7 +2754,7 @@ public final class Friend {
         return icon_;
       }
       /**
-       * <code>bytes icon = 4;</code>
+       * <code>bytes icon = 5;</code>
        * @param value The icon to set.
        * @return This builder for chaining.
        */
@@ -1318,7 +2768,7 @@ public final class Friend {
         return this;
       }
       /**
-       * <code>bytes icon = 4;</code>
+       * <code>bytes icon = 5;</code>
        * @return This builder for chaining.
        */
       public Builder clearIcon() {
@@ -1385,16 +2835,16 @@ public final class Friend {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>int32 from = 1;</code>
-     * @return The from.
+     * <code>int32 src = 1;</code>
+     * @return The src.
      */
-    int getFrom();
+    int getSrc();
 
     /**
-     * <code>int32 to = 2;</code>
-     * @return The to.
+     * <code>int32 dst = 2;</code>
+     * @return The dst.
      */
-    int getTo();
+    int getDst();
 
     /**
      * <code>bool isAccept = 3;</code>
@@ -1404,7 +2854,7 @@ public final class Friend {
   }
   /**
    * <pre>
-   * 添加好友请求, isAccept 标志目标用户是否已经接受请求
+   * 添加好友请求, isAccept 标志目标用户是否已经接受请求, type = 1
    * </pre>
    *
    * Protobuf type {@code aiins.AddFriendReq}
@@ -1453,12 +2903,12 @@ public final class Friend {
               break;
             case 8: {
 
-              from_ = input.readInt32();
+              src_ = input.readInt32();
               break;
             }
             case 16: {
 
-              to_ = input.readInt32();
+              dst_ = input.readInt32();
               break;
             }
             case 24: {
@@ -1498,26 +2948,26 @@ public final class Friend {
               com.example.aiins.proto.Friend.AddFriendReq.class, com.example.aiins.proto.Friend.AddFriendReq.Builder.class);
     }
 
-    public static final int FROM_FIELD_NUMBER = 1;
-    private int from_;
+    public static final int SRC_FIELD_NUMBER = 1;
+    private int src_;
     /**
-     * <code>int32 from = 1;</code>
-     * @return The from.
+     * <code>int32 src = 1;</code>
+     * @return The src.
      */
     @java.lang.Override
-    public int getFrom() {
-      return from_;
+    public int getSrc() {
+      return src_;
     }
 
-    public static final int TO_FIELD_NUMBER = 2;
-    private int to_;
+    public static final int DST_FIELD_NUMBER = 2;
+    private int dst_;
     /**
-     * <code>int32 to = 2;</code>
-     * @return The to.
+     * <code>int32 dst = 2;</code>
+     * @return The dst.
      */
     @java.lang.Override
-    public int getTo() {
-      return to_;
+    public int getDst() {
+      return dst_;
     }
 
     public static final int ISACCEPT_FIELD_NUMBER = 3;
@@ -1545,11 +2995,11 @@ public final class Friend {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (from_ != 0) {
-        output.writeInt32(1, from_);
+      if (src_ != 0) {
+        output.writeInt32(1, src_);
       }
-      if (to_ != 0) {
-        output.writeInt32(2, to_);
+      if (dst_ != 0) {
+        output.writeInt32(2, dst_);
       }
       if (isAccept_ != false) {
         output.writeBool(3, isAccept_);
@@ -1563,13 +3013,13 @@ public final class Friend {
       if (size != -1) return size;
 
       size = 0;
-      if (from_ != 0) {
+      if (src_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(1, from_);
+          .computeInt32Size(1, src_);
       }
-      if (to_ != 0) {
+      if (dst_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(2, to_);
+          .computeInt32Size(2, dst_);
       }
       if (isAccept_ != false) {
         size += com.google.protobuf.CodedOutputStream
@@ -1590,10 +3040,10 @@ public final class Friend {
       }
       com.example.aiins.proto.Friend.AddFriendReq other = (com.example.aiins.proto.Friend.AddFriendReq) obj;
 
-      if (getFrom()
-          != other.getFrom()) return false;
-      if (getTo()
-          != other.getTo()) return false;
+      if (getSrc()
+          != other.getSrc()) return false;
+      if (getDst()
+          != other.getDst()) return false;
       if (getIsAccept()
           != other.getIsAccept()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -1607,10 +3057,10 @@ public final class Friend {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + FROM_FIELD_NUMBER;
-      hash = (53 * hash) + getFrom();
-      hash = (37 * hash) + TO_FIELD_NUMBER;
-      hash = (53 * hash) + getTo();
+      hash = (37 * hash) + SRC_FIELD_NUMBER;
+      hash = (53 * hash) + getSrc();
+      hash = (37 * hash) + DST_FIELD_NUMBER;
+      hash = (53 * hash) + getDst();
       hash = (37 * hash) + ISACCEPT_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsAccept());
@@ -1711,7 +3161,7 @@ public final class Friend {
     }
     /**
      * <pre>
-     * 添加好友请求, isAccept 标志目标用户是否已经接受请求
+     * 添加好友请求, isAccept 标志目标用户是否已经接受请求, type = 1
      * </pre>
      *
      * Protobuf type {@code aiins.AddFriendReq}
@@ -1751,9 +3201,9 @@ public final class Friend {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        from_ = 0;
+        src_ = 0;
 
-        to_ = 0;
+        dst_ = 0;
 
         isAccept_ = false;
 
@@ -1783,8 +3233,8 @@ public final class Friend {
       @java.lang.Override
       public com.example.aiins.proto.Friend.AddFriendReq buildPartial() {
         com.example.aiins.proto.Friend.AddFriendReq result = new com.example.aiins.proto.Friend.AddFriendReq(this);
-        result.from_ = from_;
-        result.to_ = to_;
+        result.src_ = src_;
+        result.dst_ = dst_;
         result.isAccept_ = isAccept_;
         onBuilt();
         return result;
@@ -1834,11 +3284,11 @@ public final class Friend {
 
       public Builder mergeFrom(com.example.aiins.proto.Friend.AddFriendReq other) {
         if (other == com.example.aiins.proto.Friend.AddFriendReq.getDefaultInstance()) return this;
-        if (other.getFrom() != 0) {
-          setFrom(other.getFrom());
+        if (other.getSrc() != 0) {
+          setSrc(other.getSrc());
         }
-        if (other.getTo() != 0) {
-          setTo(other.getTo());
+        if (other.getDst() != 0) {
+          setDst(other.getDst());
         }
         if (other.getIsAccept() != false) {
           setIsAccept(other.getIsAccept());
@@ -1872,64 +3322,64 @@ public final class Friend {
         return this;
       }
 
-      private int from_ ;
+      private int src_ ;
       /**
-       * <code>int32 from = 1;</code>
-       * @return The from.
+       * <code>int32 src = 1;</code>
+       * @return The src.
        */
       @java.lang.Override
-      public int getFrom() {
-        return from_;
+      public int getSrc() {
+        return src_;
       }
       /**
-       * <code>int32 from = 1;</code>
-       * @param value The from to set.
+       * <code>int32 src = 1;</code>
+       * @param value The src to set.
        * @return This builder for chaining.
        */
-      public Builder setFrom(int value) {
+      public Builder setSrc(int value) {
         
-        from_ = value;
+        src_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>int32 from = 1;</code>
+       * <code>int32 src = 1;</code>
        * @return This builder for chaining.
        */
-      public Builder clearFrom() {
+      public Builder clearSrc() {
         
-        from_ = 0;
+        src_ = 0;
         onChanged();
         return this;
       }
 
-      private int to_ ;
+      private int dst_ ;
       /**
-       * <code>int32 to = 2;</code>
-       * @return The to.
+       * <code>int32 dst = 2;</code>
+       * @return The dst.
        */
       @java.lang.Override
-      public int getTo() {
-        return to_;
+      public int getDst() {
+        return dst_;
       }
       /**
-       * <code>int32 to = 2;</code>
-       * @param value The to to set.
+       * <code>int32 dst = 2;</code>
+       * @param value The dst to set.
        * @return This builder for chaining.
        */
-      public Builder setTo(int value) {
+      public Builder setDst(int value) {
         
-        to_ = value;
+        dst_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>int32 to = 2;</code>
+       * <code>int32 dst = 2;</code>
        * @return This builder for chaining.
        */
-      public Builder clearTo() {
+      public Builder clearDst() {
         
-        to_ = 0;
+        dst_ = 0;
         onChanged();
         return this;
       }
@@ -2017,6 +3467,1945 @@ public final class Friend {
 
   }
 
+  public interface PullAddFriendReqOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:aiins.PullAddFriendReq)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>int32 uid = 1;</code>
+     * @return The uid.
+     */
+    int getUid();
+  }
+  /**
+   * <pre>
+   * 从服务器中拉取请求 type = 2
+   * </pre>
+   *
+   * Protobuf type {@code aiins.PullAddFriendReq}
+   */
+  public static final class PullAddFriendReq extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:aiins.PullAddFriendReq)
+      PullAddFriendReqOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use PullAddFriendReq.newBuilder() to construct.
+    private PullAddFriendReq(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private PullAddFriendReq() {
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new PullAddFriendReq();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private PullAddFriendReq(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              uid_ = input.readInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.example.aiins.proto.Friend.internal_static_aiins_PullAddFriendReq_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.example.aiins.proto.Friend.internal_static_aiins_PullAddFriendReq_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.example.aiins.proto.Friend.PullAddFriendReq.class, com.example.aiins.proto.Friend.PullAddFriendReq.Builder.class);
+    }
+
+    public static final int UID_FIELD_NUMBER = 1;
+    private int uid_;
+    /**
+     * <code>int32 uid = 1;</code>
+     * @return The uid.
+     */
+    @java.lang.Override
+    public int getUid() {
+      return uid_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (uid_ != 0) {
+        output.writeInt32(1, uid_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (uid_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(1, uid_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.example.aiins.proto.Friend.PullAddFriendReq)) {
+        return super.equals(obj);
+      }
+      com.example.aiins.proto.Friend.PullAddFriendReq other = (com.example.aiins.proto.Friend.PullAddFriendReq) obj;
+
+      if (getUid()
+          != other.getUid()) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + UID_FIELD_NUMBER;
+      hash = (53 * hash) + getUid();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.example.aiins.proto.Friend.PullAddFriendReq parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.example.aiins.proto.Friend.PullAddFriendReq parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.example.aiins.proto.Friend.PullAddFriendReq parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.example.aiins.proto.Friend.PullAddFriendReq parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.example.aiins.proto.Friend.PullAddFriendReq parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.example.aiins.proto.Friend.PullAddFriendReq parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.example.aiins.proto.Friend.PullAddFriendReq parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.example.aiins.proto.Friend.PullAddFriendReq parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.example.aiins.proto.Friend.PullAddFriendReq parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.example.aiins.proto.Friend.PullAddFriendReq parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.example.aiins.proto.Friend.PullAddFriendReq parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.example.aiins.proto.Friend.PullAddFriendReq parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.example.aiins.proto.Friend.PullAddFriendReq prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * 从服务器中拉取请求 type = 2
+     * </pre>
+     *
+     * Protobuf type {@code aiins.PullAddFriendReq}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:aiins.PullAddFriendReq)
+        com.example.aiins.proto.Friend.PullAddFriendReqOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.example.aiins.proto.Friend.internal_static_aiins_PullAddFriendReq_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.example.aiins.proto.Friend.internal_static_aiins_PullAddFriendReq_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.example.aiins.proto.Friend.PullAddFriendReq.class, com.example.aiins.proto.Friend.PullAddFriendReq.Builder.class);
+      }
+
+      // Construct using com.example.aiins.proto.Friend.PullAddFriendReq.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        uid_ = 0;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.example.aiins.proto.Friend.internal_static_aiins_PullAddFriendReq_descriptor;
+      }
+
+      @java.lang.Override
+      public com.example.aiins.proto.Friend.PullAddFriendReq getDefaultInstanceForType() {
+        return com.example.aiins.proto.Friend.PullAddFriendReq.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.example.aiins.proto.Friend.PullAddFriendReq build() {
+        com.example.aiins.proto.Friend.PullAddFriendReq result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.example.aiins.proto.Friend.PullAddFriendReq buildPartial() {
+        com.example.aiins.proto.Friend.PullAddFriendReq result = new com.example.aiins.proto.Friend.PullAddFriendReq(this);
+        result.uid_ = uid_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.example.aiins.proto.Friend.PullAddFriendReq) {
+          return mergeFrom((com.example.aiins.proto.Friend.PullAddFriendReq)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.example.aiins.proto.Friend.PullAddFriendReq other) {
+        if (other == com.example.aiins.proto.Friend.PullAddFriendReq.getDefaultInstance()) return this;
+        if (other.getUid() != 0) {
+          setUid(other.getUid());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.example.aiins.proto.Friend.PullAddFriendReq parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.example.aiins.proto.Friend.PullAddFriendReq) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private int uid_ ;
+      /**
+       * <code>int32 uid = 1;</code>
+       * @return The uid.
+       */
+      @java.lang.Override
+      public int getUid() {
+        return uid_;
+      }
+      /**
+       * <code>int32 uid = 1;</code>
+       * @param value The uid to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUid(int value) {
+        
+        uid_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 uid = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearUid() {
+        
+        uid_ = 0;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:aiins.PullAddFriendReq)
+    }
+
+    // @@protoc_insertion_point(class_scope:aiins.PullAddFriendReq)
+    private static final com.example.aiins.proto.Friend.PullAddFriendReq DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.example.aiins.proto.Friend.PullAddFriendReq();
+    }
+
+    public static com.example.aiins.proto.Friend.PullAddFriendReq getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<PullAddFriendReq>
+        PARSER = new com.google.protobuf.AbstractParser<PullAddFriendReq>() {
+      @java.lang.Override
+      public PullAddFriendReq parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new PullAddFriendReq(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<PullAddFriendReq> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<PullAddFriendReq> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.example.aiins.proto.Friend.PullAddFriendReq getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface RemoveFriendReqOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:aiins.RemoveFriendReq)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>int32 src = 1;</code>
+     * @return The src.
+     */
+    int getSrc();
+
+    /**
+     * <code>int32 dst = 2;</code>
+     * @return The dst.
+     */
+    int getDst();
+
+    /**
+     * <code>bool isAccept = 3;</code>
+     * @return The isAccept.
+     */
+    boolean getIsAccept();
+  }
+  /**
+   * <pre>
+   * 删除朋友请求, type = 3
+   * </pre>
+   *
+   * Protobuf type {@code aiins.RemoveFriendReq}
+   */
+  public static final class RemoveFriendReq extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:aiins.RemoveFriendReq)
+      RemoveFriendReqOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use RemoveFriendReq.newBuilder() to construct.
+    private RemoveFriendReq(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private RemoveFriendReq() {
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new RemoveFriendReq();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private RemoveFriendReq(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              src_ = input.readInt32();
+              break;
+            }
+            case 16: {
+
+              dst_ = input.readInt32();
+              break;
+            }
+            case 24: {
+
+              isAccept_ = input.readBool();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.example.aiins.proto.Friend.internal_static_aiins_RemoveFriendReq_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.example.aiins.proto.Friend.internal_static_aiins_RemoveFriendReq_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.example.aiins.proto.Friend.RemoveFriendReq.class, com.example.aiins.proto.Friend.RemoveFriendReq.Builder.class);
+    }
+
+    public static final int SRC_FIELD_NUMBER = 1;
+    private int src_;
+    /**
+     * <code>int32 src = 1;</code>
+     * @return The src.
+     */
+    @java.lang.Override
+    public int getSrc() {
+      return src_;
+    }
+
+    public static final int DST_FIELD_NUMBER = 2;
+    private int dst_;
+    /**
+     * <code>int32 dst = 2;</code>
+     * @return The dst.
+     */
+    @java.lang.Override
+    public int getDst() {
+      return dst_;
+    }
+
+    public static final int ISACCEPT_FIELD_NUMBER = 3;
+    private boolean isAccept_;
+    /**
+     * <code>bool isAccept = 3;</code>
+     * @return The isAccept.
+     */
+    @java.lang.Override
+    public boolean getIsAccept() {
+      return isAccept_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (src_ != 0) {
+        output.writeInt32(1, src_);
+      }
+      if (dst_ != 0) {
+        output.writeInt32(2, dst_);
+      }
+      if (isAccept_ != false) {
+        output.writeBool(3, isAccept_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (src_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(1, src_);
+      }
+      if (dst_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(2, dst_);
+      }
+      if (isAccept_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(3, isAccept_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.example.aiins.proto.Friend.RemoveFriendReq)) {
+        return super.equals(obj);
+      }
+      com.example.aiins.proto.Friend.RemoveFriendReq other = (com.example.aiins.proto.Friend.RemoveFriendReq) obj;
+
+      if (getSrc()
+          != other.getSrc()) return false;
+      if (getDst()
+          != other.getDst()) return false;
+      if (getIsAccept()
+          != other.getIsAccept()) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + SRC_FIELD_NUMBER;
+      hash = (53 * hash) + getSrc();
+      hash = (37 * hash) + DST_FIELD_NUMBER;
+      hash = (53 * hash) + getDst();
+      hash = (37 * hash) + ISACCEPT_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getIsAccept());
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.example.aiins.proto.Friend.RemoveFriendReq parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.example.aiins.proto.Friend.RemoveFriendReq parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.example.aiins.proto.Friend.RemoveFriendReq parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.example.aiins.proto.Friend.RemoveFriendReq parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.example.aiins.proto.Friend.RemoveFriendReq parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.example.aiins.proto.Friend.RemoveFriendReq parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.example.aiins.proto.Friend.RemoveFriendReq parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.example.aiins.proto.Friend.RemoveFriendReq parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.example.aiins.proto.Friend.RemoveFriendReq parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.example.aiins.proto.Friend.RemoveFriendReq parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.example.aiins.proto.Friend.RemoveFriendReq parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.example.aiins.proto.Friend.RemoveFriendReq parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.example.aiins.proto.Friend.RemoveFriendReq prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * 删除朋友请求, type = 3
+     * </pre>
+     *
+     * Protobuf type {@code aiins.RemoveFriendReq}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:aiins.RemoveFriendReq)
+        com.example.aiins.proto.Friend.RemoveFriendReqOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.example.aiins.proto.Friend.internal_static_aiins_RemoveFriendReq_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.example.aiins.proto.Friend.internal_static_aiins_RemoveFriendReq_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.example.aiins.proto.Friend.RemoveFriendReq.class, com.example.aiins.proto.Friend.RemoveFriendReq.Builder.class);
+      }
+
+      // Construct using com.example.aiins.proto.Friend.RemoveFriendReq.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        src_ = 0;
+
+        dst_ = 0;
+
+        isAccept_ = false;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.example.aiins.proto.Friend.internal_static_aiins_RemoveFriendReq_descriptor;
+      }
+
+      @java.lang.Override
+      public com.example.aiins.proto.Friend.RemoveFriendReq getDefaultInstanceForType() {
+        return com.example.aiins.proto.Friend.RemoveFriendReq.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.example.aiins.proto.Friend.RemoveFriendReq build() {
+        com.example.aiins.proto.Friend.RemoveFriendReq result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.example.aiins.proto.Friend.RemoveFriendReq buildPartial() {
+        com.example.aiins.proto.Friend.RemoveFriendReq result = new com.example.aiins.proto.Friend.RemoveFriendReq(this);
+        result.src_ = src_;
+        result.dst_ = dst_;
+        result.isAccept_ = isAccept_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.example.aiins.proto.Friend.RemoveFriendReq) {
+          return mergeFrom((com.example.aiins.proto.Friend.RemoveFriendReq)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.example.aiins.proto.Friend.RemoveFriendReq other) {
+        if (other == com.example.aiins.proto.Friend.RemoveFriendReq.getDefaultInstance()) return this;
+        if (other.getSrc() != 0) {
+          setSrc(other.getSrc());
+        }
+        if (other.getDst() != 0) {
+          setDst(other.getDst());
+        }
+        if (other.getIsAccept() != false) {
+          setIsAccept(other.getIsAccept());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.example.aiins.proto.Friend.RemoveFriendReq parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.example.aiins.proto.Friend.RemoveFriendReq) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private int src_ ;
+      /**
+       * <code>int32 src = 1;</code>
+       * @return The src.
+       */
+      @java.lang.Override
+      public int getSrc() {
+        return src_;
+      }
+      /**
+       * <code>int32 src = 1;</code>
+       * @param value The src to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSrc(int value) {
+        
+        src_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 src = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearSrc() {
+        
+        src_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int dst_ ;
+      /**
+       * <code>int32 dst = 2;</code>
+       * @return The dst.
+       */
+      @java.lang.Override
+      public int getDst() {
+        return dst_;
+      }
+      /**
+       * <code>int32 dst = 2;</code>
+       * @param value The dst to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDst(int value) {
+        
+        dst_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 dst = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearDst() {
+        
+        dst_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private boolean isAccept_ ;
+      /**
+       * <code>bool isAccept = 3;</code>
+       * @return The isAccept.
+       */
+      @java.lang.Override
+      public boolean getIsAccept() {
+        return isAccept_;
+      }
+      /**
+       * <code>bool isAccept = 3;</code>
+       * @param value The isAccept to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIsAccept(boolean value) {
+        
+        isAccept_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool isAccept = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearIsAccept() {
+        
+        isAccept_ = false;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:aiins.RemoveFriendReq)
+    }
+
+    // @@protoc_insertion_point(class_scope:aiins.RemoveFriendReq)
+    private static final com.example.aiins.proto.Friend.RemoveFriendReq DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.example.aiins.proto.Friend.RemoveFriendReq();
+    }
+
+    public static com.example.aiins.proto.Friend.RemoveFriendReq getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<RemoveFriendReq>
+        PARSER = new com.google.protobuf.AbstractParser<RemoveFriendReq>() {
+      @java.lang.Override
+      public RemoveFriendReq parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new RemoveFriendReq(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<RemoveFriendReq> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<RemoveFriendReq> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.example.aiins.proto.Friend.RemoveFriendReq getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface PullAddFriendRspOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:aiins.PullAddFriendRsp)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>repeated .aiins.AddFriendReq reqs = 1;</code>
+     */
+    java.util.List<com.example.aiins.proto.Friend.AddFriendReq> 
+        getReqsList();
+    /**
+     * <code>repeated .aiins.AddFriendReq reqs = 1;</code>
+     */
+    com.example.aiins.proto.Friend.AddFriendReq getReqs(int index);
+    /**
+     * <code>repeated .aiins.AddFriendReq reqs = 1;</code>
+     */
+    int getReqsCount();
+    /**
+     * <code>repeated .aiins.AddFriendReq reqs = 1;</code>
+     */
+    java.util.List<? extends com.example.aiins.proto.Friend.AddFriendReqOrBuilder> 
+        getReqsOrBuilderList();
+    /**
+     * <code>repeated .aiins.AddFriendReq reqs = 1;</code>
+     */
+    com.example.aiins.proto.Friend.AddFriendReqOrBuilder getReqsOrBuilder(
+        int index);
+  }
+  /**
+   * <pre>
+   * 拉取返回值
+   * </pre>
+   *
+   * Protobuf type {@code aiins.PullAddFriendRsp}
+   */
+  public static final class PullAddFriendRsp extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:aiins.PullAddFriendRsp)
+      PullAddFriendRspOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use PullAddFriendRsp.newBuilder() to construct.
+    private PullAddFriendRsp(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private PullAddFriendRsp() {
+      reqs_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new PullAddFriendRsp();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private PullAddFriendRsp(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                reqs_ = new java.util.ArrayList<com.example.aiins.proto.Friend.AddFriendReq>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              reqs_.add(
+                  input.readMessage(com.example.aiins.proto.Friend.AddFriendReq.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          reqs_ = java.util.Collections.unmodifiableList(reqs_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.example.aiins.proto.Friend.internal_static_aiins_PullAddFriendRsp_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.example.aiins.proto.Friend.internal_static_aiins_PullAddFriendRsp_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.example.aiins.proto.Friend.PullAddFriendRsp.class, com.example.aiins.proto.Friend.PullAddFriendRsp.Builder.class);
+    }
+
+    public static final int REQS_FIELD_NUMBER = 1;
+    private java.util.List<com.example.aiins.proto.Friend.AddFriendReq> reqs_;
+    /**
+     * <code>repeated .aiins.AddFriendReq reqs = 1;</code>
+     */
+    @java.lang.Override
+    public java.util.List<com.example.aiins.proto.Friend.AddFriendReq> getReqsList() {
+      return reqs_;
+    }
+    /**
+     * <code>repeated .aiins.AddFriendReq reqs = 1;</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends com.example.aiins.proto.Friend.AddFriendReqOrBuilder> 
+        getReqsOrBuilderList() {
+      return reqs_;
+    }
+    /**
+     * <code>repeated .aiins.AddFriendReq reqs = 1;</code>
+     */
+    @java.lang.Override
+    public int getReqsCount() {
+      return reqs_.size();
+    }
+    /**
+     * <code>repeated .aiins.AddFriendReq reqs = 1;</code>
+     */
+    @java.lang.Override
+    public com.example.aiins.proto.Friend.AddFriendReq getReqs(int index) {
+      return reqs_.get(index);
+    }
+    /**
+     * <code>repeated .aiins.AddFriendReq reqs = 1;</code>
+     */
+    @java.lang.Override
+    public com.example.aiins.proto.Friend.AddFriendReqOrBuilder getReqsOrBuilder(
+        int index) {
+      return reqs_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      for (int i = 0; i < reqs_.size(); i++) {
+        output.writeMessage(1, reqs_.get(i));
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (int i = 0; i < reqs_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, reqs_.get(i));
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.example.aiins.proto.Friend.PullAddFriendRsp)) {
+        return super.equals(obj);
+      }
+      com.example.aiins.proto.Friend.PullAddFriendRsp other = (com.example.aiins.proto.Friend.PullAddFriendRsp) obj;
+
+      if (!getReqsList()
+          .equals(other.getReqsList())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getReqsCount() > 0) {
+        hash = (37 * hash) + REQS_FIELD_NUMBER;
+        hash = (53 * hash) + getReqsList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.example.aiins.proto.Friend.PullAddFriendRsp parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.example.aiins.proto.Friend.PullAddFriendRsp parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.example.aiins.proto.Friend.PullAddFriendRsp parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.example.aiins.proto.Friend.PullAddFriendRsp parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.example.aiins.proto.Friend.PullAddFriendRsp parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.example.aiins.proto.Friend.PullAddFriendRsp parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.example.aiins.proto.Friend.PullAddFriendRsp parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.example.aiins.proto.Friend.PullAddFriendRsp parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.example.aiins.proto.Friend.PullAddFriendRsp parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.example.aiins.proto.Friend.PullAddFriendRsp parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.example.aiins.proto.Friend.PullAddFriendRsp parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.example.aiins.proto.Friend.PullAddFriendRsp parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.example.aiins.proto.Friend.PullAddFriendRsp prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * 拉取返回值
+     * </pre>
+     *
+     * Protobuf type {@code aiins.PullAddFriendRsp}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:aiins.PullAddFriendRsp)
+        com.example.aiins.proto.Friend.PullAddFriendRspOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.example.aiins.proto.Friend.internal_static_aiins_PullAddFriendRsp_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.example.aiins.proto.Friend.internal_static_aiins_PullAddFriendRsp_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.example.aiins.proto.Friend.PullAddFriendRsp.class, com.example.aiins.proto.Friend.PullAddFriendRsp.Builder.class);
+      }
+
+      // Construct using com.example.aiins.proto.Friend.PullAddFriendRsp.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getReqsFieldBuilder();
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (reqsBuilder_ == null) {
+          reqs_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          reqsBuilder_.clear();
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.example.aiins.proto.Friend.internal_static_aiins_PullAddFriendRsp_descriptor;
+      }
+
+      @java.lang.Override
+      public com.example.aiins.proto.Friend.PullAddFriendRsp getDefaultInstanceForType() {
+        return com.example.aiins.proto.Friend.PullAddFriendRsp.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.example.aiins.proto.Friend.PullAddFriendRsp build() {
+        com.example.aiins.proto.Friend.PullAddFriendRsp result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.example.aiins.proto.Friend.PullAddFriendRsp buildPartial() {
+        com.example.aiins.proto.Friend.PullAddFriendRsp result = new com.example.aiins.proto.Friend.PullAddFriendRsp(this);
+        int from_bitField0_ = bitField0_;
+        if (reqsBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            reqs_ = java.util.Collections.unmodifiableList(reqs_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.reqs_ = reqs_;
+        } else {
+          result.reqs_ = reqsBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.example.aiins.proto.Friend.PullAddFriendRsp) {
+          return mergeFrom((com.example.aiins.proto.Friend.PullAddFriendRsp)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.example.aiins.proto.Friend.PullAddFriendRsp other) {
+        if (other == com.example.aiins.proto.Friend.PullAddFriendRsp.getDefaultInstance()) return this;
+        if (reqsBuilder_ == null) {
+          if (!other.reqs_.isEmpty()) {
+            if (reqs_.isEmpty()) {
+              reqs_ = other.reqs_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureReqsIsMutable();
+              reqs_.addAll(other.reqs_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.reqs_.isEmpty()) {
+            if (reqsBuilder_.isEmpty()) {
+              reqsBuilder_.dispose();
+              reqsBuilder_ = null;
+              reqs_ = other.reqs_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              reqsBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getReqsFieldBuilder() : null;
+            } else {
+              reqsBuilder_.addAllMessages(other.reqs_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.example.aiins.proto.Friend.PullAddFriendRsp parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.example.aiins.proto.Friend.PullAddFriendRsp) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.util.List<com.example.aiins.proto.Friend.AddFriendReq> reqs_ =
+        java.util.Collections.emptyList();
+      private void ensureReqsIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          reqs_ = new java.util.ArrayList<com.example.aiins.proto.Friend.AddFriendReq>(reqs_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.example.aiins.proto.Friend.AddFriendReq, com.example.aiins.proto.Friend.AddFriendReq.Builder, com.example.aiins.proto.Friend.AddFriendReqOrBuilder> reqsBuilder_;
+
+      /**
+       * <code>repeated .aiins.AddFriendReq reqs = 1;</code>
+       */
+      public java.util.List<com.example.aiins.proto.Friend.AddFriendReq> getReqsList() {
+        if (reqsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(reqs_);
+        } else {
+          return reqsBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .aiins.AddFriendReq reqs = 1;</code>
+       */
+      public int getReqsCount() {
+        if (reqsBuilder_ == null) {
+          return reqs_.size();
+        } else {
+          return reqsBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .aiins.AddFriendReq reqs = 1;</code>
+       */
+      public com.example.aiins.proto.Friend.AddFriendReq getReqs(int index) {
+        if (reqsBuilder_ == null) {
+          return reqs_.get(index);
+        } else {
+          return reqsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .aiins.AddFriendReq reqs = 1;</code>
+       */
+      public Builder setReqs(
+          int index, com.example.aiins.proto.Friend.AddFriendReq value) {
+        if (reqsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureReqsIsMutable();
+          reqs_.set(index, value);
+          onChanged();
+        } else {
+          reqsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .aiins.AddFriendReq reqs = 1;</code>
+       */
+      public Builder setReqs(
+          int index, com.example.aiins.proto.Friend.AddFriendReq.Builder builderForValue) {
+        if (reqsBuilder_ == null) {
+          ensureReqsIsMutable();
+          reqs_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          reqsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .aiins.AddFriendReq reqs = 1;</code>
+       */
+      public Builder addReqs(com.example.aiins.proto.Friend.AddFriendReq value) {
+        if (reqsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureReqsIsMutable();
+          reqs_.add(value);
+          onChanged();
+        } else {
+          reqsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .aiins.AddFriendReq reqs = 1;</code>
+       */
+      public Builder addReqs(
+          int index, com.example.aiins.proto.Friend.AddFriendReq value) {
+        if (reqsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureReqsIsMutable();
+          reqs_.add(index, value);
+          onChanged();
+        } else {
+          reqsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .aiins.AddFriendReq reqs = 1;</code>
+       */
+      public Builder addReqs(
+          com.example.aiins.proto.Friend.AddFriendReq.Builder builderForValue) {
+        if (reqsBuilder_ == null) {
+          ensureReqsIsMutable();
+          reqs_.add(builderForValue.build());
+          onChanged();
+        } else {
+          reqsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .aiins.AddFriendReq reqs = 1;</code>
+       */
+      public Builder addReqs(
+          int index, com.example.aiins.proto.Friend.AddFriendReq.Builder builderForValue) {
+        if (reqsBuilder_ == null) {
+          ensureReqsIsMutable();
+          reqs_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          reqsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .aiins.AddFriendReq reqs = 1;</code>
+       */
+      public Builder addAllReqs(
+          java.lang.Iterable<? extends com.example.aiins.proto.Friend.AddFriendReq> values) {
+        if (reqsBuilder_ == null) {
+          ensureReqsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, reqs_);
+          onChanged();
+        } else {
+          reqsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .aiins.AddFriendReq reqs = 1;</code>
+       */
+      public Builder clearReqs() {
+        if (reqsBuilder_ == null) {
+          reqs_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          reqsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .aiins.AddFriendReq reqs = 1;</code>
+       */
+      public Builder removeReqs(int index) {
+        if (reqsBuilder_ == null) {
+          ensureReqsIsMutable();
+          reqs_.remove(index);
+          onChanged();
+        } else {
+          reqsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .aiins.AddFriendReq reqs = 1;</code>
+       */
+      public com.example.aiins.proto.Friend.AddFriendReq.Builder getReqsBuilder(
+          int index) {
+        return getReqsFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .aiins.AddFriendReq reqs = 1;</code>
+       */
+      public com.example.aiins.proto.Friend.AddFriendReqOrBuilder getReqsOrBuilder(
+          int index) {
+        if (reqsBuilder_ == null) {
+          return reqs_.get(index);  } else {
+          return reqsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .aiins.AddFriendReq reqs = 1;</code>
+       */
+      public java.util.List<? extends com.example.aiins.proto.Friend.AddFriendReqOrBuilder> 
+           getReqsOrBuilderList() {
+        if (reqsBuilder_ != null) {
+          return reqsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(reqs_);
+        }
+      }
+      /**
+       * <code>repeated .aiins.AddFriendReq reqs = 1;</code>
+       */
+      public com.example.aiins.proto.Friend.AddFriendReq.Builder addReqsBuilder() {
+        return getReqsFieldBuilder().addBuilder(
+            com.example.aiins.proto.Friend.AddFriendReq.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .aiins.AddFriendReq reqs = 1;</code>
+       */
+      public com.example.aiins.proto.Friend.AddFriendReq.Builder addReqsBuilder(
+          int index) {
+        return getReqsFieldBuilder().addBuilder(
+            index, com.example.aiins.proto.Friend.AddFriendReq.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .aiins.AddFriendReq reqs = 1;</code>
+       */
+      public java.util.List<com.example.aiins.proto.Friend.AddFriendReq.Builder> 
+           getReqsBuilderList() {
+        return getReqsFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.example.aiins.proto.Friend.AddFriendReq, com.example.aiins.proto.Friend.AddFriendReq.Builder, com.example.aiins.proto.Friend.AddFriendReqOrBuilder> 
+          getReqsFieldBuilder() {
+        if (reqsBuilder_ == null) {
+          reqsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              com.example.aiins.proto.Friend.AddFriendReq, com.example.aiins.proto.Friend.AddFriendReq.Builder, com.example.aiins.proto.Friend.AddFriendReqOrBuilder>(
+                  reqs_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          reqs_ = null;
+        }
+        return reqsBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:aiins.PullAddFriendRsp)
+    }
+
+    // @@protoc_insertion_point(class_scope:aiins.PullAddFriendRsp)
+    private static final com.example.aiins.proto.Friend.PullAddFriendRsp DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.example.aiins.proto.Friend.PullAddFriendRsp();
+    }
+
+    public static com.example.aiins.proto.Friend.PullAddFriendRsp getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<PullAddFriendRsp>
+        PARSER = new com.google.protobuf.AbstractParser<PullAddFriendRsp>() {
+      @java.lang.Override
+      public PullAddFriendRsp parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new PullAddFriendRsp(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<PullAddFriendRsp> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<PullAddFriendRsp> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.example.aiins.proto.Friend.PullAddFriendRsp getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_aiins_FriendReq_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_aiins_FriendReq_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_aiins_SearchUserReq_descriptor;
   private static final 
@@ -2032,6 +5421,21 @@ public final class Friend {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_aiins_AddFriendReq_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_aiins_PullAddFriendReq_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_aiins_PullAddFriendReq_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_aiins_RemoveFriendReq_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_aiins_RemoveFriendReq_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_aiins_PullAddFriendRsp_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_aiins_PullAddFriendRsp_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -2041,35 +5445,69 @@ public final class Friend {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\022proto/Friend.proto\022\005aiins\"!\n\rSearchUse" +
-      "rReq\022\020\n\010username\030\001 \001(\t\"P\n\rSearchUserRsp\022" +
-      "\022\n\nresultCode\030\001 \001(\005\022\020\n\010nickname\030\002 \001(\t\022\013\n" +
-      "\003uid\030\003 \001(\005\022\014\n\004icon\030\004 \001(\014\":\n\014AddFriendReq" +
-      "\022\014\n\004from\030\001 \001(\005\022\n\n\002to\030\002 \001(\005\022\020\n\010isAccept\030\003" +
-      " \001(\010B\031\n\027com.example.aiins.protob\006proto3"
+      "\n\022proto/Friend.proto\022\005aiins\"\325\001\n\tFriendRe" +
+      "q\022\014\n\004type\030\001 \001(\005\022+\n\rsearchUserReq\030\002 \001(\0132\024" +
+      ".aiins.SearchUserReq\022)\n\014addFriendReq\030\003 \001" +
+      "(\0132\023.aiins.AddFriendReq\0221\n\020pullAddFriend" +
+      "Req\030\004 \001(\0132\027.aiins.PullAddFriendReq\022/\n\017re" +
+      "moveFriendReq\030\005 \001(\0132\026.aiins.RemoveFriend" +
+      "Req\"!\n\rSearchUserReq\022\020\n\010username\030\001 \001(\t\"b" +
+      "\n\rSearchUserRsp\022\022\n\nresultCode\030\001 \001(\005\022\020\n\010n" +
+      "ickname\030\002 \001(\t\022\020\n\010username\030\003 \001(\t\022\013\n\003uid\030\004" +
+      " \001(\005\022\014\n\004icon\030\005 \001(\014\":\n\014AddFriendReq\022\013\n\003sr" +
+      "c\030\001 \001(\005\022\013\n\003dst\030\002 \001(\005\022\020\n\010isAccept\030\003 \001(\010\"\037" +
+      "\n\020PullAddFriendReq\022\013\n\003uid\030\001 \001(\005\"=\n\017Remov" +
+      "eFriendReq\022\013\n\003src\030\001 \001(\005\022\013\n\003dst\030\002 \001(\005\022\020\n\010" +
+      "isAccept\030\003 \001(\010\"5\n\020PullAddFriendRsp\022!\n\004re" +
+      "qs\030\001 \003(\0132\023.aiins.AddFriendReqB\031\n\027com.exa" +
+      "mple.aiins.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
         });
-    internal_static_aiins_SearchUserReq_descriptor =
+    internal_static_aiins_FriendReq_descriptor =
       getDescriptor().getMessageTypes().get(0);
+    internal_static_aiins_FriendReq_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_aiins_FriendReq_descriptor,
+        new java.lang.String[] { "Type", "SearchUserReq", "AddFriendReq", "PullAddFriendReq", "RemoveFriendReq", });
+    internal_static_aiins_SearchUserReq_descriptor =
+      getDescriptor().getMessageTypes().get(1);
     internal_static_aiins_SearchUserReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_aiins_SearchUserReq_descriptor,
         new java.lang.String[] { "Username", });
     internal_static_aiins_SearchUserRsp_descriptor =
-      getDescriptor().getMessageTypes().get(1);
+      getDescriptor().getMessageTypes().get(2);
     internal_static_aiins_SearchUserRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_aiins_SearchUserRsp_descriptor,
-        new java.lang.String[] { "ResultCode", "Nickname", "Uid", "Icon", });
+        new java.lang.String[] { "ResultCode", "Nickname", "Username", "Uid", "Icon", });
     internal_static_aiins_AddFriendReq_descriptor =
-      getDescriptor().getMessageTypes().get(2);
+      getDescriptor().getMessageTypes().get(3);
     internal_static_aiins_AddFriendReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_aiins_AddFriendReq_descriptor,
-        new java.lang.String[] { "From", "To", "IsAccept", });
+        new java.lang.String[] { "Src", "Dst", "IsAccept", });
+    internal_static_aiins_PullAddFriendReq_descriptor =
+      getDescriptor().getMessageTypes().get(4);
+    internal_static_aiins_PullAddFriendReq_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_aiins_PullAddFriendReq_descriptor,
+        new java.lang.String[] { "Uid", });
+    internal_static_aiins_RemoveFriendReq_descriptor =
+      getDescriptor().getMessageTypes().get(5);
+    internal_static_aiins_RemoveFriendReq_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_aiins_RemoveFriendReq_descriptor,
+        new java.lang.String[] { "Src", "Dst", "IsAccept", });
+    internal_static_aiins_PullAddFriendRsp_descriptor =
+      getDescriptor().getMessageTypes().get(6);
+    internal_static_aiins_PullAddFriendRsp_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_aiins_PullAddFriendRsp_descriptor,
+        new java.lang.String[] { "Reqs", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

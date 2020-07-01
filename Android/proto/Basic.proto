@@ -6,15 +6,18 @@ option java_package = "com.example.aiins.proto";
 // 获取一系列用户基本信息请求
 message UserDataReq {
     repeated int32 uid = 1;
-    int64 time = 2;
+}
+
+message UserData {
+    string nickname = 1;
+    string username = 2;
+    bytes icon = 3;
+    int32 uid = 4;
 }
 
 // 一系列用户基本信息响应, 根据时间戳返回
 message UserDataRsp {
-    repeated string nickname = 1;
-    repeated string username = 2;
-    repeated bytes icon = 3;
-    repeated int32 uid = 4;
+    repeated UserData userData = 1;
 }
 
 // 每个用户都有的基本信息

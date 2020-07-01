@@ -2,6 +2,8 @@ from flask import Flask
 from flask import request
 import proto.Register_pb2 as Register
 import proto.Personal_pb2 as Personal
+import proto.Friend_pb2 as Friend
+import proto.Basic_pb2 as Basic
 from src.db import Mongo
 
 app = Flask("AI ins")
@@ -16,7 +18,7 @@ def login():
     print(req)
 
     rsp = Register.RegisterRsp()
-    res = mongo.login_find(req.username)
+    res = mongo.find_by_name(req.username)
 
     # 不含昵称则是登录请求
     if req.nickname == '':
@@ -64,18 +66,20 @@ def setting():
     return rsp.SerializeToString()
 
 def process_iconreq(req):
+    print('process_iconreq')
     uid = req.uid
     data = req.icon
-    res = mongo.setting_find(uid)
+    res = mongo.find_by_uid(uid)
     if res is None:
         return 4,'uid not found'
     mongo.setting_reset(res, 'icon', data)
     return 0,'ok'
 
 def process_nicknamereq(req):
+    print('process_nicknamereq')
     uid = req.uid
     name = req.nickname
-    res = mongo.setting_find(uid)
+    res = mongo.find_by_uid(uid)
     if res is None:
         return 4,'uid not found'
     mongo.setting_reset(res, 'nickname', name)
@@ -83,27 +87,99 @@ def process_nicknamereq(req):
 
 # password 检查交给本地
 def process_password(req):
+    print('process_password')
     uid = req.uid
     new = req.new
-    res = mongo.setting_find(uid)
+    res = mongo.find_by_uid(uid)
     if res is None:
         return 4,'uid not found'
     mongo.setting_reset(res, 'password', new)
     return 0,'ok'
 
+# 添加好友相关
+@app.route('/friend', methods=['POST'])
+def friend():
+    req = Friend.FriendReq()
+    data = request.data
+    req.ParseFromString(data)
+    if req.type == 0:
+        req = req.searchUserReq
+        return process_search_user(req)
+    elif req.type == 1:
+        req = req.addFriendReq
+        print('process_friend_add')
+        mongo.friend_add(req.src, req.dst)
+        return ''
+    elif req.type == 2:
+        req = req.pullAddFriendReq
+        return process_pull_friend_req(req)
+    elif req.type == 3:
+        req = req.removeFriendReq
+        process_remove_friend_req(req)
+        return ''
+    else:
+        print('unknown error')
+        return ''
+
+def process_search_user(req):
+    print('process_search_user')
+    name = req.username
+    res = mongo.find_by_name(name)
+    rsp = Friend.SearchUserRsp()
+    if res is None:
+        rsp.resultCode = 1
+    else:
+        rsp.resultCode = 0
+        rsp.nickname = res['nickname']
+        rsp.username = res['username']
+        rsp.uid = res['uid']
+        if 'icon' in res.keys():
+            rsp.icon = res['icon']
+    return rsp.SerializeToString()
+
+def process_pull_friend_req(req):
+    print('process_pull_friend_req')
+    uid = req.uid
+    l1 = mongo.friend_find(uid, None, True, False)
+    l2 = mongo.friend_find(None, uid, None, False)
+    rsp = Friend.PullAddFriendRsp()
+    l = l1 + l2
+    for r in l:
+        _r = rsp.reqs.add()
+        _r.src = r['src']
+        _r.dst = r['dst']
+        _r.isAccept = r['accept']
+    print(l)
+    return rsp.SerializeToString()
+
+def process_remove_friend_req(req):
+    print('process_remove_friend_req')
+    mongo.friend_find(req.src, req.dst, req.isAccept, True)
+
+# 查询用户信息
+@app.route('/user', methods=['POST'])
+def user():
+    req = Basic.UserDataReq()
+    data = request.data
+    req.ParseFromString(data)
+    rsp = Basic.UserDataRsp()
+    for u in req.uid:
+        res = mongo.find_by_uid(u)
+        if res == None:
+            continue
+        r = rsp.userData.add()
+        r.nickname = res['nickname']
+        r.username = res['username']
+        if 'icon' in res.keys():
+            r.icon = res['icon']
+        else:
+            r.icon = b''
+        r.uid = res['uid']
+    return rsp.SerializeToString()
+
 # 最近的信息
 @app.route('/search')
 def search():
-    return ''
-
-# 查询用户信息
-@app.route('/user')
-def user():
-    return ''
-
-# 添加好友相关
-@app.route('/friend')
-def friend():
     return ''
 
 @app.route('/')
@@ -119,10 +195,12 @@ def hello_world():
 3. /setting 设置信息
 4. /friend 添加好友
 5. /user 查询用户信息
+6. /message 获取消息记录
 
 resultCode:
 1: 注册用户名重复
 2: 登录密码错误或用户名不存在
 3: setting 请求 type 不合法
 4: setting uid not found
+5. friend type error
 '''

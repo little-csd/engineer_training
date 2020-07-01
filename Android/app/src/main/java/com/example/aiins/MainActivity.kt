@@ -2,10 +2,15 @@ package com.example.aiins
 
 import android.Manifest
 import android.app.Activity
+import android.app.AlertDialog
+import android.content.DialogInterface
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Bundle
 import android.provider.MediaStore
+import android.util.Log
+import android.view.Menu
+import android.view.MenuItem
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
@@ -13,9 +18,14 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
+import com.example.aiins.proto.Basic
+import com.example.aiins.proto.Friend
+import com.example.aiins.repository.Repository
 import com.example.aiins.util.BaseActivity
 import com.example.aiins.util.Config
 import com.example.aiins.util.FileUtil
+import com.example.aiins.util.NetworkUtil
+import com.example.aiins.view.AddFriendActivity
 import com.example.aiins.view.FinderFragment
 import com.example.aiins.view.FriendFragment
 import com.example.aiins.view.TalkFragment
@@ -23,8 +33,12 @@ import com.example.aiins.view.home.HomeFragment
 import com.google.android.material.tabs.TabLayoutMediator
 import com.yalantis.ucrop.UCrop
 import kotlinx.android.synthetic.main.activity_main.*
+import okhttp3.Call
+import okhttp3.Callback
+import okhttp3.Response
+import java.io.IOException
 
-class MainActivity : BaseActivity() {
+class MainActivity : BaseActivity(), Repository.OnAddFriendReq {
 
     val list = arrayOf(TalkFragment(), FriendFragment(), FinderFragment(), HomeFragment())
 
@@ -32,11 +46,14 @@ class MainActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         reqPermission()
-//        Log.i(TAG, "onCreate: ${Config.userData}")
+        Log.i(TAG, "onCreate: ${Config.userData}")
         init()
     }
 
+
+
     private fun init() {
+        setSupportActionBar(toolbar)
         viewpager.adapter = object : FragmentStateAdapter(this) {
             override fun createFragment(position: Int): Fragment {
                 return list[position]
@@ -69,6 +86,8 @@ class MainActivity : BaseActivity() {
                 }
             }
         }).attach()
+        Repository.addFriendListener(this)
+        Repository.init()
     }
 
     fun onClickIcon() {
@@ -86,7 +105,7 @@ class MainActivity : BaseActivity() {
 //                val options = UCrop.Options()
                 UCrop.of(data!!.data!!, uri)
                         .withAspectRatio(1f, 1f)
-                        .withMaxResultSize(100, 100)
+                        .withMaxResultSize(300, 300)
                         .start(this)
             }
             UCrop.REQUEST_CROP -> {
@@ -129,6 +148,40 @@ class MainActivity : BaseActivity() {
                 finish()
             }
         }
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu_main, menu)
+        return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.action_add_friend -> {
+                val intent = Intent(this, AddFriendActivity::class.java)
+                startActivity(intent)
+            }
+        }
+        return true
+    }
+
+    override fun onAdd(list: List<Basic.UserData>, len: Int) {
+        if (len <= 0) return
+        val data = list[len - 1]
+        val txt = TextView(this)
+        txt.text = "${data.nickname}(${data.username}) wants to add you!"
+        AlertDialog.Builder(this)
+                .setTitle("Friend request")
+                .setView(txt)
+                .setPositiveButton("Accept") { _, _ ->
+                    NetworkUtil.friendAdd(data.uid, Config.userData.uid, NetworkUtil.emptyCallback)
+                    onAdd(list, len - 1)
+                }
+                .setNegativeButton("Reject") { _, _ ->
+                    NetworkUtil.friendRemove(data.uid, Config.userData.uid, false, NetworkUtil.emptyCallback)
+                }
+                .create()
+                .show()
     }
 
     companion object {

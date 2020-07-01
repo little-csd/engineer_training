@@ -13,15 +13,11 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="60dp"
+        android:theme="@style/Theme.Design.NoActionBar"
         android:background="@color/colorBackground"
+        app:titleTextColor="@color/colorBlack"
+        app:popupTheme="@style/PopupTheme"
         android:labelFor="@id/viewpager">
-        <TextView
-            android:textSize="20sp"
-            android:text="AI Ins"
-            android:layout_marginTop="20dp"
-            android:textColor="@color/colorPrimary"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent" />
     </androidx.appcompat.widget.Toolbar>
 
     <androidx.viewpager2.widget.ViewPager2
