@@ -1,7 +1,8 @@
 package com.example.aiins.repository
 
 import android.app.Activity
-import android.app.Application
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
 import android.util.Log
 import android.widget.Toast
 import com.example.aiins.AIApplication
@@ -13,14 +14,17 @@ import okhttp3.Call
 import okhttp3.Callback
 import okhttp3.Response
 import java.io.IOException
+import java.util.concurrent.ConcurrentHashMap
 import kotlin.collections.ArrayList
 
 object Repository {
 
     const val TAG = "Repository"
     const val NET_ERR = "Network Error!"
-    private val users = ArrayList<Basic.UserData>()
+    private val users = ConcurrentHashMap<Int, Basic.UserData>()
+    private val icons = ConcurrentHashMap<Int, Bitmap>()
     private var onAddFriendReq : OnAddFriendReq? = null
+    private val observers = ArrayList<Observer>()
 
     /**
      * 获取共三种情况:
@@ -43,8 +47,8 @@ object Repository {
             val list = ArrayList<Int>()
             for (l in rsp.reqsList) {
                 if (l.isAccept) {
-                    if (l.src == id) friends.add(l.dst)
-                    else friends.add(l.src)
+                    if (l.src == id && !users.containsKey(l.dst)) friends.add(l.dst)
+                    else if (l.dst == id && !users.containsKey(l.src)) friends.add(l.src)
                 } else if (l.dst == id){
                     list.add(l.src)
                 } else {
@@ -70,8 +74,17 @@ object Repository {
         override fun onResponse(call: Call, response: Response) {
             val res = response.body!!.byteString().toByteArray()
             val rsp = Basic.UserDataRsp.parseFrom(res).userDataList
-            users.addAll(rsp)
+            for (r in rsp) {
+                users[r.uid] = r
+                if (!r.icon.isEmpty) {
+                    val bytes = r.icon.toByteArray()
+                    icons[r.uid] = BitmapFactory.decodeByteArray(bytes, 0, bytes.size)
+                }
+            }
             Log.i(TAG, "onResponse: total ${users.size} friends")
+            for (o in observers) {
+                o.onDataSetChange()
+            }
         }
     }
     private val userAddCallback = object : Callback {
@@ -96,15 +109,40 @@ object Repository {
         }
     }
 
-    fun init() {
+    // init 前添加所有 observer
+    fun pullFriend() {
         NetworkUtil.friendPull(pullCallback)
+    }
+
+    fun getAllFriends(): Set<Int> {
+        return users.keys
+    }
+
+    fun findUserData(id: Int): Basic.UserData? {
+        return users[id]
+    }
+
+    fun findIcon(id: Int): Bitmap? {
+        return icons[id]
     }
 
     fun addFriendListener(onAddFriendReq: OnAddFriendReq) {
         this.onAddFriendReq = onAddFriendReq
     }
 
+    fun addObserver(observer: Observer) {
+        observers.add(observer)
+    }
+
+    fun removeObserver(observer: Observer) {
+        observers.remove(observer)
+    }
+
     interface OnAddFriendReq {
         fun onAdd(list: List<Basic.UserData>, len: Int)
+    }
+
+    interface Observer {
+        fun onDataSetChange()
     }
 }

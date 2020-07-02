@@ -1,4 +1,4 @@
-package com.example.aiins.view
+package com.example.aiins.view.friend
 
 import android.graphics.BitmapFactory
 import androidx.appcompat.app.AppCompatActivity
@@ -8,10 +8,8 @@ import android.view.View
 import android.widget.Toast
 import com.example.aiins.R
 import com.example.aiins.proto.Friend
-import com.example.aiins.proto.Personal
 import com.example.aiins.util.Config
 import com.example.aiins.util.NetworkUtil
-import com.example.aiins.view.home.HomeFragment
 import kotlinx.android.synthetic.main.activity_add_friend.*
 import okhttp3.Call
 import okhttp3.Callback

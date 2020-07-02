@@ -46,7 +46,8 @@ class HomeFragment : Fragment() {
                 if (rsp.resultCode != 0) {
                     Toast.makeText(activity, rsp.msg, Toast.LENGTH_SHORT).show()
                 } else {
-                    val bitmap = BitmapFactory.decodeFile(FileUtil.getPathInFile(Config.iconName))
+                    val iconName = Config.getIconDataName(Config.userData.uid)
+                    val bitmap = BitmapFactory.decodeFile(FileUtil.getPathInFile(iconName))
                     if (bitmap == null) {
                         Toast.makeText(activity, "Unknown error", Toast.LENGTH_SHORT).show()
                     } else {
@@ -132,7 +133,7 @@ class HomeFragment : Fragment() {
     }
 
     private fun initIcon() {
-        val bytes = FileUtil.readFileInFiles(Config.iconName)
+        val bytes = FileUtil.readFileInFiles(Config.getIconDataName(Config.userData.uid))
         if (bytes.isNotEmpty()) {
             home_icon.setImageBitmap(BitmapFactory.decodeByteArray(bytes, 0, bytes.size))
         }
@@ -204,7 +205,7 @@ class HomeFragment : Fragment() {
     }
 
     fun onIconOK() {
-        val bytes = FileUtil.readFileInFiles(Config.iconName)
+        val bytes = FileUtil.readFileInFiles(Config.getIconDataName(Config.userData.uid))
         NetworkUtil.settingIcon(bytes, iconCallback)
     }
 

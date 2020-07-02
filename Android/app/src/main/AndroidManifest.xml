@@ -15,8 +15,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Design.NoActionBar">
-        <activity android:name=".view.AddFriendActivity"></activity>
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".view.talk.TalkActivity"
+            android:windowSoftInputMode="adjustResize|stateAlwaysHidden"/>
+        <activity android:name=".view.friend.AddFriendActivity" />
+        <activity android:name=".MainActivity" />
         <activity android:name=".login.RegisterActivity" />
         <activity android:name=".login.LoginActivity" />
         <activity android:name=".login.FirstActivity">

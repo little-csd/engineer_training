@@ -12,7 +12,6 @@ class AIApplication : Application() {
         super.onCreate()
         FileUtil.init(this)
         context = this
-        NetworkUtil.friendRemove(1, 3, false, NetworkUtil.emptyCallback)
     }
 
 
