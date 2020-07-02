@@ -20,24 +20,10 @@ message UserDataRsp {
     repeated UserData userData = 1;
 }
 
-// 每个用户都有的基本信息
+// 每个用户都有的基本信息 TODO: 后面删掉
 message BasicUserData {
     string nickname = 1;
     string username = 2;
     string password = 3;
     int32 uid = 4;
-}
-
-// 本地需要保存的数据, 自己的信息已经隔开
-message LocalData {
-    repeated Message messages = 3; // 对话信息
-}
-
-// 每一个对话信息
-message Message {
-    int32 from = 1;
-    repeated int32 to = 2;
-    int32 time = 3;
-    string text = 4;
-    bytes image = 5;
 }

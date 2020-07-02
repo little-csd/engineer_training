@@ -4,6 +4,7 @@ import proto.Register_pb2 as Register
 import proto.Personal_pb2 as Personal
 import proto.Friend_pb2 as Friend
 import proto.Basic_pb2 as Basic
+import proto.Message_pb2 as Message
 from src.db import Mongo
 
 app = Flask("AI ins")
@@ -177,10 +178,48 @@ def user():
         r.uid = res['uid']
     return rsp.SerializeToString()
 
-# 最近的信息
-@app.route('/search')
+# 最近的 Post 信息
+@app.route('/post', methods=['POST'])
 def search():
+    req = Message.PostReq()
+    data = request.data
+    req.ParseFromString(data)
+    if req.type == 0:
+        return mongo.post_find(req.time)
+    elif req.type == 1:
+        process_post_raw(req)
+    elif req.type == 2:
+        process_post_transfer(req)
+    elif req.type == 3:
+        process_post_translation(req)
+    else:
+        print('Unknown type')
     return ''
+
+def process_post_raw(req):
+    print('')
+
+def process_post_transfer(req):
+    print('')
+
+def process_post_translation(req):
+    print('')
+
+@app.route('/message', methods=['POST'])
+def message():
+    req = Message.MessageReq()
+    data = request.data
+    req.ParseFromString(data)
+    res = mongo.message_find(req.uid, req.time)
+    rsp = Message.MessageRsp()
+    for data in res:
+        r = rsp.msgs.add()
+        r.src = data['src']
+        r.dst = data['dst']
+        r.time = data['time']
+        r.text = data['text']
+        r.image = data['image']
+    return rsp.SerializeToString()
 
 @app.route('/')
 def hello_world():
@@ -191,7 +230,7 @@ def hello_world():
 各个界面:
 0. / 主界面, 暂无功能
 1. /login 登录界面, 负责处理登录请求
-2. /search 附近的人, 请求时返回
+2. /post 附近的消息, 请求时返回
 3. /setting 设置信息
 4. /friend 添加好友
 5. /user 查询用户信息

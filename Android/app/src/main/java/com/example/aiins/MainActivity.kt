@@ -3,7 +3,6 @@ package com.example.aiins
 import android.Manifest
 import android.app.Activity
 import android.app.AlertDialog
-import android.content.DialogInterface
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Bundle
@@ -11,6 +10,7 @@ import android.provider.MediaStore
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
@@ -19,24 +19,20 @@ import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.example.aiins.proto.Basic
-import com.example.aiins.proto.Friend
 import com.example.aiins.repository.Repository
+import com.example.aiins.repository.Repository.Observer
 import com.example.aiins.util.BaseActivity
 import com.example.aiins.util.Config
 import com.example.aiins.util.FileUtil
 import com.example.aiins.util.NetworkUtil
-import com.example.aiins.view.AddFriendActivity
 import com.example.aiins.view.FinderFragment
-import com.example.aiins.view.FriendFragment
-import com.example.aiins.view.TalkFragment
+import com.example.aiins.view.talk.TalkFragment
+import com.example.aiins.view.friend.AddFriendActivity
+import com.example.aiins.view.friend.FriendFragment
 import com.example.aiins.view.home.HomeFragment
 import com.google.android.material.tabs.TabLayoutMediator
 import com.yalantis.ucrop.UCrop
 import kotlinx.android.synthetic.main.activity_main.*
-import okhttp3.Call
-import okhttp3.Callback
-import okhttp3.Response
-import java.io.IOException
 
 class MainActivity : BaseActivity(), Repository.OnAddFriendReq {
 
@@ -49,8 +45,6 @@ class MainActivity : BaseActivity(), Repository.OnAddFriendReq {
         Log.i(TAG, "onCreate: ${Config.userData}")
         init()
     }
-
-
 
     private fun init() {
         setSupportActionBar(toolbar)
@@ -87,7 +81,13 @@ class MainActivity : BaseActivity(), Repository.OnAddFriendReq {
             }
         }).attach()
         Repository.addFriendListener(this)
-        Repository.init()
+        Repository.addObserver(list[1] as Observer)
+        Thread {
+            Repository.pullFriend()
+            try {
+                Thread.sleep(5000)
+            } catch (e: InterruptedException) {}
+        }.start()
     }
 
     fun onClickIcon() {
@@ -101,7 +101,7 @@ class MainActivity : BaseActivity(), Repository.OnAddFriendReq {
         if (resultCode != Activity.RESULT_OK) return
         when (requestCode) {
             REQ_PICK_PHOTO -> {
-                val uri = FileUtil.getUriInFile(Config.iconName)
+                val uri = FileUtil.getUriInFile(Config.getIconDataName(Config.userData.uid))
 //                val options = UCrop.Options()
                 UCrop.of(data!!.data!!, uri)
                         .withAspectRatio(1f, 1f)
@@ -168,11 +168,12 @@ class MainActivity : BaseActivity(), Repository.OnAddFriendReq {
     override fun onAdd(list: List<Basic.UserData>, len: Int) {
         if (len <= 0) return
         val data = list[len - 1]
-        val txt = TextView(this)
+        val view = View.inflate(this, R.layout.friend_req_layout, null)
+        val txt = view.findViewById<TextView>(R.id.friend_req_txt)
         txt.text = "${data.nickname}(${data.username}) wants to add you!"
         AlertDialog.Builder(this)
                 .setTitle("Friend request")
-                .setView(txt)
+                .setView(view)
                 .setPositiveButton("Accept") { _, _ ->
                     NetworkUtil.friendAdd(data.uid, Config.userData.uid, NetworkUtil.emptyCallback)
                     onAdd(list, len - 1)

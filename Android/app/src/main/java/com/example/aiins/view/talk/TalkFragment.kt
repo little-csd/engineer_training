@@ -1,4 +1,4 @@
-package com.example.aiins.view
+package com.example.aiins.view.talk
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,9 +7,8 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.aiins.R
 
-class FriendFragment : Fragment() {
-
+class TalkFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        return inflater.inflate(R.layout.fragment_friend, container, false)
+        return inflater.inflate(R.layout.fragment_talk, container, false)
     }
 }
