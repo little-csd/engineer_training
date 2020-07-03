@@ -9,6 +9,8 @@ object Config {
     const val friend = "$host/friend"
     const val user = "$host/user"
     const val post = "$host/post"
+    const val message = "$host/message"
+    const val socket = "ws://192.168.101.65:5000"
 
     lateinit var userData: Basic.BasicUserData
 

@@ -7,8 +7,8 @@ import proto.Basic_pb2 as Basic
 import proto.Message_pb2 as Message
 from src.db import Mongo
 
-app = Flask("AI ins")
 mongo = Mongo()
+app = Flask("AI ins")
 
 # 注册登录相关部分页面与处理函数
 @app.route('/login', methods=['POST'])
@@ -36,7 +36,6 @@ def login():
             rsp.resultCode = 1
     
     return rsp.SerializeToString()
-
 
 # 用户设置相关部分页面与处理函数
 @app.route('/setting', methods=['POST'])
@@ -221,9 +220,41 @@ def message():
         r.image = data['image']
     return rsp.SerializeToString()
 
+@app.route('/hello')
+def hello():
+    return 'Hello World!'
+
+from geventwebsocket.handler import WebSocketHandler
+from geventwebsocket.server import WSGIServer
+from geventwebsocket.websocket import WebSocket
+
+client_list = {}
+
 @app.route('/')
-def hello_world():
-    return 'Welcome to AI Ins application'
+def entry():
+    user = request.environ.get('wsgi.websocket')
+    if user:
+        print('WebSocket connected')
+    uid = 0
+    try:
+        uid = int(user.receive())
+        client_list[uid] = user
+        while True:
+            msg = Message.Message()
+            msg.ParseFromString(user.receive())
+            dst = client_list[msg.dst]
+            if dst != None:
+                dst.send(msg.SerializeToString())
+            mongo.message_add(msg)
+    except BaseException:
+        print('Connection failed')
+    
+    client_list[uid] = None
+    return None
+
+if __name__ == '__main__':
+    http_server = WSGIServer(('192.168.101.65', 5000), application=app, handler_class=WebSocketHandler)
+    http_server.serve_forever()
 
 '''
 数据库使用 mongodb 存储

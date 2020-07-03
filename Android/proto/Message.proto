@@ -28,16 +28,20 @@ message PostReq {
     int32 type = 1;
     int32 uid = 2;
     int32 time = 3;
-    string text = 4;
-    bytes img1 = 5;
-    bytes img2 = 6;
+    bytes icon = 4;
+    string nickname = 5;
+    string username = 6;
+
+    string text = 7;
+    bytes img1 = 8;
+    bytes img2 = 9;
 }
 
 // 存在数据库的每一个 Post 类
 message Post {
     int32 uid = 1;
+    int32 time = 4;
     string text = 2;
     bytes image = 3;
-    int32 time = 4;
     string desc = 5;
 }
