@@ -2289,7 +2289,7 @@ public final class MessageOuterClass {
   }
   /**
    * <pre>
-   * 发布 Post 请求, type = 0 表示原始, type = 1 表示 transfer, type = 2 表示转文本
+   * Post 请求, type = 0 表示拉取信息(time 为拉取的页数), type = 1 表示原始, type = 2 表示 transfer, type = 3 表示转文本
    * </pre>
    *
    * Protobuf type {@code aiins.PostReq}
@@ -2706,7 +2706,7 @@ public final class MessageOuterClass {
     }
     /**
      * <pre>
-     * 发布 Post 请求, type = 0 表示原始, type = 1 表示 transfer, type = 2 表示转文本
+     * Post 请求, type = 0 表示拉取信息(time 为拉取的页数), type = 1 表示原始, type = 2 表示 transfer, type = 3 表示转文本
      * </pre>
      *
      * Protobuf type {@code aiins.PostReq}
@@ -3175,6 +3175,799 @@ public final class MessageOuterClass {
 
   }
 
+  public interface PostRspOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:aiins.PostRsp)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>repeated .aiins.Post posts = 1;</code>
+     */
+    java.util.List<com.example.aiins.proto.MessageOuterClass.Post> 
+        getPostsList();
+    /**
+     * <code>repeated .aiins.Post posts = 1;</code>
+     */
+    com.example.aiins.proto.MessageOuterClass.Post getPosts(int index);
+    /**
+     * <code>repeated .aiins.Post posts = 1;</code>
+     */
+    int getPostsCount();
+    /**
+     * <code>repeated .aiins.Post posts = 1;</code>
+     */
+    java.util.List<? extends com.example.aiins.proto.MessageOuterClass.PostOrBuilder> 
+        getPostsOrBuilderList();
+    /**
+     * <code>repeated .aiins.Post posts = 1;</code>
+     */
+    com.example.aiins.proto.MessageOuterClass.PostOrBuilder getPostsOrBuilder(
+        int index);
+  }
+  /**
+   * Protobuf type {@code aiins.PostRsp}
+   */
+  public static final class PostRsp extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:aiins.PostRsp)
+      PostRspOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use PostRsp.newBuilder() to construct.
+    private PostRsp(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private PostRsp() {
+      posts_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new PostRsp();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private PostRsp(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                posts_ = new java.util.ArrayList<com.example.aiins.proto.MessageOuterClass.Post>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              posts_.add(
+                  input.readMessage(com.example.aiins.proto.MessageOuterClass.Post.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          posts_ = java.util.Collections.unmodifiableList(posts_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.example.aiins.proto.MessageOuterClass.internal_static_aiins_PostRsp_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.example.aiins.proto.MessageOuterClass.internal_static_aiins_PostRsp_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.example.aiins.proto.MessageOuterClass.PostRsp.class, com.example.aiins.proto.MessageOuterClass.PostRsp.Builder.class);
+    }
+
+    public static final int POSTS_FIELD_NUMBER = 1;
+    private java.util.List<com.example.aiins.proto.MessageOuterClass.Post> posts_;
+    /**
+     * <code>repeated .aiins.Post posts = 1;</code>
+     */
+    @java.lang.Override
+    public java.util.List<com.example.aiins.proto.MessageOuterClass.Post> getPostsList() {
+      return posts_;
+    }
+    /**
+     * <code>repeated .aiins.Post posts = 1;</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends com.example.aiins.proto.MessageOuterClass.PostOrBuilder> 
+        getPostsOrBuilderList() {
+      return posts_;
+    }
+    /**
+     * <code>repeated .aiins.Post posts = 1;</code>
+     */
+    @java.lang.Override
+    public int getPostsCount() {
+      return posts_.size();
+    }
+    /**
+     * <code>repeated .aiins.Post posts = 1;</code>
+     */
+    @java.lang.Override
+    public com.example.aiins.proto.MessageOuterClass.Post getPosts(int index) {
+      return posts_.get(index);
+    }
+    /**
+     * <code>repeated .aiins.Post posts = 1;</code>
+     */
+    @java.lang.Override
+    public com.example.aiins.proto.MessageOuterClass.PostOrBuilder getPostsOrBuilder(
+        int index) {
+      return posts_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      for (int i = 0; i < posts_.size(); i++) {
+        output.writeMessage(1, posts_.get(i));
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (int i = 0; i < posts_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, posts_.get(i));
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.example.aiins.proto.MessageOuterClass.PostRsp)) {
+        return super.equals(obj);
+      }
+      com.example.aiins.proto.MessageOuterClass.PostRsp other = (com.example.aiins.proto.MessageOuterClass.PostRsp) obj;
+
+      if (!getPostsList()
+          .equals(other.getPostsList())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getPostsCount() > 0) {
+        hash = (37 * hash) + POSTS_FIELD_NUMBER;
+        hash = (53 * hash) + getPostsList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.example.aiins.proto.MessageOuterClass.PostRsp parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.example.aiins.proto.MessageOuterClass.PostRsp parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.example.aiins.proto.MessageOuterClass.PostRsp parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.example.aiins.proto.MessageOuterClass.PostRsp parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.example.aiins.proto.MessageOuterClass.PostRsp parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.example.aiins.proto.MessageOuterClass.PostRsp parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.example.aiins.proto.MessageOuterClass.PostRsp parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.example.aiins.proto.MessageOuterClass.PostRsp parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.example.aiins.proto.MessageOuterClass.PostRsp parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.example.aiins.proto.MessageOuterClass.PostRsp parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.example.aiins.proto.MessageOuterClass.PostRsp parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.example.aiins.proto.MessageOuterClass.PostRsp parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.example.aiins.proto.MessageOuterClass.PostRsp prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code aiins.PostRsp}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:aiins.PostRsp)
+        com.example.aiins.proto.MessageOuterClass.PostRspOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.example.aiins.proto.MessageOuterClass.internal_static_aiins_PostRsp_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.example.aiins.proto.MessageOuterClass.internal_static_aiins_PostRsp_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.example.aiins.proto.MessageOuterClass.PostRsp.class, com.example.aiins.proto.MessageOuterClass.PostRsp.Builder.class);
+      }
+
+      // Construct using com.example.aiins.proto.MessageOuterClass.PostRsp.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getPostsFieldBuilder();
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (postsBuilder_ == null) {
+          posts_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          postsBuilder_.clear();
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.example.aiins.proto.MessageOuterClass.internal_static_aiins_PostRsp_descriptor;
+      }
+
+      @java.lang.Override
+      public com.example.aiins.proto.MessageOuterClass.PostRsp getDefaultInstanceForType() {
+        return com.example.aiins.proto.MessageOuterClass.PostRsp.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.example.aiins.proto.MessageOuterClass.PostRsp build() {
+        com.example.aiins.proto.MessageOuterClass.PostRsp result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.example.aiins.proto.MessageOuterClass.PostRsp buildPartial() {
+        com.example.aiins.proto.MessageOuterClass.PostRsp result = new com.example.aiins.proto.MessageOuterClass.PostRsp(this);
+        int from_bitField0_ = bitField0_;
+        if (postsBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            posts_ = java.util.Collections.unmodifiableList(posts_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.posts_ = posts_;
+        } else {
+          result.posts_ = postsBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.example.aiins.proto.MessageOuterClass.PostRsp) {
+          return mergeFrom((com.example.aiins.proto.MessageOuterClass.PostRsp)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.example.aiins.proto.MessageOuterClass.PostRsp other) {
+        if (other == com.example.aiins.proto.MessageOuterClass.PostRsp.getDefaultInstance()) return this;
+        if (postsBuilder_ == null) {
+          if (!other.posts_.isEmpty()) {
+            if (posts_.isEmpty()) {
+              posts_ = other.posts_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensurePostsIsMutable();
+              posts_.addAll(other.posts_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.posts_.isEmpty()) {
+            if (postsBuilder_.isEmpty()) {
+              postsBuilder_.dispose();
+              postsBuilder_ = null;
+              posts_ = other.posts_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              postsBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getPostsFieldBuilder() : null;
+            } else {
+              postsBuilder_.addAllMessages(other.posts_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.example.aiins.proto.MessageOuterClass.PostRsp parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.example.aiins.proto.MessageOuterClass.PostRsp) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.util.List<com.example.aiins.proto.MessageOuterClass.Post> posts_ =
+        java.util.Collections.emptyList();
+      private void ensurePostsIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          posts_ = new java.util.ArrayList<com.example.aiins.proto.MessageOuterClass.Post>(posts_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.example.aiins.proto.MessageOuterClass.Post, com.example.aiins.proto.MessageOuterClass.Post.Builder, com.example.aiins.proto.MessageOuterClass.PostOrBuilder> postsBuilder_;
+
+      /**
+       * <code>repeated .aiins.Post posts = 1;</code>
+       */
+      public java.util.List<com.example.aiins.proto.MessageOuterClass.Post> getPostsList() {
+        if (postsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(posts_);
+        } else {
+          return postsBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .aiins.Post posts = 1;</code>
+       */
+      public int getPostsCount() {
+        if (postsBuilder_ == null) {
+          return posts_.size();
+        } else {
+          return postsBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .aiins.Post posts = 1;</code>
+       */
+      public com.example.aiins.proto.MessageOuterClass.Post getPosts(int index) {
+        if (postsBuilder_ == null) {
+          return posts_.get(index);
+        } else {
+          return postsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .aiins.Post posts = 1;</code>
+       */
+      public Builder setPosts(
+          int index, com.example.aiins.proto.MessageOuterClass.Post value) {
+        if (postsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensurePostsIsMutable();
+          posts_.set(index, value);
+          onChanged();
+        } else {
+          postsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .aiins.Post posts = 1;</code>
+       */
+      public Builder setPosts(
+          int index, com.example.aiins.proto.MessageOuterClass.Post.Builder builderForValue) {
+        if (postsBuilder_ == null) {
+          ensurePostsIsMutable();
+          posts_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          postsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .aiins.Post posts = 1;</code>
+       */
+      public Builder addPosts(com.example.aiins.proto.MessageOuterClass.Post value) {
+        if (postsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensurePostsIsMutable();
+          posts_.add(value);
+          onChanged();
+        } else {
+          postsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .aiins.Post posts = 1;</code>
+       */
+      public Builder addPosts(
+          int index, com.example.aiins.proto.MessageOuterClass.Post value) {
+        if (postsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensurePostsIsMutable();
+          posts_.add(index, value);
+          onChanged();
+        } else {
+          postsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .aiins.Post posts = 1;</code>
+       */
+      public Builder addPosts(
+          com.example.aiins.proto.MessageOuterClass.Post.Builder builderForValue) {
+        if (postsBuilder_ == null) {
+          ensurePostsIsMutable();
+          posts_.add(builderForValue.build());
+          onChanged();
+        } else {
+          postsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .aiins.Post posts = 1;</code>
+       */
+      public Builder addPosts(
+          int index, com.example.aiins.proto.MessageOuterClass.Post.Builder builderForValue) {
+        if (postsBuilder_ == null) {
+          ensurePostsIsMutable();
+          posts_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          postsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .aiins.Post posts = 1;</code>
+       */
+      public Builder addAllPosts(
+          java.lang.Iterable<? extends com.example.aiins.proto.MessageOuterClass.Post> values) {
+        if (postsBuilder_ == null) {
+          ensurePostsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, posts_);
+          onChanged();
+        } else {
+          postsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .aiins.Post posts = 1;</code>
+       */
+      public Builder clearPosts() {
+        if (postsBuilder_ == null) {
+          posts_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          postsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .aiins.Post posts = 1;</code>
+       */
+      public Builder removePosts(int index) {
+        if (postsBuilder_ == null) {
+          ensurePostsIsMutable();
+          posts_.remove(index);
+          onChanged();
+        } else {
+          postsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .aiins.Post posts = 1;</code>
+       */
+      public com.example.aiins.proto.MessageOuterClass.Post.Builder getPostsBuilder(
+          int index) {
+        return getPostsFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .aiins.Post posts = 1;</code>
+       */
+      public com.example.aiins.proto.MessageOuterClass.PostOrBuilder getPostsOrBuilder(
+          int index) {
+        if (postsBuilder_ == null) {
+          return posts_.get(index);  } else {
+          return postsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .aiins.Post posts = 1;</code>
+       */
+      public java.util.List<? extends com.example.aiins.proto.MessageOuterClass.PostOrBuilder> 
+           getPostsOrBuilderList() {
+        if (postsBuilder_ != null) {
+          return postsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(posts_);
+        }
+      }
+      /**
+       * <code>repeated .aiins.Post posts = 1;</code>
+       */
+      public com.example.aiins.proto.MessageOuterClass.Post.Builder addPostsBuilder() {
+        return getPostsFieldBuilder().addBuilder(
+            com.example.aiins.proto.MessageOuterClass.Post.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .aiins.Post posts = 1;</code>
+       */
+      public com.example.aiins.proto.MessageOuterClass.Post.Builder addPostsBuilder(
+          int index) {
+        return getPostsFieldBuilder().addBuilder(
+            index, com.example.aiins.proto.MessageOuterClass.Post.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .aiins.Post posts = 1;</code>
+       */
+      public java.util.List<com.example.aiins.proto.MessageOuterClass.Post.Builder> 
+           getPostsBuilderList() {
+        return getPostsFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.example.aiins.proto.MessageOuterClass.Post, com.example.aiins.proto.MessageOuterClass.Post.Builder, com.example.aiins.proto.MessageOuterClass.PostOrBuilder> 
+          getPostsFieldBuilder() {
+        if (postsBuilder_ == null) {
+          postsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              com.example.aiins.proto.MessageOuterClass.Post, com.example.aiins.proto.MessageOuterClass.Post.Builder, com.example.aiins.proto.MessageOuterClass.PostOrBuilder>(
+                  posts_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          posts_ = null;
+        }
+        return postsBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:aiins.PostRsp)
+    }
+
+    // @@protoc_insertion_point(class_scope:aiins.PostRsp)
+    private static final com.example.aiins.proto.MessageOuterClass.PostRsp DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.example.aiins.proto.MessageOuterClass.PostRsp();
+    }
+
+    public static com.example.aiins.proto.MessageOuterClass.PostRsp getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<PostRsp>
+        PARSER = new com.google.protobuf.AbstractParser<PostRsp>() {
+      @java.lang.Override
+      public PostRsp parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new PostRsp(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<PostRsp> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<PostRsp> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.example.aiins.proto.MessageOuterClass.PostRsp getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface PostOrBuilder extends
       // @@protoc_insertion_point(interface_extends:aiins.Post)
       com.google.protobuf.MessageOrBuilder {
@@ -3184,6 +3977,12 @@ public final class MessageOuterClass {
      * @return The uid.
      */
     int getUid();
+
+    /**
+     * <code>int32 time = 4;</code>
+     * @return The time.
+     */
+    int getTime();
 
     /**
      * <code>string text = 2;</code>
@@ -3204,12 +4003,6 @@ public final class MessageOuterClass {
     com.google.protobuf.ByteString getImage();
 
     /**
-     * <code>int32 time = 4;</code>
-     * @return The time.
-     */
-    int getTime();
-
-    /**
      * <code>string desc = 5;</code>
      * @return The desc.
      */
@@ -3220,6 +4013,36 @@ public final class MessageOuterClass {
      */
     com.google.protobuf.ByteString
         getDescBytes();
+
+    /**
+     * <code>string username = 6;</code>
+     * @return The username.
+     */
+    java.lang.String getUsername();
+    /**
+     * <code>string username = 6;</code>
+     * @return The bytes for username.
+     */
+    com.google.protobuf.ByteString
+        getUsernameBytes();
+
+    /**
+     * <code>string nickname = 7;</code>
+     * @return The nickname.
+     */
+    java.lang.String getNickname();
+    /**
+     * <code>string nickname = 7;</code>
+     * @return The bytes for nickname.
+     */
+    com.google.protobuf.ByteString
+        getNicknameBytes();
+
+    /**
+     * <code>bytes icon = 8;</code>
+     * @return The icon.
+     */
+    com.google.protobuf.ByteString getIcon();
   }
   /**
    * <pre>
@@ -3241,6 +4064,9 @@ public final class MessageOuterClass {
       text_ = "";
       image_ = com.google.protobuf.ByteString.EMPTY;
       desc_ = "";
+      username_ = "";
+      nickname_ = "";
+      icon_ = com.google.protobuf.ByteString.EMPTY;
     }
 
     @java.lang.Override
@@ -3300,6 +4126,23 @@ public final class MessageOuterClass {
               desc_ = s;
               break;
             }
+            case 50: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              username_ = s;
+              break;
+            }
+            case 58: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              nickname_ = s;
+              break;
+            }
+            case 66: {
+
+              icon_ = input.readBytes();
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -3341,6 +4184,17 @@ public final class MessageOuterClass {
     @java.lang.Override
     public int getUid() {
       return uid_;
+    }
+
+    public static final int TIME_FIELD_NUMBER = 4;
+    private int time_;
+    /**
+     * <code>int32 time = 4;</code>
+     * @return The time.
+     */
+    @java.lang.Override
+    public int getTime() {
+      return time_;
     }
 
     public static final int TEXT_FIELD_NUMBER = 2;
@@ -3392,17 +4246,6 @@ public final class MessageOuterClass {
       return image_;
     }
 
-    public static final int TIME_FIELD_NUMBER = 4;
-    private int time_;
-    /**
-     * <code>int32 time = 4;</code>
-     * @return The time.
-     */
-    @java.lang.Override
-    public int getTime() {
-      return time_;
-    }
-
     public static final int DESC_FIELD_NUMBER = 5;
     private volatile java.lang.Object desc_;
     /**
@@ -3441,6 +4284,93 @@ public final class MessageOuterClass {
       }
     }
 
+    public static final int USERNAME_FIELD_NUMBER = 6;
+    private volatile java.lang.Object username_;
+    /**
+     * <code>string username = 6;</code>
+     * @return The username.
+     */
+    @java.lang.Override
+    public java.lang.String getUsername() {
+      java.lang.Object ref = username_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        username_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string username = 6;</code>
+     * @return The bytes for username.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getUsernameBytes() {
+      java.lang.Object ref = username_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        username_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int NICKNAME_FIELD_NUMBER = 7;
+    private volatile java.lang.Object nickname_;
+    /**
+     * <code>string nickname = 7;</code>
+     * @return The nickname.
+     */
+    @java.lang.Override
+    public java.lang.String getNickname() {
+      java.lang.Object ref = nickname_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        nickname_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string nickname = 7;</code>
+     * @return The bytes for nickname.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getNicknameBytes() {
+      java.lang.Object ref = nickname_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        nickname_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int ICON_FIELD_NUMBER = 8;
+    private com.google.protobuf.ByteString icon_;
+    /**
+     * <code>bytes icon = 8;</code>
+     * @return The icon.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getIcon() {
+      return icon_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -3470,6 +4400,15 @@ public final class MessageOuterClass {
       if (!getDescBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 5, desc_);
       }
+      if (!getUsernameBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, username_);
+      }
+      if (!getNicknameBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, nickname_);
+      }
+      if (!icon_.isEmpty()) {
+        output.writeBytes(8, icon_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -3497,6 +4436,16 @@ public final class MessageOuterClass {
       if (!getDescBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, desc_);
       }
+      if (!getUsernameBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, username_);
+      }
+      if (!getNicknameBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, nickname_);
+      }
+      if (!icon_.isEmpty()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(8, icon_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -3514,14 +4463,20 @@ public final class MessageOuterClass {
 
       if (getUid()
           != other.getUid()) return false;
+      if (getTime()
+          != other.getTime()) return false;
       if (!getText()
           .equals(other.getText())) return false;
       if (!getImage()
           .equals(other.getImage())) return false;
-      if (getTime()
-          != other.getTime()) return false;
       if (!getDesc()
           .equals(other.getDesc())) return false;
+      if (!getUsername()
+          .equals(other.getUsername())) return false;
+      if (!getNickname()
+          .equals(other.getNickname())) return false;
+      if (!getIcon()
+          .equals(other.getIcon())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -3535,14 +4490,20 @@ public final class MessageOuterClass {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + UID_FIELD_NUMBER;
       hash = (53 * hash) + getUid();
+      hash = (37 * hash) + TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getTime();
       hash = (37 * hash) + TEXT_FIELD_NUMBER;
       hash = (53 * hash) + getText().hashCode();
       hash = (37 * hash) + IMAGE_FIELD_NUMBER;
       hash = (53 * hash) + getImage().hashCode();
-      hash = (37 * hash) + TIME_FIELD_NUMBER;
-      hash = (53 * hash) + getTime();
       hash = (37 * hash) + DESC_FIELD_NUMBER;
       hash = (53 * hash) + getDesc().hashCode();
+      hash = (37 * hash) + USERNAME_FIELD_NUMBER;
+      hash = (53 * hash) + getUsername().hashCode();
+      hash = (37 * hash) + NICKNAME_FIELD_NUMBER;
+      hash = (53 * hash) + getNickname().hashCode();
+      hash = (37 * hash) + ICON_FIELD_NUMBER;
+      hash = (53 * hash) + getIcon().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -3682,13 +4643,19 @@ public final class MessageOuterClass {
         super.clear();
         uid_ = 0;
 
+        time_ = 0;
+
         text_ = "";
 
         image_ = com.google.protobuf.ByteString.EMPTY;
 
-        time_ = 0;
-
         desc_ = "";
+
+        username_ = "";
+
+        nickname_ = "";
+
+        icon_ = com.google.protobuf.ByteString.EMPTY;
 
         return this;
       }
@@ -3717,10 +4684,13 @@ public final class MessageOuterClass {
       public com.example.aiins.proto.MessageOuterClass.Post buildPartial() {
         com.example.aiins.proto.MessageOuterClass.Post result = new com.example.aiins.proto.MessageOuterClass.Post(this);
         result.uid_ = uid_;
+        result.time_ = time_;
         result.text_ = text_;
         result.image_ = image_;
-        result.time_ = time_;
         result.desc_ = desc_;
+        result.username_ = username_;
+        result.nickname_ = nickname_;
+        result.icon_ = icon_;
         onBuilt();
         return result;
       }
@@ -3772,6 +4742,9 @@ public final class MessageOuterClass {
         if (other.getUid() != 0) {
           setUid(other.getUid());
         }
+        if (other.getTime() != 0) {
+          setTime(other.getTime());
+        }
         if (!other.getText().isEmpty()) {
           text_ = other.text_;
           onChanged();
@@ -3779,12 +4752,20 @@ public final class MessageOuterClass {
         if (other.getImage() != com.google.protobuf.ByteString.EMPTY) {
           setImage(other.getImage());
         }
-        if (other.getTime() != 0) {
-          setTime(other.getTime());
-        }
         if (!other.getDesc().isEmpty()) {
           desc_ = other.desc_;
           onChanged();
+        }
+        if (!other.getUsername().isEmpty()) {
+          username_ = other.username_;
+          onChanged();
+        }
+        if (!other.getNickname().isEmpty()) {
+          nickname_ = other.nickname_;
+          onChanged();
+        }
+        if (other.getIcon() != com.google.protobuf.ByteString.EMPTY) {
+          setIcon(other.getIcon());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -3842,6 +4823,37 @@ public final class MessageOuterClass {
       public Builder clearUid() {
         
         uid_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int time_ ;
+      /**
+       * <code>int32 time = 4;</code>
+       * @return The time.
+       */
+      @java.lang.Override
+      public int getTime() {
+        return time_;
+      }
+      /**
+       * <code>int32 time = 4;</code>
+       * @param value The time to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTime(int value) {
+        
+        time_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 time = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTime() {
+        
+        time_ = 0;
         onChanged();
         return this;
       }
@@ -3956,37 +4968,6 @@ public final class MessageOuterClass {
         return this;
       }
 
-      private int time_ ;
-      /**
-       * <code>int32 time = 4;</code>
-       * @return The time.
-       */
-      @java.lang.Override
-      public int getTime() {
-        return time_;
-      }
-      /**
-       * <code>int32 time = 4;</code>
-       * @param value The time to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTime(int value) {
-        
-        time_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>int32 time = 4;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearTime() {
-        
-        time_ = 0;
-        onChanged();
-        return this;
-      }
-
       private java.lang.Object desc_ = "";
       /**
        * <code>string desc = 5;</code>
@@ -4059,6 +5040,192 @@ public final class MessageOuterClass {
   checkByteStringIsUtf8(value);
         
         desc_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object username_ = "";
+      /**
+       * <code>string username = 6;</code>
+       * @return The username.
+       */
+      public java.lang.String getUsername() {
+        java.lang.Object ref = username_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          username_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string username = 6;</code>
+       * @return The bytes for username.
+       */
+      public com.google.protobuf.ByteString
+          getUsernameBytes() {
+        java.lang.Object ref = username_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          username_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string username = 6;</code>
+       * @param value The username to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUsername(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        username_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string username = 6;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearUsername() {
+        
+        username_ = getDefaultInstance().getUsername();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string username = 6;</code>
+       * @param value The bytes for username to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUsernameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        username_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object nickname_ = "";
+      /**
+       * <code>string nickname = 7;</code>
+       * @return The nickname.
+       */
+      public java.lang.String getNickname() {
+        java.lang.Object ref = nickname_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          nickname_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string nickname = 7;</code>
+       * @return The bytes for nickname.
+       */
+      public com.google.protobuf.ByteString
+          getNicknameBytes() {
+        java.lang.Object ref = nickname_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          nickname_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string nickname = 7;</code>
+       * @param value The nickname to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNickname(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        nickname_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string nickname = 7;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearNickname() {
+        
+        nickname_ = getDefaultInstance().getNickname();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string nickname = 7;</code>
+       * @param value The bytes for nickname to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNicknameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        nickname_ = value;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.ByteString icon_ = com.google.protobuf.ByteString.EMPTY;
+      /**
+       * <code>bytes icon = 8;</code>
+       * @return The icon.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getIcon() {
+        return icon_;
+      }
+      /**
+       * <code>bytes icon = 8;</code>
+       * @param value The icon to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIcon(com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        icon_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bytes icon = 8;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearIcon() {
+        
+        icon_ = getDefaultInstance().getIcon();
         onChanged();
         return this;
       }
@@ -4136,6 +5303,11 @@ public final class MessageOuterClass {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_aiins_PostReq_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_aiins_PostRsp_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_aiins_PostRsp_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_aiins_Post_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -4156,9 +5328,12 @@ public final class MessageOuterClass {
       " \001(\005\022\014\n\004text\030\004 \001(\t\022\r\n\005image\030\005 \001(\014\"\\\n\007Pos" +
       "tReq\022\014\n\004type\030\001 \001(\005\022\013\n\003uid\030\002 \001(\005\022\014\n\004time\030" +
       "\003 \001(\005\022\014\n\004text\030\004 \001(\t\022\014\n\004img1\030\005 \001(\014\022\014\n\004img" +
-      "2\030\006 \001(\014\"L\n\004Post\022\013\n\003uid\030\001 \001(\005\022\014\n\004text\030\002 \001" +
-      "(\t\022\r\n\005image\030\003 \001(\014\022\014\n\004time\030\004 \001(\005\022\014\n\004desc\030" +
-      "\005 \001(\tB\031\n\027com.example.aiins.protob\006proto3"
+      "2\030\006 \001(\014\"%\n\007PostRsp\022\032\n\005posts\030\001 \003(\0132\013.aiin" +
+      "s.Post\"~\n\004Post\022\013\n\003uid\030\001 \001(\005\022\014\n\004time\030\004 \001(" +
+      "\005\022\014\n\004text\030\002 \001(\t\022\r\n\005image\030\003 \001(\014\022\014\n\004desc\030\005" +
+      " \001(\t\022\020\n\010username\030\006 \001(\t\022\020\n\010nickname\030\007 \001(\t" +
+      "\022\014\n\004icon\030\010 \001(\014B\031\n\027com.example.aiins.prot" +
+      "ob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -4188,12 +5363,18 @@ public final class MessageOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_aiins_PostReq_descriptor,
         new java.lang.String[] { "Type", "Uid", "Time", "Text", "Img1", "Img2", });
-    internal_static_aiins_Post_descriptor =
+    internal_static_aiins_PostRsp_descriptor =
       getDescriptor().getMessageTypes().get(4);
+    internal_static_aiins_PostRsp_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_aiins_PostRsp_descriptor,
+        new java.lang.String[] { "Posts", });
+    internal_static_aiins_Post_descriptor =
+      getDescriptor().getMessageTypes().get(5);
     internal_static_aiins_Post_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_aiins_Post_descriptor,
-        new java.lang.String[] { "Uid", "Text", "Image", "Time", "Desc", });
+        new java.lang.String[] { "Uid", "Time", "Text", "Image", "Desc", "Username", "Nickname", "Icon", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

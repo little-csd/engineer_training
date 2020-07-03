@@ -8,6 +8,7 @@ import android.widget.Toast
 import com.example.aiins.AIApplication
 import com.example.aiins.proto.Basic
 import com.example.aiins.proto.Friend
+import com.example.aiins.proto.MessageOuterClass
 import com.example.aiins.util.Config
 import com.example.aiins.util.NetworkUtil
 import okhttp3.Call
@@ -25,6 +26,7 @@ object Repository {
     private val icons = ConcurrentHashMap<Int, Bitmap>()
     private var onAddFriendReq : OnAddFriendReq? = null
     private val observers = ArrayList<Observer>()
+    private val msgList = ArrayList<MessageOuterClass.Message>()
 
     /**
      * 获取共三种情况:
@@ -108,14 +110,30 @@ object Repository {
             }
         }
     }
+    private val msgCallback = object : Callback {
+        override fun onFailure(call: Call, e: IOException) {
+            e.printStackTrace()
+            Toast.makeText(AIApplication.context, NET_ERR, Toast.LENGTH_SHORT).show()
+        }
 
-    fun init() {
-//        Thread(this).start()
+        override fun onResponse(call: Call, response: Response) {
+            val res = response.body!!.byteString().toByteArray()
+            val rsp = MessageOuterClass.MessageRsp.parseFrom(res)
+            Log.i(TAG, "onResponse: get ${rsp.msgsList.size} messages")
+            msgList.clear()
+            msgList.addAll(rsp.msgsList.sortedBy {
+                it.time
+            })
+        }
     }
 
     // init 前添加所有 observer
     fun pullFriend() {
         NetworkUtil.friendPull(pullCallback)
+    }
+
+    fun pullMessage() {
+        NetworkUtil.messageReq(Config.userData.uid, 0, msgCallback)
     }
 
     fun getAllFriends(): Set<Int> {
@@ -128,6 +146,25 @@ object Repository {
 
     fun findIcon(id: Int): Bitmap? {
         return icons[id]
+    }
+
+    fun addMessage(msg: MessageOuterClass.Message) {
+        msgList.add(msg)
+    }
+
+    fun setIcon(id: Int, data: Bitmap) {
+        icons[id] = data
+    }
+
+    fun getMessage(id: Int): ArrayList<MessageOuterClass.Message> {
+        val res = ArrayList<MessageOuterClass.Message>()
+        for (msg in msgList) {
+            Log.i(TAG, "getMessage: $msg")
+            if (msg.src == id || msg.dst == id) {
+                res.add(msg)
+            }
+        }
+        return res
     }
 
     fun addFriendListener(onAddFriendReq: OnAddFriendReq) {

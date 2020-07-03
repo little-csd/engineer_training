@@ -23,6 +23,8 @@ object Config {
     const val TYPE_PULL = 2
     const val TYPE_REMOVE = 3
 
+    const val POST_IMAGE = "post.png"
+
     fun getUserDataName(id: Int): String {
         return "UserData.$id"
     }

@@ -1,5 +1,6 @@
 package com.example.aiins.view.talk
 
+import android.os.Handler
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -7,10 +8,12 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
 import com.example.aiins.R
 import com.example.aiins.proto.MessageOuterClass.Message
 import com.example.aiins.repository.Repository
+import com.example.aiins.repository.WebRepository
 import com.example.aiins.util.Config
 
 class TalkListAdapter: RecyclerView.Adapter<TalkListAdapter.ViewHolder>() {
@@ -18,6 +21,7 @@ class TalkListAdapter: RecyclerView.Adapter<TalkListAdapter.ViewHolder>() {
     private val msgList = ArrayList<Message>()
     private val id = Config.userData.uid
     private var recyclerView: RecyclerView? = null
+    private val handler = Handler()
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         var iconLeft: ImageView = view.findViewById(R.id.talk_icon_left)
@@ -44,7 +48,7 @@ class TalkListAdapter: RecyclerView.Adapter<TalkListAdapter.ViewHolder>() {
         } else {
             holder.talkLeft.visibility = View.VISIBLE
             holder.talkRight.visibility = View.GONE
-            setIconOrDefault(msg.dst, holder.iconLeft)
+            setIconOrDefault(msg.src, holder.iconLeft)
             holder.txtLeft.text = msg.text
         }
     }

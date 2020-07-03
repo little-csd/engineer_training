@@ -1,6 +1,7 @@
 package com.example.aiins.login
 
 import android.content.Intent
+import android.graphics.BitmapFactory
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
@@ -8,6 +9,7 @@ import com.example.aiins.MainActivity
 import com.example.aiins.R
 import com.example.aiins.proto.Basic
 import com.example.aiins.proto.Register
+import com.example.aiins.repository.Repository
 import com.example.aiins.util.*
 import kotlinx.android.synthetic.main.activity_login.*
 import okhttp3.Call
@@ -50,10 +52,17 @@ class LoginActivity : BaseActivity(), Callback {
                 }
             }
         }
+        val data = FileUtil.readFileInFiles(SAVE_MSG)
+        if (data.isNotEmpty()) {
+            val msg = Basic.LocalMsg.parseFrom(data)
+            input_username.text.append(msg.username)
+            input_password.text.append(msg.password)
+        }
     }
 
     companion object {
         private const val TAG = "LoginActivity"
+        private const val SAVE_MSG = "saved"
     }
 
     override fun onFailure(call: Call, e: IOException) {
@@ -72,6 +81,12 @@ class LoginActivity : BaseActivity(), Callback {
             if (rsp.resultCode == 0) {
                 val data = FileUtil.readFileInFiles(Config.getUserDataName(rsp.uid))
                 Config.userData = Basic.BasicUserData.parseFrom(data)
+
+                val msg = Basic.LocalMsg.newBuilder()
+                        .setUsername(input_username.text.toString())
+                        .setPassword(input_password.text.toString())
+                        .build()
+                FileUtil.writeFileInFiles(msg.toByteArray(), SAVE_MSG)
                 Log.i(TAG, "LoginActivity: onResponse: create userdata ${Config.userData}")
 
                 Toast.makeText(this@LoginActivity, "Login successfully!", Toast.LENGTH_SHORT).show()

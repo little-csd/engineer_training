@@ -16,6 +16,7 @@ import com.example.aiins.MainActivity
 import com.example.aiins.R
 import com.example.aiins.proto.Basic
 import com.example.aiins.proto.Personal
+import com.example.aiins.repository.Repository
 import com.example.aiins.util.Config
 import com.example.aiins.util.FileUtil
 import com.example.aiins.util.NetworkUtil
@@ -53,6 +54,7 @@ class HomeFragment : Fragment() {
                     } else {
                         Toast.makeText(activity, "Set icon successfully!", Toast.LENGTH_SHORT).show()
                         home_icon.setImageBitmap(bitmap)
+                        Repository.setIcon(Config.userData.uid, bitmap)
                     }
                 }
             }
@@ -135,7 +137,9 @@ class HomeFragment : Fragment() {
     private fun initIcon() {
         val bytes = FileUtil.readFileInFiles(Config.getIconDataName(Config.userData.uid))
         if (bytes.isNotEmpty()) {
-            home_icon.setImageBitmap(BitmapFactory.decodeByteArray(bytes, 0, bytes.size))
+            val bitmap = BitmapFactory.decodeByteArray(bytes, 0, bytes.size)
+            home_icon.setImageBitmap(bitmap)
+            Repository.setIcon(Config.userData.uid, bitmap)
         }
         home_icon.setOnClickListener {
             val activity = activity as MainActivity

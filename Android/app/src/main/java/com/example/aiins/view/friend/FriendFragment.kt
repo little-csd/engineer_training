@@ -2,6 +2,7 @@ package com.example.aiins.view.friend
 
 import android.content.Intent
 import android.os.Bundle
+import android.os.Handler
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -18,6 +19,7 @@ import kotlinx.android.synthetic.main.fragment_friend.*
 class FriendFragment : Fragment(), Repository.Observer, FriendListAdapter.OnClickListener {
 
     private val adapter = FriendListAdapter()
+    private val handler = Handler()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.fragment_friend, container, false)
@@ -37,7 +39,9 @@ class FriendFragment : Fragment(), Repository.Observer, FriendListAdapter.OnClic
         for (k in key) {
             ll.add(Repository.findUserData(k)!!)
         }
-        adapter.setData(ll)
+        handler.post {
+            adapter.setData(ll)
+        }
         Log.i("FriendFragment", "onDataSetChange: ${ll.size}")
     }
 

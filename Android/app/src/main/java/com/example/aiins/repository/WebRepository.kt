@@ -1,25 +1,23 @@
 package com.example.aiins.repository
 
 import android.util.Log
-import android.widget.Toast
 import com.example.aiins.MainActivity
 import com.example.aiins.proto.MessageOuterClass
-import com.example.aiins.repository.Repository.NET_ERR
 import com.example.aiins.util.Config
 import org.java_websocket.client.WebSocketClient
 import org.java_websocket.handshake.ServerHandshake
 import java.net.URI
 import java.nio.ByteBuffer
-import kotlin.system.exitProcess
 
 object WebRepository : WebSocketClient(URI.create(Config.socket)) {
 
     const val TAG = "WebClient"
-    lateinit var context: MainActivity
-    private var observer: Observer? = null
+    private val observers = ArrayList<Observer>()
 
     override fun onOpen(handshakedata: ServerHandshake?) {
         Log.i(TAG, "onOpen: $handshakedata")
+        Repository.pullMessage()
+        send(Config.userData.uid.toString())
     }
 
     override fun onClose(code: Int, reason: String?, remote: Boolean) {
@@ -31,8 +29,12 @@ object WebRepository : WebSocketClient(URI.create(Config.socket)) {
     }
 
     override fun onMessage(bytes: ByteBuffer?) {
+        Log.i(TAG, "onMessage: ")
         val msg = MessageOuterClass.Message.parseFrom(bytes)
-        observer?.onMessage(msg)
+        for (observer in observers) {
+            observer.onMessage(msg)
+        }
+        Repository.addMessage(msg)
     }
 
     override fun onError(ex: Exception?) {
@@ -48,11 +50,11 @@ object WebRepository : WebSocketClient(URI.create(Config.socket)) {
     }
 
     fun addObserver(observer: Observer) {
-        this.observer = observer
+        observers.add(observer)
     }
 
-    fun removeObserver() {
-        this.observer = null
+    fun removeObserver(observer: Observer) {
+        observers.remove(observer)
     }
 
     interface Observer {

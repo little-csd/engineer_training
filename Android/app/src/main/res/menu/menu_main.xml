@@ -13,6 +13,12 @@
                 android:icon="@drawable/ic_person_add"
                 android:title="Add Friend"
                 app:showAsAction="never" />
+            <item
+                android:id="@+id/action_post"
+                android:orderInCategory="120"
+                android:icon="@drawable/ic_post"
+                android:title="Post"
+                app:showAsAction="never" />
         </menu>
     </item>
 </menu>

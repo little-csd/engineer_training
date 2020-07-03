@@ -75,8 +75,8 @@ class Mongo:
 
     def message_find(self, uid, time):
         l = []
-        r1 = self.friend.find({'src': uid, 'time': {"$gt": time}})
-        r2 = self.friend.find({'dst': uid, 'time': {"$gt": time}})
+        r1 = self.message.find({'src': uid})
+        r2 = self.message.find({'dst': uid})
         for r in r1:
             l.append(r)
         for r in r2:
@@ -110,7 +110,7 @@ class Mongo:
     def __init__(self):
         self.client = pymongo.MongoClient(host='localhost')
         # 在此处更改 db 即可
-        self.db = self.client.test
+        self.db = self.client.test2
         # login part
         self.login = self.db.login
         # friend request part

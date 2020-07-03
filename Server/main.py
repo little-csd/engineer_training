@@ -99,6 +99,7 @@ def process_password(req):
 # 添加好友相关
 @app.route('/friend', methods=['POST'])
 def friend():
+    print('friend request')
     req = Friend.FriendReq()
     data = request.data
     req.ParseFromString(data)
@@ -184,7 +185,11 @@ def search():
     data = request.data
     req.ParseFromString(data)
     if req.type == 0:
-        return mongo.post_find(req.time)
+        l = mongo.post_find(req.time)
+        res = Message.PostRsp()
+        for r in l:
+            res.posts.add() = r
+        return res.SerializeToString()
     elif req.type == 1:
         process_post_raw(req)
     elif req.type == 2:
@@ -196,7 +201,18 @@ def search():
     return ''
 
 def process_post_raw(req):
-    print('')
+    user = mongo.find_by_uid(req.uid)
+    r = Message.Post()
+    r.uid = req.uid
+    r.time = req.time
+    r.text = req.text
+    r.image = req.img1
+    r.username = user['username']
+    r.nickname = user['nickname']
+    if 'icon' in r.keys():
+        r.icon = user['icon']
+    mongo.post_add(r)
+    print(r.text)
 
 def process_post_transfer(req):
     print('')
@@ -206,6 +222,7 @@ def process_post_translation(req):
 
 @app.route('/message', methods=['POST'])
 def message():
+    print('message request')
     req = Message.MessageReq()
     data = request.data
     req.ParseFromString(data)
@@ -239,9 +256,12 @@ def entry():
     try:
         uid = int(user.receive())
         client_list[uid] = user
+        print('uid {} connect to server'.format(uid))
         while True:
             msg = Message.Message()
             msg.ParseFromString(user.receive())
+            print(msg.text)
+            # user.send(msg.SerializeToString())
             dst = client_list[msg.dst]
             if dst != None:
                 dst.send(msg.SerializeToString())
@@ -249,8 +269,9 @@ def entry():
     except BaseException:
         print('Connection failed')
     
+    print('uid {} leave server'.format(uid))
     client_list[uid] = None
-    return None
+    return 'good bye'
 
 if __name__ == '__main__':
     http_server = WSGIServer(('192.168.101.65', 5000), application=app, handler_class=WebSocketHandler)

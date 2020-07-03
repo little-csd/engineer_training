@@ -29,6 +29,7 @@ import com.example.aiins.util.Config
 import com.example.aiins.util.FileUtil
 import com.example.aiins.util.NetworkUtil
 import com.example.aiins.view.FinderFragment
+import com.example.aiins.view.PostActivity
 import com.example.aiins.view.talk.TalkFragment
 import com.example.aiins.view.friend.AddFriendActivity
 import com.example.aiins.view.friend.FriendFragment
@@ -40,7 +41,7 @@ import java.util.concurrent.TimeUnit
 
 class MainActivity : BaseActivity(), Repository.OnAddFriendReq {
 
-    val list = arrayOf(TalkFragment(), FriendFragment(), FinderFragment(), HomeFragment())
+    val list = arrayOf(FriendFragment(), FinderFragment(), HomeFragment())
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -51,11 +52,9 @@ class MainActivity : BaseActivity(), Repository.OnAddFriendReq {
     }
 
     private fun init() {
-        WebRepository.context = this
         if (!WebRepository.connectBlocking(1, TimeUnit.SECONDS)) {
             Toast.makeText(this, NET_ERR, Toast.LENGTH_SHORT).show()
         }
-        WebRepository.send(Config.userData.uid.toString())
 
         setSupportActionBar(toolbar)
         viewpager.adapter = object : FragmentStateAdapter(this) {
@@ -72,36 +71,38 @@ class MainActivity : BaseActivity(), Repository.OnAddFriendReq {
             val img = tab.view.findViewById<ImageView>(R.id.tab_icon_img)
             val txt = tab.view.findViewById<TextView>(R.id.tab_icon_txt)
             when (position) {
+//                0 -> {
+//                    img.setImageResource(R.drawable.ic_chat)
+//                    txt.text = "chat"
+//                }
                 0 -> {
-                    img.setImageResource(R.drawable.ic_chat)
-                    txt.text = "chat"
-                }
-                1 -> {
                     img.setImageResource(R.drawable.ic_people)
                     txt.text = "people"
                 }
-                2 -> {
+                1 -> {
                     img.setImageResource(R.drawable.ic_search)
                     txt.text = "search"
                 }
-                3 -> {
+                2 -> {
                     img.setImageResource(R.drawable.ic_home)
                     txt.text = "center"
                 }
             }
         }).attach()
         Repository.addFriendListener(this)
-        Repository.addObserver(list[1] as Observer)
+        Repository.addObserver(list[0] as Observer)
         Thread {
-            Repository.pullFriend()
-            try {
-                Thread.sleep(5000)
-            } catch (e: InterruptedException) {}
+            while (true) {
+                Repository.pullFriend()
+                try {
+                    Thread.sleep(5000)
+                } catch (e: InterruptedException) {}
+            }
         }.start()
-        val msg = MessageOuterClass.Message.newBuilder()
-                .setText("a")
-                .build()
-        WebRepository.send(msg.toByteArray())
+//        val msg = MessageOuterClass.Message.newBuilder()
+//                .setText("a")
+//                .build()
+//        WebRepository.send(msg.toByteArray())
     }
 
     fun onClickIcon() {
@@ -123,7 +124,7 @@ class MainActivity : BaseActivity(), Repository.OnAddFriendReq {
                         .start(this)
             }
             UCrop.REQUEST_CROP -> {
-                val fragment = list[3] as HomeFragment
+                val fragment = list[2] as HomeFragment
                 fragment.onIconOK()
             }
         }
@@ -173,6 +174,10 @@ class MainActivity : BaseActivity(), Repository.OnAddFriendReq {
         when (item.itemId) {
             R.id.action_add_friend -> {
                 val intent = Intent(this, AddFriendActivity::class.java)
+                startActivity(intent)
+            }
+            R.id.action_post -> {
+                val intent = Intent(this, PostActivity::class.java)
                 startActivity(intent)
             }
         }

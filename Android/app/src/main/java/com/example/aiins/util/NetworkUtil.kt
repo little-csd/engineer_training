@@ -2,7 +2,9 @@ package com.example.aiins.util
 
 import android.util.Log
 import com.example.aiins.proto.*
+import com.example.aiins.repository.WebRepository
 import com.google.protobuf.ByteString
+import com.google.protobuf.Message
 import okhttp3.*
 import okhttp3.RequestBody.Companion.toRequestBody
 import java.io.IOException
@@ -156,6 +158,25 @@ object NetworkUtil {
                 .build()
         val request = Request.Builder()
                 .url(Config.message)
+                .post(req.toByteArray().toRequestBody())
+                .build()
+        val call = okHttpClient.newCall(request)
+        call.enqueue(callback)
+    }
+
+    fun messageSend(uid: Int, txt: String) {
+        val req = MessageOuterClass.Message.newBuilder()
+                .setSrc(Config.userData.uid)
+                .setDst(uid)
+                .setText(txt)
+                .setTime((System.currentTimeMillis()/1000).toInt())
+                .build()
+        WebRepository.send(req.toByteArray())
+    }
+
+    fun post(req: MessageOuterClass.PostReq, callback: Callback) {
+        val request = Request.Builder()
+                .url(Config.post)
                 .post(req.toByteArray().toRequestBody())
                 .build()
         val call = okHttpClient.newCall(request)

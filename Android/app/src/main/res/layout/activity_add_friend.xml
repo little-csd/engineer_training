@@ -11,6 +11,7 @@
         android:id="@+id/toolbar_add_friend"
         android:layout_width="match_parent"
         android:layout_height="60dp"
+        app:title="Add Friend"
         android:theme="@style/Theme.Design.NoActionBar"
         android:background="@color/colorBackground"
         app:titleTextColor="@color/colorBlack"/>

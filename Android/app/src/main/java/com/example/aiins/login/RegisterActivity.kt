@@ -79,10 +79,9 @@ class RegisterActivity : BaseActivity(), Callback {
     }
 
     override fun onResponse(call: Call, response: Response) {
+        val res = response.body!!.byteString().toByteArray()
+        val rsp = Register.RegisterRsp.parseFrom(res)
         runOnUiThread {
-            val res = response.body!!.byteString().toByteArray()
-            val rsp = Register.RegisterRsp.parseFrom(res)
-
             if (rsp.resultCode == 0) {
                 Toast.makeText(this@RegisterActivity, "Register successfully!", Toast.LENGTH_SHORT).show()
 
@@ -93,9 +92,6 @@ class RegisterActivity : BaseActivity(), Callback {
                 basicUserDataBuilder.uid = rsp.uid
                 Config.userData = basicUserDataBuilder.build()
 
-                if (BuildConfig.DEBUG && FileUtil.checkExistInFiles(Config.getUserDataName(rsp.uid))) {
-                    error("Assertion failed")
-                }
                 FileUtil.writeFileInFiles(Config.userData.toByteArray(), Config.getUserDataName(rsp.uid))
 
                 val intent = Intent(this, MainActivity::class.java)

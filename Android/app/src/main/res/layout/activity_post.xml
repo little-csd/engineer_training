@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.PostActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_post"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        app:title="Post"
+        android:theme="@style/Theme.Design.NoActionBar"
+        android:background="@color/colorBackground"
+        app:titleTextColor="@color/colorBlack"
+        app:popupTheme="@style/PopupTheme"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <FrameLayout
+        android:id="@+id/post_framelayout"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginVertical="10dp"
+        android:background="@drawable/edit_bg"
+        app:layout_constraintTop_toBottomOf="@id/toolbar_post" >
+
+        <EditText
+            android:id="@+id/post_text"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textColor="@color/colorBlack"
+            android:layout_marginHorizontal="10dp"
+            android:gravity="top"
+            android:background="@null"
+            android:layout_marginVertical="5dp"/>
+    </FrameLayout>
+
+    <RadioGroup
+        android:id="@+id/RadioGroup1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@id/post_framelayout"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp">
+        <RadioButton
+            android:id="@+id/mode_normal"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:text="普通模式(最多只发送一张照片)"/>
+        <RadioButton
+            android:id="@+id/mode_transfer"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:text="风格混合(需要添加两张照片)"/>
+        <RadioButton
+            android:id="@+id/mode_2text"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:text="图片转文本(需要添加一张照片)"/>
+    </RadioGroup>
+</androidx.constraintlayout.widget.ConstraintLayout>

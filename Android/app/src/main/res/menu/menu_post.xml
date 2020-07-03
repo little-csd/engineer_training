@@ -1,0 +1,25 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/menu_overflow_post"
+        android:enabled="true"
+        android:icon="@drawable/ic_more_vert"
+        android:title=""
+        app:showAsAction="always">
+        <menu>
+            <item
+                android:id="@+id/action_post_image"
+                android:icon="@drawable/ic_post_image"
+                android:orderInCategory="120"
+                android:title="Add image"
+                app:showAsAction="never" />
+
+            <item
+                android:id="@+id/action_post_send"
+                android:icon="@drawable/ic_post_white"
+                android:orderInCategory="100"
+                android:title="Post"
+                app:showAsAction="never" />
+        </menu>
+    </item>
+</menu>

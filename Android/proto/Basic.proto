@@ -20,6 +20,11 @@ message UserDataRsp {
     repeated UserData userData = 1;
 }
 
+message LocalMsg {
+    string username = 1;
+    string password = 2;
+}
+
 // 每个用户都有的基本信息 TODO: 后面删掉
 message BasicUserData {
     string nickname = 1;
