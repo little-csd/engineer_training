@@ -63,10 +63,6 @@ def main(bytestream):
 		if word == '<end>':
 			break
 	sentence = ' '.join(sampled_caption)
-	print(sentence)
-	image = Image.open(args.image).convert('RGB')
-	plt.imshow(np.asarray(image))
-	plt.show()
-
+	return sentence
 
 
