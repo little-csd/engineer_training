@@ -43,6 +43,13 @@ class VGGNet(nn.Module):
         return features
 
 
+def image_to_byte_array(image:Image):
+  imgByteArr = io.BytesIO()
+  image.save(imgByteArr, format=image.format)
+  imgByteArr = imgByteArr.getvalue()
+  return imgByteArr
+
+
 def main(content_bytes, style_bytes):
     gpu_id = 0
     max_size = 400
@@ -103,15 +110,21 @@ def main(content_bytes, style_bytes):
             print('Step [{}/{}], Content Loss: {:.4f}, Style Loss: {:.4f}'
                   .format(step + 1, total_step, content_loss.item(), style_loss.item()))
 
+
+        # maybe need to modify here
         if (step + 1) % sample_step == 0:
             # Save generated image
             denorm = transforms.Normalize(mean=(-2.12, -2.04, -1.8),
                                           std=(4.37, 4.46, 4.44))
             img = target.clone().squeeze()
             img = denorm(img).clamp_(0, 1)
+
+            imgByteArr = image_to_byte_array(img)
+            return imgByteArr
+
             if not os.path.exists('outputImage'):
                 os.makedirs('outputImage')
                 torchvision.utils.save_image(img, 'outputImage/' + 'output-{}.png'.format(step + 1))
             else:
                 torchvision.utils.save_image(img, 'outputImage/' + 'output-{}.png'.format(step + 1))
-            
+
