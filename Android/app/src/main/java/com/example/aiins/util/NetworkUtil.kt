@@ -1,10 +1,7 @@
 package com.example.aiins.util
 
 import android.util.Log
-import com.example.aiins.proto.Basic
-import com.example.aiins.proto.Friend
-import com.example.aiins.proto.Personal
-import com.example.aiins.proto.Register
+import com.example.aiins.proto.*
 import com.google.protobuf.ByteString
 import okhttp3.*
 import okhttp3.RequestBody.Companion.toRequestBody
@@ -146,6 +143,19 @@ object NetworkUtil {
                 .build()
         val request = Request.Builder()
                 .url(Config.user)
+                .post(req.toByteArray().toRequestBody())
+                .build()
+        val call = okHttpClient.newCall(request)
+        call.enqueue(callback)
+    }
+
+    fun messageReq(uid: Int, time: Int, callback: Callback) {
+        val req = MessageOuterClass.MessageReq.newBuilder()
+                .setUid(uid)
+                .setTime(time)
+                .build()
+        val request = Request.Builder()
+                .url(Config.message)
                 .post(req.toByteArray().toRequestBody())
                 .build()
         val call = okHttpClient.newCall(request)

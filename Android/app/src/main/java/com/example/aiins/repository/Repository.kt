@@ -109,6 +109,10 @@ object Repository {
         }
     }
 
+    fun init() {
+//        Thread(this).start()
+    }
+
     // init 前添加所有 observer
     fun pullFriend() {
         NetworkUtil.friendPull(pullCallback)

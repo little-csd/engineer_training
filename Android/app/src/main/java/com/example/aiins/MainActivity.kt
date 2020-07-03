@@ -19,8 +19,11 @@ import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.example.aiins.proto.Basic
+import com.example.aiins.proto.MessageOuterClass
 import com.example.aiins.repository.Repository
+import com.example.aiins.repository.Repository.NET_ERR
 import com.example.aiins.repository.Repository.Observer
+import com.example.aiins.repository.WebRepository
 import com.example.aiins.util.BaseActivity
 import com.example.aiins.util.Config
 import com.example.aiins.util.FileUtil
@@ -33,6 +36,7 @@ import com.example.aiins.view.home.HomeFragment
 import com.google.android.material.tabs.TabLayoutMediator
 import com.yalantis.ucrop.UCrop
 import kotlinx.android.synthetic.main.activity_main.*
+import java.util.concurrent.TimeUnit
 
 class MainActivity : BaseActivity(), Repository.OnAddFriendReq {
 
@@ -47,6 +51,12 @@ class MainActivity : BaseActivity(), Repository.OnAddFriendReq {
     }
 
     private fun init() {
+        WebRepository.context = this
+        if (!WebRepository.connectBlocking(1, TimeUnit.SECONDS)) {
+            Toast.makeText(this, NET_ERR, Toast.LENGTH_SHORT).show()
+        }
+        WebRepository.send(Config.userData.uid.toString())
+
         setSupportActionBar(toolbar)
         viewpager.adapter = object : FragmentStateAdapter(this) {
             override fun createFragment(position: Int): Fragment {
@@ -88,6 +98,10 @@ class MainActivity : BaseActivity(), Repository.OnAddFriendReq {
                 Thread.sleep(5000)
             } catch (e: InterruptedException) {}
         }.start()
+        val msg = MessageOuterClass.Message.newBuilder()
+                .setText("a")
+                .build()
+        WebRepository.send(msg.toByteArray())
     }
 
     fun onClickIcon() {

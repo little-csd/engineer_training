@@ -2,11 +2,8 @@ package com.example.aiins.login
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
-import androidx.appcompat.app.AppCompatActivity
 import com.example.aiins.R
 import com.example.aiins.util.BaseActivity
-import com.example.aiins.util.NetworkUtil
 import kotlinx.android.synthetic.main.activity_first.*
 
 class FirstActivity : BaseActivity() {
