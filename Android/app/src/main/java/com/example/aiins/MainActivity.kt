@@ -19,7 +19,6 @@ import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.example.aiins.proto.Basic
-import com.example.aiins.proto.MessageOuterClass
 import com.example.aiins.repository.Repository
 import com.example.aiins.repository.Repository.NET_ERR
 import com.example.aiins.repository.Repository.Observer
@@ -28,9 +27,8 @@ import com.example.aiins.util.BaseActivity
 import com.example.aiins.util.Config
 import com.example.aiins.util.FileUtil
 import com.example.aiins.util.NetworkUtil
-import com.example.aiins.view.FinderFragment
-import com.example.aiins.view.PostActivity
-import com.example.aiins.view.talk.TalkFragment
+import com.example.aiins.view.post.FinderFragment
+import com.example.aiins.view.post.PostActivity
 import com.example.aiins.view.friend.AddFriendActivity
 import com.example.aiins.view.friend.FriendFragment
 import com.example.aiins.view.home.HomeFragment

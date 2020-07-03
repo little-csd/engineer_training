@@ -188,7 +188,15 @@ def search():
         l = mongo.post_find(req.time)
         res = Message.PostRsp()
         for r in l:
-            res.posts.add() = r
+            post = res.posts.add()
+            post.uid = r['uid']
+            post.text = r['text']
+            post.image = r['image']
+            post.time = r['time']
+            post.desc = r['desc']
+            post.username = r['username']
+            post.nickname = r['nickname']
+            post.icon = r['icon']
         return res.SerializeToString()
     elif req.type == 1:
         process_post_raw(req)
@@ -201,6 +209,7 @@ def search():
     return ''
 
 def process_post_raw(req):
+    print('process row post')
     user = mongo.find_by_uid(req.uid)
     r = Message.Post()
     r.uid = req.uid
@@ -209,16 +218,16 @@ def process_post_raw(req):
     r.image = req.img1
     r.username = user['username']
     r.nickname = user['nickname']
-    if 'icon' in r.keys():
+    if 'icon' in user.keys():
         r.icon = user['icon']
     mongo.post_add(r)
     print(r.text)
 
 def process_post_transfer(req):
-    print('')
+    print('process transfer post')
 
 def process_post_translation(req):
-    print('')
+    print('process translation post')
 
 @app.route('/message', methods=['POST'])
 def message():

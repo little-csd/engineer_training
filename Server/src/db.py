@@ -89,21 +89,22 @@ class Mongo:
             'text': post.text,
             'image': post.image,
             'time': post.time,
-            'desc': post.desc
+            'desc': post.desc,
+            'username': post.username,
+            'nickname': post.nickname,
+            'icon': post.icon
         }
         self.post.insert_one(data)
         return ''
 
-    def post_find(self, number):
-        if number <= 0:
-            return []
-        res = self.post.find(sort=[("time", -1)])
+    def post_find(self, time):
+        res = self.post.find({'time': {'$gt': time}},sort=[("time", -1)])
         t = 0
         l = []
         for r in res:
             l.append(r)
             t += 1
-            if t >= number:
+            if t >= 5:
                 break
         return l
 

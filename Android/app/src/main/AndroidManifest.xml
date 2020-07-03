@@ -16,7 +16,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Design.NoActionBar">
-        <activity android:name=".view.PostActivity"></activity>
+        <activity android:name=".view.post.PostActivity"></activity>
         <activity
             android:name=".view.talk.TalkActivity"
             android:windowSoftInputMode="adjustResize|stateAlwaysHidden" />

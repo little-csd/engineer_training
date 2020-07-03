@@ -1,4 +1,4 @@
-package com.example.aiins.view
+package com.example.aiins.view.post
 
 import android.app.Activity
 import android.content.Intent
@@ -8,7 +8,6 @@ import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
-import com.example.aiins.AIApplication
 import com.example.aiins.R
 import com.example.aiins.proto.MessageOuterClass
 import com.example.aiins.repository.Repository
@@ -31,11 +30,15 @@ class PostActivity : BaseActivity() {
     private val postCallback = object : Callback {
         override fun onFailure(call: Call, e: IOException) {
             e.printStackTrace()
-            Toast.makeText(this@PostActivity, Repository.NET_ERR, Toast.LENGTH_SHORT).show()
+            runOnUiThread {
+                Toast.makeText(this@PostActivity, Repository.NET_ERR, Toast.LENGTH_SHORT).show()
+            }
         }
 
         override fun onResponse(call: Call, response: Response) {
-            Toast.makeText(this@PostActivity, "Post successfully", Toast.LENGTH_SHORT).show()
+            runOnUiThread {
+                Toast.makeText(this@PostActivity, "Post successfully", Toast.LENGTH_SHORT).show()
+            }
         }
     }
 
@@ -43,6 +46,8 @@ class PostActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_post)
         setSupportActionBar(toolbar_post)
+        lastImage = null
+        last2Image = null
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -60,6 +65,7 @@ class PostActivity : BaseActivity() {
                     Toast.makeText(this, "Text should not be empty!", Toast.LENGTH_SHORT).show()
                     return true
                 }
+                Log.i(TAG, "onOptionsItemSelected: $txt")
                 if (mode_normal.isChecked) {
                     val builder = MessageOuterClass.PostReq.newBuilder()
                             .setType(MODE_NORMAL)
@@ -72,6 +78,7 @@ class PostActivity : BaseActivity() {
                     } else {
                         NetworkUtil.post(builder.build(), postCallback)
                     }
+                    finish()
                 } else if (mode_transfer.isChecked) {
                     if (last2Image == null) {
                         Toast.makeText(this, "At least two pictures are required!", Toast.LENGTH_SHORT).show()
@@ -86,6 +93,7 @@ class PostActivity : BaseActivity() {
                             .setImg2(ByteString.copyFrom(last2Image))
                             .build()
                     NetworkUtil.post(req, postCallback)
+                    finish()
                 } else if (mode_2text.isChecked) {
                     if (lastImage == null) {
                         Toast.makeText(this, "At least one picture is required!", Toast.LENGTH_SHORT).show()
@@ -99,6 +107,9 @@ class PostActivity : BaseActivity() {
                             .setImg1(ByteString.copyFrom(lastImage))
                             .build()
                     NetworkUtil.post(req, postCallback)
+                    finish()
+                } else {
+                    Toast.makeText(this, "At least choose one type", Toast.LENGTH_SHORT).show()
                 }
             }
             R.id.action_post_image -> {
